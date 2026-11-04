@@ -599,7 +599,7 @@ export default function LiturgyPlanningPage() {
 
   return (
     <PortalShell>
-      <div className="space-y-6 max-w-7xl mx-auto pb-16">
+      <div className="space-y-6 w-full pb-16">
         {/* Navigation Breadcrumb & Top Actions (RBAC Guarded) */}
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
           <nav className="flex items-center gap-1.5 text-xs text-on-surface-variant font-medium flex-wrap">

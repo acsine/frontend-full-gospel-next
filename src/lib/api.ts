@@ -107,7 +107,20 @@ export function formatBackendErrorMessage(raw: any, statusCode?: number): string
     return `Une erreur inattendue est survenue (code ${statusCode}).`;
   }
 
-  // Handle Pydantic detail array: [{ loc: [...], msg: "...", type: "..." }]
+  // If raw is an object with errors array or detail
+  if (typeof raw === "object" && raw !== null) {
+    if (Array.isArray(raw.data?.errors) && raw.data.errors.length > 0) {
+      return formatBackendErrorMessage(raw.data.errors, statusCode);
+    }
+    if (Array.isArray(raw.errors) && raw.errors.length > 0) {
+      return formatBackendErrorMessage(raw.errors, statusCode);
+    }
+    if (Array.isArray(raw.detail) && raw.detail.length > 0) {
+      return formatBackendErrorMessage(raw.detail, statusCode);
+    }
+  }
+
+  // Handle error array (e.g. FastAPI / Pydantic validation errors)
   if (Array.isArray(raw)) {
     const fieldMap: Record<string, string> = {
       identifier: "l'identifiant ou matricule",
@@ -116,27 +129,58 @@ export function formatBackendErrorMessage(raw: any, statusCode?: number): string
       phone: "le numéro de téléphone",
       amount: "le montant",
       assembly_id: "l'assemblée de rattachement",
+      transfer_date: "la date de transfert",
+      to_assembly_id: "l'assemblée de destination",
+      reason: "le motif",
       first_name: "le prénom",
       last_name: "le nom",
       category_id: "la catégorie",
       account_id: "le compte financier",
       role_level: "le niveau de rôle",
+      title: "l'intitulé de la dépense",
+      beneficiary_name: "le nom du bénéficiaire",
+      beneficiary_phone: "le numéro de téléphone du bénéficiaire",
+      requested_amount: "le montant demandé",
+      description: "la description ou motif",
+      node_type: "le niveau de gouvernance",
+      node_id: "l'entité ecclésiale",
+      department_id: "le département paroissial",
+      source_account_id: "le compte financier source",
     };
 
-    const details = raw.map((item: any) => {
-      const field = Array.isArray(item?.loc) ? item.loc[item.loc.length - 1] : "";
-      const fieldFr = fieldMap[field] || (field ? `le champ "${field}"` : "un champ obligatoire");
-      if (item?.type === "missing" || (typeof item?.msg === "string" && item.msg.toLowerCase().includes("required"))) {
-        return `${fieldFr} est requis`;
-      }
-      if (typeof item?.msg === "string" && item.msg.toLowerCase().includes("valid email")) {
-        return `${fieldFr} n'est pas une adresse email valide`;
-      }
-      return `${fieldFr} (${item?.msg || "invalide"})`;
-    });
+    const details = raw
+      .map((item: any) => {
+        if (typeof item === "string") {
+          return item.replace(/^Value error,\s*/i, "").trim();
+        }
+        if (item && typeof item === "object") {
+          // Check for direct field error: { transfer_date: "Value error, ..." }
+          const nonMetaKeys = Object.keys(item).filter(
+            (k) => k !== "location" && k !== "loc" && k !== "type" && k !== "ctx"
+          );
+          for (const key of nonMetaKeys) {
+            let msg = String(item[key] || "");
+            msg = msg.replace(/^Value error,\s*/i, "").trim();
+            return msg;
+          }
+
+          // Check for item.msg or item.message
+          if (item.msg || item.message) {
+            let msg = String(item.msg || item.message).replace(/^Value error,\s*/i, "").trim();
+            const field = Array.isArray(item?.loc) ? item.loc[item.loc.length - 1] : (item.location || "");
+            const fieldFr = fieldMap[field] || (field ? `le champ "${field}"` : "");
+            if (item?.type === "missing" || msg.toLowerCase().includes("required")) {
+              return fieldFr ? `${fieldFr} est requis` : "Un champ obligatoire est manquant";
+            }
+            return msg;
+          }
+        }
+        return "";
+      })
+      .filter(Boolean);
 
     if (details.length > 0) {
-      return `Veuillez compléter correctement le formulaire : ${details.slice(0, 3).join(", ")}.`;
+      return details.join(" • ");
     }
     return "Certains champs obligatoires sont manquants ou invalides.";
   }
@@ -348,11 +392,12 @@ async function request<T>(
     const json = await res.json().catch(() => ({}));
 
     if (!res.ok) {
-      const rawErrMsg = json.message || json.detail || json.error;
+      const rawErrMsg = json.data?.errors || json.errors || json.detail || json.message || json.error || json;
       const formatted = formatBackendErrorMessage(rawErrMsg, res.status);
       return {
         error: true,
         message: formatted,
+        data: json.data,
         status: res.status,
       };
     }
@@ -1824,6 +1869,19 @@ export const api = {
       if (params?.offset) query.append("offset", String(params.offset));
       return request<{ items: any[]; total: number }>(
         `/api/v1/admin/audit-logs?${query.toString()}`
+      );
+    },
+
+    exportAuditLogsJson: () => request<any>("/api/v1/admin/audit-logs/export-json"),
+
+    getSystemLogs: (params?: { log_type?: "error" | "app"; lines?: number; filter_term?: string }) => {
+      const query = new URLSearchParams();
+      if (params?.log_type) query.append("log_type", params.log_type);
+      if (params?.lines) query.append("lines", String(params.lines));
+      if (params?.filter_term) query.append("filter_term", params.filter_term);
+      const qs = query.toString();
+      return request<{ logs: any; total_lines?: number }>(
+        `/api/v1/admin/system/logs${qs ? `?${qs}` : ""}`
       );
     },
 

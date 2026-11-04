@@ -239,7 +239,7 @@ export default function MediathequePage() {
 
   return (
     <PortalShell activePath="/mediatheque" title="Médiathèque Numérique">
-      <div className="space-y-6 max-w-7xl 2xl:max-w-[1700px] mx-auto pb-24">
+      <div className="space-y-6 w-full pb-24">
         {/* Navigation Breadcrumb & Top Bar */}
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
           <nav className="flex items-center gap-1.5 text-xs text-on-surface-variant font-medium flex-wrap">

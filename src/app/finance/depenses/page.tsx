@@ -202,6 +202,14 @@ export default function DepensesPage() {
       // Ignorer si SSE non disponible
     }
 
+    // Ouvrir automatiquement le formulaire si ?new=1 ou ?new=true dans l'URL
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get("new") === "1" || params.get("new") === "true") {
+        setIsNewVoucherModalOpen(true);
+      }
+    }
+
     return () => {
       isMounted = false;
       if (eventSource) eventSource.close();
@@ -577,9 +585,46 @@ export default function DepensesPage() {
 
     if (!ok) return;
 
+    const catMapReverse: Record<string, string> = {
+      "Travaux & Entretien": "87f6225a-412b-4927-80ee-1aa473444cc4",
+      "Liturgie & Culte": "807567be-f89e-4459-8e30-6f818fbc5966",
+      "Social & Assistance": "91e45a22-381c-4b55-a134-8c819fa10111",
+      "Évangélisation": "a2b3c4d5-e6f7-4890-1234-56789abcdef0",
+    };
+
+    let backendId = `vch-${Date.now()}`;
+    let backendCode = `BON-2026-03-0${Math.floor(20 + Math.random() * 80)}`;
+
+    try {
+      const res = await api.finance.createExpenseRequest({
+        title: newMotive.slice(0, 100) || `Dépense ${newCategory}`,
+        description: newMotive,
+        requested_amount: Math.round(Number(newAmount)),
+        beneficiary_name: newApplicant || "Ouvrier Paroissial",
+        node_type: newLevel === "department" ? "assembly" : newLevel,
+        category_id: catMapReverse[newCategory] || "87f6225a-412b-4927-80ee-1aa473444cc4",
+      });
+
+      if (res.error) {
+        await alert({
+          title: "Erreur lors de la création",
+          message: res.message || "Impossible d'enregistrer la demande de décaissement sur le serveur central.",
+          variant: "danger",
+        });
+        return;
+      }
+
+      if (res.data?.expense) {
+        backendId = res.data.expense.id;
+        backendCode = res.data.expense.voucher_number || backendCode;
+      }
+    } catch (err) {
+      console.warn("Backend expense save fallback:", err);
+    }
+
     const newV: ExpenseVoucher = {
-      id: `vch-${Date.now()}`,
-      code: `BON-2026-03-0${Math.floor(20 + Math.random() * 80)}`,
+      id: backendId,
+      code: backendCode,
       category: newCategory,
       motive: newMotive,
       applicant: newApplicant || "Ouvrier Paroissial",

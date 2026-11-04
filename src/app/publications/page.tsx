@@ -226,7 +226,7 @@ export default function PublicationsPage() {
       <PublicHeader />
 
       <main className="flex flex-col relative w-full pt-20 pb-24 min-h-screen">
-        <div className="w-full max-w-7xl 2xl:max-w-[1600px] mx-auto px-4 md:px-8 lg:px-12 flex flex-col gap-8">
+        <div className="w-full px-4 md:px-8 lg:px-12 flex flex-col gap-8">
           {/* Header Banner & Creation Action (Guarded by RBAC) */}
           <section className="flex flex-col md:flex-row md:items-end justify-between gap-4 pt-4 pb-2">
             <div className="max-w-3xl lg:max-w-4xl">
@@ -406,20 +406,20 @@ export default function PublicationsPage() {
                   </div>
 
                   {/* Card Details */}
-                  <div className="p-6 flex flex-col justify-between flex-1 gap-4">
-                    <div className="flex flex-col gap-2">
-                      <div className="flex items-center gap-2 text-xs text-on-surface-variant">
-                        <span className="flex items-center gap-1">
+                  <div className="p-4 sm:p-6 flex flex-col justify-between flex-1 gap-3 sm:gap-4 min-w-0 overflow-hidden">
+                    <div className="flex flex-col gap-2 min-w-0">
+                      <div className="flex items-center gap-1.5 sm:gap-2 text-xs text-on-surface-variant flex-wrap">
+                        <span className="flex items-center gap-1 shrink-0">
                           <span className="material-symbols-outlined text-[14px]">calendar_today</span>
                           {pub.date}
                         </span>
                         <span>•</span>
-                        <span className="flex items-center gap-1">
+                        <span className="flex items-center gap-1 shrink-0">
                           <span className="material-symbols-outlined text-[14px]">schedule</span>
                           {pub.readTime}
                         </span>
                         <span>•</span>
-                        <span className="flex items-center gap-1 text-primary font-medium">
+                        <span className="flex items-center gap-1 text-primary font-medium shrink-0">
                           <span className="material-symbols-outlined text-[14px]">visibility</span>
                           {pub.views.toLocaleString()} vues
                         </span>
@@ -428,13 +428,13 @@ export default function PublicationsPage() {
                       <h2>
                         <Link
                           href={`/publications/${pub.id}`}
-                          className="text-lg md:text-xl font-bold text-on-surface hover:text-primary transition-colors cursor-pointer leading-snug font-display block"
+                          className="text-base sm:text-lg md:text-xl font-bold text-on-surface hover:text-primary transition-colors cursor-pointer leading-snug font-display block break-words"
                         >
                           {pub.title}
                         </Link>
                       </h2>
 
-                      <p className="text-xs md:text-sm text-on-surface-variant line-clamp-2 leading-relaxed">
+                      <p className="text-xs md:text-sm text-on-surface-variant line-clamp-2 leading-relaxed break-words">
                         {pub.excerpt}
                       </p>
 

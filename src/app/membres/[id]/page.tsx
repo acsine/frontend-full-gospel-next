@@ -586,7 +586,7 @@ export default function FicheMembrePage() {
 
   return (
     <PortalShell>
-      <div className="portal-screen-content space-y-6 max-w-6xl mx-auto">
+      <div className="portal-screen-content space-y-6 w-full">
         {/* Navigation Breadcrumb */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <nav className="flex items-center gap-1.5 text-xs text-on-surface-variant font-medium flex-wrap">

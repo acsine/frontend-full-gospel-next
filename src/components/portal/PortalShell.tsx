@@ -371,6 +371,7 @@ export function PortalShell({ children, hideSidebar = false }: PortalShellProps)
       items: [
         { name: t("portalNav.finance"), path: "/finance", icon: "payments", permission: "view:finance:summary", minRole: 4 },
         { name: t("portalNav.tithes"), path: "/finance/entrees", icon: "receipt_long", permission: "view:finance:incomes", minRole: 2 },
+        { name: t("portalNav.treasuryValidations"), path: "/finance/validations", icon: "verified_user", permission: "view:finance:incomes", minRole: 2 },
         { name: t("portalNav.expenses"), path: "/finance/depenses", icon: "shopping_cart_checkout", permission: "view:finance:expenses", minRole: 4 },
         { name: t("portalNav.serviceCount"), path: "/liturgie/comptage", icon: "verified", permission: "view:liturgy:count", minRole: 2 },
         { name: t("portalNav.donations"), path: "/dons", icon: "volunteer_activism", minRole: 1 },
@@ -447,7 +448,7 @@ export function PortalShell({ children, hideSidebar = false }: PortalShellProps)
   }
 
   return (
-    <div className="bg-surface font-body-md text-on-surface antialiased min-h-screen">
+    <div className="bg-surface font-body-md text-on-surface antialiased min-h-screen w-full min-w-0">
       {/* ============================================================== */}
       {/* SIDEBAR DESKTOP */}
       {/* ============================================================== */}
@@ -598,14 +599,14 @@ export function PortalShell({ children, hideSidebar = false }: PortalShellProps)
       {/* ============================================================== */}
       {/* MAIN CONTAINER WITH HEADER */}
       {/* ============================================================== */}
-      <div className={`${hideSidebar ? "w-full" : "md:pl-72"} flex flex-col min-h-screen`}>
+      <div className={`${hideSidebar ? "w-full" : "md:pl-72"} flex flex-col min-h-screen w-full min-w-0`}>
         {/* Top Header */}
-        <header className="sticky top-0 z-40 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] px-4 md:px-8 lg:px-10 2xl:px-12 flex items-center justify-between border-b border-surface-container-high">
+        <header className="sticky top-0 z-40 h-16 w-full bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] px-3 sm:px-6 md:px-8 lg:px-10 2xl:px-12 flex items-center justify-between border-b border-surface-container-high gap-2">
           {/* Left section: Hamburger / Brand Logo & Quick Search */}
-          <div className="flex items-center gap-3 flex-1 max-w-xl">
+          <div className="flex items-center gap-2 sm:gap-3 flex-1 min-w-0 max-w-xl">
             {hideSidebar ? (
-              <Link href="/dashboard" className="flex items-center gap-2.5 mr-3 hover:opacity-85 transition-opacity shrink-0">
-                <div className="w-9 h-9 rounded-xl bg-white p-1 flex items-center justify-center shadow-sm overflow-hidden flex-shrink-0 border border-slate-200">
+              <Link href="/dashboard" className="flex items-center gap-2 sm:gap-2.5 mr-1 sm:mr-3 hover:opacity-85 transition-opacity shrink-0 min-w-0">
+                <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-white p-1 flex items-center justify-center shadow-sm overflow-hidden flex-shrink-0 border border-slate-200">
                   <Image
                     src="/logo.jpg"
                     alt="Logo FULLGOPE"
@@ -614,11 +615,11 @@ export function PortalShell({ children, hideSidebar = false }: PortalShellProps)
                     className="w-full h-full object-contain"
                   />
                 </div>
-                <div className="flex flex-col">
-                  <span className="font-extrabold text-xs sm:text-sm text-on-surface tracking-tight leading-tight">
-                    FULL GOSPEL MISSION
+                <div className="flex flex-col min-w-0">
+                  <span className="font-extrabold text-xs sm:text-sm text-on-surface tracking-tight leading-tight truncate max-w-[110px] sm:max-w-none">
+                    FULL GOSPEL
                   </span>
-                  <span className="text-[10px] text-primary font-bold leading-tight">
+                  <span className="text-[9px] sm:text-[10px] text-primary font-bold leading-tight truncate hidden xs:inline">
                     Koinōnia • Fil Fraternel
                   </span>
                 </div>

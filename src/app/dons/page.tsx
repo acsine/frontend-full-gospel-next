@@ -493,7 +493,7 @@ export default function DonsPage() {
     <div className="flex flex-col min-h-screen bg-surface">
       <PublicHeader />
 
-      <main className="flex-1 pt-20 pb-24 max-w-7xl 2xl:max-w-[1500px] mx-auto px-4 md:px-8 lg:px-12 w-full">
+      <main className="flex-1 pt-20 pb-24 w-full px-4 md:px-8 lg:px-12">
         {/* Top Navigation & Trust badge */}
         <div className="pt-2 pb-4 flex items-center justify-between">
           <Link
@@ -545,7 +545,7 @@ export default function DonsPage() {
                         "1"
                       )}
                     </div>
-                    <span className={`text-xs font-semibold ${step >= 1 ? "text-primary" : "text-on-surface-variant"}`}>
+                    <span className={`text-[10px] sm:text-xs font-semibold text-center leading-tight ${step >= 1 ? "text-primary" : "text-on-surface-variant"}`}>
                       Montant &amp; Vœu
                     </span>
                   </div>
@@ -567,7 +567,7 @@ export default function DonsPage() {
                         "2"
                       )}
                     </div>
-                    <span className={`text-xs font-semibold ${step >= 2 ? "text-primary" : "text-on-surface-variant"}`}>
+                    <span className={`text-[10px] sm:text-xs font-semibold text-center leading-tight ${step >= 2 ? "text-primary" : "text-on-surface-variant"}`}>
                       Règlement Sécurisé
                     </span>
                   </div>
@@ -577,7 +577,7 @@ export default function DonsPage() {
                     <div className="w-9 h-9 rounded-full flex items-center justify-center font-bold text-xs shadow-sm bg-surface-container text-on-surface-variant">
                       3
                     </div>
-                    <span className="text-xs font-semibold text-on-surface-variant">
+                    <span className="text-[10px] sm:text-xs font-semibold text-center leading-tight text-on-surface-variant">
                       Reçu Certifié
                     </span>
                   </div>
@@ -817,34 +817,34 @@ export default function DonsPage() {
               </div>
 
               {/* 4 Mode selection cards */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 min-w-0">
                 {/* MTN Mobile Money */}
                 <div
                   onClick={() => handleSelectPaymentMethod("mtn")}
-                  className={`p-4 rounded-xl flex items-center justify-between cursor-pointer border transition-all ${
+                  className={`p-3.5 sm:p-4 rounded-xl flex items-center justify-between cursor-pointer border transition-all min-w-0 ${
                     paymentMethod === "mtn"
                       ? "bg-secondary-fixed/30 border-secondary-container shadow-sm ring-2 ring-primary/20"
                       : "bg-surface-container-low border-transparent hover:bg-surface-container"
                   }`}
                 >
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-xl bg-secondary-container text-on-secondary-container font-extrabold flex items-center justify-center text-sm shadow-sm shrink-0">
+                  <div className="flex items-center gap-3 min-w-0 flex-1">
+                    <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-secondary-container text-on-secondary-container font-extrabold flex items-center justify-center text-sm shadow-sm shrink-0">
                       MTN
                     </div>
-                    <div>
-                      <div className="flex items-center gap-2">
-                        <span className="font-bold text-sm text-on-surface">MTN Mobile Money</span>
-                        <span className="bg-secondary text-on-secondary text-[10px] font-bold px-2 py-0.5 rounded-full">
+                    <div className="min-w-0 flex-1">
+                      <div className="flex items-center gap-1.5 flex-wrap">
+                        <span className="font-bold text-sm text-on-surface truncate">MTN MoMo</span>
+                        <span className="bg-secondary text-on-secondary text-[10px] font-bold px-1.5 py-0.2 rounded-full shrink-0">
                           *126#
                         </span>
                       </div>
-                      <span className="text-xs text-on-surface-variant">
+                      <span className="text-[11px] sm:text-xs text-on-surface-variant block truncate">
                         Débit automatique USSD
                       </span>
                     </div>
                   </div>
                   <div
-                    className={`w-6 h-6 rounded-full flex items-center justify-center shrink-0 ${
+                    className={`w-6 h-6 rounded-full flex items-center justify-center shrink-0 ml-2 ${
                       paymentMethod === "mtn"
                         ? "bg-primary text-on-primary"
                         : "bg-surface-container text-transparent"
@@ -857,30 +857,30 @@ export default function DonsPage() {
                 {/* Orange Money */}
                 <div
                   onClick={() => handleSelectPaymentMethod("orange")}
-                  className={`p-4 rounded-xl flex items-center justify-between cursor-pointer border transition-all ${
+                  className={`p-3.5 sm:p-4 rounded-xl flex items-center justify-between cursor-pointer border transition-all min-w-0 ${
                     paymentMethod === "orange"
                       ? "bg-secondary-fixed/30 border-secondary-container shadow-sm ring-2 ring-primary/20"
                       : "bg-surface-container-low border-transparent hover:bg-surface-container"
                   }`}
                 >
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-xl bg-inverse-surface text-surface font-extrabold flex items-center justify-center text-sm shadow-sm shrink-0">
+                  <div className="flex items-center gap-3 min-w-0 flex-1">
+                    <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-inverse-surface text-surface font-extrabold flex items-center justify-center text-sm shadow-sm shrink-0">
                       OM
                     </div>
-                    <div>
-                      <div className="flex items-center gap-2">
-                        <span className="font-bold text-sm text-on-surface">Orange Money</span>
-                        <span className="bg-surface-container-highest text-on-surface text-[10px] font-bold px-2 py-0.5 rounded-full">
+                    <div className="min-w-0 flex-1">
+                      <div className="flex items-center gap-1.5 flex-wrap">
+                        <span className="font-bold text-sm text-on-surface truncate">Orange Money</span>
+                        <span className="bg-surface-container-highest text-on-surface text-[10px] font-bold px-1.5 py-0.2 rounded-full shrink-0">
                           #150#
                         </span>
                       </div>
-                      <span className="text-xs text-on-surface-variant">
+                      <span className="text-[11px] sm:text-xs text-on-surface-variant block truncate">
                         Débit automatique USSD
                       </span>
                     </div>
                   </div>
                   <div
-                    className={`w-6 h-6 rounded-full flex items-center justify-center shrink-0 ${
+                    className={`w-6 h-6 rounded-full flex items-center justify-center shrink-0 ml-2 ${
                       paymentMethod === "orange"
                         ? "bg-primary text-on-primary"
                         : "bg-surface-container text-transparent"
@@ -893,30 +893,30 @@ export default function DonsPage() {
                 {/* Virement Bancaire (Manuel - avec bordereau) */}
                 <div
                   onClick={() => handleSelectPaymentMethod("bank")}
-                  className={`p-4 rounded-xl flex items-center justify-between cursor-pointer border transition-all ${
+                  className={`p-3.5 sm:p-4 rounded-xl flex items-center justify-between cursor-pointer border transition-all min-w-0 ${
                     paymentMethod === "bank"
                       ? "bg-secondary-fixed/30 border-secondary-container shadow-sm ring-2 ring-primary/20"
                       : "bg-surface-container-low border-transparent hover:bg-surface-container"
                   }`}
                 >
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-xl bg-emerald-700 text-white font-extrabold flex items-center justify-center text-sm shadow-sm shrink-0">
-                      <span className="material-symbols-outlined text-[24px]">account_balance</span>
+                  <div className="flex items-center gap-3 min-w-0 flex-1">
+                    <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-emerald-700 text-white font-extrabold flex items-center justify-center text-sm shadow-sm shrink-0">
+                      <span className="material-symbols-outlined text-[22px]">account_balance</span>
                     </div>
-                    <div>
-                      <div className="flex items-center gap-2">
-                        <span className="font-bold text-sm text-on-surface">Virement Bancaire</span>
-                        <span className="bg-emerald-100 text-emerald-800 text-[10px] font-bold px-2 py-0.5 rounded-full">
+                    <div className="min-w-0 flex-1">
+                      <div className="flex items-center gap-1.5 flex-wrap">
+                        <span className="font-bold text-sm text-on-surface truncate">Virement Bancaire</span>
+                        <span className="bg-emerald-100 text-emerald-800 text-[10px] font-bold px-1.5 py-0.2 rounded-full shrink-0">
                           Bordereau
                         </span>
                       </div>
-                      <span className="text-xs text-on-surface-variant">
-                        Manuel avec preuve de versement
+                      <span className="text-[11px] sm:text-xs text-on-surface-variant block truncate">
+                        Manuel avec preuve
                       </span>
                     </div>
                   </div>
                   <div
-                    className={`w-6 h-6 rounded-full flex items-center justify-center shrink-0 ${
+                    className={`w-6 h-6 rounded-full flex items-center justify-center shrink-0 ml-2 ${
                       paymentMethod === "bank"
                         ? "bg-primary text-on-primary"
                         : "bg-surface-container text-transparent"
@@ -929,30 +929,30 @@ export default function DonsPage() {
                 {/* Carte Bancaire */}
                 <div
                   onClick={() => handleSelectPaymentMethod("card")}
-                  className={`p-4 rounded-xl flex items-center justify-between cursor-pointer border transition-all ${
+                  className={`p-3.5 sm:p-4 rounded-xl flex items-center justify-between cursor-pointer border transition-all min-w-0 ${
                     paymentMethod === "card"
                       ? "bg-secondary-fixed/30 border-secondary-container shadow-sm ring-2 ring-primary/20"
                       : "bg-surface-container-low border-transparent hover:bg-surface-container"
                   }`}
                 >
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-xl bg-surface-container-high text-on-surface font-extrabold flex items-center justify-center text-sm shadow-sm shrink-0">
-                      <span className="material-symbols-outlined text-[24px]">credit_card</span>
+                  <div className="flex items-center gap-3 min-w-0 flex-1">
+                    <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-surface-container-high text-on-surface font-extrabold flex items-center justify-center text-sm shadow-sm shrink-0">
+                      <span className="material-symbols-outlined text-[22px]">credit_card</span>
                     </div>
-                    <div>
-                      <div className="flex items-center gap-2">
-                        <span className="font-bold text-sm text-on-surface">Carte Bancaire</span>
-                        <span className="bg-surface-container-highest text-on-surface text-[10px] font-bold px-2 py-0.5 rounded-full">
+                    <div className="min-w-0 flex-1">
+                      <div className="flex items-center gap-1.5 flex-wrap">
+                        <span className="font-bold text-sm text-on-surface truncate">Carte Bancaire</span>
+                        <span className="bg-surface-container-highest text-on-surface text-[10px] font-bold px-1.5 py-0.2 rounded-full shrink-0">
                           GIMAC
                         </span>
                       </div>
-                      <span className="text-xs text-on-surface-variant">
+                      <span className="text-[11px] sm:text-xs text-on-surface-variant block truncate">
                         Visa, Mastercard, GIMAC
                       </span>
                     </div>
                   </div>
                   <div
-                    className={`w-6 h-6 rounded-full flex items-center justify-center shrink-0 ${
+                    className={`w-6 h-6 rounded-full flex items-center justify-center shrink-0 ml-2 ${
                       paymentMethod === "card"
                         ? "bg-primary text-on-primary"
                         : "bg-surface-container text-transparent"
@@ -1373,10 +1373,10 @@ export default function DonsPage() {
 
                         <button
                           type="submit"
-                          className="w-full h-12 bg-primary text-on-primary hover:bg-primary/90 rounded-full font-bold text-xs shadow-md active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer mt-2"
+                          className="w-full min-h-[48px] py-2.5 px-4 bg-primary text-on-primary hover:bg-primary/90 rounded-full font-bold text-xs shadow-md active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer mt-2 text-center"
                         >
-                          <span className="material-symbols-outlined text-[18px]">send</span>
-                          <span>Transmettre la référence à la Trésorerie ({amount.toLocaleString()} FCFA)</span>
+                          <span className="material-symbols-outlined text-[18px] shrink-0">send</span>
+                          <span className="break-words">Transmettre la référence ({amount.toLocaleString()} FCFA)</span>
                         </button>
                       </form>
                     </div>
@@ -1391,17 +1391,17 @@ export default function DonsPage() {
                 <div className="space-y-5 pt-2">
                   {/* Coordonnées Bancaires Officielles (SANS DÉCOMPTE) */}
                   <div className="p-5 rounded-2xl bg-surface-container-low border border-surface-container-high space-y-4">
-                    <div className="flex items-center justify-between pb-3 border-b border-surface-container">
-                      <div className="flex items-center gap-2.5">
-                        <span className="material-symbols-outlined text-primary text-[24px]">account_balance</span>
-                        <div>
-                          <h4 className="font-bold text-sm text-on-surface">
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-3 border-b border-surface-container gap-2">
+                      <div className="flex items-center gap-2.5 min-w-0">
+                        <span className="material-symbols-outlined text-primary text-[24px] shrink-0">account_balance</span>
+                        <div className="min-w-0">
+                          <h4 className="font-bold text-sm text-on-surface break-words">
                             Coordonnées Bancaires Officielles de la Mission
                           </h4>
-                          <span className="text-[11px] text-on-surface-variant">Afriland First Bank Cameroun</span>
+                          <span className="text-[11px] text-on-surface-variant block">Afriland First Bank Cameroun</span>
                         </div>
                       </div>
-                      <span className="text-[11px] font-bold text-emerald-800 bg-emerald-100 px-2.5 py-0.5 rounded-full">
+                      <span className="text-[10px] sm:text-[11px] font-bold text-emerald-800 bg-emerald-100 px-2.5 py-0.5 rounded-full shrink-0 self-start sm:self-auto">
                         Compte National Titulaire
                       </span>
                     </div>

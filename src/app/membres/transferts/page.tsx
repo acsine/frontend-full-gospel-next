@@ -139,6 +139,13 @@ export default function TransfertsPage() {
   const [submittingStudio, setSubmittingStudio] = useState(false);
   const [studioFeedback, setStudioFeedback] = useState<{ type: "success" | "error"; message: string } | null>(null);
 
+  // Toast Notification state
+  const [toast, setToast] = useState<{ type: "success" | "error" | "info"; message: string } | null>(null);
+  const showToast = (message: string, type: "success" | "error" | "info" = "info") => {
+    setToast({ message, type });
+    setTimeout(() => setToast(null), 6000);
+  };
+
   // Decision modal state (for approving/rejecting existing transfers)
   const [isDecisionModalOpen, setIsDecisionModalOpen] = useState(false);
   const [decisionAction, setDecisionAction] = useState<"approve" | "reject">("approve");
@@ -298,9 +305,11 @@ export default function TransfertsPage() {
       });
 
       if (res.error) {
+        const errMsg = res.message || "Impossible de créer la demande de transfert.";
+        showToast(errMsg, "error");
         setStudioFeedback({
           type: "error",
-          message: res.message || "Impossible de créer la demande de transfert.",
+          message: errMsg,
         });
         return;
       }
@@ -315,6 +324,7 @@ export default function TransfertsPage() {
         });
       }
 
+      showToast("Lettre de recommandation pastorale et transfert enregistrés avec succès !", "success");
       setStudioFeedback({
         type: "success",
         message: "Lettre de recommandation pastorale et transfert enregistrés avec succès !",
@@ -330,9 +340,11 @@ export default function TransfertsPage() {
         setStudioFeedback(null);
       }, 1400);
     } catch (err: any) {
+      const errMsg = `Erreur réseau : ${err?.message || "Échec de l'enregistrement."}`;
+      showToast(errMsg, "error");
       setStudioFeedback({
         type: "error",
-        message: `Erreur réseau : ${err?.message || "Échec de l'enregistrement."}`,
+        message: errMsg,
       });
     } finally {
       setSubmittingStudio(false);
@@ -356,13 +368,15 @@ export default function TransfertsPage() {
       });
 
       if (res.error) {
-        setDecisionFeedback(`Erreur : ${res.message || "Impossible d'enregistrer la décision."}`);
+        const errMsg = res.message || "Impossible d'enregistrer la décision.";
+        showToast(errMsg, "error");
+        setDecisionFeedback(`Erreur : ${errMsg}`);
       } else {
-        setDecisionFeedback(
-          approved
-            ? `Le transfert a été approuvé avec visa officiel. La lettre de recommandation est prête.`
-            : `Le transfert a été refusé avec mention transmise à l'assemblée d'origine.`
-        );
+        const successMsg = approved
+          ? `Le transfert a été approuvé avec visa officiel. La lettre de recommandation est prête.`
+          : `Le transfert a été refusé avec mention transmise à l'assemblée d'origine.`;
+        showToast(successMsg, "success");
+        setDecisionFeedback(successMsg);
         setTimeout(() => {
           setIsDecisionModalOpen(false);
           setDecisionFeedback(null);
@@ -372,7 +386,9 @@ export default function TransfertsPage() {
         }, 1500);
       }
     } catch (err: any) {
-      setDecisionFeedback(`Erreur réseau : ${err?.message}`);
+      const errMsg = `Erreur réseau : ${err?.message}`;
+      showToast(errMsg, "error");
+      setDecisionFeedback(errMsg);
     } finally {
       setSubmittingDecision(false);
     }
@@ -409,7 +425,41 @@ export default function TransfertsPage() {
 
   return (
     <PortalShell activePath="membres" title="Gestion des Transferts">
-      <div className="flex flex-col gap-6 max-w-7xl mx-auto pb-16">
+      <div className="flex flex-col gap-6 w-full pb-16">
+        {/* Toast Notification Flottante */}
+        {toast && (
+          <div
+            className={`fixed top-20 right-6 z-[9999] px-4 py-3 rounded-xl shadow-2xl flex items-center gap-3 border animate-in slide-in-from-top duration-200 ${
+              toast.type === "error"
+                ? "bg-rose-950 text-rose-100 border-rose-800"
+                : toast.type === "success"
+                ? "bg-emerald-950 text-emerald-100 border-emerald-800"
+                : "bg-inverse-surface text-inverse-on-surface border-inverse-on-surface/20"
+            }`}
+          >
+            <span
+              className={`material-symbols-outlined text-[22px] ${
+                toast.type === "error" ? "text-rose-400" : "text-emerald-400"
+              }`}
+            >
+              {toast.type === "error" ? "error" : "check_circle"}
+            </span>
+            <div className="flex flex-col max-w-md">
+              <span className="font-bold text-xs uppercase tracking-wide">
+                {toast.type === "error" ? "Erreur de validation" : "Confirmation"}
+              </span>
+              <span className="text-xs font-medium leading-snug">{toast.message}</span>
+            </div>
+            <button
+              type="button"
+              onClick={() => setToast(null)}
+              className="ml-2 text-white/70 hover:text-white p-1 rounded-md cursor-pointer"
+            >
+              <span className="material-symbols-outlined text-[16px]">close</span>
+            </button>
+          </div>
+        )}
+
         {/* Header Banner */}
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
           <div>
@@ -441,10 +491,10 @@ export default function TransfertsPage() {
                   setStudioFeedback(null);
                   setIsStudioOpen(true);
                 }}
-                className="h-10 px-4 rounded-xl bg-primary hover:brightness-110 text-white text-xs font-bold shadow-sm flex items-center gap-2 transition-all active:scale-95"
+                className="h-10 px-4 rounded-xl bg-primary hover:brightness-110 text-white text-xs font-bold shadow-sm flex items-center gap-2 transition-all active:scale-95 cursor-pointer"
               >
                 <SvgIcons.Plus />
-                <span>+ Rédiger une Lettre &amp; Créer un Transfert</span>
+                <span>Rédiger une Lettre &amp; Créer un Transfert</span>
               </button>
             </Can>
             <Link
@@ -720,7 +770,7 @@ export default function TransfertsPage() {
         {/* =================================================================== */}
         {isStudioOpen && (
           <div className="fixed inset-0 z-50 bg-black/75 backdrop-blur-xs flex items-center justify-center p-2 sm:p-4 overflow-y-auto">
-            <div className="w-full max-w-7xl bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col max-h-[95vh] border border-slate-200">
+            <div className="w-full max-w-[96vw] bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col max-h-[95vh] border border-slate-200">
               {/* Studio Topbar */}
               <div className="p-4 bg-slate-900 text-white flex items-center justify-between shrink-0">
                 <div className="flex items-center gap-3">
@@ -839,9 +889,11 @@ export default function TransfertsPage() {
                           <input
                             type="date"
                             value={formTransferDate}
+                            max={new Date().toISOString().split("T")[0]}
                             onChange={(e) => setFormTransferDate(e.target.value)}
                             className="w-full h-9 px-2.5 bg-slate-50 border border-slate-300 rounded-lg text-slate-900 font-medium"
                           />
+                          <span className="text-[10px] text-slate-500 block mt-0.5">La date ne peut pas être située dans le futur</span>
                         </div>
 
                         <div>

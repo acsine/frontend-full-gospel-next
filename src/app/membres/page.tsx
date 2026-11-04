@@ -256,8 +256,8 @@ export default function MembresPage() {
 
   return (
     <PortalShell>
-      <div className="space-y-6 max-w-7xl 2xl:max-w-[1700px] mx-auto w-full">
-        {/* Breadcrumb & Live status badge */}
+      <div className="space-y-6 w-full">
+        {/* Breadcrumb */}
         <div className="flex flex-wrap items-center justify-between gap-4">
           <nav className="flex items-center gap-1.5 text-xs text-on-surface-variant font-medium">
             <Link href="/dashboard" className="hover:text-primary flex items-center gap-1">
@@ -272,13 +272,6 @@ export default function MembresPage() {
             <span>/</span>
             <span className="text-primary font-bold">{t("members.breadcrumbMembers")}</span>
           </nav>
-
-          <div className="flex items-center gap-2">
-            <span className="text-xs text-emerald-700 bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800 px-3 py-1 rounded-full flex items-center gap-1.5 font-semibold">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-              {t("members.dbConnected")}
-            </span>
-          </div>
         </div>
 
         {/* Page Title & Main Actions */}

@@ -8,7 +8,7 @@ export function PublicFooter() {
   const { t } = useIntl();
 
   return (
-    <footer className="bg-inverse-surface text-inverse-on-surface pt-16 pb-12 border-t border-surface-variant/20">
+    <footer className="bg-inverse-surface text-inverse-on-surface pt-16 pb-24 md:pb-12 border-t border-surface-variant/20">
       <div className="max-w-7xl 2xl:max-w-[1600px] mx-auto px-4 md:px-8 lg:px-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
           {/* Col 1: Identity */}

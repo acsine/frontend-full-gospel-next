@@ -86,7 +86,7 @@ export default function EvenementsPage() {
     <div className="flex flex-col min-h-screen bg-surface">
       <PublicHeader />
 
-      <main className="flex-1 pt-20 pb-24 max-w-7xl 2xl:max-w-[1600px] mx-auto px-4 md:px-8 lg:px-12 w-full space-y-8">
+      <main className="flex-1 pt-20 pb-24 w-full px-4 md:px-8 lg:px-12 space-y-8">
         {/* Header */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4">
           <div className="space-y-2">
@@ -266,30 +266,30 @@ export default function EvenementsPage() {
                 filtered.map((e) => (
                   <div
                     key={e.id}
-                    className="bg-surface-container-lowest p-6 rounded-2xl shadow-sm border border-surface-container-high/60 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 hover:shadow-md transition-all group"
+                    className="bg-surface-container-lowest p-4 sm:p-6 rounded-2xl shadow-sm border border-surface-container-high/60 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 sm:gap-6 hover:shadow-md transition-all group min-w-0 overflow-hidden"
                   >
-                    <div className="flex items-start gap-4 min-w-0">
+                    <div className="flex items-start gap-3 sm:gap-4 min-w-0 flex-1">
                       {/* Date badge */}
                       <div
-                        className={`px-4 py-3 rounded-2xl text-center leading-none flex flex-col justify-center min-w-[76px] shrink-0 shadow-sm ${e.category === "convention"
+                        className={`px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl sm:rounded-2xl text-center leading-none flex flex-col justify-center min-w-[64px] sm:min-w-[76px] shrink-0 shadow-sm ${e.category === "convention"
                             ? "bg-primary text-on-primary"
                             : e.category === "conference"
                               ? "bg-secondary-container text-on-secondary-container"
                               : "bg-inverse-surface text-inverse-on-surface"
                           }`}
                       >
-                        <span className="text-[11px] uppercase font-bold tracking-wider block opacity-90">
+                        <span className="text-[10px] sm:text-[11px] uppercase font-bold tracking-wider block opacity-90">
                           {e.month}
                         </span>
-                        <span className="text-xl font-black mt-1 block tracking-tight">
+                        <span className="text-lg sm:text-xl font-black mt-1 block tracking-tight">
                           {e.days}
                         </span>
                       </div>
 
-                      <div className="space-y-1.5 min-w-0">
-                        <div className="flex items-center gap-2">
+                      <div className="space-y-1.5 min-w-0 flex-1">
+                        <div className="flex items-center gap-2 flex-wrap">
                           <span
-                            className={`px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase ${e.category === "convention"
+                            className={`px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase shrink-0 ${e.category === "convention"
                                 ? "bg-primary-fixed text-primary"
                                 : "bg-surface-container text-on-surface-variant"
                               }`}
@@ -302,22 +302,22 @@ export default function EvenementsPage() {
                           </span>
                         </div>
 
-                        <h3 className="text-base sm:text-lg font-bold text-on-surface group-hover:text-primary transition-colors">
+                        <h3 className="text-base sm:text-lg font-bold text-on-surface group-hover:text-primary transition-colors break-words">
                           {e.title}
                         </h3>
 
-                        <p className="text-xs text-on-surface-variant line-clamp-2 leading-relaxed">
+                        <p className="text-xs text-on-surface-variant line-clamp-2 leading-relaxed break-words">
                           {e.description}
                         </p>
 
-                        <div className="flex items-center gap-2 text-xs text-on-surface-variant pt-1">
-                          <span className="material-symbols-outlined text-[16px] text-primary">location_on</span>
+                        <div className="flex items-center gap-2 text-xs text-on-surface-variant pt-1 min-w-0">
+                          <span className="material-symbols-outlined text-[16px] text-primary shrink-0">location_on</span>
                           <span className="truncate">{e.location}</span>
                         </div>
                       </div>
                     </div>
 
-                    <div className="flex flex-col sm:flex-row md:flex-col gap-2 w-full md:w-auto shrink-0">
+                    <div className="flex flex-col sm:flex-row md:flex-col gap-2 w-full md:w-auto shrink-0 mt-2 md:mt-0">
                       <button
                         type="button"
                         onClick={() => setSelectedEvent(e)}

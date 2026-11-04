@@ -341,7 +341,7 @@ export default function RolesAndPermissionsPage() {
 
   return (
     <PortalShell>
-      <div className="space-y-6 max-w-7xl mx-auto">
+      <div className="space-y-6 w-full">
         {/* Header & Tabs */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pb-2 border-b border-surface-container-high/60">
           <div>

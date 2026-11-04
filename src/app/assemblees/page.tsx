@@ -204,7 +204,7 @@ export default function AssembleesPage() {
       <main className="flex-1 pt-16 flex flex-col bg-white">
         {/* Top Control Bar */}
         <div className="bg-white border-b border-slate-200 px-3 md:px-6 py-3 shadow-xs">
-          <div className="max-w-7xl 2xl:max-w-[1700px] mx-auto flex flex-col md:flex-row items-stretch md:items-center justify-between gap-3">
+          <div className="w-full flex flex-col md:flex-row items-stretch md:items-center justify-between gap-3">
             {/* Search Input */}
             <div className="relative flex-1 max-w-md">
               <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">
@@ -326,7 +326,7 @@ export default function AssembleesPage() {
 
         {/* Main Content Area */}
         {viewMode === "list" ? (
-          <div className="flex-1 max-w-7xl 2xl:max-w-[1700px] mx-auto w-full p-4 md:p-6 bg-white">
+          <div className="flex-1 w-full p-4 md:p-6 bg-white">
             <div className="flex items-center justify-between mb-4">
               <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">
                 {filteredAssemblies.length} Assemblée{filteredAssemblies.length > 1 ? "s" : ""} trouvée{filteredAssemblies.length > 1 ? "s" : ""}
@@ -382,10 +382,10 @@ export default function AssembleesPage() {
                 {filteredAssemblies.map((a) => (
                   <div
                     key={a.id}
-                    className="bg-white rounded-2xl p-4 sm:p-5 border border-slate-200/90 shadow-xs hover:shadow-md transition-all flex flex-col justify-between gap-3 text-slate-900"
+                    className="bg-white rounded-2xl p-4 sm:p-5 border border-slate-200/90 shadow-xs hover:shadow-md transition-all flex flex-col justify-between gap-3 text-slate-900 min-w-0 overflow-hidden"
                   >
-                    <div className="space-y-2.5">
-                      <div className="flex items-center justify-between gap-2">
+                    <div className="space-y-2.5 min-w-0">
+                      <div className="flex items-center justify-between gap-2 min-w-0">
                         <span className="text-[10px] font-bold uppercase tracking-wider text-[#c8102e] truncate">
                           {a.district}
                         </span>
@@ -402,15 +402,15 @@ export default function AssembleesPage() {
                         </span>
                       </div>
 
-                      <h3 className="text-sm font-bold leading-tight text-slate-900">
+                      <h3 className="text-sm font-bold leading-tight text-slate-900 break-words">
                         {a.name}
                       </h3>
-                      <p className="text-[11px] text-slate-500 flex items-center gap-1">
+                      <p className="text-[11px] text-slate-500 flex items-center gap-1 min-w-0">
                         <SvgIcons.Pin />
                         <span className="truncate">{a.address}</span>
                       </p>
 
-                      <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200/70 flex items-center gap-2.5">
+                      <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200/70 flex items-center gap-2.5 min-w-0">
                         <div className="w-8 h-8 rounded-full bg-[#c8102e] flex items-center justify-center text-white font-bold text-[10px] shrink-0 shadow-xs">
                           PA
                         </div>
@@ -421,31 +421,31 @@ export default function AssembleesPage() {
                       </div>
 
                       {a.services.length > 0 && (
-                        <div className="text-[11px] text-slate-600 flex items-center gap-1 pt-0.5">
+                        <div className="text-[11px] text-slate-600 flex items-center gap-1 pt-0.5 min-w-0">
                           <SvgIcons.Clock />
                           <span className="truncate">{a.services[0]}</span>
                         </div>
                       )}
                     </div>
 
-                    <div className="pt-2.5 border-t border-slate-100 flex items-center gap-1.5">
+                    <div className="pt-2.5 border-t border-slate-100 flex items-center gap-1.5 min-w-0">
                       <button
                         onClick={() => {
                           setSelectedAssembly(a);
                           setShowDetails(true);
                           setViewMode("map");
                         }}
-                        className="flex-1 h-8 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-[11px] font-bold flex items-center justify-center gap-1 transition-colors"
+                        className="flex-1 h-8 px-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 text-[10px] sm:text-[11px] font-bold flex items-center justify-center gap-1 transition-colors truncate"
                       >
                         <SvgIcons.Map />
-                        <span>Carte</span>
+                        <span className="truncate">Carte</span>
                       </button>
                       <Link
                         href={`/dons?assembly=${a.id}`}
-                        className="flex-1 h-8 rounded-lg bg-[#c8102e] hover:bg-[#9e001f] text-white text-[11px] font-bold flex items-center justify-center gap-1 shadow-xs transition-all"
+                        className="flex-1 h-8 px-1.5 rounded-lg bg-[#c8102e] hover:bg-[#9e001f] text-white text-[10px] sm:text-[11px] font-bold flex items-center justify-center gap-1 shadow-xs transition-all truncate"
                       >
                         <SvgIcons.HeartGive />
-                        <span>Don / Dîme</span>
+                        <span className="truncate">Don / Dîme</span>
                       </Link>
                     </div>
                   </div>

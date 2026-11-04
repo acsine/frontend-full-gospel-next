@@ -53,6 +53,7 @@
     "governance": "Intendance & Gouvernance",
     "finance": "Finance & Grand Livre",
     "tithes": "Journal des Entrées (Dîmes)",
+    "treasuryValidations": "Validations Trésorerie (Dons & Dîmes)",
     "expenses": "Dépenses & Décaissements",
     "serviceCount": "Comptage Culte (PV)",
     "donations": "Dons & Campagnes",
@@ -80,13 +81,13 @@
     "title": "Le Symbolisme du Sceau Officiel de la Mission",
     "description": "Chaque élément du logo officiel porte un fondement scripturaire irrévocable qui guide la marche, la foi et l'enseignement dispensé dans chaque assemblée locale à travers les dix régions du Cameroun.",
     "clayVessel": "LE VASE BLANC",
-    "clayVesselRef": "2 Timothée 2 : 20 - 21",
+    "clayVesselRef": "2 Timothée 2:20-21",
     "clayVesselDesc": "Symbolise la pureté qui caractérise la vie du Chrétien",
     "redFlame": "LA FLAMME",
-    "redFlameRef": "Actes 2 : 1 - 4 ; Éphésiens 5 : 18",
+    "redFlameRef": "Actes 2:1-4 • Éphésiens 5:18",
     "redFlameDesc": "Symbolise la plénitude du Saint-Esprit qui remplit, transforme et équipe les vies de sa puissance.",
     "blackCross": "LA CROIX",
-    "blackCrossRef": "1 Corinthiens 1 : 18, 23 - 24 ; 1 Corinthiens 15 : 3 - 4",
+    "blackCrossRef": "1 Cor. 1:18, 23-24 • 15:3-4",
     "blackCrossDesc": "Symbolise l'œuvre salvatrice parfaite de Jésus Christ accomplie à la croix, qui constitue le socle même de l'Évangile",
     "authenticNotice": "Charte officielle : Croix droite, flamme rouge et vase blanc. Tout autre graphisme (croix inclinée, sceau circulaire multicolore) est non conforme."
   },
@@ -205,4 +206,3 @@
     "emptyState": "Aucun fidèle ne correspond aux critères de recherche"
   }
 }
-

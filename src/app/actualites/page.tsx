@@ -410,7 +410,7 @@ export default function ActualitesPage() {
 
   return (
     <PortalShell hideSidebar={true} activePath="reseau-social" title="Fil Fraternel & Communauté">
-      <div className="flex flex-col gap-6 max-w-7xl 2xl:max-w-[1600px] mx-auto w-full px-4 sm:px-6 lg:px-8 py-6">
+      <div className="flex flex-col gap-6 w-full px-4 sm:px-6 lg:px-8 py-6">
         {/* Banner */}
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
           <div>

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useMemo } from "react";
+import Link from "next/link";
 import PortalShell from "@/components/portal/PortalShell";
 import { useConfirm } from "@/components/ui/ConfirmDialog";
 import { api, getStoredUser } from "@/lib/api";
@@ -139,6 +140,14 @@ export default function JournalEntreesPage() {
     loadAssemblies();
     loadIncomes();
     loadPendingDonations();
+
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      const tabParam = params.get("tab");
+      if (tabParam === "validations" || tabParam === "treasury_pending" || tabParam === "pending") {
+        setActiveTab("treasury_pending");
+      }
+    }
 
     // Abonnement temps réel SSE aux encaissements et validations
     let eventSource: EventSource | null = null;
@@ -633,27 +642,33 @@ export default function JournalEntreesPage() {
             <span>Livre-Journal des Recettes ({entries.length})</span>
           </button>
 
-          <Can permission="finance:validate" minRole={2}>
-            <button
-              type="button"
-              onClick={() => {
-                setActiveTab("treasury_pending");
-                loadPendingDonations();
-              }}
-              className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${activeTab === "treasury_pending"
-                  ? "bg-amber-600 text-white shadow-sm"
-                  : "bg-surface-container-low text-on-surface hover:bg-surface-container"
-                }`}
-            >
-              <span className="material-symbols-outlined text-[18px]">verified_user</span>
-              <span>Validations Trésorerie (MoMo, OM &amp; Virements)</span>
-              {pendingDonations.length > 0 && (
-                <span className="px-2 py-0.5 rounded-full bg-amber-200 text-amber-950 text-[10px] font-black animate-pulse">
-                  {pendingDonations.length}
-                </span>
-              )}
-            </button>
-          </Can>
+          <button
+            type="button"
+            onClick={() => {
+              setActiveTab("treasury_pending");
+              loadPendingDonations();
+            }}
+            className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${activeTab === "treasury_pending"
+                ? "bg-amber-600 text-white shadow-sm ring-2 ring-amber-600/30"
+                : "bg-surface-container-low text-on-surface hover:bg-surface-container"
+              }`}
+          >
+            <span className="material-symbols-outlined text-[18px]">verified_user</span>
+            <span>Validations Trésorerie (MoMo, OM &amp; Virements)</span>
+            {pendingDonations.length > 0 && (
+              <span className="px-2 py-0.5 rounded-full bg-amber-200 text-amber-950 text-[10px] font-black animate-pulse">
+                {pendingDonations.length}
+              </span>
+            )}
+          </button>
+
+          <Link
+            href="/finance/validations"
+            className="ml-auto hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-xs font-semibold text-on-surface transition-colors"
+          >
+            <span className="material-symbols-outlined text-[16px] text-amber-600">open_in_new</span>
+            <span>Ouvrir la Vue Dédiée Trésorerie</span>
+          </Link>
         </div>
 
         {/* Filter and Table (Livre-Journal de caisse général) */}

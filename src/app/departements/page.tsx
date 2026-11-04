@@ -567,7 +567,7 @@ export default function DepartmentsPage() {
 
   return (
     <PortalShell>
-      <div className="space-y-6 max-w-7xl mx-auto">
+      <div className="space-y-6 w-full">
         {/* Page Header */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pb-2 border-b border-surface-container-high/60">
           <div>
@@ -691,13 +691,13 @@ export default function DepartmentsPage() {
               return (
                 <div
                   key={dept.id}
-                  className="bg-surface-container-lowest rounded-2xl p-5 border border-surface-container-high/80 shadow-xs hover:shadow-md transition-all flex flex-col justify-between gap-4"
+                  className="bg-surface-container-lowest rounded-2xl p-4 sm:p-5 border border-surface-container-high/80 shadow-xs hover:shadow-md transition-all flex flex-col justify-between gap-4 min-w-0 overflow-hidden"
                 >
-                  <div className="space-y-3">
+                  <div className="space-y-3 min-w-0">
                     {/* Badges: Nature & Scope */}
                     <div className="flex items-center justify-between gap-2 flex-wrap">
                       <span
-                        className={`px-2.5 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider ${
+                        className={`px-2.5 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider shrink-0 ${
                           isMinistry
                             ? "bg-rose-500/10 text-rose-700 border border-rose-500/30"
                             : "bg-blue-500/10 text-blue-700 border border-blue-500/30"
@@ -706,19 +706,19 @@ export default function DepartmentsPage() {
                         {isMinistry ? "Ministère" : "Département"}
                       </span>
 
-                      <span className={`px-2 py-0.5 rounded-full border text-[10px] font-bold ${scopeBadge.bg}`}>
+                      <span className={`px-2 py-0.5 rounded-full border text-[10px] font-bold truncate max-w-[200px] ${scopeBadge.bg}`}>
                         {scopeBadge.label}
                         {dept.district_name ? ` • ${dept.district_name}` : ""}
                         {dept.region_name ? ` • ${dept.region_name}` : ""}
                       </span>
                     </div>
 
-                    <h3 className="text-base font-extrabold text-on-surface leading-snug">
+                    <h3 className="text-base font-extrabold text-on-surface leading-snug break-words">
                       {dept.name}
                     </h3>
 
                     {dept.description && (
-                      <p className="text-xs text-on-surface-variant line-clamp-2">
+                      <p className="text-xs text-on-surface-variant line-clamp-2 break-words">
                         {dept.description}
                       </p>
                     )}
