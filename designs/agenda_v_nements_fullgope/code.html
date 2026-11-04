@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+
+<html lang="fr"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"surface-container-low":"#f6f2f8","on-secondary-fixed":"#2a1800","surface-variant":"#e4e1e7","surface-container-lowest":"#ffffff","inverse-surface":"#303034","surface-container-high":"#eae7ed","primary-fixed":"#ffdad8","tertiary-fixed":"#86faa7","background":"#fcf8fe","on-background":"#1b1b1f","error":"#ba1a1a","on-primary-container":"#ffdad8","secondary-container":"#feb64e","on-secondary-fixed-variant":"#643f00","surface-bright":"#fcf8fe","secondary-fixed-dim":"#ffb956","on-primary-fixed-variant":"#92001c","outline-variant":"#e5bdbb","tertiary-fixed-dim":"#6add8d","tertiary":"#00592b","on-error-container":"#93000a","tertiary-container":"#00743a","on-surface":"#1b1b1f","error-container":"#ffdad6","on-tertiary":"#ffffff","primary":"#9e001f","on-primary-fixed":"#410007","on-primary":"#ffffff","primary-container":"#c8102e","inverse-primary":"#ffb3b1","secondary":"#835400","primary-fixed-dim":"#ffb3b1","surface-dim":"#dcd9df","on-tertiary-fixed-variant":"#005228","surface-tint":"#bf0229","on-secondary":"#ffffff","inverse-on-surface":"#f3eff6","on-tertiary-container":"#86faa7","secondary-fixed":"#ffddb5","surface":"#fcf8fe","outline":"#906f6e","on-tertiary-fixed":"#00210c","surface-container-highest":"#e4e1e7","on-secondary-container":"#714800","on-surface-variant":"#5c403f","surface-container":"#f0edf3","on-error":"#ffffff"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"margin-desktop":"3rem","gutter":"1rem","space-md":"1rem","space-xl":"2.5rem","space-sm":"0.5rem","gutter-desktop":"2rem","space-xs":"0.25rem","margin":"1rem","space-lg":"1.5rem","margin-tablet":"2rem","gutter-tablet":"1.5rem"},"fontFamily":{"headline-sm":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"body-md-medium":["Inter"],"title-md":["Plus Jakarta Sans"],"body-md":["Inter"],"display-lg-mobile":["Plus Jakarta Sans"],"label-sm":["Inter"],"currency-display":["Plus Jakarta Sans"],"headline-lg-mobile":["Plus Jakarta Sans"],"body-sm":["Inter"],"display-lg":["Plus Jakarta Sans"],"body-lg":["Inter"],"label-md":["Inter"],"headline-lg":["Plus Jakarta Sans"]},"fontSize":{"headline-sm":["20px",{"lineHeight":"28px","fontWeight":"600"}],"headline-md":["24px",{"lineHeight":"32px","fontWeight":"700"}],"body-md-medium":["16px",{"lineHeight":"24px","fontWeight":"500"}],"title-md":["18px",{"lineHeight":"26px","fontWeight":"600"}],"body-md":["16px",{"lineHeight":"24px","fontWeight":"400"}],"display-lg-mobile":["34px",{"lineHeight":"42px","fontWeight":"800"}],"label-sm":["12px",{"lineHeight":"16px","fontWeight":"600"}],"currency-display":["28px",{"lineHeight":"36px","fontWeight":"700"}],"headline-lg-mobile":["26px",{"lineHeight":"34px","fontWeight":"700"}],"body-sm":["14px",{"lineHeight":"20px","fontWeight":"400"}],"display-lg":["48px",{"lineHeight":"56px","fontWeight":"800"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"label-md":["14px",{"lineHeight":"20px","fontWeight":"500"}],"headline-lg":["32px",{"lineHeight":"40px","fontWeight":"700"}]}}}}</script></head><body class="bg-surface font-body-md text-on-surface"><aside class="fixed left-0 top-0 h-screen w-72 bg-inverse-surface text-inverse-on-surface z-50 flex flex-col justify-between overflow-y-auto select-none shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="px-space-lg pt-space-lg pb-space-md flex items-center gap-space-sm"><div class="w-10 h-10 rounded-xl bg-primary-container flex items-center justify-center text-on-primary shadow-sm flex-shrink-0"><span class="material-symbols-outlined text-[24px]">local_fire_department</span></div><div class="flex flex-col min-w-0"><span class="font-headline-sm text-headline-sm tracking-tight text-surface-container-lowest font-bold leading-none">FULLGOPE</span><span class="font-label-sm text-label-sm text-surface-variant truncate mt-0.5">Mission du Plein Évangile</span></div></div><div class="px-space-md py-space-xs"><div class="px-space-sm py-space-xs rounded-lg bg-surface-container-highest/10 text-surface-variant font-label-sm text-label-sm leading-tight italic">« No Other Christ, No Other Gospel » • 1961</div></div><nav class="flex flex-col gap-space-xs px-space-md mt-space-md" data-active-classes="bg-primary-container text-on-primary font-body-md-medium shadow-sm"><div class="px-space-sm pt-space-sm pb-space-xs font-label-sm text-label-sm uppercase tracking-wider text-surface-variant/70 font-semibold">Principal</div><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-surface-variant hover:bg-surface-container-highest/20 hover:text-surface-container-lowest transition-colors" data-path="accueil" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">grid_view</span><span class="font-body-sm text-body-sm">Accueil</span></div></a><div class="px-space-sm pt-space-md pb-space-xs font-label-sm text-label-sm uppercase tracking-wider text-surface-variant/70 font-semibold">Communauté</div><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-surface-variant hover:bg-surface-container-highest/20 hover:text-surface-container-lowest transition-colors" data-path="membres" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">groups</span><span class="font-body-sm text-body-sm">Membres</span></div><span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container-highest/20 text-surface-bright">1 450</span></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-surface-variant hover:bg-surface-container-highest/20 hover:text-surface-container-lowest transition-colors" data-path="departements" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">diversity_3</span><span class="font-body-sm text-body-sm">Départements</span></div></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-surface-variant hover:bg-surface-container-highest/20 hover:text-surface-container-lowest transition-colors" data-path="organisation" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">account_tree</span><span class="font-body-sm text-body-sm">Organisation</span></div></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-surface-variant hover:bg-surface-container-highest/20 hover:text-surface-container-lowest transition-colors" data-path="transferts" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">move_up</span><span class="font-body-sm text-body-sm">Transferts</span></div></a><div class="px-space-sm pt-space-md pb-space-xs font-label-sm text-label-sm uppercase tracking-wider text-surface-variant/70 font-semibold">Ministère &amp; Activités</div><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-surface-variant hover:bg-surface-container-highest/20 hover:text-surface-container-lowest transition-colors" data-path="rapports" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">description</span><span class="font-body-sm text-body-sm">Rapports</span></div></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-surface-variant hover:bg-surface-container-highest/20 hover:text-surface-container-lowest transition-colors" data-path="publications" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">menu_book</span><span class="font-body-sm text-body-sm">Publications</span></div></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-surface-variant hover:bg-surface-container-highest/20 hover:text-surface-container-lowest transition-colors" data-path="evenements-plannings" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">calendar_month</span><span class="font-body-sm text-body-sm">Événements &amp; Plannings</span></div><span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-primary-container text-on-primary font-semibold">3</span></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-surface-variant hover:bg-surface-container-highest/20 hover:text-surface-container-lowest transition-colors" data-path="reseau-social" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">hub</span><span class="font-body-sm text-body-sm">Réseau social</span></div></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-surface-variant hover:bg-surface-container-highest/20 hover:text-surface-container-lowest transition-colors" data-path="messagerie" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">chat</span><span class="font-body-sm text-body-sm">Messagerie</span></div><span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-secondary text-on-secondary font-semibold">12</span></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-surface-variant hover:bg-surface-container-highest/20 hover:text-surface-container-lowest transition-colors" data-path="mediatheque" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">play_circle</span><span class="font-body-sm text-body-sm">Médiathèque</span></div></a><div class="px-space-sm pt-space-md pb-space-xs font-label-sm text-label-sm uppercase tracking-wider text-surface-variant/70 font-semibold">Intendance &amp; Gouvernance</div><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-surface-variant hover:bg-surface-container-highest/20 hover:text-surface-container-lowest transition-colors" data-path="finance" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">account_balance_wallet</span><span class="font-body-sm text-body-sm">Finance (FCFA)</span></div></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-surface-variant hover:bg-surface-container-highest/20 hover:text-surface-container-lowest transition-colors" data-path="dons-campagnes" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">volunteer_activism</span><span class="font-body-sm text-body-sm">Dons &amp; Campagnes</span></div></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-surface-variant hover:bg-surface-container-highest/20 hover:text-surface-container-lowest transition-colors" data-path="administration" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">admin_panel_settings</span><span class="font-body-sm text-body-sm">Administration</span></div></a></nav></div><div class="p-space-md flex flex-col gap-space-xs bg-surface-container-highest/5 mt-space-md"><div class="flex items-center justify-between px-space-sm py-space-xs rounded-lg text-surface-variant font-label-sm text-label-sm"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim inline-block animate-pulse"></span><span class="text-surface-bright">Yaoundé v2.4</span></div><span class="font-semibold text-tertiary-fixed">En ligne</span></div><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-surface-variant hover:text-surface-bright font-label-sm text-label-sm transition-colors" data-path="centre-aide" href="#"><span class="material-symbols-outlined text-[18px]">help</span><span>Assistance &amp; Guide pastoral</span></a></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/85 backdrop-blur-xl z-40 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-space-lg flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md flex-1 max-w-xl"><div class="flex items-center gap-space-xs px-space-sm py-1.5 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm"><span class="material-symbols-outlined text-[18px] text-primary">church</span><span class="font-semibold truncate max-w-[210px]">District Centre (Temple Tsinga)</span><span class="text-outline text-xs">•</span><span class="text-on-surface-variant font-medium text-xs whitespace-nowrap">Pasteur Titulaire</span></div><div class="relative flex-1 hidden md:block"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span><input class="w-full pl-9 pr-4 py-2 rounded-full bg-surface-container-low text-on-surface placeholder:text-outline font-body-sm text-body-sm outline-none focus:bg-surface-container-lowest focus:ring-1 focus:ring-primary transition-all" placeholder="Rechercher membre, culte, transaction..." type="text"/></div></div><div class="flex items-center gap-space-sm"><div class="flex items-center p-0.5 rounded-full bg-surface-container-low text-on-surface"><button class="px-2.5 py-1 rounded-full bg-on-surface text-surface font-label-sm text-label-sm transition-colors" type="button">FR</button><button class="px-2.5 py-1 rounded-full text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm transition-colors" type="button">EN</button></div><button class="relative w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-primary-container ring-2 ring-surface"></span></button><div class="flex items-center gap-space-sm pl-space-xs"><div class="flex flex-col text-right hidden lg:flex"><span class="font-body-md-medium text-body-sm text-on-surface font-semibold leading-tight">Rev. N. Samuel</span><span class="font-label-sm text-label-sm text-on-surface-variant">Pasteur Titulaire</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-sm"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="relative pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Fil d'Ariane & Barre de Statut Liturgique -->
+<div class="px-margin-desktop pt-space-md pb-space-sm">
+<div class="flex flex-wrap items-center justify-between gap-space-sm">
+<nav aria-label="Breadcrumb" class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span class="hover:text-primary transition-colors cursor-pointer">Accueil</span>
+<span class="material-symbols-outlined text-[14px] text-outline">chevron_right</span>
+<span class="hover:text-primary transition-colors cursor-pointer">Ministère &amp; Activités</span>
+<span class="material-symbols-outlined text-[14px] text-outline">chevron_right</span>
+<span class="hover:text-primary transition-colors cursor-pointer">Événements &amp; Plannings</span>
+<span class="material-symbols-outlined text-[14px] text-outline">chevron_right</span>
+<span class="text-on-surface font-semibold">Agenda Canonique</span>
+</nav>
+<div class="flex items-center gap-space-xs px-3 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+<span class="font-medium">Saison Liturgique : Pentecôte &amp; Moisson 2025</span>
+<span class="text-outline">•</span>
+<span class="text-primary font-semibold">Semaine 16</span>
+</div>
+</div>
+</div>
+<!-- Onglets de Sous-Navigation Supérieure -->
+<div class="px-margin-desktop mb-space-md">
+<div class="flex items-center gap-space-xs bg-surface-container-low p-1.5 rounded-2xl w-fit shadow-sm">
+<button class="flex items-center gap-space-xs px-space-md py-2 rounded-xl bg-surface-container-lowest text-primary font-headline-sm text-label-md font-bold shadow-sm transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">calendar_month</span>
+<span>Agenda &amp; Calendrier</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-md py-2 rounded-xl text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">assignment_ind</span>
+<span>Planning de Service</span>
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container text-[11px] font-bold tracking-tight">2 conflits</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-md py-2 rounded-xl text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">event_busy</span>
+<span>Mes Indisponibilités</span>
+</button>
+</div>
+</div>
+<!-- En-tête Titre & Contrôles d'Action -->
+<div class="px-margin-desktop mb-space-lg">
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-space-md">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="px-2.5 py-0.5 rounded-md bg-primary/10 text-primary font-label-sm text-label-sm font-bold uppercase tracking-wider">Sanctuaire &amp; District</span>
+<span class="text-outline font-label-sm">•</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">Région du Centre 1</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight font-extrabold">Agenda Paroissial &amp; Événements Nationaux</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1 max-w-3xl">
+          Supervision du calendrier liturgique, conventions de district et rassemblements spirituels • Temple Central de Tsinga
+        </p>
+</div>
+<!-- Actions Rapides -->
+<div class="flex items-center gap-space-sm flex-shrink-0">
+<button class="flex items-center gap-space-xs px-space-md py-3 rounded-full bg-surface-container-lowest text-on-surface shadow-sm hover:bg-surface-container-high transition-colors font-label-md text-label-md" type="button">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">file_download</span>
+<span>Exporter tout (.ics)</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-lg py-3 rounded-full bg-primary-container text-on-primary font-headline-sm text-label-md font-bold shadow-md hover:bg-primary transition-all" type="button">
+<span class="material-symbols-outlined text-[20px]">add</span>
+<span>Nouvel événement</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Barre d'outils de Calendrier : Vues & Navigation Mensuelle & Légende -->
+<div class="px-margin-desktop mb-space-lg">
+<div class="p-space-md rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-md">
+<div class="flex flex-wrap items-center justify-between gap-space-md">
+<!-- Navigation Mois / Année -->
+<div class="flex items-center gap-space-sm">
+<div class="flex items-center bg-surface-container-low rounded-xl p-1">
+<button aria-label="Mois précédent" class="w-9 h-9 rounded-lg flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-lowest transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">chevron_left</span>
+</button>
+<button aria-label="Mois suivant" class="w-9 h-9 rounded-lg flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-lowest transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</div>
+<span class="font-headline-md text-headline-md text-on-surface font-extrabold tracking-tight min-w-[170px]">Avril 2025</span>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-semibold hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button">
+            Aujourd'hui
+          </button>
+</div>
+<!-- Bascule de Vue (Mois / Semaine / Liste) -->
+<div class="flex items-center p-1 rounded-xl bg-surface-container-low">
+<button class="px-4 py-1.5 rounded-lg bg-surface-container-lowest text-primary font-headline-sm text-label-sm font-bold shadow-sm transition-colors" type="button">
+            Mois
+          </button>
+<button class="px-4 py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm transition-colors" type="button">
+            Semaine
+          </button>
+<button class="px-4 py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm transition-colors" type="button">
+            Liste
+          </button>
+</div>
+</div>
+<!-- Légende Catégorielle Intégrée -->
+<div class="flex flex-wrap items-center gap-x-space-md gap-y-2 pt-space-xs text-label-sm font-label-sm">
+<span class="text-on-surface-variant font-semibold">Types de culte :</span>
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-[#7E22CE]"></span>
+<span class="text-on-surface">Cultes &amp; Ste-Cène</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-[#991B1B]"></span>
+<span class="text-on-surface">Veillées &amp; Délivrance</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-[#1D4ED8]"></span>
+<span class="text-on-surface">Conférences &amp; Études</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-[#D97706]"></span>
+<span class="text-on-surface">Jeunesse &amp; CEPE</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span>
+<span class="text-on-surface font-bold text-primary">Conventions Nationales (FGM)</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-[#059669]"></span>
+<span class="text-on-surface">Répétitions &amp; Ateliers</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Layout Principal en 2 Colonnes (65% Grille Calendrier / 35% Panneau Détail) -->
+<div class="px-margin-desktop pb-space-xl">
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-lg items-start">
+<!-- COLONNE GAUCHE (Grille Calendrier Mensuelle 65%) -->
+<div class="xl:col-span-8 flex flex-col gap-space-md">
+<div class="bg-surface-container-lowest rounded-2xl p-space-md shadow-sm overflow-hidden">
+<!-- En-têtes Jours de la Semaine -->
+<div class="grid grid-cols-7 gap-2 mb-2 text-center">
+<div class="py-2 rounded-lg bg-surface-container-low font-headline-sm text-label-sm text-on-surface-variant font-bold">Lun</div>
+<div class="py-2 rounded-lg bg-surface-container-low font-headline-sm text-label-sm text-on-surface-variant font-bold">Mar</div>
+<div class="py-2 rounded-lg bg-surface-container-low font-headline-sm text-label-sm text-on-surface-variant font-bold">Mer</div>
+<div class="py-2 rounded-lg bg-surface-container-low font-headline-sm text-label-sm text-on-surface-variant font-bold">Jeu</div>
+<div class="py-2 rounded-lg bg-surface-container-low font-headline-sm text-label-sm text-on-surface-variant font-bold">Ven</div>
+<div class="py-2 rounded-lg bg-surface-container-low font-headline-sm text-label-sm text-on-surface-variant font-bold">Sam</div>
+<div class="py-2 rounded-lg bg-surface-container-low font-headline-sm text-label-sm text-primary font-bold">Dim</div>
+</div>
+<!-- Grille des Jours d'Avril 2025 -->
+<div class="grid grid-cols-7 gap-2 text-on-surface">
+<!-- Semaine 1 (Fin Mars / Début Avril) -->
+<div class="min-h-[118px] p-2 rounded-xl bg-surface-container-low/40 opacity-40 flex flex-col justify-between">
+<span class="font-label-sm text-label-sm font-semibold">31</span>
+</div>
+<div class="min-h-[118px] p-2 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-bold text-on-surface">1</span>
+</div>
+</div>
+<div class="min-h-[118px] p-2 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-bold text-on-surface">2</span>
+</div>
+</div>
+<div class="min-h-[118px] p-2 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-bold text-on-surface">3</span>
+</div>
+</div>
+<div class="min-h-[118px] p-2 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-bold text-on-surface">4</span>
+</div>
+<div class="px-1.5 py-1 rounded bg-[#991B1B]/15 text-[#991B1B] text-[11px] font-semibold truncate leading-tight">
+                20:00 Prière d'intercession
+              </div>
+</div>
+<div class="min-h-[118px] p-2 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-bold text-on-surface">5</span>
+</div>
+</div>
+<!-- Dimanche 6 -->
+<div class="min-h-[118px] p-2 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-bold text-primary">6</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+</div>
+<div class="px-1.5 py-1 rounded bg-[#7E22CE]/15 text-[#7E22CE] text-[11px] font-semibold truncate leading-tight" title="08:00 Culte de Célébration (Tsinga)">
+                08:00 Culte Célébration
+              </div>
+<div class="px-1.5 py-1 rounded bg-[#059669]/15 text-[#059669] text-[11px] font-semibold truncate leading-tight" title="15:00 Répétition Chorale CGL">
+                15:00 Chorale CGL
+              </div>
+</div>
+<!-- Semaine 2 -->
+<div class="min-h-[118px] p-2 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col gap-1">
+<span class="font-label-sm text-label-sm font-bold text-on-surface">7</span>
+</div>
+<div class="min-h-[118px] p-2 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col gap-1">
+<span class="font-label-sm text-label-sm font-bold text-on-surface">8</span>
+</div>
+<!-- Mercredi 9 -->
+<div class="min-h-[118px] p-2 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-bold text-on-surface">9</span>
+</div>
+<div class="px-1.5 py-1 rounded bg-[#1D4ED8]/15 text-[#1D4ED8] text-[11px] font-semibold truncate leading-tight" title="17:30 Étude Biblique &amp; Enseignement">
+                17:30 Étude Biblique
+              </div>
+</div>
+<div class="min-h-[118px] p-2 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col gap-1">
+<span class="font-label-sm text-label-sm font-bold text-on-surface">10</span>
+</div>
+<!-- Vendredi 11 -->
+<div class="min-h-[118px] p-2 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-bold text-on-surface">11</span>
+</div>
+<div class="px-1.5 py-1 rounded bg-[#991B1B]/15 text-[#991B1B] text-[11px] font-semibold truncate leading-tight" title="20:00 Nuit de Traversée &amp; Intercession">
+                20:00 Nuit Traversée
+              </div>
+</div>
+<div class="min-h-[118px] p-2 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col gap-1">
+<span class="font-label-sm text-label-sm font-bold text-on-surface">12</span>
+</div>
+<!-- Dimanche 13 -->
+<div class="min-h-[118px] p-2 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-bold text-primary">13</span>
+<span class="w-1.5 h-1.5 rounded-full bg-[#7E22CE]"></span>
+</div>
+<div class="px-1.5 py-1 rounded bg-[#7E22CE]/15 text-[#7E22CE] text-[11px] font-semibold truncate leading-tight" title="08:00 Culte Solennel &amp; Sainte-Cène">
+                08:00 Ste-Cène Tsinga
+              </div>
+</div>
+<!-- Semaine 3 (Convention Majeure FGM Yaoundé) -->
+<div class="min-h-[118px] p-2 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col gap-1">
+<span class="font-label-sm text-label-sm font-bold text-on-surface">14</span>
+</div>
+<div class="min-h-[118px] p-2 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col gap-1">
+<span class="font-label-sm text-label-sm font-bold text-on-surface">15</span>
+</div>
+<div class="min-h-[118px] p-2 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col gap-1">
+<span class="font-label-sm text-label-sm font-bold text-on-surface">16</span>
+</div>
+<div class="min-h-[118px] p-2 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col gap-1">
+<span class="font-label-sm text-label-sm font-bold text-on-surface">17</span>
+</div>
+<!-- Ven 18, Sam 19, Dim 20 : BANDE ÉTENDUE DE CONVENTION -->
+<!-- Ven 18 -->
+<div class="min-h-[118px] p-2 rounded-xl bg-primary-fixed/30 border-2 border-primary/20 flex flex-col gap-1 relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-bold text-primary">18</span>
+<span class="px-1 py-0.2 rounded bg-primary text-on-primary text-[9px] font-bold uppercase">J1</span>
+</div>
+<div class="p-1.5 rounded-lg bg-primary text-on-primary text-[10px] font-bold leading-tight shadow-sm">
+                17:00 Ouverture Convention Réveil
+              </div>
+</div>
+<!-- Sam 19 -->
+<div class="min-h-[118px] p-2 rounded-xl bg-primary-fixed/30 border-2 border-primary/20 flex flex-col gap-1 relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-bold text-primary">19</span>
+<span class="px-1 py-0.2 rounded bg-primary text-on-primary text-[9px] font-bold uppercase">J2</span>
+</div>
+<div class="p-1 rounded bg-primary/90 text-on-primary text-[10px] font-bold leading-tight">
+                09:00 Sessions Plénières
+              </div>
+<div class="px-1.5 py-0.5 rounded bg-[#D97706] text-on-primary text-[10px] font-semibold truncate leading-tight" title="14:00 Rassemblement Jeunesse CEPE">
+                14:00 Jeunesse CEPE
+              </div>
+</div>
+<!-- Dim 20 (ACTIF / SÉLECTIONNÉ) -->
+<div class="min-h-[118px] p-2 rounded-xl bg-primary-fixed/50 ring-2 ring-primary ring-offset-2 ring-offset-surface-container-lowest flex flex-col gap-1 relative shadow-md">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-extrabold text-primary">20</span>
+<span class="flex items-center gap-1 px-1.5 py-0.5 rounded-full bg-primary-container text-on-primary text-[9px] font-extrabold tracking-tight">
+<span class="w-1.5 h-1.5 rounded-full bg-on-primary animate-ping"></span>
+                  Sélectionné
+                </span>
+</div>
+<div class="p-1.5 rounded-lg bg-primary-container text-on-primary text-[11px] font-extrabold leading-tight shadow-sm">
+                08:00 Culte de Clôture &amp; Sainte Onction
+              </div>
+<div class="px-1 py-0.5 rounded bg-surface-container-lowest/80 text-primary text-[10px] font-semibold truncate">
+                1 420 inscrits
+              </div>
+</div>
+<!-- Semaine 4 -->
+<div class="min-h-[118px] p-2 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col gap-1">
+<span class="font-label-sm text-label-sm font-bold text-on-surface">21</span>
+</div>
+<div class="min-h-[118px] p-2 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col gap-1">
+<span class="font-label-sm text-label-sm font-bold text-on-surface">22</span>
+</div>
+<!-- Mercredi 23 -->
+<div class="min-h-[118px] p-2 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-bold text-on-surface">23</span>
+</div>
+<div class="px-1.5 py-1 rounded bg-[#1D4ED8]/15 text-[#1D4ED8] text-[11px] font-semibold truncate leading-tight" title="17:30 Étude Doctrinale des Actes">
+                17:30 Étude des Actes
+              </div>
+</div>
+<div class="min-h-[118px] p-2 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col gap-1">
+<span class="font-label-sm text-label-sm font-bold text-on-surface">24</span>
+</div>
+<!-- Vendredi 25 -->
+<div class="min-h-[118px] p-2 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-bold text-on-surface">25</span>
+</div>
+<div class="px-1.5 py-1 rounded bg-[#1e293b]/15 text-[#0f172a] text-[11px] font-semibold truncate leading-tight" title="18:00 Réunion des Hommes d'Honneur">
+                18:00 Hommes d'Honneur
+              </div>
+</div>
+<div class="min-h-[118px] p-2 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col gap-1">
+<span class="font-label-sm text-label-sm font-bold text-on-surface">26</span>
+<div class="px-1.5 py-1 rounded bg-[#059669]/15 text-[#059669] text-[11px] font-semibold truncate leading-tight">
+                07:00 Évangélisation de rue
+              </div>
+</div>
+<div class="min-h-[118px] p-2 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-bold text-primary">27</span>
+</div>
+<div class="px-1.5 py-1 rounded bg-[#7E22CE]/15 text-[#7E22CE] text-[11px] font-semibold truncate leading-tight">
+                08:00 Culte d'Action de Grâces
+              </div>
+</div>
+<!-- Semaine 5 (Fin Avril / Début Mai) -->
+<div class="min-h-[118px] p-2 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col gap-1">
+<span class="font-label-sm text-label-sm font-bold text-on-surface">28</span>
+</div>
+<div class="min-h-[118px] p-2 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col gap-1">
+<span class="font-label-sm text-label-sm font-bold text-on-surface">29</span>
+</div>
+<div class="min-h-[118px] p-2 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col gap-1">
+<span class="font-label-sm text-label-sm font-bold text-on-surface">30</span>
+<div class="px-1.5 py-1 rounded bg-[#1D4ED8]/15 text-[#1D4ED8] text-[11px] font-semibold truncate leading-tight">
+                17:30 Étude &amp; Prière
+              </div>
+</div>
+<div class="min-h-[118px] p-2 rounded-xl bg-surface-container-low/40 opacity-40 flex flex-col justify-between">
+<span class="font-label-sm text-label-sm font-semibold">1</span>
+</div>
+<div class="min-h-[118px] p-2 rounded-xl bg-surface-container-low/40 opacity-40 flex flex-col justify-between">
+<span class="font-label-sm text-label-sm font-semibold">2</span>
+</div>
+<div class="min-h-[118px] p-2 rounded-xl bg-surface-container-low/40 opacity-40 flex flex-col justify-between">
+<span class="font-label-sm text-label-sm font-semibold">3</span>
+</div>
+<div class="min-h-[118px] p-2 rounded-xl bg-surface-container-low/40 opacity-40 flex flex-col justify-between">
+<span class="font-label-sm text-label-sm font-semibold">4</span>
+</div>
+</div>
+</div>
+<!-- Alerte Info Ministérielle sous la Grille -->
+<div class="p-space-md rounded-2xl bg-surface-container-low flex items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-primary-container text-on-primary flex items-center justify-center flex-shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[24px]">broadcast_on_home</span>
+</div>
+<div>
+<div class="font-headline-sm text-label-md font-bold text-on-surface">Retransmission Directe &amp; Multiplex de District</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Les cultes des 13 et 20 Avril seront retransmis en multiplex vers les annexes d'Olembé, Soa et Mbankolo.</p>
+</div>
+</div>
+<button class="px-4 py-2 rounded-xl bg-surface-container-lowest text-primary font-label-sm text-label-sm font-bold shadow-sm hover:bg-surface-container-high transition-colors whitespace-nowrap" type="button">
+            Gérer les liaisons
+          </button>
+</div>
+</div>
+<!-- COLONNE DROITE (Volet Détail Événement Sélectionné 35%) -->
+<div class="xl:col-span-4 flex flex-col gap-space-md">
+<div class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm flex flex-col">
+<!-- Bannière Visuelle avec Overlay -->
+<div class="relative h-44 w-full bg-inverse-surface">
+<div class="bg-cover bg-center w-full h-full opacity-60" data-alt="A luminous and dignified evangelical worship gathering inside a massive sanctuary in Yaounde Cameroon with warm crimson lighting, rows of faithful worshippers with raised hands, choir robes, and a warm mahogany wooden pulpit adorned with the Full Gospel flame cross emblem." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBS4-vV-1ov_7VtWt1ZOHx0NjSA6n02oQaBiYk5LczgN49FT8HAMydbQzi539Vdtg5I0wO-TloOdeQE7t7SCUZZd3Wlgvpp0Jp13HdpyylLgtDV80-3HJj3ODd6DKUptZaV0j0JJJZIfjk7bDTaWIj48ek4TriZoFcpi6SnIr6oDrzKb3OiAQ5bO9BuAp262SALWUtXe8gSA-_dk6CZyeIbgl_V75o8zNnm7jR6vEE')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface via-inverse-surface/40 to-transparent"></div>
+<div class="absolute top-3 left-3 right-3 flex items-center justify-between">
+<span class="px-3 py-1 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm font-bold shadow-sm flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+                Officiel District
+              </span>
+<span class="px-2.5 py-1 rounded-full bg-inverse-surface/80 backdrop-blur-md text-surface-container-lowest font-label-sm text-label-sm font-medium">
+                18 - 20 Avril 2025
+              </span>
+</div>
+<div class="absolute bottom-3 left-4 right-4">
+<span class="font-label-sm text-label-sm text-secondary-fixed font-bold uppercase tracking-wider">Convention Annuelle de District</span>
+<h2 class="font-headline-md text-headline-sm text-surface-container-lowest font-extrabold leading-tight">Grande Convention Régionale de Réveil - Yaoundé</h2>
+</div>
+</div>
+<!-- Contenu du Volet Détail -->
+<div class="p-space-md flex flex-col gap-space-md">
+<!-- Thème Spirituel & Référence Biblique -->
+<div class="p-3.5 rounded-xl bg-surface-container-low flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[22px] flex-shrink-0 mt-0.5">auto_stories</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-[11px] text-on-surface-variant uppercase font-bold tracking-wider">Thème Spirituel Canonique</span>
+<p class="font-body-md-medium text-body-sm text-primary font-bold italic leading-snug mt-0.5">
+                  « Fortifie-toi et prends courage dans le Plein Évangile »
+                </p>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium mt-1">Josué 1:9 • Confession de foi 1961</span>
+</div>
+</div>
+<!-- Lieu & Horaires Synthétiques -->
+<div class="flex flex-col gap-2.5">
+<div class="flex items-start gap- space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-primary flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[18px]">church</span>
+</div>
+<div class="flex flex-col flex-1 pl-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Lieu de Célébration</span>
+<span class="font-headline-sm text-body-sm text-on-surface font-bold">Sanctuaire Principal du Temple Central de Tsinga</span>
+<span class="font-body-sm text-[13px] text-on-surface-variant">Esplanade extérieure &amp; Salle de conférence annexe</span>
+</div>
+</div>
+<!-- Mini-Carte d'Accès avec Data-Location -->
+<div class="w-full h-24 bg-cover bg-center rounded-xl relative overflow-hidden shadow-sm" data-location="Temple du Plein Evangile Tsinga, Yaounde, Cameroon" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB9Blx8zHEAsjm44i9S51GElT5MCwBzFsEab4KwteYm_iLEwwWaCg1cE12p7u4InwFmR8312E5g8FlIQ2NwVz3convMsQYAceVgXZ-RiFD_Ku25rS63Mb6McX_5RM98XDAK-6W4gYHpqcQ5Ue2bOCQFFgmoIdumdWZmahdbJbqd03MhbOtpJLfIunCCLbEGsycxWUZH3SdJxGzLiSotRQlA3t8bEf6gF506_0S6HDs')">
+<div class="absolute inset-0 bg-on-surface/20 hover:bg-transparent transition-colors flex items-end p-2">
+<span class="px-2 py-0.5 rounded bg-surface/90 backdrop-blur-sm text-on-surface font-label-sm text-[11px] font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-primary">pin_drop</span>
+                    Yaoundé - Tsinga (Face Commissariat)
+                  </span>
+</div>
+</div>
+<div class="flex items-start gap-space-sm pt-1">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-primary flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+</div>
+<div class="flex flex-col flex-1 pl-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Horaires &amp; Programme</span>
+<span class="font-body-md text-body-sm text-on-surface font-bold">Vendredi 17h00 — Dimanche 13h30</span>
+<span class="font-body-sm text-[13px] text-on-surface-variant">3 sessions plénières • 2 ateliers de formation pastorale</span>
+</div>
+</div>
+</div>
+<!-- Jauge d'Inscrits & Capacité (Data Visualization Progress Bar) -->
+<div class="p-3.5 rounded-xl bg-surface-container-low flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-label-sm font-bold text-on-surface">Capacité &amp; Jauge du Temple</span>
+<span class="font-label-sm text-label-sm font-extrabold text-primary">1 420 / 1 800 places</span>
+</div>
+<!-- Progress Bar -->
+<div class="w-full h-2.5 rounded-full bg-surface-container-highest overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-primary-container rounded-full" style="width: 78.8%;"></div>
+</div>
+<div class="flex items-center justify-between text-[11px] font-label-sm text-on-surface-variant pt-1">
+<span>Remplissage : <strong>78.8%</strong></span>
+<span>380 places restantes</span>
+</div>
+<!-- Badges de ventilation sociologique -->
+<div class="flex flex-wrap gap-1.5 pt-1">
+<span class="px-2 py-0.5 rounded-md bg-surface-container-lowest text-on-surface font-label-sm text-[11px]">
+<strong>950</strong> fidèles locaux
+                </span>
+<span class="px-2 py-0.5 rounded-md bg-surface-container-lowest text-on-surface font-label-sm text-[11px]">
+<strong>380</strong> délégués district
+                </span>
+<span class="px-2 py-0.5 rounded-md bg-surface-container-lowest text-on-surface font-label-sm text-[11px]">
+<strong>90</strong> ouvriers / protocole
+                </span>
+</div>
+</div>
+<!-- Liste des Récents Inscrits & Contrôle Responsable -->
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-label-sm font-bold text-on-surface">Derniers Inscrits (District)</span>
+<button class="text-primary font-label-sm text-[12px] font-bold hover:underline" type="button">
+                  Voir tout (1 420) • .xlsx
+                </button>
+</div>
+<div class="flex items-center gap-space-xs">
+<!-- Avatars Participants avec photos chaleureuses -->
+<div class="flex -space-x-2 overflow-hidden py-1">
+<div class="inline-block h-8 w-8 rounded-full ring-2 ring-surface-container-lowest bg-surface-container-high overflow-hidden" title="Fr. Jean-Claude Fossouo">
+<img class="h-full w-full object-cover" data-alt="Portrait of an African church elder and father with gentle smile and neat glasses in Tsinga parish Yaounde" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAP206FcZP52S6UfdxS3PDYm-ge-9wVmyKgH99jNen7q-y_hYA8V-GcreQnYVokD9vobqEZ3og7a6oaSONiPDzoHEbdoFIom_ToBy84kXBAgkDGkAqf6oxGTC8Eu_x-WF3XyOaJpQxyKarasu9WQqZL07fBEOZ5DDaFsP-IaWr0LilAmhEdTuXnctvvp7i97J61XHHIWQf0JKHmTb2VYFPo3uwz06ewhFLy3ryjwJE"/>
+</div>
+<div class="inline-block h-8 w-8 rounded-full ring-2 ring-surface-container-lowest bg-surface-container-high overflow-hidden" title="Sr. Mireille Ngo">
+<img class="h-full w-full object-cover" data-alt="Portrait of an African deaconess wearing a colorful dignified church headwrap and smiling warmly in Cameroon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKKazor3DTT2eyNt3pFUIxNioO_44tEsW-broGXQRnm0wFZl84uXFi1sHekzJPi662EjWC_D5r0iNAxsNrZrhlZ2BsQ2O14wxOSbRP_B8ZWjwqyfmDb_Z7XnkyWYIrja_6w2GiaYe-9bQhYhbMSBDi2SQzlRZ1SyEIOpArC0aFDAeB3iS9yY-OvkArXcnqz62yBjbW_JZ0MAOOsJfD8I59WQse--GkIvvJqF8iqmM"/>
+</div>
+<div class="inline-block h-8 w-8 rounded-full ring-2 ring-surface-container-lowest bg-surface-container-high overflow-hidden" title="Pasteur Daniel Ebogo">
+<img class="h-full w-full object-cover" data-alt="Portrait of an African evangelical pastor in modern suit with pastoral warmth in Yaounde Cameroon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjlwPXvknK19YXGOxyfy6_fb1hhYuzt9qpBWWZEml3o9ilBwqcQR0jIVe54vZ7HRa797Q4gAKa9ZFsGtChaghKoD3ErceVemMPw0H9Sh78TToqXxw8el15N6YZeupZvkLIuUxMENJ2FNscqWw4-XqIXVFvnZFfmNHasvEwX12t9p5xGOmL9I22FI7FBorMgVsfw3noUfMzwekMcAmfafas2BMdm9kEY8IwyL5JDaU"/>
+</div>
+<div class="inline-block h-8 w-8 rounded-full ring-2 ring-surface-container-lowest bg-surface-container-high overflow-hidden" title="Sr. Carine Mballa">
+<img class="h-full w-full object-cover" data-alt="Young African choir leader with vibrant expression inside a church setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5cPZDurahI-y2famI0OPPm1_sHkmoykQM5FB2wUOeuFPIaNgmevt5HSjLwhqzxIcdcSVknpGVC-PFymnYaTWuiqNSZLrC8tyTbr9e35S5oKHwUBZPplj31HiibHG50bj77PSW_fL0T6pQecZ_X7T0H9aNzVQ6nsAsksvtRtQKtCfxf6Om-o4oDjtyy7j2rLu1Srpe4UWjjkQdAuFPl6voP9ioJpltxhxVUgm0eLI"/>
+</div>
+<div class="inline-flex h-8 w-8 items-center justify-center rounded-full ring-2 ring-surface-container-lowest bg-primary-fixed text-primary font-label-sm text-[11px] font-bold">
+                    +1.4k
+                  </div>
+</div>
+<span class="text-on-surface-variant font-label-sm text-[12px] pl-1 truncate">Dont Pasteur Daniel Ebogo &amp; 12 diacres</span>
+</div>
+</div>
+<!-- Coordonnateur Pastoral -->
+<div class="flex items-center justify-between p-3 rounded-xl bg-surface-container-low">
+<div class="flex items-center gap-2.5">
+<div class="w-10 h-10 rounded-full bg-primary overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Senior African superintendent pastor of Full Gospel Mission Cameroon with stately clerical attire, silver hair and dignified pastoral demeanor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAce92O3pKBFnyIs-01-GGyKmYuj2m1CeFd7IQ5W8NB1HFdTA2XZsmvGXEy1TGhiz6YZZIxN7riFLafpkkqlfg6RzMa2I2gEPQ52-FjxCy3bC9841Fy5LmiBbdKKoE9b_ScuwYNjDZcSQV3nkXToxrGvNXReGY4xVNQKnRP_2Y8A0m5aEKwspDIju6FsHRSUmvXQJB3WswlffaaOeI4fYbyrOj2F9irpxlW2MGaCk"/>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-body-sm font-bold text-on-surface">Rév. Dr. Samuel Ndifon</span>
+<span class="font-label-sm text-[12px] text-on-surface-variant">Surintendant Régional du Centre</span>
+</div>
+</div>
+<a class="w-8 h-8 rounded-full bg-surface-container-lowest flex items-center justify-center text-primary shadow-sm hover:bg-primary hover:text-on-primary transition-colors" href="tel:+237699000000" title="Contacter la permanence">
+<span class="material-symbols-outlined text-[18px]">call</span>
+</a>
+</div>
+<!-- Actions du Fidèle & Statut d'Inscription -->
+<div class="flex flex-col gap-2 pt-1">
+<!-- Bouton Statut Actif : Déjà Inscrit -->
+<div class="p-3 rounded-xl bg-tertiary-container/10 flex items-center justify-between">
+<div class="flex items-center gap-2 text-tertiary">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+<span class="font-headline-sm text-label-md font-bold">Session Confirmée (Badge N° 0482)</span>
+</div>
+<button class="text-error font-label-sm text-[11px] font-semibold hover:underline" type="button">
+                  Annuler
+                </button>
+</div>
+<!-- Boutons d'Action Secondaires -->
+<div class="grid grid-cols-2 gap-2">
+<button class="flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-sm text-label-sm font-semibold transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">event</span>
+<span>Ajouter agenda</span>
+</button>
+<button class="flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl bg-[#25D366]/15 hover:bg-[#25D366]/25 text-[#075E54] font-label-sm text-label-sm font-bold transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">share</span>
+<span>Affiche WhatsApp</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Carte d'Aide Liturgique & Permanence Pastorale -->
+<div class="p-space-md rounded-2xl bg-surface-container-low flex items-center gap-space-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px] text-secondary">info</span>
+<p class="font-label-sm text-label-sm leading-snug">
+            Pour les requêtes de baptême d'eau lors de la convention, veuillez vous rapprocher du secrétariat paroissial au plus tard le Mercredi 16 Avril.
+          </p>
+</div>
+</div>
+</div>
+</div>
+</div></main></div></body></html>

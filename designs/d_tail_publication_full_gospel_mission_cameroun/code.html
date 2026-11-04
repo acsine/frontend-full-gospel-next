@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+
+<html lang="fr"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-tint": "#bf0229", "primary": "#9e001f", "inverse-surface": "#303034", "surface-variant": "#e4e1e7", "tertiary-fixed": "#86faa7", "on-tertiary-container": "#86faa7", "tertiary-container": "#00743a", "on-secondary-fixed-variant": "#643f00", "surface-container-lowest": "#ffffff", "surface": "#fcf8fe", "on-primary-fixed-variant": "#92001c", "surface-container-highest": "#e4e1e7", "on-error": "#ffffff", "on-primary": "#ffffff", "on-primary-fixed": "#410007", "surface-bright": "#fcf8fe", "primary-fixed": "#ffdad8", "surface-container-high": "#eae7ed", "outline": "#906f6e", "on-surface-variant": "#5c403f", "tertiary": "#00592b", "surface-dim": "#dcd9df", "on-tertiary": "#ffffff", "secondary-fixed": "#ffddb5", "on-tertiary-fixed": "#00210c", "background": "#fcf8fe", "on-surface": "#1b1b1f", "on-primary-container": "#ffdad8", "primary-fixed-dim": "#ffb3b1", "inverse-primary": "#ffb3b1", "on-secondary": "#ffffff", "secondary-container": "#feb64e", "error-container": "#ffdad6", "primary-container": "#c8102e", "outline-variant": "#e5bdbb", "surface-container": "#f0edf3", "secondary": "#835400", "error": "#ba1a1a", "on-secondary-fixed": "#2a1800", "surface-container-low": "#f6f2f8", "on-secondary-container": "#714800", "on-background": "#1b1b1f", "inverse-on-surface": "#f3eff6", "tertiary-fixed-dim": "#6add8d", "on-error-container": "#93000a", "secondary-fixed-dim": "#ffb956", "on-tertiary-fixed-variant": "#005228" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin": "1rem", "margin-desktop": "3rem", "space-xs": "0.25rem", "gutter-tablet": "1.5rem", "margin-tablet": "2rem", "space-xl": "2.5rem", "space-sm": "0.5rem", "gutter-desktop": "2rem", "gutter": "1rem", "space-lg": "1.5rem", "space-md": "1rem" }, "fontFamily": { "display-lg": ["Plus Jakarta Sans"], "body-sm": ["Inter"], "body-lg": ["Inter"], "title-md": ["Plus Jakarta Sans"], "label-sm": ["Inter"], "label-md": ["Inter"], "headline-sm": ["Plus Jakarta Sans"], "display-lg-mobile": ["Plus Jakarta Sans"], "currency-display": ["Plus Jakarta Sans"], "body-md": ["Inter"], "headline-md": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "body-md-medium": ["Inter"], "headline-lg-mobile": ["Plus Jakarta Sans"] }, "fontSize": { "display-lg": ["48px", { "lineHeight": "56px", "fontWeight": "800" }], "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "title-md": ["18px", { "lineHeight": "26px", "fontWeight": "600" }], "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "600" }], "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }], "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "display-lg-mobile": ["34px", { "lineHeight": "42px", "fontWeight": "800" }], "currency-display": ["28px", { "lineHeight": "36px", "fontWeight": "700" }], "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "700" }], "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }], "body-md-medium": ["16px", { "lineHeight": "24px", "fontWeight": "500" }], "headline-lg-mobile": ["26px", { "lineHeight": "34px", "fontWeight": "700" }] } } } }</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;background-color:#fcf8fe;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="w-full h-[3px] bg-primary/20 relative overflow-hidden"><div class="absolute inset-y-0 left-0 w-2/5 bg-primary-container animate-pulse"></div></div><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0 flex-shrink-0"><img alt="Logo Full Gospel Mission Cameroun" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VtR_Amnvhju8fh_HutLzNg-PTJjLKTQagr709OXkSveuYiSe61lp9WlYO7Q4k6MV2bwG96w7F7Y-QIQTu0gsrx8_UMHBiMfnxYxpr-U11CXcnSHhy_4v_98oLtqgEG16dZFla3ixnfZc_RQ_sf-Wna8pSjDxL8VmYf-xqCp4efW0Y-xzZTQf72swwUuMWB02PjtbU5XSFO1_y0qthSeYkQoQwyUeWXPobUkXa7RjE"/><div class="flex flex-col"><span class="font-title-md text-title-md text-primary leading-tight font-bold tracking-tight">FULLGOPE</span><span class="font-label-sm text-label-sm text-on-surface-variant leading-none">Publications</span></div></div><div class="flex items-center gap-space-xs flex-shrink-0"><div aria-label="Langue / Language" class="flex items-center bg-surface-container rounded-full p-0.5" role="group"><button class="min-w-[28px] h-7 px-1.5 rounded-full bg-surface-container-lowest text-on-surface font-label-sm text-label-sm shadow-[0_1px_4px_rgba(0,0,0,0.06)] flex items-center justify-center transition-all" type="button">FR</button><button class="min-w-[28px] h-7 px-1.5 rounded-full text-on-surface-variant font-label-sm text-label-sm flex items-center justify-center transition-all hover:text-on-surface" type="button">EN</button></div><button aria-label="Mode clair/sombre" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">light_mode</span></button><a class="h-9 px-3 bg-primary-container text-on-primary rounded-full font-label-md text-label-md flex items-center justify-center shadow-[0_2px_8px_rgba(200,16,46,0.15)] transition-transform active:scale-95" data-path="dons" href="#">Donner</a><a aria-label="Espace membre" class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors" data-path="connexion" href="#"><span class="material-symbols-outlined text-[20px]">person</span></a></div></div></header><main class="flex flex-col relative w-full pt-16 pb-24 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Article Sticky Micro-Action Toolbar -->
+<div class="w-full px-margin py-space-sm flex items-center justify-between bg-surface-container-low shadow-sm">
+<a class="flex items-center gap-1 text-primary hover:opacity-80 transition-opacity" data-path="publications" href="#">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+<span class="font-label-sm text-label-sm">Toutes les publications</span>
+</a>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1 mr-1">
+<span class="material-symbols-outlined text-[15px]">schedule</span>
+        6 min
+      </span>
+<button aria-label="Ajouter aux favoris" class="w-10 h-10 rounded-full flex items-center justify-center bg-surface-container text-on-surface-variant hover:text-primary transition-colors" id="btn-bookmark">
+<span class="material-symbols-outlined text-[20px]" id="bookmark-icon">bookmark</span>
+</button>
+<button aria-label="Partager" class="w-10 h-10 rounded-full flex items-center justify-center bg-surface-container text-on-surface-variant hover:text-primary transition-colors" id="btn-share">
+<span class="material-symbols-outlined text-[20px]">share</span>
+</button>
+</div>
+</div>
+<!-- Share Quick Overlay / Drawer (Hidden by default, triggered by share button) -->
+<div class="hidden w-full px-margin py-space-md bg-surface-container-highest shadow-md flex flex-col gap-space-sm transition-all" id="share-drawer">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface">Transmettre cette parole divine</span>
+<button class="text-on-surface-variant text-[18px]" id="close-share"><span class="material-symbols-outlined">close</span></button>
+</div>
+<div class="flex items-center gap-space-sm flex-wrap">
+<a class="h-10 px-3 rounded-full bg-tertiary-container text-on-tertiary flex items-center gap-1.5 font-label-sm text-label-sm shadow-sm active:scale-95 transition-transform" href="https://api.whatsapp.com/send?text=Lecture%20pastorale%20FULLGOPE" target="_blank">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+        WhatsApp
+      </a>
+<a class="h-10 px-3 rounded-full bg-surface-container-lowest text-on-surface flex items-center gap-1.5 font-label-sm text-label-sm shadow-sm active:scale-95 transition-transform" href="https://www.facebook.com/sharer/sharer.php" target="_blank">
+<span class="material-symbols-outlined text-[18px]">public</span>
+        Facebook
+      </a>
+<button class="h-10 px-3 rounded-full bg-surface-container-lowest text-on-surface flex items-center gap-1.5 font-label-sm text-label-sm shadow-sm active:scale-95 transition-transform" id="copy-link-btn">
+<span class="material-symbols-outlined text-[18px]">link</span>
+<span id="copy-text">Copier le lien</span>
+</button>
+</div>
+</div>
+<article class="w-full flex flex-col px-margin pt-space-md">
+<!-- Category & Metadata Badge -->
+<div class="flex items-center gap-2 mb-space-sm">
+<span class="px-2.5 py-1 rounded-full bg-primary-fixed text-primary font-label-sm text-label-sm tracking-wide">
+        Lettre pastorale
+      </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">N° 108 • Mai 2025</span>
+</div>
+<!-- Master Headline -->
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface leading-tight tracking-tight mb-space-md">
+      Demeurer inébranlables dans la saine doctrine biblique face aux dérives contemporaines
+    </h1>
+<!-- Author Profile Card -->
+<div class="p-space-md rounded-xl bg-surface-container-low shadow-sm flex items-center gap-space-md mb-space-lg">
+<div class="relative flex-shrink-0">
+<img class="w-14 h-14 rounded-full object-cover shadow-sm" data-alt="Portrait photography of Reverend Doctor Ndifon, an authoritative and warm African senior pastor of Full Gospel Mission Cameroon, wearing pastoral formal attire with a modest cross pendant, warm lighting, respectful studio atmosphere, soft warm undertones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsVU_TPFgddMJYOXHK5fTC6FpZytiGnmzkRwoaO_zjpUgoaVUjXKv2Bz6OpE4oVFIzqcHEBe_AnupPoNZdvIQi0usuZ16FGM57kBaKyHh3NqAH_quZXzmu2onWl6z3idEUSXLUKATAjZNmRnmmdsC0WREzXcw75lbP4PWR854viUAx7DeXhk7AjOdanvPl-NzqYVOhLsIQFJ-ImSLb263w9CFdCfBVSMUfo-L54aw"/>
+<div class="absolute bottom-0 right-0 w-4 h-4 bg-tertiary-container rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-[10px] text-on-tertiary" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+</div>
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-baseline justify-between gap-1">
+<span class="font-title-md text-title-md text-on-surface truncate">Rév. Dr. Ndifon</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary truncate">Surintendant Général &amp; Président National</span>
+<div class="flex items-center gap-2 mt-1 text-on-surface-variant font-label-sm text-label-sm flex-wrap">
+<span class="flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[13px]">location_on</span>
+            Yaoundé
+          </span>
+<span>•</span>
+<span>15 Mai 2025</span>
+<span>•</span>
+<span class="flex items-center gap-0.5 text-on-surface">
+<span class="material-symbols-outlined text-[13px]">visibility</span>
+            1 420
+          </span>
+</div>
+</div>
+</div>
+<!-- Immersive Cover Image -->
+<div class="w-full flex flex-col mb-space-lg">
+<div class="w-full h-56 rounded-xl overflow-hidden shadow-md relative">
+<img class="w-full h-full object-cover" data-alt="Vibrant Sunday worship assembly inside Full Gospel Mission Cameroon sanctuary with African congregants raising hands in solemn prayer, gentle warm rays of sunlight streaming through stained glass, flame red banner flags softly visible in the background, authentic communal reverence" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbuI3yxCZVBCWdpNT1wqEMfKBrT8m6twVcB-z5uQ7I6_Bv9YqT4-MntPzdRR5tW7aL53INsDbaE2gLuKJ02bz3V_GE6nSoCZa_AWguTMqdwJZLR0l8hZ_AA7IURkgx2sJUJJ2pHfiYWnRYJSRYX50K8c_kRw8AunrfUhZaVlzrlxuEVVJClDwqzsEaX_Zg6lK-NV7IYmBE265_UPJDHgrQN0n0qp3vL3ybMfk0dkc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/60 via-transparent to-transparent"></div>
+<div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-on-primary">
+<span class="font-label-sm text-label-sm bg-inverse-surface/70 px-2 py-0.5 rounded-full backdrop-blur-sm">Édition spéciale Nationale</span>
+<span class="font-label-sm text-label-sm flex items-center gap-1 opacity-90">
+<span class="material-symbols-outlined text-[14px]">photo_camera</span>
+            FGM Mvog-Ada
+          </span>
+</div>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant italic mt-1.5 px-1">
+        Célébration solennelle du 64e anniversaire de fidélité doctrinale à Yaoundé. Crédit : Archives de la Mission.
+      </span>
+</div>
+<!-- Integrated Audio Player Pill (Exhortation Podcast) -->
+<div class="w-full p-space-md rounded-xl bg-surface-container-lowest shadow-md mb-space-lg">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[16px]">podcasts</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Écouter la prédication</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary bg-surface-container px-2 py-0.5 rounded-full">Audio officiel</span>
+</div>
+<div class="flex items-center gap-space-md">
+<button aria-label="Écouter le podcast" class="w-12 h-12 rounded-full bg-primary-container text-on-primary flex items-center justify-center flex-shrink-0 shadow-sm active:scale-95 transition-transform" id="audio-play-toggle">
+<span class="material-symbols-outlined text-[26px]" id="audio-icon" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm mb-1">
+<span id="current-time">03:42</span>
+<span>14:35</span>
+</div>
+<!-- Tactile Waveform / Progress bar -->
+<div class="w-full h-2 rounded-full bg-surface-container-high relative overflow-hidden cursor-pointer" id="progress-container">
+<div class="h-full bg-primary rounded-full w-1/4" id="audio-progress"></div>
+</div>
+</div>
+<button class="h-8 px-2 rounded-lg bg-surface-container text-on-surface font-label-sm text-label-sm flex items-center justify-center" id="speed-toggle">
+          1.0x
+        </button>
+</div>
+</div>
+<!-- Structured Rich Editorial Body -->
+<div class="w-full flex flex-col space-y-space-md leading-relaxed text-on-surface">
+<!-- Solemn Drop-cap intro -->
+<div class="font-body-lg text-body-lg text-on-surface">
+<p class="first-letter:font-display-lg-mobile first-letter:text-display-lg-mobile first-letter:font-bold first-letter:text-primary first-letter:mr-2 first-letter:float-left first-letter:leading-none">
+          Chers frères et sœurs en Christ, membres bien-aimés de nos assemblées réparties du Nord au Sud, de l’Est à l’Ouest de notre nation : que la grâce et la paix vous soient multipliées au nom souverain de notre Seigneur Jésus-Christ. À l'heure où les vents de théologies opportunistes et les compromis séculiers soufflent sur le corps ecclésial, nous sommes appelés à la vigilance la plus absolue.
+        </p>
+</div>
+<!-- Scripture Quote Highlight Box -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm my-space-md relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary-container"></div>
+<div class="pl-2 flex flex-col gap-space-xs">
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+<span class="font-label-sm text-label-sm tracking-wide uppercase">Parole inspirée</span>
+</div>
+<blockquote class="font-body-md-medium text-body-md-medium text-on-surface italic">
+            « Car il viendra un temps où les hommes ne supporteront pas la saine doctrine ; mais, ayant la démangeaison d'entendre des choses agréables, ils se donneront une foule de docteurs selon leurs propres désirs... Mais toi, sois sobre en toutes choses, supporte les souffrances, fais l'œuvre d'un évangéliste. »
+          </blockquote>
+<div class="flex items-center justify-between pt-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-bold">2 Timothée 4:1-5</span>
+<span class="font-label-sm text-label-sm text-primary">Cf. Actes 2:42</span>
+</div>
+</div>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold tracking-tight pt-2">
+        1. L'héritage d'une foi éprouvée par le feu
+      </h2>
+<p class="font-body-md text-body-md text-on-surface">
+        Depuis les fondements posés en 1961 par les pionniers de la Full Gospel Mission Cameroon, notre fidélité repose sur le triptyque apostolique immuable : l'inerrance des Saintes Écritures, le baptême dans le Saint-Esprit avec le feu de la sanctification, et l'urgence de l'évangélisation holistique de chaque village et cité camerounaise.
+      </p>
+<p class="font-body-md text-body-md text-on-surface">
+        Le message de l'Évangile n'est ni un produit marchandable ni un tremplin d'élévation personnelle factice. Lorsque les prédications substituent le salut par la repentance par un mirage d'abondance sans croix, elles vident le témoignage de l'Église de sa puissance rédemptrice.
+      </p>
+<!-- Intermediate Illustration Image -->
+<div class="w-full flex flex-col my-space-md">
+<div class="w-full h-48 rounded-xl overflow-hidden shadow-sm">
+<img class="w-full h-full object-cover" data-alt="An open Holy Bible resting on a carved dark wood African church pulpit, a warm amber desk lamp softly highlighting the scripture pages in French, blurred background of a welcoming prayer chapel with wooden pews" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCur6HG7Kjs-CBWPEjmAcRlJcHhL0Fj3FB4OQ6gtj70ijZIbXYCV0IlttpZHgHKCpOEbi_oLwJoH90AglfWc9I5-r5rl56woGWqTo8Y1Fhzp4pQmdVPXXucgdxGYX1Niu3gTt1uwyJrDI9cc6-Lod8-LRZojZ2iVZQ1qMDu80WCd2VqsGwTA5BATkBOwThPl8MJ0gEtzhDLFzo1wHWieBHcXZnfq0PYBMuWJljd8LA"/>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant italic mt-1 text-center">
+          L'Écriture seule : boussole inaltérable pour les générations montantes.
+        </span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold tracking-tight">
+        L'impératif de la sanctification dans le réveil national
+      </h3>
+<p class="font-body-md text-body-md text-on-surface">
+        Le Cameroun a soif de témoins intègres. Dans l'administration publique, dans les marchés, dans les universités et au foyer, le chrétien de la Mission du Plein Évangile est une lettre vivante de droiture morale. Nous ne pouvons espérer un réveil spirituel authentique sans une consécration pratique exempte de corruption et de duplicité.
+      </p>
+<!-- Prayer & Meditation Amber/Ember Box -->
+<div class="p-space-md rounded-xl bg-secondary-fixed text-on-secondary-fixed shadow-sm my-space-md flex flex-col gap-space-sm">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+</div>
+<span class="font-title-md text-title-md font-bold">Point de prière &amp; Méditation</span>
+</div>
+<p class="font-body-md text-body-md italic leading-relaxed">
+          « Père céleste, préserve mon cœur de toute séduction spirituelle. Fais de mon assemblée locale un rempart d'intégrité doctrinale. Ranime en notre nation le feu purificateur de la Pentecôte. Amen. »
+        </p>
+<div class="flex items-center gap-2 pt-1 font-label-sm text-label-sm text-secondary">
+<span class="material-symbols-outlined text-[15px]">auto_stories</span>
+<span>Méditation suggérée : Psaumes 119:105-112</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface">
+        Que chaque pasteur de district, chaque diacre, chaque moniteur de l'école du dimanche veille sur le troupeau confié avec amour et fermeté. Demeurons inébranlables jusqu'à l'avènement glorieux de notre Maître.
+      </p>
+<div class="pt-2 text-right">
+<p class="font-title-md text-title-md text-on-surface font-bold">Rév. Dr. Ndifon</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Surintendance Générale, FGM Cameroun</p>
+</div>
+</div>
+<!-- Spiritual Reactions Bar -->
+<div class="w-full mt-space-lg p-space-md rounded-xl bg-surface-container-low shadow-sm flex flex-col gap-space-sm">
+<span class="font-label-md text-label-md text-on-surface text-center font-medium">Participer en esprit avec l'assemblée</span>
+<div class="flex items-center justify-around gap-2 pt-1">
+<button class="reaction-btn flex flex-col items-center gap-1 p-2 rounded-lg bg-surface-container-lowest text-on-surface shadow-sm active:scale-95 transition-all flex-1" data-type="amen">
+<span class="material-symbols-outlined text-[22px] text-primary" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="font-label-sm text-label-sm">Amên (<span class="reaction-count">842</span>)</span>
+</button>
+<button class="reaction-btn flex flex-col items-center gap-1 p-2 rounded-lg bg-surface-container-lowest text-on-surface shadow-sm active:scale-95 transition-all flex-1" data-type="priere">
+<span class="material-symbols-outlined text-[22px] text-secondary" style="font-variation-settings: 'FILL' 1;">volunteer_activism</span>
+<span class="font-label-sm text-label-sm">Prière (<span class="reaction-count">319</span>)</span>
+</button>
+<button class="reaction-btn flex flex-col items-center gap-1 p-2 rounded-lg bg-surface-container-lowest text-on-surface shadow-sm active:scale-95 transition-all flex-1" data-type="fortifie">
+<span class="material-symbols-outlined text-[22px] text-tertiary-container" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<span class="font-label-sm text-label-sm">Fortifié (<span class="reaction-count">478</span>)</span>
+</button>
+</div>
+</div>
+<!-- Engagement & Distribution Action Buttons -->
+<div class="w-full mt-space-md flex flex-col gap-space-sm">
+<a class="w-full h-12 rounded-full bg-tertiary-container text-on-tertiary font-label-md text-label-md flex items-center justify-center gap-2 shadow-sm active:scale-98 transition-transform" href="https://api.whatsapp.com/send?text=Je%20partage%20avec%20toi%20cette%20exhortation%20pastorale%20essentielle%20de%20la%20Full%20Gospel%20Mission%20Cameroun%20:%20Demeurer%20in%C3%A9branlables%20dans%20la%20saine%20doctrine" target="_blank">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+        Partager sur WhatsApp avec ma cellule
+      </a>
+<button class="w-full h-12 rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md flex items-center justify-center gap-2 shadow-sm active:scale-98 transition-transform" id="download-pdf-btn">
+<span class="material-symbols-outlined text-[20px] text-primary">download</span>
+        Télécharger le PDF d'étude officiel (A4)
+      </button>
+</div>
+<!-- Related Publications / Enseignements Liés -->
+<div class="w-full mt-space-xl flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<h3 class="font-title-md text-title-md text-on-surface font-bold">Enseignements liés</h3>
+<a class="font-label-sm text-label-sm text-primary flex items-center" data-path="publications" href="#">
+          Voir tout
+          <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</a>
+</div>
+<div class="flex flex-col gap-space-sm">
+<!-- Compact Suggested Card 1 -->
+<a class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex items-center gap-space-md active:scale-98 transition-transform" href="#">
+<img class="w-16 h-16 rounded-lg object-cover flex-shrink-0" data-alt="Close up photo of anointing oil bottle next to an olive branch on communion table, soft daylight, warm Pentecostal setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTCei7JnxcxgXwBZsHIe1Fd2Vdceji9aJ_oXqEPvnudjAKlm4CZPb6rkzdwlmTc-m1ngyUlH450z7YtrzBevwAeuKp-fKfXkttIs6yVhLetuE92dT6IjReKAxZRTp24K7MGnDJsUSTLsGotNaxv1tE1WS0SNy_LZi9eRrXc900aRbdgMVeeeGiZ4_Db6AL9iVVNW5QVthUJ7ybKH0R7F3aMsRGhutihfLpsZeZVmw"/>
+<div class="flex flex-col min-w-0 flex-1">
+<span class="font-label-sm text-label-sm text-secondary truncate">Étude doctrinale</span>
+<span class="font-body-md-medium text-body-md-medium text-on-surface line-clamp-2 leading-tight">
+              Le baptême du Saint-Esprit et les dons spirituels aujourd'hui
+            </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1">Pasteur Thomas E. • 8 min</span>
+</div>
+</a>
+<!-- Compact Suggested Card 2 -->
+<a class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex items-center gap-space-md active:scale-98 transition-transform" href="#">
+<img class="w-16 h-16 rounded-lg object-cover flex-shrink-0" data-alt="Congregation members holding hands in circle of prayer during prayer summit at Full Gospel Mission Cameroon, warm African communal spiritual moment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAt4bcEUDwtFEvtCwd-8stypV5TXrlo840brNGDbp2_rSDDKMEFjqmHKfMEr8RKKkzKEMI-gbC_aG5GzGCXHL61LOUrlfBlTsFHHZcF2g-nC85BXBfvF2c-AINlfzqweS7fQaakj8QhKgjPk1ac6ZEgQIskiQBuidvb955-MvwPdrZP6UZOMNaM0i5a87Jt_qKAsCspEaA9qKMDYc-YKDMJYF-cJkJQIglS0_VDIjo"/>
+<div class="flex flex-col min-w-0 flex-1">
+<span class="font-label-sm text-label-sm text-primary truncate">Vie de l'Église</span>
+<span class="font-body-md-medium text-body-md-medium text-on-surface line-clamp-2 leading-tight">
+              L'unité fraternelle : pilier inébranlable de la mission
+            </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1">Conseil National • 5 min</span>
+</div>
+</a>
+</div>
+</div>
+<!-- Church Finder Call To Action Banner -->
+<div class="w-full mt-space-lg mb-space-lg p-space-md rounded-xl bg-surface-container-high shadow-sm flex items-center justify-between gap-space-md">
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface font-bold">Vivre ce message en communauté</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Trouvez l'assemblée la plus proche de votre quartier.</span>
+</div>
+<a class="h-11 px-4 rounded-full bg-primary text-on-primary font-label-md text-label-md flex items-center justify-center flex-shrink-0 shadow-sm active:scale-95 transition-transform" data-path="assemblees" href="#">
+        Localiser
+      </a>
+</div>
+</article>
+</div>
+<script>
+  // Quick micro-interactions for Article screen
+  (function() {
+    const bookmarkBtn = document.getElementById('btn-bookmark');
+    const bookmarkIcon = document.getElementById('bookmark-icon');
+    let isBookmarked = false;
+
+    if (bookmarkBtn && bookmarkIcon) {
+      bookmarkBtn.addEventListener('click', function() {
+        isBookmarked = !isBookmarked;
+        if (isBookmarked) {
+          bookmarkIcon.style.fontVariationSettings = "'FILL' 1";
+          bookmarkBtn.classList.add('text-primary');
+        } else {
+          bookmarkIcon.style.fontVariationSettings = "'FILL' 0";
+          bookmarkBtn.classList.remove('text-primary');
+        }
+      });
+    }
+
+    const shareBtn = document.getElementById('btn-share');
+    const shareDrawer = document.getElementById('share-drawer');
+    const closeShare = document.getElementById('close-share');
+
+    if (shareBtn && shareDrawer) {
+      shareBtn.addEventListener('click', function() {
+        shareDrawer.classList.toggle('hidden');
+      });
+    }
+
+    if (closeShare && shareDrawer) {
+      closeShare.addEventListener('click', function() {
+        shareDrawer.classList.add('hidden');
+      });
+    }
+
+    const copyBtn = document.getElementById('copy-link-btn');
+    const copyText = document.getElementById('copy-text');
+    if (copyBtn && copyText) {
+      copyBtn.addEventListener('click', function() {
+        navigator.clipboard?.writeText(window.location.href);
+        const original = copyText.textContent;
+        copyText.textContent = 'Copié !';
+        setTimeout(() => {
+          copyText.textContent = original;
+        }, 2000);
+      });
+    }
+
+    // Audio Play Toggle Emulation
+    const playBtn = document.getElementById('audio-play-toggle');
+    const audioIcon = document.getElementById('audio-icon');
+    let isPlaying = false;
+
+    if (playBtn && audioIcon) {
+      playBtn.addEventListener('click', function() {
+        isPlaying = !isPlaying;
+        audioIcon.textContent = isPlaying ? 'pause' : 'play_arrow';
+      });
+    }
+
+    // Audio Speed Toggle
+    const speedBtn = document.getElementById('speed-toggle');
+    const speeds = ['1.0x', '1.25x', '1.5x'];
+    let speedIdx = 0;
+    if (speedBtn) {
+      speedBtn.addEventListener('click', function() {
+        speedIdx = (speedIdx + 1) % speeds.length;
+        speedBtn.textContent = speeds[speedIdx];
+      });
+    }
+
+    // Reactions click counters
+    const reactionButtons = document.querySelectorAll('.reaction-btn');
+    reactionButtons.forEach(btn => {
+      btn.addEventListener('click', function() {
+        const countSpan = this.querySelector('.reaction-count');
+        if (countSpan && !this.dataset.reacted) {
+          let count = parseInt(countSpan.textContent.replace(/\s/g, ''), 10);
+          countSpan.textContent = count + 1;
+          this.dataset.reacted = "true";
+          this.classList.add('bg-primary-fixed');
+        }
+      });
+    });
+
+    // PDF Download Feedback
+    const pdfBtn = document.getElementById('download-pdf-btn');
+    if (pdfBtn) {
+      pdfBtn.addEventListener('click', function() {
+        const originalContent = pdfBtn.innerHTML;
+        pdfBtn.innerHTML = '<span class="material-symbols-outlined text-[20px] text-tertiary">check_circle</span> Téléchargement initié...';
+        setTimeout(() => {
+          pdfBtn.innerHTML = originalContent;
+        }, 2500);
+      });
+    }
+  })();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.05)]" data-active-classes="text-primary font-body-md-medium"><div class="flex justify-around items-center h-16 px-space-xs"><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] text-on-surface-variant transition-colors group" data-path="accueil" href="#"><span class="material-symbols-outlined text-[22px] group-hover:text-primary transition-colors">home</span><span class="font-label-sm text-label-sm tracking-tight mt-0.5">Accueil</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] text-on-surface-variant transition-colors group" data-path="assemblees" href="#"><span class="material-symbols-outlined text-[22px] group-hover:text-primary transition-colors">church</span><span class="font-label-sm text-label-sm tracking-tight mt-0.5">Assemblées</span></a><a aria-current="page" class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] transition-colors group text-primary font-body-md-medium" data-path="publications" href="#"><span class="material-symbols-outlined text-[22px] group-hover:text-primary transition-colors">menu_book</span><span class="font-label-sm text-label-sm tracking-tight mt-0.5">Publications</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] text-on-surface-variant transition-colors group" data-path="dons" href="#"><span class="material-symbols-outlined text-[22px] group-hover:text-primary transition-colors">volunteer_activism</span><span class="font-label-sm text-label-sm tracking-tight mt-0.5">Dons</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] text-on-surface-variant transition-colors group" data-path="connexion" href="#"><span class="material-symbols-outlined text-[22px] group-hover:text-primary transition-colors">account_circle</span><span class="font-label-sm text-label-sm tracking-tight mt-0.5">Connexion</span></a></div></nav></body></html>

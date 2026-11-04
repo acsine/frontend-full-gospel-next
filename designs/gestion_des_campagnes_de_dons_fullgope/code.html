@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+
+<html lang="fr"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}.route-loader{position:fixed;top:0;left:0;height:3px;width:68%;background:#C8102E;z-index:9999;box-shadow:0 0 10px rgba(200,16,46,0.5);animation:pulse-bar 2s infinite ease-in-out;}@keyframes pulse-bar{0%{width:20%;opacity:0.8;}50%{width:85%;opacity:1;}100%{width:68%;opacity:0.9;}}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"on-primary":"#ffffff","surface-bright":"#fcf8fe","primary-fixed-dim":"#ffb3b1","surface-container-highest":"#e4e1e7","surface-variant":"#e4e1e7","secondary-fixed-dim":"#ffb956","on-error":"#ffffff","surface-dim":"#dcd9df","secondary-container":"#feb64e","on-secondary-container":"#714800","outline":"#906f6e","surface-tint":"#bf0229","on-tertiary":"#ffffff","inverse-on-surface":"#f3eff6","tertiary":"#00592b","on-secondary-fixed":"#2a1800","outline-variant":"#e5bdbb","on-tertiary-container":"#86faa7","on-error-container":"#93000a","on-primary-fixed-variant":"#92001c","secondary":"#835400","primary":"#9e001f","on-surface-variant":"#5c403f","surface-container":"#f0edf3","error":"#ba1a1a","on-background":"#1b1b1f","primary-container":"#c8102e","primary-fixed":"#ffdad8","surface-container-high":"#eae7ed","background":"#fcf8fe","error-container":"#ffdad6","tertiary-container":"#00743a","on-tertiary-fixed-variant":"#005228","on-primary-fixed":"#410007","on-secondary":"#ffffff","on-secondary-fixed-variant":"#643f00","tertiary-fixed":"#86faa7","on-tertiary-fixed":"#00210c","inverse-surface":"#303034","surface-container-low":"#f6f2f8","surface-container-lowest":"#ffffff","surface":"#fcf8fe","on-surface":"#1b1b1f","inverse-primary":"#ffb3b1","secondary-fixed":"#ffddb5","tertiary-fixed-dim":"#6add8d","on-primary-container":"#ffdad8"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-sm":"0.5rem","margin-desktop":"3rem","gutter":"1rem","space-lg":"1.5rem","space-xl":"2.5rem","space-xs":"0.25rem","gutter-desktop":"2rem","space-md":"1rem","margin":"1rem","margin-tablet":"2rem","gutter-tablet":"1.5rem"},"fontFamily":{"display-lg-mobile":["Plus Jakarta Sans"],"currency-display":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"label-md":["Inter"],"body-md":["Inter"],"headline-lg":["Plus Jakarta Sans"],"body-lg":["Inter"],"title-md":["Plus Jakarta Sans"],"body-md-medium":["Inter"],"label-sm":["Inter"],"body-sm":["Inter"],"headline-lg-mobile":["Plus Jakarta Sans"],"display-lg":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"]},"fontSize":{"display-lg-mobile":["34px",{"lineHeight":"42px","fontWeight":"800"}],"currency-display":["28px",{"lineHeight":"36px","fontWeight":"700"}],"headline-sm":["20px",{"lineHeight":"28px","fontWeight":"600"}],"label-md":["14px",{"lineHeight":"20px","fontWeight":"500"}],"body-md":["16px",{"lineHeight":"24px","fontWeight":"400"}],"headline-lg":["32px",{"lineHeight":"40px","fontWeight":"700"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"title-md":["18px",{"lineHeight":"26px","fontWeight":"600"}],"body-md-medium":["16px",{"lineHeight":"24px","fontWeight":"500"}],"label-sm":["12px",{"lineHeight":"16px","fontWeight":"600"}],"body-sm":["14px",{"lineHeight":"20px","fontWeight":"400"}],"headline-lg-mobile":["26px",{"lineHeight":"34px","fontWeight":"700"}],"display-lg":["48px",{"lineHeight":"56px","fontWeight":"800"}],"headline-md":["24px",{"lineHeight":"32px","fontWeight":"700"}]}}}}</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><div class="route-loader"></div><aside class="fixed left-0 top-0 h-full w-72 bg-inverse-surface text-inverse-on-surface z-50 flex flex-col justify-between hidden md:flex"><div class="flex flex-col flex-1 overflow-y-auto"><div class="px-space-md py-space-md flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-10 h-10 rounded-xl bg-primary-container flex items-center justify-center text-on-primary font-headline-sm text-headline-sm">FG</div><div><span class="font-headline-sm text-headline-sm tracking-tight text-surface-container-lowest block">FULLGOPE</span><span class="font-label-sm text-label-sm text-surface-variant flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-tertiary-fixed"></span>Connecté • Tsinga</span></div></div><button class="w-8 h-8 rounded-lg flex items-center justify-center text-surface-variant hover:text-surface-container-lowest transition-colors"><span class="material-symbols-outlined text-[20px]">dock_to_right</span></button></div><div class="px-space-md py-space-xs"><div class="bg-inverse-on-surface/5 rounded-lg px-space-sm py-1.5"><p class="font-label-sm text-label-sm text-secondary-fixed italic leading-tight">« No Other Christ, No Other Gospel »</p><p class="font-label-sm text-[10px] text-surface-dim uppercase tracking-wider mt-0.5">Mission du Plein Évangile (1961)</p></div></div><nav class="flex-1 px-space-sm py-space-md space-y-space-md" data-active-classes="bg-primary-container text-on-primary font-body-md-medium rounded-xl"><div class="space-y-1"><span class="px-space-sm font-label-sm text-label-sm uppercase tracking-wider text-surface-dim block mb-1">Principal</span><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="accueil" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">grid_view</span><span class="font-body-sm text-body-sm">Accueil</span></div></a></div><div class="space-y-1"><span class="px-space-sm font-label-sm text-label-sm uppercase tracking-wider text-surface-dim block mb-1">Communauté</span><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="membres" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">groups</span><span class="font-body-sm text-body-sm">Membres</span></div><span class="px-2 py-0.5 rounded-full font-label-sm text-[11px] bg-inverse-on-surface/15 text-surface-bright">1 450</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="departements" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">diversity_3</span><span class="font-body-sm text-body-sm">Départements</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="organisation" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">account_tree</span><span class="font-body-sm text-body-sm">Organisation</span></div></a></div><div class="space-y-1"><span class="px-space-sm font-label-sm text-label-sm uppercase tracking-wider text-surface-dim block mb-1">Ministère &amp; Activités</span><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="rapports" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">assignment</span><span class="font-body-sm text-body-sm">Rapports</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="publications" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">menu_book</span><span class="font-body-sm text-body-sm">Publications</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="evenements-et-plannings" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">calendar_month</span><span class="font-body-sm text-body-sm">Événements &amp; Plannings</span></div><span class="px-2 py-0.5 rounded-full font-label-sm text-[11px] bg-secondary-container text-on-secondary-container font-bold">3</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="reseau-social" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">hub</span><span class="font-body-sm text-body-sm">Réseau social</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="messagerie" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">chat_bubble</span><span class="font-body-sm text-body-sm">Messagerie</span></div><span class="px-2 py-0.5 rounded-full font-label-sm text-[11px] bg-primary text-on-primary font-bold">12</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="mediatheque" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">video_library</span><span class="font-body-sm text-body-sm">Médiathèque</span></div></a></div><div class="space-y-1"><span class="px-space-sm font-label-sm text-label-sm uppercase tracking-wider text-surface-dim block mb-1">Intendance &amp; Gouvernance</span><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="finance" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">payments</span><span class="font-body-sm text-body-sm">Finance</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="dons-et-campagnes" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">volunteer_activism</span><span class="font-body-sm text-body-sm">Dons &amp; Campagnes</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="administration" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">admin_panel_settings</span><span class="font-body-sm text-body-sm">Administration</span></div></a></div></nav></div><div class="p-space-md bg-inverse-on-surface/5 flex items-center justify-between"><div class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-tertiary-fixed-dim"></span><span class="font-label-sm text-label-sm text-surface-variant">Serveur Yaoundé • v2.4</span></div><button class="text-surface-dim hover:text-surface-container-lowest transition-colors"><span class="material-symbols-outlined text-[18px]">help</span></button></div></aside><div class="md:pl-72"><header class="fixed top-0 left-0 md:left-72 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 px-space-md flex items-center justify-between"><div class="flex items-center gap-space-sm flex-1 max-w-xl"><button class="md:hidden w-10 h-10 rounded-xl flex items-center justify-center text-on-surface hover:bg-surface-container"><span class="material-symbols-outlined">menu</span></button><div class="relative flex-1 hidden sm:block"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">search</span><input class="w-full h-10 pl-10 pr-20 bg-surface-container-low rounded-xl font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant/70 focus:outline-none focus:bg-surface-container-lowest" placeholder="Rechercher fidèles, assemblées, reçus MoMo/Orange..." type="text"/><kbd class="absolute right-2.5 top-1/2 -translate-y-1/2 px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-[11px]">&amp;#8984;K</kbd></div><div class="hidden lg:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface"><span class="material-symbols-outlined text-primary text-[18px]">church</span><span class="font-body-md-medium text-body-md-medium">Pasteur Titulaire</span><span class="text-on-surface-variant">•</span><span class="text-on-surface-variant">District Centre (Temple Tsinga)</span></div></div><div class="flex items-center gap-space-sm"><div class="flex items-center gap-1 p-1 bg-surface-container-low rounded-full"><button class="px-2.5 py-1 rounded-full font-label-sm text-label-sm font-bold bg-inverse-surface text-surface-container-lowest">FR</button><button class="px-2.5 py-1 rounded-full font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface">EN</button></div><button class="h-9 px-2.5 rounded-xl bg-surface-container text-on-surface-variant hover:text-on-surface flex items-center gap-1.5 font-label-sm text-label-sm" title="Basculer l'état de chargement skeleton"><span class="material-symbols-outlined text-[18px] text-secondary">hourglass_empty</span><span class="hidden xl:inline">Skeleton</span></button><button class="relative w-10 h-10 rounded-xl flex items-center justify-center text-on-surface hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2 right-2 w-2.5 h-2.5 rounded-full bg-primary-container ring-2 ring-surface-container-lowest"></span></button><div class="flex items-center gap-2 pl-2 border-l border-surface-container-high"><div class="relative"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-tertiary-container ring-2 ring-surface-container-lowest"></span></div><div class="hidden sm:block text-left"><span class="font-label-md text-label-md text-on-surface block leading-tight">Rev. N. Samuel</span><span class="font-label-sm text-label-sm text-on-surface-variant block leading-tight">District Tsinga</span></div><span class="material-symbols-outlined text-on-surface-variant text-[18px]">arrow_drop_down</span></div></div></header><main class="w-full pt-16 bg-surface min-h-screen px-space-md md:px-gutter-desktop py-space-lg pb-24 md:pb-space-lg"><div class="flex flex-col w-full space-y-space-lg">
+<!-- Fil d'Ariane & En-tête Principal -->
+<div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-space-md">
+<div class="space-y-1">
+<nav aria-label="Breadcrumb" class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm">
+<a class="hover:text-primary transition-colors flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[16px]">church</span>
+<span>Accueil</span>
+</a>
+<span class="text-surface-dim">/</span>
+<span class="text-on-surface-variant font-body-md-medium">Intendance &amp; Dons</span>
+<span class="text-surface-dim">/</span>
+<span class="text-primary font-headline-sm text-label-sm font-bold tracking-tight">Gestion des Campagnes</span>
+</nav>
+<div class="flex items-center gap-3">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+          Campagnes de Dons &amp; Bâtisseurs
+        </h1>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-tertiary/10 text-tertiary font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>
+          Exercice 2025 Actif
+        </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-2xl">
+        Coordination financière canonique, traçabilité des collectes missionnaires et intendance transparente pour la Mission du Plein Évangile au Cameroun.
+      </p>
+</div>
+<!-- Actions Rapides -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<button class="inline-flex items-center justify-center gap-2 h-12 px-6 rounded-full bg-primary-container text-on-primary font-title-md text-label-md font-bold shadow-md hover:bg-primary transition-transform active:scale-95 cursor-pointer" onclick="document.getElementById('modal-new-campaign').classList.remove('hidden')">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+<span>Lancer une Nouvelle Campagne</span>
+</button>
+<button class="inline-flex items-center justify-center gap-2 h-12 px-4 rounded-xl bg-surface-container-high text-on-surface hover:bg-surface-container-highest transition-colors font-label-md text-label-md">
+<span class="material-symbols-outlined text-[20px]">file_download</span>
+<span>Rapport Consolidé (PDF)</span>
+</button>
+</div>
+</div>
+<!-- KPI Synthèse Consolidée -->
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-space-md">
+<!-- Total Collecté -->
+<div class="relative overflow-hidden rounded-2xl bg-surface-container-lowest p-space-lg shadow-sm">
+<div class="absolute -right-4 -bottom-4 w-24 h-24 rounded-full bg-primary-fixed/30 pointer-events-none"></div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-bold">Total Collecté Année</span>
+<div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">payments</span>
+</div>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight">42 850 000</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-semibold">XAF</span>
+</div>
+<div class="mt-3 flex items-center gap-2 font-label-sm text-label-sm">
+<span class="inline-flex items-center text-tertiary font-bold gap-0.5">
+<span class="material-symbols-outlined text-[16px]">trending_up</span> +14.2%
+        </span>
+<span class="text-on-surface-variant">vs même période 2024</span>
+</div>
+</div>
+<!-- Objectif Consolidé -->
+<div class="relative overflow-hidden rounded-2xl bg-surface-container-lowest p-space-lg shadow-sm">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-bold">Objectif Consolidé</span>
+<div class="w-10 h-10 rounded-xl bg-secondary-container/20 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[22px]">flag_circle</span>
+</div>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight">60 000 000</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-semibold">XAF</span>
+</div>
+<div class="mt-3 flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-primary font-bold">71.4% complété</span>
+<div class="w-28 h-2 rounded-full bg-surface-container-high overflow-hidden">
+<div class="h-full bg-primary-container rounded-full" style="width: 71.4%"></div>
+</div>
+</div>
+</div>
+<!-- Campagnes Actives -->
+<div class="relative overflow-hidden rounded-2xl bg-surface-container-lowest p-space-lg shadow-sm">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-bold">Campagnes En Cours</span>
+<div class="w-10 h-10 rounded-xl bg-tertiary-fixed/30 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[22px]">campaign</span>
+</div>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight">3</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">actives simultanées</span>
+</div>
+<div class="mt-3 flex items-center gap-1.5 font-label-sm text-label-sm text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span>1 clôturée avec succès ce trimestre</span>
+</div>
+</div>
+<!-- Donateurs Uniques -->
+<div class="relative overflow-hidden rounded-2xl bg-surface-container-lowest p-space-lg shadow-sm">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-bold">Contributeurs Uniques</span>
+<div class="w-10 h-10 rounded-xl bg-surface-container-highest flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[22px]">volunteer_activism</span>
+</div>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight">1 420</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">fidèles engagés</span>
+</div>
+<div class="mt-3 flex items-center gap-2 font-label-sm text-label-sm text-on-surface-variant">
+<span class="text-tertiary font-bold">89.4%</span>
+<span>via Mobile Money (MTN &amp; Orange)</span>
+</div>
+</div>
+</div>
+<!-- Barre de Filtres & Recherche -->
+<div class="rounded-2xl bg-surface-container-lowest p-space-md shadow-sm space-y-space-md">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<!-- Filtres Statut -->
+<div class="flex items-center gap-1.5 overflow-x-auto pb-1 lg:pb-0" id="filter-status-group">
+<button class="filter-status-btn active px-4 py-2 rounded-full text-label-sm font-semibold bg-primary-container text-on-primary shadow-sm whitespace-nowrap">
+          Toutes (4)
+        </button>
+<button class="filter-status-btn px-4 py-2 rounded-full text-label-sm font-semibold bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface whitespace-nowrap transition-colors">
+          En cours / Actives (3)
+        </button>
+<button class="filter-status-btn px-4 py-2 rounded-full text-label-sm font-semibold bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface whitespace-nowrap transition-colors">
+          Clôturées (1)
+        </button>
+<button class="filter-status-btn px-4 py-2 rounded-full text-label-sm font-semibold bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface whitespace-nowrap transition-colors">
+          Brouillons (0)
+        </button>
+</div>
+<!-- Filtres Portée Territoriale & Tri -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<div class="flex items-center gap-2 bg-surface-container-low px-3 py-1.5 rounded-xl">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">travel_explore</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Portée :</span>
+<select class="bg-transparent font-label-sm text-label-sm text-on-surface font-semibold focus:outline-none cursor-pointer">
+<option value="all">Toutes portées</option>
+<option value="nationale">Nationale (Convention, Siège)</option>
+<option value="regionale">Régionale (Districts Réunis)</option>
+<option value="district">District Centre / Littoral</option>
+<option value="locale">Assemblée Locale (Tsinga)</option>
+</select>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-low px-3 py-1.5 rounded-xl">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">sort</span>
+<select class="bg-transparent font-label-sm text-label-sm text-on-surface font-semibold focus:outline-none cursor-pointer">
+<option>Plus récentes en premier</option>
+<option>Objectif % (croissant)</option>
+<option>Montant collecté le plus élevé</option>
+<option>Échéance imminente</option>
+</select>
+</div>
+</div>
+</div>
+</div>
+<!-- Cartes de Campagnes Principales (Grille 2x2) -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-space-lg">
+<!-- Campagne 1 : Sono Tsinga (Sélectionnée par défaut pour Analytics) -->
+<div class="group relative rounded-2xl bg-surface-container-lowest overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+<div class="relative h-48 w-full bg-cover bg-center overflow-hidden" data-alt="Intérieur d'un temple moderne de la Mission du Plein Évangile à Tsinga Yaoundé, bancs d'assemblée en bois chaleureux, pupitre de prédication avec micro, consoles de sonorisation numériques professionnelles flambant neuves et baffles suspendus, lumière douce chaleureuse baignée de rouge bordeaux et doré, atmosphère chrétienne recueillie." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDafGbdPFFsu-AGO0RjWyw85sFVfICEpmcSqV-3Wzx9rMJDojuZhoM_2pWXrdZDaeajVcTvu6JUwBlDjYZy18TaWYcmRnQZ_3u2JiotowBvVY-TqWXxgxsGfwA6bxwkjhPZT1wNuDF40zsHzZVkLqJKytu9b5ZF6KLcccxSk17GWUqU1-1QxklZ6HK8bCVczMe0K23DXIg8F7ih94GTkMqBcGkfLCpPwkzMh-EqBPA')">
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/90 via-inverse-surface/30 to-transparent"></div>
+<div class="absolute top-3 left-3 flex flex-wrap gap-2">
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-primary-container text-on-primary font-label-sm text-[11px] font-bold shadow">
+<span class="w-1.5 h-1.5 rounded-full bg-surface-container-lowest animate-ping"></span>
+            ACTIVE
+          </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-on-surface font-label-sm text-[11px] font-semibold">
+<span class="material-symbols-outlined text-[14px] text-primary">church</span>
+            Assemblée Locale (Tsinga)
+          </span>
+</div>
+<div class="absolute top-3 right-3">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-inverse-surface/80 backdrop-blur-md text-surface-container-lowest font-label-sm text-[11px]">
+<span class="material-symbols-outlined text-[14px] text-secondary-fixed">schedule</span>
+            28 jours restants
+          </span>
+</div>
+<div class="absolute bottom-3 left-4 right-4">
+<h2 class="font-title-md text-title-md font-bold text-surface-container-lowest leading-tight">
+            Acquisition Sonorisation Numérique &amp; Acoustique
+          </h2>
+<p class="font-body-sm text-[13px] text-surface-variant line-clamp-1 mt-0.5">
+            Modernisation de la régie du Temple de Tsinga pour la louange et retransmission multicanale.
+          </p>
+</div>
+</div>
+<div class="p-space-lg flex-1 flex flex-col justify-between space-y-space-md">
+<!-- Données Chiffrées -->
+<div>
+<div class="flex items-baseline justify-between mb-1.5">
+<div>
+<span class="font-currency-display text-headline-sm font-bold text-primary">8 750 000</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-bold ml-1">XAF</span>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Objectif:</span>
+<span class="font-label-md text-label-md font-bold text-on-surface ml-1">10 000 000 XAF</span>
+</div>
+</div>
+<!-- Jauge -->
+<div class="relative w-full h-3 rounded-full bg-surface-container-high overflow-hidden">
+<div class="h-full bg-primary-container rounded-full transition-all duration-1000" style="width: 87.5%"></div>
+</div>
+<div class="flex items-center justify-between mt-1.5 font-label-sm text-label-sm">
+<span class="font-bold text-primary">87.5% collectés</span>
+<span class="text-on-surface-variant">342 fidèles contributeurs</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2 text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+            15 Fév 2025 — 30 Avr 2025
+          </span>
+<span class="inline-flex items-center gap-1 text-tertiary font-semibold">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+            Compte Afriland &amp; MoMo
+          </span>
+</div>
+<!-- Boutons d'Action -->
+<div class="pt-2 flex items-center gap-2">
+<button class="flex-1 h-11 px-4 rounded-xl bg-primary-container text-on-primary font-label-md text-label-md font-bold flex items-center justify-center gap-2 shadow-sm hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">insights</span>
+<span>Gérer &amp; Analytics</span>
+</button>
+<button class="h-11 px-3 rounded-xl bg-surface-container-high text-on-surface hover:bg-surface-container-highest transition-colors flex items-center justify-center" title="Copier le lien public de don">
+<span class="material-symbols-outlined text-[20px]">share</span>
+</button>
+<button class="h-11 px-3 rounded-xl bg-surface-container-high text-on-surface hover:bg-surface-container-highest transition-colors flex items-center justify-center" title="Options de clôture ou reçu">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Campagne 2 : Bafoussam (Régionale) -->
+<div class="group relative rounded-2xl bg-surface-container-lowest overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+<div class="relative h-48 w-full bg-cover bg-center overflow-hidden" data-alt="Chantier architectural de construction d'une grande chapelle d'église pentecôtiste contemporaine à Bafoussam Région de l'Ouest Cameroun, structure en briques de terre cuite et piliers en béton, toiture évasée, collines verdoyantes de l'Ouest en arrière-plan, ouvriers chrétiens et ingénieurs examinant les plans sur site au soleil levant." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBBGMtqXrtpm1TIRSa-B8htk_CiGI-DVtVomXoSfwWdi_pmEjZFj7JC95SqsUROpu736ybbbP4GYBu06zNB5iU3cll8lvoHEKCMZyVx1iWs9Gou5wJMPugCU6d1jxp_ts2UqjHhW4lxuCa3Nm89qm74Df7t6-V1o5DV7BwGT5nRYRMsBcZljzSgXe4rHYCctoUsMV9-oSS53iMit7CDOoqBvDbS31m7O_LPLTxpWu0')">
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/90 via-inverse-surface/30 to-transparent"></div>
+<div class="absolute top-3 left-3 flex flex-wrap gap-2">
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-primary-container text-on-primary font-label-sm text-[11px] font-bold shadow">
+            ACTIVE
+          </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-on-surface font-label-sm text-[11px] font-semibold">
+<span class="material-symbols-outlined text-[14px] text-secondary">domain</span>
+            Régionale (Ouest Bafoussam)
+          </span>
+</div>
+<div class="absolute top-3 right-3">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-inverse-surface/80 backdrop-blur-md text-surface-container-lowest font-label-sm text-[11px]">
+<span class="material-symbols-outlined text-[14px] text-secondary-fixed">schedule</span>
+            88 jours restants
+          </span>
+</div>
+<div class="absolute bottom-3 left-4 right-4">
+<h2 class="font-title-md text-title-md font-bold text-surface-container-lowest leading-tight">
+            Construction de la Chapelle Régionale Bafoussam
+          </h2>
+<p class="font-body-sm text-[13px] text-surface-variant line-clamp-1 mt-0.5">
+            Érection du sanctuaire de 1 200 places assises pour le rayonnement de l'Évangile à l'Ouest.
+          </p>
+</div>
+</div>
+<div class="p-space-lg flex-1 flex flex-col justify-between space-y-space-md">
+<div>
+<div class="flex items-baseline justify-between mb-1.5">
+<div>
+<span class="font-currency-display text-headline-sm font-bold text-primary">18 400 000</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-bold ml-1">XAF</span>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Objectif:</span>
+<span class="font-label-md text-label-md font-bold text-on-surface ml-1">25 000 000 XAF</span>
+</div>
+</div>
+<div class="relative w-full h-3 rounded-full bg-surface-container-high overflow-hidden">
+<div class="h-full bg-secondary rounded-full transition-all duration-1000" style="width: 73.6%"></div>
+</div>
+<div class="flex items-center justify-between mt-1.5 font-label-sm text-label-sm">
+<span class="font-bold text-secondary">73.6% complétés</span>
+<span class="text-on-surface-variant">580 donateurs &amp; engagements</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2 text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+            01 Jan 2025 — 30 Juin 2025
+          </span>
+<span class="inline-flex items-center gap-1 text-tertiary font-semibold">
+<span class="material-symbols-outlined text-[16px]">account_balance</span>
+            Sous-compte Région Ouest
+          </span>
+</div>
+<div class="pt-2 flex items-center gap-2">
+<button class="flex-1 h-11 px-4 rounded-xl bg-surface-container-high text-on-surface font-label-md text-label-md font-bold flex items-center justify-center gap-2 hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-[18px]">insights</span>
+<span>Gérer &amp; Analytics</span>
+</button>
+<button class="h-11 px-3 rounded-xl bg-surface-container-high text-on-surface hover:bg-surface-container-highest transition-colors flex items-center justify-center" title="Copier le lien public">
+<span class="material-symbols-outlined text-[20px]">share</span>
+</button>
+<button class="h-11 px-3 rounded-xl bg-surface-container-high text-on-surface hover:bg-surface-container-highest transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Campagne 3 : Convention Nationale Pentecôte (Nationale) -->
+<div class="group relative rounded-2xl bg-surface-container-lowest overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+<div class="relative h-48 w-full bg-cover bg-center overflow-hidden" data-alt="Grande foule de croyants africains réunis pour une convention chrétienne nationale de la Full Gospel Mission Cameroun, estrade avec chorale en toges rouges et blanches, pupitre solennel avec Bible ouverte, drapeaux et banderole 'Pentecôte 2025 - Le Réveil Apostolique', ambiance spirituelle éclatante et festive, Yaoundé." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBiLugtgn0FaQdV7IXYlwHJJFNQ5_ZUStvK9kTsI60wExPyPyYiN13O6RGANYtKwP4AUbcvsQKF-59LDC8itJbb0TixK9nmBHLpy58XlyEQUvRdMmmqDA1y-_WVGX251IkGefNjrdSY0rn2CM3RlNfXiuDv9NLRgKFt3B0wQNY-BcoT7Cp6_GuRzUfHdyDUtfgRYCF9tI2LpenzaTVvbNLjv0irUDCaDZtB3eqYONc')">
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/90 via-inverse-surface/30 to-transparent"></div>
+<div class="absolute top-3 left-3 flex flex-wrap gap-2">
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-primary-container text-on-primary font-label-sm text-[11px] font-bold shadow">
+            ACTIVE
+          </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-on-surface font-label-sm text-[11px] font-semibold">
+<span class="material-symbols-outlined text-[14px] text-primary">public</span>
+            Nationale (Siège &amp; Tout Cameroun)
+          </span>
+</div>
+<div class="absolute top-3 right-3">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-inverse-surface/80 backdrop-blur-md text-surface-container-lowest font-label-sm text-[11px]">
+<span class="material-symbols-outlined text-[14px] text-secondary-fixed">schedule</span>
+            Fin le 15 Mai 2025
+          </span>
+</div>
+<div class="absolute bottom-3 left-4 right-4">
+<h2 class="font-title-md text-title-md font-bold text-surface-container-lowest leading-tight">
+            Grande Convention Nationale de Pentecôte 2025
+          </h2>
+<p class="font-body-sm text-[13px] text-surface-variant line-clamp-1 mt-0.5">
+            Fonds logistique, accueil des délégués provinciaux et évangélisation de masse.
+          </p>
+</div>
+</div>
+<div class="p-space-lg flex-1 flex flex-col justify-between space-y-space-md">
+<div>
+<div class="flex items-baseline justify-between mb-1.5">
+<div>
+<span class="font-currency-display text-headline-sm font-bold text-primary">12 200 000</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-bold ml-1">XAF</span>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Objectif:</span>
+<span class="font-label-md text-label-md font-bold text-on-surface ml-1">15 000 000 XAF</span>
+</div>
+</div>
+<div class="relative w-full h-3 rounded-full bg-surface-container-high overflow-hidden">
+<div class="h-full bg-primary-container rounded-full transition-all duration-1000" style="width: 81.3%"></div>
+</div>
+<div class="flex items-center justify-between mt-1.5 font-label-sm text-label-sm">
+<span class="font-bold text-primary">81.3% collectés</span>
+<span class="text-on-surface-variant">418 donateurs nationaux</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2 text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+            01 Fév 2025 — 15 Mai 2025
+          </span>
+<span class="inline-flex items-center gap-1 text-tertiary font-semibold">
+<span class="material-symbols-outlined text-[16px]">phone_android</span>
+            MoMo, OM &amp; Dépôt Bancaire
+          </span>
+</div>
+<div class="pt-2 flex items-center gap-2">
+<button class="flex-1 h-11 px-4 rounded-xl bg-surface-container-high text-on-surface font-label-md text-label-md font-bold flex items-center justify-center gap-2 hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-[18px]">insights</span>
+<span>Gérer &amp; Analytics</span>
+</button>
+<button class="h-11 px-3 rounded-xl bg-surface-container-high text-on-surface hover:bg-surface-container-highest transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">share</span>
+</button>
+<button class="h-11 px-3 rounded-xl bg-surface-container-high text-on-surface hover:bg-surface-container-highest transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Campagne 4 : Forage Oyom-Abang (Clôturée avec Succès) -->
+<div class="group relative rounded-2xl bg-surface-container-lowest overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+<div class="relative h-48 w-full bg-cover bg-center overflow-hidden" data-alt="Inauguration festive d'une borne fontaine et château d'eau potable réalisé par la mission chrétienne à Oyom-Abang Yaoundé, enfants et mères camerounaises joyeux puisant de l'eau claire avec des seaux neufs, plaque commémorative avec le logo de la Mission du Plein Évangile, soleil éclatant." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAgXa3keK9Hgolbm2BiweYs3wxCKdG_z41tE6e1gWslqb45ApBxoXlTJAUZYUTXq4Rw-2Q-l4rq782S0OyAmtcDXfnbFjgsvqFY5lyqLsa97kj_UWRRIaFTINh05qRZZW9qAZ6EXTBojn3IfBp3VY8XS1BxH5uflsTTkODTGYbirGxGAnIXSwyu6505WXQ6bZInvVWsj0TA0wDT-sY81-zElz2jdAocmoAy4Xe913M')">
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/90 via-inverse-surface/30 to-transparent"></div>
+<div class="absolute top-3 left-3 flex flex-wrap gap-2">
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-tertiary text-on-tertiary font-label-sm text-[11px] font-bold shadow">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+            CLÔTURÉE AVEC SUCCÈS
+          </span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-on-surface font-label-sm text-[11px] font-semibold">
+<span class="material-symbols-outlined text-[14px] text-tertiary">hub</span>
+            District Centre (Oyom-Abang)
+          </span>
+</div>
+<div class="absolute bottom-3 left-4 right-4">
+<h2 class="font-title-md text-title-md font-bold text-surface-container-lowest leading-tight">
+            Forage &amp; Adduction d'Eau Potable Oyom-Abang
+          </h2>
+<p class="font-body-sm text-[13px] text-surface-variant line-clamp-1 mt-0.5">
+            Action diaconale et accès à l'eau potable pour l'assemblée locale et les riverains du quartier.
+          </p>
+</div>
+</div>
+<div class="p-space-lg flex-1 flex flex-col justify-between space-y-space-md">
+<div>
+<div class="flex items-baseline justify-between mb-1.5">
+<div>
+<span class="font-currency-display text-headline-sm font-bold text-tertiary">3 500 000</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-bold ml-1">XAF</span>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Objectif:</span>
+<span class="font-label-md text-label-md font-bold text-on-surface ml-1">3 500 000 XAF</span>
+</div>
+</div>
+<div class="relative w-full h-3 rounded-full bg-surface-container-high overflow-hidden">
+<div class="h-full bg-tertiary rounded-full transition-all duration-1000" style="width: 100%"></div>
+</div>
+<div class="flex items-center justify-between mt-1.5 font-label-sm text-label-sm">
+<span class="font-bold text-tertiary">100% — Objectif Atteint &amp; Bilan Clôturé</span>
+<span class="text-on-surface-variant">80 donateurs</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2 text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">task_alt</span>
+            Livraison &amp; dédicace le 10 Fév 2025
+          </span>
+<span class="inline-flex items-center gap-1 text-on-surface-variant font-medium">
+<span class="material-symbols-outlined text-[16px]">receipt_long</span>
+            Audit comptable validé
+          </span>
+</div>
+<div class="pt-2 flex items-center gap-2">
+<button class="flex-1 h-11 px-4 rounded-xl bg-surface-container-high text-on-surface font-label-md text-label-md font-semibold flex items-center justify-center gap-2 hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>Voir Rapport de Fin de Chantier</span>
+</button>
+<button class="h-11 px-4 rounded-xl bg-surface-container-high text-on-surface hover:bg-surface-container-highest transition-colors flex items-center justify-center gap-1 font-label-sm text-label-sm" title="Télécharger les reçus scellés">
+<span class="material-symbols-outlined text-[18px]">archive</span>
+<span>Reçus</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Panneau de Détail & Analytics Approfondi (Campagne Actuelle de Tsinga) -->
+<div class="rounded-2xl bg-surface-container-lowest p-space-lg shadow-sm space-y-space-lg">
+<!-- En-tête Analytics -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md pb-space-md border-b-0">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="px-2.5 py-0.5 rounded-full bg-primary/10 text-primary font-label-sm text-label-sm font-bold">
+            Analytics en Direct
+          </span>
+<span class="text-on-surface-variant text-label-sm">•</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Temple Central Tsinga</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface">
+          Acquisition Sonorisation Numérique &amp; Acoustique
+        </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Suivi des flux dominicaux, Mobile Money et récapitulatif des libéralités du troupeau de Dieu.
+        </p>
+</div>
+<div class="flex items-center gap-space-sm flex-wrap">
+<button class="h-11 px-4 rounded-xl bg-surface-container-high text-on-surface hover:bg-surface-container-highest transition-colors flex items-center gap-2 font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-[18px]">filter_alt</span>
+<span>Dernières 8 Semaines</span>
+</button>
+<button class="h-11 px-4 rounded-xl bg-primary text-on-primary hover:bg-primary-container transition-colors flex items-center gap-2 font-label-md text-label-md font-bold shadow-sm">
+<span class="material-symbols-outlined text-[18px]">receipt_long</span>
+<span>Exporter le Registre Canonique</span>
+</button>
+</div>
+</div>
+<!-- Visualisations : Évolution des dons & Répartition par canal -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Graphique d'Évolution Temporelle (SVG Chart Stylisé) -->
+<div class="lg:col-span-8 rounded-2xl bg-surface-container-low p-space-md space-y-space-md">
+<div class="flex items-center justify-between">
+<div>
+<h3 class="font-title-md text-title-md font-bold text-on-surface">
+              Courbe d'Évolution des Collectes Hebdomadaires
+            </h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant">
+              Pics notables enregistrés lors des cultes solennels de Sainte-Cène (Sem. 3 &amp; Sem. 7)
+            </p>
+</div>
+<span class="px-2.5 py-1 rounded-lg bg-surface-container-lowest text-primary font-label-sm text-label-sm font-bold">
+            Moy. 1 093 750 XAF / sem
+          </span>
+</div>
+<!-- Courbe SVG Responsive -->
+<div class="w-full h-56 pt-2">
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 600 200">
+<defs>
+<lineargradient id="primaryGrad" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#c8102e" stop-opacity="0.35"></stop>
+<stop offset="100%" stop-color="#c8102e" stop-opacity="0.0"></stop>
+</lineargradient>
+</defs>
+<!-- Lignes de repère horizontales -->
+<line stroke="#eae7ed" stroke-dasharray="4 4" stroke-width="1" x1="0" x2="600" y1="40" y2="40"></line>
+<line stroke="#eae7ed" stroke-dasharray="4 4" stroke-width="1" x1="0" x2="600" y1="90" y2="90"></line>
+<line stroke="#eae7ed" stroke-dasharray="4 4" stroke-width="1" x1="0" x2="600" y1="140" y2="140"></line>
+<line stroke="#eae7ed" stroke-width="1" x1="0" x2="600" y1="190" y2="190"></line>
+<!-- Zone de dégradé sous la courbe -->
+<polygon fill="url(#primaryGrad)" points="20,170 95,140 170,55 245,110 320,80 395,135 470,30 545,75 580,75 580,190 20,190"></polygon>
+<!-- Ligne de tendance principale -->
+<polyline fill="none" points="20,170 95,140 170,55 245,110 320,80 395,135 470,30 545,75 580,75" stroke="#c8102e" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"></polyline>
+<!-- Points clés -->
+<circle cx="20" cy="170" fill="#c8102e" r="4.5"></circle>
+<circle cx="95" cy="140" fill="#c8102e" r="4.5"></circle>
+<!-- Pic 1 : Sainte-Cène S3 -->
+<circle cx="170" cy="55" fill="#c8102e" r="6" stroke="#ffffff" stroke-width="2"></circle>
+<circle cx="245" cy="110" fill="#c8102e" r="4.5"></circle>
+<circle cx="320" cy="80" fill="#c8102e" r="4.5"></circle>
+<circle cx="395" cy="135" fill="#c8102e" r="4.5"></circle>
+<!-- Pic 2 : Culte Spécial Bâtisseurs S7 -->
+<circle cx="470" cy="30" fill="#835400" r="7" stroke="#ffffff" stroke-width="2.5"></circle>
+<circle cx="545" cy="75" fill="#c8102e" r="5"></circle>
+</svg>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-[11px] px-2">
+<span>Sem 1 (Lancement)</span>
+<span>Sem 2</span>
+<span class="font-bold text-primary">Sem 3 (Sainte-Cène)</span>
+<span>Sem 4</span>
+<span>Sem 5</span>
+<span>Sem 6</span>
+<span class="font-bold text-secondary">Sem 7 (Dimanche Bâtisseurs)</span>
+<span>Sem 8 (En cours)</span>
+</div>
+</div>
+<!-- Répartition par Mode de Paiement (Donut SVG & Liste) -->
+<div class="lg:col-span-4 rounded-2xl bg-surface-container-low p-space-md flex flex-col justify-between space-y-space-md">
+<div>
+<h3 class="font-title-md text-title-md font-bold text-on-surface">
+            Canaux &amp; Modes de Versement
+          </h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant">
+            Ventilation des 8 750 000 XAF enregistrés
+          </p>
+</div>
+<!-- Donut SVG Minimaliste -->
+<div class="flex items-center justify-center py-2">
+<div class="relative w-36 h-36 flex items-center justify-center">
+<svg class="w-full h-full -rotate-90" viewbox="0 0 100 100">
+<!-- Fond -->
+<circle cx="50" cy="50" fill="transparent" r="38" stroke="#eae7ed" stroke-width="12"></circle>
+<!-- MoMo & OM : 52% (circonférence = 238.76, 52% = 124.15) -->
+<circle cx="50" cy="50" fill="transparent" r="38" stroke="#c8102e" stroke-dasharray="124.15 238.76" stroke-dashoffset="0" stroke-width="12"></circle>
+<!-- Enveloppes Culte Scellées : 31% = 74.01 -->
+<circle cx="50" cy="50" fill="transparent" r="38" stroke="#835400" stroke-dasharray="74.01 238.76" stroke-dashoffset="-124.15" stroke-width="12"></circle>
+<!-- Promesses Honorées : 17% = 40.58 -->
+<circle cx="50" cy="50" fill="transparent" r="38" stroke="#00592b" stroke-dasharray="40.58 238.76" stroke-dashoffset="-198.16" stroke-width="12"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center text-center">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">100%</span>
+<span class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-wider">Répartis</span>
+</div>
+</div>
+</div>
+<div class="space-y-2.5">
+<div class="flex items-center justify-between p-2 rounded-xl bg-surface-container-lowest">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-primary-container"></span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Mobile Money (MTN / OM)</span>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-label-sm font-bold text-on-surface">52%</span>
+<span class="text-[11px] text-on-surface-variant block">4 550 000 XAF</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-2 rounded-xl bg-surface-container-lowest">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Enveloppes &amp; Culte</span>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-label-sm font-bold text-on-surface">31%</span>
+<span class="text-[11px] text-on-surface-variant block">2 712 500 XAF</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-2 rounded-xl bg-surface-container-lowest">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-tertiary"></span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Promesses Honorées (Pledges)</span>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-label-sm font-bold text-on-surface">17%</span>
+<span class="text-[11px] text-on-surface-variant block">1 487 500 XAF</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Tableau / Registre des Derniers Donateurs en Direct -->
+<div class="space-y-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div>
+<h3 class="font-title-md text-title-md font-bold text-on-surface">
+            Registre des Derniers Versements (En direct)
+          </h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant">
+            Traçabilité avec conformité pastorale et respect scrupuleux de l'anonymat pieux.
+          </p>
+</div>
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-tertiary-fixed/30 text-tertiary font-label-sm text-label-sm font-bold">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+            Synchronisation Passerelle CAMPOST / MoMo
+          </span>
+</div>
+</div>
+<div class="overflow-x-auto rounded-xl bg-surface-container-low">
+<table class="w-full text-left font-body-sm text-body-sm">
+<thead class="bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<tr>
+<th class="px-space-md py-3 font-bold">Donateur / Titre</th>
+<th class="px-space-md py-3 font-bold">Canal de Règlement</th>
+<th class="px-space-md py-3 font-bold">Date &amp; Heure</th>
+<th class="px-space-md py-3 font-bold text-right">Montant Offert</th>
+<th class="px-space-md py-3 font-bold text-center">Reçu Fiscal/Canonique</th>
+</tr>
+</thead>
+<tbody class="divide-y-0">
+<!-- Ligne 1: Anonyme par déférence chrétienne -->
+<tr class="hover:bg-surface-container transition-colors">
+<td class="px-space-md py-3.5">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+</div>
+<div>
+<span class="font-body-md-medium text-on-surface block">Frère Anonyme</span>
+<span class="font-label-sm text-[11px] text-primary italic">« Masqué par déférence chrétienne (Matthieu 6:3) »</span>
+</div>
+</div>
+</td>
+<td class="px-space-md py-3.5">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-surface-container-lowest text-on-surface font-label-sm text-label-sm font-semibold">
+<span class="w-2 h-2 rounded-full bg-[#1F9D55]"></span>
+                  MTN Mobile Money
+                </span>
+</td>
+<td class="px-space-md py-3.5 text-on-surface-variant font-label-sm text-label-sm">
+                Aujourd'hui à 11:42
+              </td>
+<td class="px-space-md py-3.5 text-right">
+<span class="font-currency-display text-label-md font-bold text-on-surface">500 000</span>
+<span class="font-label-sm text-[11px] text-on-surface-variant font-bold ml-0.5">XAF</span>
+</td>
+<td class="px-space-md py-3.5 text-center">
+<button class="inline-flex items-center gap-1 px-3 py-1 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-sm text-label-sm font-semibold transition-colors">
+<span class="material-symbols-outlined text-[16px]">print</span>
+<span>Générer #FG-8921</span>
+</button>
+</td>
+</tr>
+<!-- Ligne 2: Sœur Ngo Biboum -->
+<tr class="hover:bg-surface-container transition-colors">
+<td class="px-space-md py-3.5">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-secondary-container/30 flex items-center justify-center text-secondary font-bold text-label-sm">
+                    NB
+                  </div>
+<div>
+<span class="font-body-md-medium text-on-surface block">Sœur Ngo Biboum Emilienne</span>
+<span class="font-label-sm text-[11px] text-on-surface-variant">Département Dames de Tsinga</span>
+</div>
+</div>
+</td>
+<td class="px-space-md py-3.5">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-surface-container-lowest text-on-surface font-label-sm text-label-sm font-semibold">
+<span class="w-2 h-2 rounded-full bg-[#FF7900]"></span>
+                  Orange Money Cameroun
+                </span>
+</td>
+<td class="px-space-md py-3.5 text-on-surface-variant font-label-sm text-label-sm">
+                Hier à 18:15
+              </td>
+<td class="px-space-md py-3.5 text-right">
+<span class="font-currency-display text-label-md font-bold text-on-surface">150 000</span>
+<span class="font-label-sm text-[11px] text-on-surface-variant font-bold ml-0.5">XAF</span>
+</td>
+<td class="px-space-md py-3.5 text-center">
+<span class="inline-flex items-center gap-1 text-tertiary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+                  Envoyé par SMS
+                </span>
+</td>
+</tr>
+<!-- Ligne 3: Ancien Ebogo -->
+<tr class="hover:bg-surface-container transition-colors">
+<td class="px-space-md py-3.5">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed font-bold text-label-sm">
+                    AE
+                  </div>
+<div>
+<span class="font-body-md-medium text-on-surface block">Ancien Ebogo Mathias</span>
+<span class="font-label-sm text-[11px] text-on-surface-variant">Conseil des Anciens &amp; Diaconat</span>
+</div>
+</div>
+</td>
+<td class="px-space-md py-3.5">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-surface-container-lowest text-on-surface font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px] text-secondary">mail</span>
+                  Enveloppe Scellée Culte
+                </span>
+</td>
+<td class="px-space-md py-3.5 text-on-surface-variant font-label-sm text-label-sm">
+                Dimanche 02 Mars (11:00)
+              </td>
+<td class="px-space-md py-3.5 text-right">
+<span class="font-currency-display text-label-md font-bold text-on-surface">200 000</span>
+<span class="font-label-sm text-[11px] text-on-surface-variant font-bold ml-0.5">XAF</span>
+</td>
+<td class="px-space-md py-3.5 text-center">
+<button class="inline-flex items-center gap-1 px-3 py-1 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-sm text-label-sm font-semibold transition-colors">
+<span class="material-symbols-outlined text-[16px]">print</span>
+<span>Générer #FG-8920</span>
+</button>
+</td>
+</tr>
+<!-- Ligne 4: Autre Donateur Anonyme -->
+<tr class="hover:bg-surface-container transition-colors">
+<td class="px-space-md py-3.5">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">person_off</span>
+</div>
+<div>
+<span class="font-body-md-medium text-on-surface block">Donateur Anonyme</span>
+<span class="font-label-sm text-[11px] text-on-surface-variant">Virement Bancaire Afriland First Bank</span>
+</div>
+</div>
+</td>
+<td class="px-space-md py-3.5">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-surface-container-lowest text-on-surface font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px] text-primary">account_balance</span>
+                  Virement Afriland
+                </span>
+</td>
+<td class="px-space-md py-3.5 text-on-surface-variant font-label-sm text-label-sm">
+                28 Fév 2025 à 14:20
+              </td>
+<td class="px-space-md py-3.5 text-right">
+<span class="font-currency-display text-label-md font-bold text-on-surface">1 000 000</span>
+<span class="font-label-sm text-[11px] text-on-surface-variant font-bold ml-0.5">XAF</span>
+</td>
+<td class="px-space-md py-3.5 text-center">
+<span class="inline-flex items-center gap-1 text-tertiary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+                  Scellé au Registre
+                </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- MODAL / PANNEAU LATÉRAL MODAL DE CRÉATION DE NOUVELLE CAMPAGNE -->
+<div class="hidden fixed inset-0 z-50 overflow-y-auto bg-inverse-surface/60 backdrop-blur-sm flex items-center justify-center p-4" id="modal-new-campaign">
+<div class="relative w-full max-w-3xl rounded-3xl bg-surface-container-lowest p-space-lg md:p-space-xl shadow-xl space-y-space-lg max-h-[921px] overflow-y-auto">
+<!-- En-tête Modale -->
+<div class="flex items-center justify-between pb-space-md border-b-0">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-2xl bg-primary-container text-on-primary flex items-center justify-center shadow-md">
+<span class="material-symbols-outlined text-[26px]">add_circle</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface">
+              Créer une Nouvelle Campagne de Dons
+            </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Projet missionnaire, bâti ou action sociale sous l'égide de la Mission du Plein Évangile.
+            </p>
+</div>
+</div>
+<button class="w-10 h-10 rounded-full bg-surface-container hover:bg-surface-container-highest flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors cursor-pointer" onclick="document.getElementById('modal-new-campaign').classList.add('hidden')">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Corps du Formulaire -->
+<form class="space-y-space-md" onsubmit="event.preventDefault(); alert('Campagne enregistrée avec succès dans le registre canonique.'); document.getElementById('modal-new-campaign').classList.add('hidden');">
+<!-- Titre -->
+<div>
+<label class="block font-label-md text-label-md font-bold text-on-surface mb-1.5">
+            Titre de la Campagne *
+          </label>
+<input class="w-full h-12 px-4 rounded-xl bg-surface-container-low text-on-surface font-body-md focus:bg-surface-container-lowest focus:outline-none placeholder:text-on-surface-variant/60" placeholder="Ex: Réhabilitation de la Toiture du Temple Central..." required="" type="text"/>
+</div>
+<!-- Description canonique & projet missionnaire -->
+<div>
+<label class="block font-label-md text-label-md font-bold text-on-surface mb-1.5">
+            Description Canonique &amp; Motivation Missionnaire *
+          </label>
+<textarea class="w-full p-4 rounded-xl bg-surface-container-low text-on-surface font-body-md focus:bg-surface-container-lowest focus:outline-none placeholder:text-on-surface-variant/60" placeholder="Exposer les motifs spirituels, passages bibliques d'exhortation (ex: Aggée 1:8) et portée concrète du projet..." required="" rows="3"></textarea>
+</div>
+<!-- Portée Institutionnelle & Compte de Réception -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div>
+<label class="block font-label-md text-label-md font-bold text-on-surface mb-1.5">
+              Portée Institutionnelle *
+            </label>
+<select class="w-full h-12 px-4 rounded-xl bg-surface-container-low text-on-surface font-label-md focus:bg-surface-container-lowest focus:outline-none cursor-pointer">
+<option value="locale">Assemblée Locale (Ex: Tsinga)</option>
+<option value="district">District Ecclésiastique (Centre)</option>
+<option value="region">Région Missionnaire</option>
+<option value="national">Bureau National / Siège</option>
+</select>
+</div>
+<div>
+<label class="block font-label-md text-label-md font-bold text-on-surface mb-1.5">
+              Compte Principal de Réception *
+            </label>
+<select class="w-full h-12 px-4 rounded-xl bg-surface-container-low text-on-surface font-label-md focus:bg-surface-container-lowest focus:outline-none cursor-pointer">
+<option>Compte Afriland First Bank (FGM Tsinga)</option>
+<option>MTN MoMo Merchant Ecclésiastique (677...)</option>
+<option>Orange Money Marchand (699...)</option>
+<option>Caisse Intendance Temple (Offrandes scellées)</option>
+</select>
+</div>
+</div>
+<!-- Objectif Financier & Formatage XAF -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<div class="md:col-span-1">
+<label class="block font-label-md text-label-md font-bold text-on-surface mb-1.5">
+              Objectif Financier (XAF) *
+            </label>
+<div class="relative">
+<input class="w-full h-12 pl-4 pr-16 rounded-xl bg-surface-container-low text-on-surface font-currency-display text-label-md focus:bg-surface-container-lowest focus:outline-none" min="100000" placeholder="10000000" required="" step="50000" type="number"/>
+<span class="absolute right-3.5 top-1/2 -translate-y-1/2 font-label-sm text-label-sm font-bold text-on-surface-variant">XAF</span>
+</div>
+</div>
+<div class="md:col-span-1">
+<label class="block font-label-md text-label-md font-bold text-on-surface mb-1.5">
+              Date de Début *
+            </label>
+<input class="w-full h-12 px-4 rounded-xl bg-surface-container-low text-on-surface font-label-md focus:bg-surface-container-lowest focus:outline-none" required="" type="date" value="2025-03-01"/>
+</div>
+<div class="md:col-span-1">
+<label class="block font-label-md text-label-md font-bold text-on-surface mb-1.5">
+              Date de Clôture Prévisionnelle *
+            </label>
+<input class="w-full h-12 px-4 rounded-xl bg-surface-container-low text-on-surface font-label-md focus:bg-surface-container-lowest focus:outline-none" required="" type="date" value="2025-06-30"/>
+</div>
+</div>
+<!-- Option Pledges / Promesses de Don -->
+<div class="p-space-md rounded-2xl bg-surface-container-low flex items-start gap-3">
+<input checked="" class="mt-1 w-5 h-5 rounded text-primary focus:ring-primary accent-primary cursor-pointer" id="pledge-toggle" type="checkbox"/>
+<div>
+<label class="font-label-md text-label-md font-bold text-on-surface cursor-pointer" for="pledge-toggle">
+              Activer les Promesses de Don (Pledges) &amp; Relances Pastorales
+            </label>
+<p class="font-body-sm text-[13px] text-on-surface-variant">
+              Permet aux membres de s'engager sur un montant échelonné sur 30, 60 ou 90 jours avec rappel respectueux par SMS/WhatsApp.
+            </p>
+</div>
+</div>
+<!-- Zone d'Upload Bannière du Projet -->
+<div>
+<label class="block font-label-md text-label-md font-bold text-on-surface mb-1.5">
+            Bannière Visuelle du Projet
+          </label>
+<div class="w-full p-6 rounded-2xl bg-surface-container-low flex flex-col items-center justify-center text-center cursor-pointer hover:bg-surface-container transition-colors">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center text-primary mb-2">
+<span class="material-symbols-outlined text-[24px]">cloud_upload</span>
+</div>
+<span class="font-label-md text-label-md font-bold text-on-surface">
+              Glissez la maquette ou photo architecturale ici
+            </span>
+<span class="font-label-sm text-[12px] text-on-surface-variant mt-0.5">
+              Formats acceptés : JPG, PNG ou WebP jusqu'à 8 Mo. Ratio 16:9 recommandé.
+            </span>
+</div>
+</div>
+<!-- Boutons de Validation -->
+<div class="pt-space-md flex flex-col sm:flex-row items-center justify-end gap-space-sm">
+<button class="w-full sm:w-auto h-12 px-6 rounded-xl bg-surface-container-high text-on-surface font-label-md text-label-md font-semibold hover:bg-surface-container-highest transition-colors" onclick="document.getElementById('modal-new-campaign').classList.add('hidden')" type="button">
+            Enregistrer en Brouillon
+          </button>
+<button class="w-full sm:w-auto h-12 px-8 rounded-full bg-primary-container text-on-primary font-title-md text-label-md font-bold shadow-md hover:bg-primary transition-transform active:scale-95" type="submit">
+            Publier &amp; Ouvrir la Campagne
+          </button>
+</div>
+</form>
+</div>
+</div>
+</div>
+<script>
+  // Micro-interaction de bascule des filtres de statut
+  const filterButtons = document.querySelectorAll('.filter-status-btn');
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterButtons.forEach(b => {
+        b.classList.remove('bg-primary-container', 'text-on-primary', 'shadow-sm');
+        b.classList.add('bg-surface-container-low', 'text-on-surface-variant');
+      });
+      btn.classList.add('bg-primary-container', 'text-on-primary', 'shadow-sm');
+      btn.classList.remove('bg-surface-container-low', 'text-on-surface-variant');
+    });
+  });
+</script></main></div><div class="md:hidden fixed bottom-0 left-0 right-0 h-16 bg-surface-container-lowest/95 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.06)] z-50 flex items-center justify-around px-2"><a class="flex flex-col items-center justify-center flex-1 py-1 text-primary-container" href="#"><span class="material-symbols-outlined text-[22px]">grid_view</span><span class="font-label-sm text-[10px] mt-0.5">Accueil</span></a><a class="flex flex-col items-center justify-center flex-1 py-1 text-on-surface-variant" href="#"><span class="material-symbols-outlined text-[22px]">groups</span><span class="font-label-sm text-[10px] mt-0.5">Membres</span></a><a class="flex flex-col items-center justify-center flex-1 py-1 text-on-surface-variant" href="#"><span class="material-symbols-outlined text-[22px]">payments</span><span class="font-label-sm text-[10px] mt-0.5">Finance</span></a><a class="flex flex-col items-center justify-center flex-1 py-1 text-on-surface-variant relative" href="#"><span class="material-symbols-outlined text-[22px]">chat_bubble</span><span class="absolute top-1 right-5 w-2 h-2 rounded-full bg-primary-container"></span><span class="font-label-sm text-[10px] mt-0.5">Messages</span></a><button class="flex flex-col items-center justify-center flex-1 py-1 text-on-surface-variant"><span class="material-symbols-outlined text-[22px]">menu_open</span><span class="font-label-sm text-[10px] mt-0.5">Plus</span></button></div></body></html>

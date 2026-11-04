@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+
+<html lang="fr"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-tint": "#bf0229", "primary": "#9e001f", "inverse-surface": "#303034", "surface-variant": "#e4e1e7", "tertiary-fixed": "#86faa7", "on-tertiary-container": "#86faa7", "tertiary-container": "#00743a", "on-secondary-fixed-variant": "#643f00", "surface-container-lowest": "#ffffff", "surface": "#fcf8fe", "on-primary-fixed-variant": "#92001c", "surface-container-highest": "#e4e1e7", "on-error": "#ffffff", "on-primary": "#ffffff", "on-primary-fixed": "#410007", "surface-bright": "#fcf8fe", "primary-fixed": "#ffdad8", "surface-container-high": "#eae7ed", "outline": "#906f6e", "on-surface-variant": "#5c403f", "tertiary": "#00592b", "surface-dim": "#dcd9df", "on-tertiary": "#ffffff", "secondary-fixed": "#ffddb5", "on-tertiary-fixed": "#00210c", "background": "#fcf8fe", "on-surface": "#1b1b1f", "on-primary-container": "#ffdad8", "primary-fixed-dim": "#ffb3b1", "inverse-primary": "#ffb3b1", "on-secondary": "#ffffff", "secondary-container": "#feb64e", "error-container": "#ffdad6", "primary-container": "#c8102e", "outline-variant": "#e5bdbb", "surface-container": "#f0edf3", "secondary": "#835400", "error": "#ba1a1a", "on-secondary-fixed": "#2a1800", "surface-container-low": "#f6f2f8", "on-secondary-container": "#714800", "on-background": "#1b1b1f", "inverse-on-surface": "#f3eff6", "tertiary-fixed-dim": "#6add8d", "on-error-container": "#93000a", "secondary-fixed-dim": "#ffb956", "on-tertiary-fixed-variant": "#005228" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin": "1rem", "margin-desktop": "3rem", "space-xs": "0.25rem", "gutter-tablet": "1.5rem", "margin-tablet": "2rem", "space-xl": "2.5rem", "space-sm": "0.5rem", "gutter-desktop": "2rem", "gutter": "1rem", "space-lg": "1.5rem", "space-md": "1rem" }, "fontFamily": { "display-lg": ["Plus Jakarta Sans"], "body-sm": ["Inter"], "body-lg": ["Inter"], "title-md": ["Plus Jakarta Sans"], "label-sm": ["Inter"], "label-md": ["Inter"], "headline-sm": ["Plus Jakarta Sans"], "display-lg-mobile": ["Plus Jakarta Sans"], "currency-display": ["Plus Jakarta Sans"], "body-md": ["Inter"], "headline-md": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "body-md-medium": ["Inter"], "headline-lg-mobile": ["Plus Jakarta Sans"] }, "fontSize": { "display-lg": ["48px", { "lineHeight": "56px", "fontWeight": "800" }], "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "title-md": ["18px", { "lineHeight": "26px", "fontWeight": "600" }], "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "600" }], "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }], "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "display-lg-mobile": ["34px", { "lineHeight": "42px", "fontWeight": "800" }], "currency-display": ["28px", { "lineHeight": "36px", "fontWeight": "700" }], "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "700" }], "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }], "body-md-medium": ["16px", { "lineHeight": "24px", "fontWeight": "500" }], "headline-lg-mobile": ["26px", { "lineHeight": "34px", "fontWeight": "700" }] } } } }</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;background-color:#fcf8fe;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="w-full h-[3px] bg-primary-container relative overflow-hidden"><div class="absolute inset-y-0 left-0 w-1/3 bg-primary animate-pulse"></div></div><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0 flex-shrink-0"><img alt="Logo Full Gospel Mission Cameroun" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VtR_Amnvhju8fh_HutLzNg-PTJjLKTQagr709OXkSveuYiSe61lp9WlYO7Q4k6MV2bwG96w7F7Y-QIQTu0gsrx8_UMHBiMfnxYxpr-U11CXcnSHhy_4v_98oLtqgEG16dZFla3ixnfZc_RQ_sf-Wna8pSjDxL8VmYf-xqCp4efW0Y-xzZTQf72swwUuMWB02PjtbU5XSFO1_y0qthSeYkQoQwyUeWXPobUkXa7RjE"/><div class="flex flex-col"><span class="font-title-md text-title-md text-primary leading-tight truncate font-bold">FULLGOPE</span><span class="font-label-sm text-label-sm text-on-surface-variant truncate">Accueil</span></div></div><div class="flex items-center gap-space-xs flex-shrink-0"><div aria-label="Langue" class="flex items-center bg-surface-container rounded-full p-0.5" role="group"><button class="min-w-[28px] h-7 px-1.5 rounded-full bg-surface-container-lowest text-on-surface font-label-sm text-label-sm shadow-[0_1px_4px_rgba(0,0,0,0.06)] flex items-center justify-center transition-all" type="button">FR</button><button class="min-w-[28px] h-7 px-1.5 rounded-full text-on-surface-variant font-label-sm text-label-sm flex items-center justify-center transition-all" type="button">EN</button></div><button aria-label="Basculer le thème" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">light_mode</span></button><a class="h-9 px-3 bg-primary-container text-on-primary rounded-full font-label-md text-label-md flex items-center justify-center shadow-[0_2px_8px_rgba(200,16,46,0.15)] transition-transform active:scale-95" data-path="dons" href="#">Donner</a><a class="h-9 px-2.5 rounded-full text-on-surface font-label-md text-label-md flex items-center justify-center hover:bg-surface-container-high transition-colors" data-path="connexion" href="#">Connexion</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center ml-1"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-24 bg-surface min-h-screen"><div class="flex flex-col w-full relative select-none">
+<!-- Search & Filter Bar (Sticky below Header) -->
+<header class="sticky top-0 z-30 flex flex-col bg-surface/95 backdrop-blur-md shadow-sm">
+<div class="px-margin pt-space-sm pb-space-xs flex flex-col gap-space-xs">
+<!-- Primary Search Input -->
+<div class="relative flex items-center w-full">
+<span class="material-symbols-outlined absolute left-3.5 text-outline text-[20px] pointer-events-none">search</span>
+<input class="w-full h-11 pl-10 pr-24 bg-surface-container-lowest text-on-surface placeholder:text-on-surface-variant/70 font-body-sm text-body-sm rounded-full shadow-sm focus:outline-none focus:bg-surface-container-low transition-all" id="churchSearchInput" placeholder="Temple, quartier, pasteur, ville..." type="search"/>
+<div class="absolute right-1.5 flex items-center gap-1">
+<!-- Voice or Geolocation Quick Action -->
+<button class="h-8 px-2.5 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm flex items-center gap-1 shadow-sm active:scale-95 transition-transform" id="gpsNearMeBtn" title="Près de moi" type="button">
+<span class="material-symbols-outlined text-[15px]">near_me</span>
+<span>GPS</span>
+</button>
+</div>
+</div>
+<!-- Quick Radius Picker & Filters Header Bar -->
+<div class="flex items-center justify-between gap-space-xs py-1">
+<div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-0.5">
+<!-- Radius Chip with Quick Picker Dropdown Trigger -->
+<button class="flex items-center gap-1 h-7 px-2.5 rounded-full bg-surface-container text-primary font-label-sm text-label-sm whitespace-nowrap active:bg-surface-container-high transition-colors" id="radiusToggleBtn" type="button">
+<span class="material-symbols-outlined text-[14px]">radar</span>
+<span id="radiusLabel">Rayon : 15 km</span>
+<span class="material-symbols-outlined text-[14px]">arrow_drop_down</span>
+</button>
+<!-- Region Filter Pill -->
+<button class="flex items-center gap-1 h-7 px-2.5 rounded-full bg-surface-container-lowest text-on-surface-variant font-label-sm text-label-sm whitespace-nowrap shadow-sm active:bg-surface-container transition-colors" id="regionFilterBtn" type="button">
+<span class="material-symbols-outlined text-[14px]">map</span>
+<span>Régions (10)</span>
+</button>
+<!-- District Filter Pill -->
+<button class="flex items-center gap-1 h-7 px-2.5 rounded-full bg-surface-container-lowest text-on-surface-variant font-label-sm text-label-sm whitespace-nowrap shadow-sm active:bg-surface-container transition-colors" id="districtFilterBtn" type="button">
+<span class="material-symbols-outlined text-[14px]">location_city</span>
+<span>Districts</span>
+</button>
+<!-- Low-bandwidth preview toggle -->
+<button class="flex items-center gap-1 h-7 px-2.5 rounded-full bg-surface-container text-secondary font-label-sm text-label-sm whitespace-nowrap active:bg-surface-container-high transition-colors" id="skeletonToggleBtn" title="Simuler débit 2G/3G" type="button">
+<span class="material-symbols-outlined text-[14px]">wifi_tethering_error</span>
+<span id="skeletonLabel">Simuler 2G/3G</span>
+</button>
+</div>
+</div>
+<!-- Extended Filter Pills Carousel: Status & Counts -->
+<div class="flex items-center justify-between gap-space-xs pb-1">
+<div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-0.5">
+<button class="status-chip active h-6 px-2.5 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm whitespace-nowrap" data-status="all">
+            Toutes (1 450)
+          </button>
+<button class="status-chip h-6 px-2.5 rounded-full bg-surface-container-lowest text-tertiary font-label-sm text-label-sm whitespace-nowrap shadow-sm flex items-center gap-1" data-status="active">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+            Actives (1 380)
+          </button>
+<button class="status-chip h-6 px-2.5 rounded-full bg-surface-container-lowest text-secondary font-label-sm text-label-sm whitespace-nowrap shadow-sm flex items-center gap-1" data-status="pioneer">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-container"></span>
+            Implantations (58)
+          </button>
+<button class="status-chip h-6 px-2.5 rounded-full bg-surface-container-lowest text-outline font-label-sm text-label-sm whitespace-nowrap shadow-sm" data-status="historical">
+            Historiques (12)
+          </button>
+</div>
+<!-- View Switch Button (Map / List) -->
+<div class="flex items-center bg-surface-container-high rounded-full p-0.5 flex-shrink-0">
+<button class="w-7 h-6 rounded-full bg-surface-container-lowest text-primary shadow-sm flex items-center justify-center transition-all" id="viewMapToggle" title="Vue Carte">
+<span class="material-symbols-outlined text-[16px]">map</span>
+</button>
+<button class="w-7 h-6 rounded-full text-on-surface-variant flex items-center justify-center transition-all" id="viewListToggle" title="Vue Liste">
+<span class="material-symbols-outlined text-[16px]">format_list_bulleted</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Radius Slider Popup Tray (Conditional / Toggleable) -->
+<div class="hidden px-margin py-2 bg-surface-container-low transition-all" id="radiusDrawer">
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm mb-1">
+<span>Périmètre de recherche</span>
+<span class="font-body-md-medium text-primary" id="radiusValDisplay">15 km</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-label-sm font-label-sm text-on-surface-variant">5km</span>
+<input class="w-full accent-primary h-2 bg-surface-variant rounded-full cursor-pointer" id="radiusSlider" max="100" min="5" step="5" type="range" value="15"/>
+<span class="text-label-sm font-label-sm text-on-surface-variant">100km</span>
+</div>
+<div class="flex justify-between mt-2 pt-1">
+<button class="radius-quick-btn text-label-sm font-label-sm px-2 py-0.5 rounded bg-surface-container-lowest" data-km="5">5 km</button>
+<button class="radius-quick-btn text-label-sm font-label-sm px-2 py-0.5 rounded bg-primary text-on-primary" data-km="15">15 km</button>
+<button class="radius-quick-btn text-label-sm font-label-sm px-2 py-0.5 rounded bg-surface-container-lowest" data-km="30">30 km</button>
+<button class="radius-quick-btn text-label-sm font-label-sm px-2 py-0.5 rounded bg-surface-container-lowest" data-km="50">50 km</button>
+<button class="radius-quick-btn text-label-sm font-label-sm px-2 py-0.5 rounded bg-surface-container-lowest" data-km="100">100 km</button>
+</div>
+</div>
+</header>
+<!-- Interactive Map Canvas Container (Full Gospel Mission Cameroon) -->
+<main class="relative w-full h-[calc(100vh-170px)] min-h-[500px] overflow-hidden bg-[#efebe7]">
+<!-- Map Vector Visual / Cartography Layer -->
+<div class="absolute inset-0 w-full h-full overflow-hidden flex items-center justify-center" id="cameroonVectorMap">
+<!-- Stylized Cameroon Map SVG Background -->
+<svg class="w-full h-full object-cover max-w-xl mx-auto" fill="none" viewbox="0 0 600 800" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<!-- Regional Relief Gradients -->
+<radialgradient cx="35%" cy="58%" id="cmHighlandGrad" r="45%">
+<stop offset="0%" stop-color="#e8e2dc"></stop>
+<stop offset="70%" stop-color="#dfd8d1"></stop>
+<stop offset="100%" stop-color="#d4cbbf"></stop>
+</radialgradient>
+<filter height="140%" id="softGlow" width="140%" x="-20%" y="-20%">
+<fegaussianblur result="blur" stddeviation="6"></fegaussianblur>
+<fecomposite in="SourceGraphic" in2="blur" operator="over"></fecomposite>
+</filter>
+</defs>
+<!-- Ocean / Coastline Accent (Gulf of Guinea) -->
+<path d="M0,580 C60,570 110,640 145,690 C180,740 190,800 190,800 L0,800 Z" fill="#d9e6eb" opacity="0.8"></path>
+<text fill="#889da6" font-family="Inter" font-size="12" letter-spacing="1.5" x="30" y="730">GOLFE DE GUINÉE</text>
+<!-- Cameroon Country Polygon Approximation -->
+<path d="M280,40 L340,90 L390,140 L370,220 L440,290 L420,380 L490,470 L480,560 L420,640 L350,650 L320,680 L280,730 L220,740 L195,710 L160,650 L120,630 L115,580 L180,530 L210,480 L190,420 L240,360 L220,290 L260,210 L310,130 Z" fill="url(#cmHighlandGrad)" stroke="#cfc5b8" stroke-linejoin="round" stroke-width="1.8"></path>
+<!-- Regional Boundaries (Stylized dashes) -->
+<path d="M220,290 Q290,320 420,380" stroke="#c0b5a6" stroke-dasharray="3,3" stroke-width="1"></path>
+<path d="M190,420 Q280,450 490,470" stroke="#c0b5a6" stroke-dasharray="3,3" stroke-width="1"></path>
+<path d="M180,530 Q260,540 480,560" stroke="#c0b5a6" stroke-dasharray="3,3" stroke-width="1"></path>
+<path d="M160,650 Q230,620 350,650" stroke="#c0b5a6" stroke-dasharray="3,3" stroke-width="1"></path>
+<!-- Major Road Arteries (Nationales 1, 2, 3, 4) -->
+<path d="M160,610 Q195,575 250,560 Q300,520 320,390 Q340,260 360,160" opacity="0.8" stroke="#ffffff" stroke-linecap="round" stroke-width="2.5"></path>
+<path d="M160,610 L220,535 L250,560" opacity="0.8" stroke="#ffffff" stroke-linecap="round" stroke-width="2"></path>
+<path d="M220,535 L200,450" opacity="0.8" stroke="#ffffff" stroke-linecap="round" stroke-width="1.8"></path>
+<!-- Toponymic Markers for Major Hubs -->
+<text fill="#7a6e60" font-family="Plus Jakarta Sans" font-size="10" font-weight="600" x="355" y="150">MAROUA</text>
+<text fill="#7a6e60" font-family="Plus Jakarta Sans" font-size="10" font-weight="600" x="305" y="270">GAROUA</text>
+<text fill="#7a6e60" font-family="Plus Jakarta Sans" font-size="10" font-weight="600" x="305" y="420">NGAOUNDÉRÉ</text>
+<text fill="#7a6e60" font-family="Plus Jakarta Sans" font-size="10" font-weight="600" x="145" y="490">BAMENDA</text>
+<text fill="#7a6e60" font-family="Plus Jakarta Sans" font-size="10" font-weight="600" x="180" y="520">BAFOUSSAM</text>
+<text fill="#7a6e60" font-family="Plus Jakarta Sans" font-size="10" font-weight="600" x="110" y="605">DOUALA</text>
+<text fill="#7a6e60" font-family="Plus Jakarta Sans" font-size="10" font-weight="600" x="260" y="575">YAOUNDÉ</text>
+<text fill="#7a6e60" font-family="Plus Jakarta Sans" font-size="10" font-weight="600" x="210" y="680">EBOLOWA</text>
+</svg>
+</div>
+<!-- Map Markers & Clusters Overlay Layer -->
+<div class="absolute inset-0 pointer-events-auto" id="interactiveMarkersLayer">
+<!-- Cluster 1: Grand Nord (Garoua / Maroua) -->
+<button class="map-cluster absolute top-[28%] right-[32%] transform -translate-x-1/2 -translate-y-1/2 flex items-center gap-1 px-2 py-1 rounded-full bg-primary text-on-primary shadow-md active:scale-90 transition-transform" data-cluster="Grand Nord" data-count="18" type="button">
+<span class="w-2 h-2 rounded-full bg-secondary-container"></span>
+<span class="font-label-sm text-label-sm font-bold">Nord (18)</span>
+</button>
+<!-- Cluster 2: Ouest (Bafoussam) -->
+<button class="map-cluster absolute top-[52%] left-[42%] transform -translate-x-1/2 -translate-y-1/2 flex items-center gap-1 px-2.5 py-1 rounded-full bg-primary text-on-primary shadow-md active:scale-90 transition-transform" data-cluster="Ouest" data-count="84" type="button">
+<span class="material-symbols-outlined text-[14px]">church</span>
+<span class="font-label-sm text-label-sm font-bold">Ouest (84)</span>
+</button>
+<!-- Pin: Bamenda Old Church (Nord-Ouest) - Historic Cradle -->
+<div class="map-pin absolute top-[48%] left-[34%] transform -translate-x-1/2 -translate-y-1/2 cursor-pointer group" data-church="bamenda-cradle">
+<div class="relative flex items-center justify-center">
+<span class="w-8 h-8 rounded-full bg-surface-container-lowest shadow-md flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</span>
+<span class="absolute -bottom-4 whitespace-nowrap px-1.5 py-0.5 rounded bg-inverse-surface text-inverse-on-surface font-label-sm text-[10px] shadow-sm">
+            Bamenda (1961)
+          </span>
+</div>
+</div>
+<!-- Cluster 3: Douala Métropole (Littoral) -->
+<button class="map-cluster absolute top-[62%] left-[28%] transform -translate-x-1/2 -translate-y-1/2 flex items-center gap-1 px-3 py-1.5 rounded-full bg-primary text-on-primary shadow-lg active:scale-95 transition-transform" data-cluster="Douala" data-count="58" type="button">
+<span class="material-symbols-outlined text-[16px]">domain</span>
+<span class="font-label-sm text-label-sm font-bold">Douala (58)</span>
+</button>
+<!-- Pin: Douala Bépanda -->
+<div class="map-pin absolute top-[64%] left-[32%] transform -translate-x-1/2 -translate-y-1/2 cursor-pointer group" data-church="douala-bepanda">
+<div class="w-7 h-7 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center shadow-md active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[16px]">church</span>
+</div>
+</div>
+<!-- Active Selected Pin: Temple Central Tsinga - Yaoundé (Center of Action) -->
+<div class="map-pin absolute top-[58%] left-[54%] transform -translate-x-1/2 -translate-y-1/2 cursor-pointer z-20" data-church="tsinga-central" id="activeTsingaPin">
+<!-- Pulsing Flame Halo -->
+<span class="absolute -inset-2.5 rounded-full bg-primary/25 animate-ping"></span>
+<span class="absolute -inset-1 rounded-full bg-primary/40"></span>
+<!-- Church Flame Pin Icon -->
+<div class="relative w-10 h-10 rounded-full bg-primary-container text-on-primary flex items-center justify-center shadow-xl border-2 border-surface-container-lowest">
+<span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+</div>
+<!-- Selected Pin Tag -->
+<div class="absolute -top-6 left-1/2 transform -translate-x-1/2 whitespace-nowrap bg-primary-container text-on-primary font-label-sm text-[10px] px-2 py-0.5 rounded-full shadow-md flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-container"></span>
+<span>Temple Central</span>
+</div>
+</div>
+<!-- Pin: Simbock Pioneer Church (Yaoundé Sud-Ouest) -->
+<div class="map-pin absolute top-[61%] left-[51%] transform -translate-x-1/2 -translate-y-1/2 cursor-pointer group" data-church="simbock-pioneer">
+<div class="w-6 h-6 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shadow-md active:scale-95 transition-transform" title="Implantation Simbock">
+<span class="material-symbols-outlined text-[14px]">flag</span>
+</div>
+</div>
+</div>
+<!-- Floating Map Control Buttons (Right Dock) -->
+<div class="absolute top-4 right-3 z-20 flex flex-col gap-2">
+<!-- Zoom Controls -->
+<div class="flex flex-col bg-surface-container-lowest rounded-full shadow-md overflow-hidden">
+<button aria-label="Agrandir" class="w-10 h-10 flex items-center justify-center text-on-surface hover:bg-surface-container-low active:bg-surface-variant transition-colors" id="zoomInBtn" type="button">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+<div class="w-full h-px bg-surface-container"></div>
+<button aria-label="Dézoomer" class="w-10 h-10 flex items-center justify-center text-on-surface hover:bg-surface-container-low active:bg-surface-variant transition-colors" id="zoomOutBtn" type="button">
+<span class="material-symbols-outlined text-[20px]">remove</span>
+</button>
+</div>
+<!-- Recenter on User GPS -->
+<button aria-label="Recentrer GPS" class="w-10 h-10 rounded-full bg-surface-container-lowest text-primary shadow-md flex items-center justify-center hover:bg-surface-container-low active:scale-95 transition-all" id="recenterGpsBtn" type="button">
+<span class="material-symbols-outlined text-[20px]">my_location</span>
+</button>
+<!-- Compass Indicator -->
+<button aria-label="Nord Boussole" class="w-10 h-10 rounded-full bg-surface-container-lowest text-on-surface-variant shadow-md flex items-center justify-center hover:bg-surface-container-low active:scale-95 transition-all" id="compassBtn" type="button">
+<span class="material-symbols-outlined text-[20px] text-primary">explore</span>
+</button>
+<!-- Layer Toggle (Plan / Satellite) -->
+<button aria-label="Calques cartographiques" class="w-10 h-10 rounded-full bg-surface-container-lowest text-on-surface-variant shadow-md flex items-center justify-center hover:bg-surface-container-low active:scale-95 transition-all" id="layerToggleBtn" type="button">
+<span class="material-symbols-outlined text-[20px]">layers</span>
+</button>
+</div>
+<!-- Active Church Floating Modal / Preview Popup (Interactive Pin Detail) -->
+<div class="absolute top-4 left-3 right-16 z-20 bg-surface-container-lowest/95 backdrop-blur-md rounded-xl p-3 shadow-xl transition-all duration-300" id="mapPreviewCard">
+<div class="flex items-start justify-between gap-2 mb-1.5">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-[11px] font-semibold">
+              Active
+            </span>
+<span class="text-label-sm font-label-sm text-outline">District Yaoundé-Centre</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface truncate leading-tight mt-0.5">
+            Temple Central Tsinga
+          </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[15px] text-outline">location_on</span>
+<span>Rue 1.402, Carrefour Tsinga, Yaoundé</span>
+</p>
+</div>
+<button class="w-7 h-7 rounded-full bg-surface-container text-on-surface-variant flex items-center justify-center hover:bg-surface-container-high transition-colors" id="closePreviewBtn" type="button">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+<div class="grid grid-cols-2 gap-2 my-2 py-1.5 bg-surface-container-low rounded-lg px-2 text-on-surface">
+<div class="flex flex-col">
+<span class="font-label-sm text-[11px] text-outline">Prochain Culte</span>
+<span class="font-body-sm text-body-sm font-semibold text-primary">Dim. 09h00 (FR/EN)</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-[11px] text-outline">Pasteur Résident</span>
+<span class="font-body-sm text-body-sm font-medium truncate">Rev. Dr. Ndifon</span>
+</div>
+</div>
+<!-- Action Buttons Row -->
+<div class="flex items-center gap-2 pt-0.5">
+<button class="flex-1 h-9 px-3 rounded-full bg-primary-container text-on-primary font-label-md text-label-md flex items-center justify-center gap-1.5 shadow-sm active:scale-95 transition-transform" type="button">
+<span class="material-symbols-outlined text-[16px]">navigation</span>
+<span>Itinéraire GPS</span>
+</button>
+<button class="h-9 px-3 rounded-full bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center justify-center hover:bg-surface-variant active:scale-95 transition-transform" type="button">
+<span>Détails</span>
+</button>
+</div>
+</div>
+<!-- Network / Offline Helper Pill (Cameroon Context) -->
+<div class="absolute bottom-20 left-3 z-10 pointer-events-none">
+<div class="flex items-center gap-1 px-2.5 py-1 rounded-full bg-inverse-surface/80 text-inverse-on-surface backdrop-blur-sm shadow-sm font-label-sm text-[11px]">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed animate-pulse"></span>
+<span>Mode hors-ligne disponible (Cache 48h)</span>
+</div>
+</div>
+</main>
+<!-- Sliding Bottom-Sheet / Church Directory Drawer -->
+<section class="fixed inset-x-0 bottom-16 z-40 bg-surface-container-lowest rounded-t-[24px] shadow-[0_-8px_30px_rgba(0,0,0,0.12)] transition-all duration-300 flex flex-col max-h-[724px]" id="slidingBottomSheet" style="transform: translateY(calc(100% - 150px));">
+<!-- Tactile Handlebar Area -->
+<div class="w-full pt-3 pb-2 px-margin flex flex-col items-center cursor-grab active:cursor-grabbing" id="bottomSheetHandle">
+<div class="w-12 h-1.5 rounded-full bg-surface-variant mb-2"></div>
+<div class="w-full flex items-center justify-between">
+<div class="flex items-center gap-2">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">
+            Assemblées à proximité
+          </h3>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-primary font-label-sm text-label-sm font-bold">
+            4 visibles
+          </span>
+</div>
+<button class="text-outline hover:text-on-surface p-1 rounded-full" id="sheetToggleSizeBtn" type="button">
+<span class="material-symbols-outlined text-[22px]" id="sheetExpandIcon">expand_less</span>
+</button>
+</div>
+</div>
+<!-- Scrollable Church Cards Container -->
+<div class="overflow-y-auto px-margin pb-6 flex flex-col gap-3" id="bottomSheetContent">
+<!-- SKELETON STATE (Toggled via button for testing low bandwidth) -->
+<div class="hidden flex-col gap-3 animate-pulse" id="skeletonLoaderWrapper">
+<div class="p-3 bg-surface-container-low rounded-xl">
+<div class="flex justify-between items-center mb-2">
+<div class="h-4 bg-surface-variant rounded w-1/3"></div>
+<div class="h-4 bg-surface-variant rounded w-1/5"></div>
+</div>
+<div class="h-5 bg-surface-variant rounded w-2/3 mb-2"></div>
+<div class="h-3 bg-surface-variant rounded w-1/2 mb-3"></div>
+<div class="h-8 bg-surface-variant rounded w-full"></div>
+</div>
+<div class="p-3 bg-surface-container-low rounded-xl">
+<div class="h-4 bg-surface-variant rounded w-1/4 mb-2"></div>
+<div class="h-5 bg-surface-variant rounded w-3/4 mb-2"></div>
+<div class="h-8 bg-surface-variant rounded w-full"></div>
+</div>
+</div>
+<!-- CARD 1: Assemblée Centrale Tsinga (Yaoundé) -->
+<article class="church-card p-3.5 bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between gap-2 mb-1.5">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-[11px] font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                Active
+              </span>
+<span class="font-label-sm text-label-sm text-outline">Yaoundé • Centre</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mt-0.5 leading-snug">
+              Assemblée Centrale de Tsinga
+            </h4>
+</div>
+<!-- Distance Badge -->
+<div class="flex items-center gap-0.5 px-2 py-1 rounded-full bg-surface-container text-primary font-label-sm text-label-sm font-semibold flex-shrink-0">
+<span class="material-symbols-outlined text-[14px]">near_me</span>
+<span>1.2 km</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 mb-2">
+<span class="material-symbols-outlined text-[15px] text-outline">place</span>
+<span>Face École Publique de Tsinga, Yaoundé</span>
+</p>
+<!-- Services & Prayer Schedule -->
+<div class="flex flex-col gap-1 py-2 px-2.5 rounded-lg bg-surface-container-low mb-3">
+<div class="flex items-center gap-1.5 font-body-sm text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-primary">schedule</span>
+<span class="font-medium">Dimanche :</span>
+<span>08h30 (1er culte) • 10h30 (2e culte)</span>
+</div>
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-outline">diversity_3</span>
+<span>Mercredi : Culte d'intercession à 17h30</span>
+</div>
+</div>
+<!-- Card Footprint & Action CTA -->
+<div class="flex items-center justify-between gap-2 pt-1">
+<a class="h-9 px-3 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm flex items-center gap-1 hover:bg-surface-container-high transition-colors" href="tel:+237677001122">
+<span class="material-symbols-outlined text-[16px] text-primary">call</span>
+<span>+237 677 00 11 22</span>
+</a>
+<div class="flex items-center gap-1.5">
+<button class="h-9 px-3 rounded-full bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center justify-center hover:bg-surface-variant transition-colors" type="button">
+              Fiche
+            </button>
+<button class="h-9 px-3.5 rounded-full bg-primary-container text-on-primary font-label-md text-label-md flex items-center gap-1 shadow-sm active:scale-95 transition-transform" type="button">
+<span class="material-symbols-outlined text-[16px]">turn_right</span>
+<span>Itinéraire</span>
+</button>
+</div>
+</div>
+</article>
+<!-- CARD 2: Temple de Bépanda - Gloire Divine (Douala) -->
+<article class="church-card p-3.5 bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between gap-2 mb-1.5">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-[11px] font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                Active
+              </span>
+<span class="font-label-sm text-label-sm text-outline">Douala • Littoral</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mt-0.5 leading-snug">
+              Temple de Bépanda - Gloire Divine
+            </h4>
+</div>
+<div class="flex items-center gap-0.5 px-2 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-semibold flex-shrink-0">
+<span>214 km</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 mb-2">
+<span class="material-symbols-outlined text-[15px] text-outline">place</span>
+<span>Bépanda Omnisports, Carrefour Casmando</span>
+</p>
+<div class="flex flex-col gap-1 py-2 px-2.5 rounded-lg bg-surface-container-low mb-3">
+<div class="flex items-center gap-1.5 font-body-sm text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-primary">schedule</span>
+<span class="font-medium">Dimanche :</span>
+<span>09h00 (Culte de célébration)</span>
+</div>
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-outline">menu_book</span>
+<span>Mardi : Étude biblique &amp; discipleship à 18h00</span>
+</div>
+</div>
+<div class="flex items-center justify-between gap-2 pt-1">
+<span class="font-label-sm text-label-sm text-outline">Rev. Tanyi Enow</span>
+<button class="h-9 px-4 rounded-full bg-primary-container text-on-primary font-label-md text-label-md flex items-center gap-1 shadow-sm active:scale-95 transition-transform" type="button">
+<span class="material-symbols-outlined text-[16px]">turn_right</span>
+<span>Itinéraire</span>
+</button>
+</div>
+</article>
+<!-- CARD 3: Implantation Nouvelle Jérusalem - Simbock (Yaoundé) -->
+<article class="church-card p-3.5 bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between gap-2 mb-1.5">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-[11px] font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                Mission Pionnière (2024)
+              </span>
+<span class="font-label-sm text-label-sm text-outline">Yaoundé VII</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mt-0.5 leading-snug">
+              Implantation Simbock Nouvelle Jérusalem
+            </h4>
+</div>
+<div class="flex items-center gap-0.5 px-2 py-1 rounded-full bg-surface-container text-primary font-label-sm text-label-sm font-semibold flex-shrink-0">
+<span class="material-symbols-outlined text-[14px]">near_me</span>
+<span>6.8 km</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 mb-2">
+<span class="material-symbols-outlined text-[15px] text-outline">place</span>
+<span>Entrée Chapelle Simbock, Axe Mendong</span>
+</p>
+<div class="flex flex-col gap-1 py-2 px-2.5 rounded-lg bg-surface-container-low mb-3">
+<div class="flex items-center gap-1.5 font-body-sm text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-secondary">church</span>
+<span class="font-medium">Dimanche :</span>
+<span>09h30 (Culte de louange et foi)</span>
+</div>
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-outline">campaign</span>
+<span>Vendredi : Évangélisation de quartier 16h00</span>
+</div>
+</div>
+<div class="flex items-center justify-between gap-2 pt-1">
+<span class="font-label-sm text-label-sm text-secondary font-medium">Pasteur Proposant : Pst. Samuel Ebéné</span>
+<button class="h-9 px-4 rounded-full bg-primary-container text-on-primary font-label-md text-label-md flex items-center gap-1 shadow-sm active:scale-95 transition-transform" type="button">
+<span class="material-symbols-outlined text-[16px]">turn_right</span>
+<span>Itinéraire</span>
+</button>
+</div>
+</article>
+<!-- CARD 4: Assemblée de Bamenda Old Church (Nord-Ouest) - 1961 -->
+<article class="church-card p-3.5 bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between gap-2 mb-1.5">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface font-label-sm text-[11px] font-semibold">
+<span class="material-symbols-outlined text-[13px] text-primary">verified</span>
+                Berceau Historique (Fondée en 1961)
+              </span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface mt-0.5 leading-snug">
+              Bamenda Old Church Mother Assembly
+            </h4>
+</div>
+<div class="flex items-center gap-0.5 px-2 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-semibold flex-shrink-0">
+<span>368 km</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 mb-2">
+<span class="material-symbols-outlined text-[15px] text-outline">place</span>
+<span>Mission Road, Old Bamenda Station</span>
+</p>
+<div class="flex flex-col gap-1 py-2 px-2.5 rounded-lg bg-surface-container-low mb-3">
+<div class="flex items-center gap-1.5 font-body-sm text-body-sm text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-primary">schedule</span>
+<span class="font-medium">Sunday :</span>
+<span>08:00 AM (English) • 10:00 AM (Bilingual)</span>
+</div>
+</div>
+<div class="flex items-center justify-between gap-2 pt-1">
+<span class="font-label-sm text-label-sm text-outline">District Nord-Ouest 1</span>
+<button class="h-9 px-4 rounded-full bg-primary-container text-on-primary font-label-md text-label-md flex items-center gap-1 shadow-sm active:scale-95 transition-transform" type="button">
+<span class="material-symbols-outlined text-[16px]">turn_right</span>
+<span>Itinéraire</span>
+</button>
+</div>
+</article>
+</div>
+</section>
+</div>
+<script>
+  (function() {
+    // 1. Sliding Bottom Sheet Interactive Heights
+    const sheet = document.getElementById('slidingBottomSheet');
+    const handle = document.getElementById('bottomSheetHandle');
+    const toggleIcon = document.getElementById('sheetExpandIcon');
+    const toggleBtn = document.getElementById('sheetToggleSizeBtn');
+
+    // States: 'collapsed' (140px peak), 'half' (48vh), 'expanded' (80vh)
+    let sheetState = 'collapsed';
+
+    function setSheetState(state) {
+      sheetState = state;
+      if (state === 'collapsed') {
+        sheet.style.transform = 'translateY(calc(100% - 150px))';
+        if (toggleIcon) toggleIcon.textContent = 'expand_less';
+      } else if (state === 'half') {
+        sheet.style.transform = 'translateY(calc(100% - 46vh))';
+        if (toggleIcon) toggleIcon.textContent = 'expand_less';
+      } else if (state === 'expanded') {
+        sheet.style.transform = 'translateY(0%)';
+        if (toggleIcon) toggleIcon.textContent = 'expand_more';
+      }
+    }
+
+    if (handle) {
+      handle.addEventListener('click', () => {
+        if (sheetState === 'collapsed') {
+          setSheetState('half');
+        } else if (sheetState === 'half') {
+          setSheetState('expanded');
+        } else {
+          setSheetState('collapsed');
+        }
+      });
+    }
+
+    if (toggleBtn) {
+      toggleBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (sheetState === 'expanded') {
+          setSheetState('collapsed');
+        } else {
+          setSheetState('expanded');
+        }
+      });
+    }
+
+    // 2. Map Preview Card Toggle
+    const previewCard = document.getElementById('mapPreviewCard');
+    const closePreviewBtn = document.getElementById('closePreviewBtn');
+    const activePin = document.getElementById('activeTsingaPin');
+
+    if (closePreviewBtn && previewCard) {
+      closePreviewBtn.addEventListener('click', () => {
+        previewCard.classList.add('hidden');
+      });
+    }
+
+    if (activePin && previewCard) {
+      activePin.addEventListener('click', () => {
+        previewCard.classList.remove('hidden');
+        setSheetState('collapsed');
+      });
+    }
+
+    // Other Pins trigger preview card content update
+    const mapPins = document.querySelectorAll('.map-pin');
+    mapPins.forEach(pin => {
+      pin.addEventListener('click', () => {
+        if (previewCard) {
+          previewCard.classList.remove('hidden');
+        }
+      });
+    });
+
+    // 3. Radius Drawer & Quick Sliders
+    const radiusBtn = document.getElementById('radiusToggleBtn');
+    const radiusDrawer = document.getElementById('radiusDrawer');
+    const radiusSlider = document.getElementById('radiusSlider');
+    const radiusValDisplay = document.getElementById('radiusValDisplay');
+    const radiusLabel = document.getElementById('radiusLabel');
+    const quickRadiusBtns = document.querySelectorAll('.radius-quick-btn');
+
+    if (radiusBtn && radiusDrawer) {
+      radiusBtn.addEventListener('click', () => {
+        radiusDrawer.classList.toggle('hidden');
+      });
+    }
+
+    function updateRadius(val) {
+      if (radiusValDisplay) radiusValDisplay.textContent = val + ' km';
+      if (radiusLabel) radiusLabel.textContent = 'Rayon : ' + val + ' km';
+      if (radiusSlider) radiusSlider.value = val;
+      quickRadiusBtns.forEach(b => {
+        if (b.dataset.km === String(val)) {
+          b.className = 'radius-quick-btn text-label-sm font-label-sm px-2 py-0.5 rounded bg-primary text-on-primary';
+        } else {
+          b.className = 'radius-quick-btn text-label-sm font-label-sm px-2 py-0.5 rounded bg-surface-container-lowest';
+        }
+      });
+    }
+
+    if (radiusSlider) {
+      radiusSlider.addEventListener('input', (e) => {
+        updateRadius(e.target.value);
+      });
+    }
+
+    quickRadiusBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        updateRadius(btn.dataset.km);
+      });
+    });
+
+    // 4. Skeleton Loading Toggle Simulation (Offline 2G/3G Simulation)
+    const skeletonBtn = document.getElementById('skeletonToggleBtn');
+    const skeletonLoader = document.getElementById('skeletonLoaderWrapper');
+    const churchCards = document.querySelectorAll('.church-card');
+    const skeletonLabel = document.getElementById('skeletonLabel');
+    let isSkeletonActive = false;
+
+    if (skeletonBtn && skeletonLoader) {
+      skeletonBtn.addEventListener('click', () => {
+        isSkeletonActive = !isSkeletonActive;
+        if (isSkeletonActive) {
+          skeletonLoader.classList.remove('hidden');
+          skeletonLoader.classList.add('flex');
+          churchCards.forEach(c => c.classList.add('hidden'));
+          if (skeletonLabel) skeletonLabel.textContent = 'Fin 2G/3G';
+          skeletonBtn.classList.add('bg-primary-fixed', 'text-on-primary-fixed');
+          setSheetState('half');
+        } else {
+          skeletonLoader.classList.add('hidden');
+          skeletonLoader.classList.remove('flex');
+          churchCards.forEach(c => c.classList.remove('hidden'));
+          if (skeletonLabel) skeletonLabel.textContent = 'Simuler 2G/3G';
+          skeletonBtn.classList.remove('bg-primary-fixed', 'text-on-primary-fixed');
+        }
+      });
+    }
+
+    // 5. Status Filter Pills Selection
+    const statusChips = document.querySelectorAll('.status-chip');
+    statusChips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        statusChips.forEach(c => {
+          c.classList.remove('bg-primary-container', 'text-on-primary');
+          c.classList.add('bg-surface-container-lowest', 'text-on-surface-variant');
+        });
+        chip.classList.add('bg-primary-container', 'text-on-primary');
+        chip.classList.remove('bg-surface-container-lowest', 'text-on-surface-variant');
+      });
+    });
+
+    // 6. Map / List View Switcher
+    const viewMapToggle = document.getElementById('viewMapToggle');
+    const viewListToggle = document.getElementById('viewListToggle');
+
+    if (viewListToggle) {
+      viewListToggle.addEventListener('click', () => {
+        setSheetState('expanded');
+        viewListToggle.classList.add('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
+        viewMapToggle.classList.remove('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
+      });
+    }
+
+    if (viewMapToggle) {
+      viewMapToggle.addEventListener('click', () => {
+        setSheetState('collapsed');
+        viewMapToggle.classList.add('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
+        viewListToggle.classList.remove('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
+      });
+    }
+
+    // 7. Floating Zoom & Compass Feedback
+    const recenterGpsBtn = document.getElementById('recenterGpsBtn');
+    if (recenterGpsBtn) {
+      recenterGpsBtn.addEventListener('click', () => {
+        if (activePin) {
+          activePin.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+        if (previewCard) previewCard.classList.remove('hidden');
+      });
+    }
+  })();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.05)]" data-active-classes="text-primary font-body-md-medium"><div class="flex justify-around items-center h-16 px-space-xs"><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] text-on-surface-variant transition-colors group" data-path="accueil" href="#"><span class="material-symbols-outlined text-[22px] group-hover:text-primary transition-colors">home</span><span class="font-label-sm text-label-sm tracking-tight mt-0.5">Accueil</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] text-on-surface-variant transition-colors group" data-path="assemblees" href="#"><span class="material-symbols-outlined text-[22px] group-hover:text-primary transition-colors">church</span><span class="font-label-sm text-label-sm tracking-tight mt-0.5">Assemblées</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] text-on-surface-variant transition-colors group" data-path="ministeres" href="#"><span class="material-symbols-outlined text-[22px] group-hover:text-primary transition-colors">groups</span><span class="font-label-sm text-label-sm tracking-tight mt-0.5">Ministères</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] text-on-surface-variant transition-colors group" data-path="dons" href="#"><span class="material-symbols-outlined text-[22px] group-hover:text-primary transition-colors">volunteer_activism</span><span class="font-label-sm text-label-sm tracking-tight mt-0.5">Dons</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] text-on-surface-variant transition-colors group" data-path="connexion" href="#"><span class="material-symbols-outlined text-[22px] group-hover:text-primary transition-colors">account_circle</span><span class="font-label-sm text-label-sm tracking-tight mt-0.5">Connexion</span></a></div></nav></body></html>

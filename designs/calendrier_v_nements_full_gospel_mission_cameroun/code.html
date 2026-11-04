@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+
+<html lang="fr"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-tint": "#bf0229", "primary": "#9e001f", "inverse-surface": "#303034", "surface-variant": "#e4e1e7", "tertiary-fixed": "#86faa7", "on-tertiary-container": "#86faa7", "tertiary-container": "#00743a", "on-secondary-fixed-variant": "#643f00", "surface-container-lowest": "#ffffff", "surface": "#fcf8fe", "on-primary-fixed-variant": "#92001c", "surface-container-highest": "#e4e1e7", "on-error": "#ffffff", "on-primary": "#ffffff", "on-primary-fixed": "#410007", "surface-bright": "#fcf8fe", "primary-fixed": "#ffdad8", "surface-container-high": "#eae7ed", "outline": "#906f6e", "on-surface-variant": "#5c403f", "tertiary": "#00592b", "surface-dim": "#dcd9df", "on-tertiary": "#ffffff", "secondary-fixed": "#ffddb5", "on-tertiary-fixed": "#00210c", "background": "#fcf8fe", "on-surface": "#1b1b1f", "on-primary-container": "#ffdad8", "primary-fixed-dim": "#ffb3b1", "inverse-primary": "#ffb3b1", "on-secondary": "#ffffff", "secondary-container": "#feb64e", "error-container": "#ffdad6", "primary-container": "#c8102e", "outline-variant": "#e5bdbb", "surface-container": "#f0edf3", "secondary": "#835400", "error": "#ba1a1a", "on-secondary-fixed": "#2a1800", "surface-container-low": "#f6f2f8", "on-secondary-container": "#714800", "on-background": "#1b1b1f", "inverse-on-surface": "#f3eff6", "tertiary-fixed-dim": "#6add8d", "on-error-container": "#93000a", "secondary-fixed-dim": "#ffb956", "on-tertiary-fixed-variant": "#005228" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin": "1rem", "margin-desktop": "3rem", "space-xs": "0.25rem", "gutter-tablet": "1.5rem", "margin-tablet": "2rem", "space-xl": "2.5rem", "space-sm": "0.5rem", "gutter-desktop": "2rem", "gutter": "1rem", "space-lg": "1.5rem", "space-md": "1rem" }, "fontFamily": { "display-lg": ["Plus Jakarta Sans"], "body-sm": ["Inter"], "body-lg": ["Inter"], "title-md": ["Plus Jakarta Sans"], "label-sm": ["Inter"], "label-md": ["Inter"], "headline-sm": ["Plus Jakarta Sans"], "display-lg-mobile": ["Plus Jakarta Sans"], "currency-display": ["Plus Jakarta Sans"], "body-md": ["Inter"], "headline-md": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "body-md-medium": ["Inter"], "headline-lg-mobile": ["Plus Jakarta Sans"] }, "fontSize": { "display-lg": ["48px", { "lineHeight": "56px", "fontWeight": "800" }], "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "title-md": ["18px", { "lineHeight": "26px", "fontWeight": "600" }], "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "600" }], "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }], "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "display-lg-mobile": ["34px", { "lineHeight": "42px", "fontWeight": "800" }], "currency-display": ["28px", { "lineHeight": "36px", "fontWeight": "700" }], "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "700" }], "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }], "body-md-medium": ["16px", { "lineHeight": "24px", "fontWeight": "500" }], "headline-lg-mobile": ["26px", { "lineHeight": "34px", "fontWeight": "700" }] } } } }</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;background-color:#fcf8fe;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="w-full h-[3px] bg-primary/20 relative overflow-hidden"><div class="absolute inset-y-0 left-0 w-2/5 bg-primary-container animate-pulse"></div></div><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0 flex-shrink-0"><img alt="Logo Full Gospel Mission Cameroun" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VtR_Amnvhju8fh_HutLzNg-PTJjLKTQagr709OXkSveuYiSe61lp9WlYO7Q4k6MV2bwG96w7F7Y-QIQTu0gsrx8_UMHBiMfnxYxpr-U11CXcnSHhy_4v_98oLtqgEG16dZFla3ixnfZc_RQ_sf-Wna8pSjDxL8VmYf-xqCp4efW0Y-xzZTQf72swwUuMWB02PjtbU5XSFO1_y0qthSeYkQoQwyUeWXPobUkXa7RjE"/><div class="flex flex-col"><span class="font-title-md text-title-md text-primary leading-tight font-bold tracking-tight">FULLGOPE</span><span class="font-label-sm text-label-sm text-on-surface-variant leading-none">Publications</span></div></div><div class="flex items-center gap-space-xs flex-shrink-0"><div aria-label="Langue / Language" class="flex items-center bg-surface-container rounded-full p-0.5" role="group"><button class="min-w-[28px] h-7 px-1.5 rounded-full bg-surface-container-lowest text-on-surface font-label-sm text-label-sm shadow-[0_1px_4px_rgba(0,0,0,0.06)] flex items-center justify-center transition-all" type="button">FR</button><button class="min-w-[28px] h-7 px-1.5 rounded-full text-on-surface-variant font-label-sm text-label-sm flex items-center justify-center transition-all hover:text-on-surface" type="button">EN</button></div><button aria-label="Mode clair/sombre" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">light_mode</span></button><a class="h-9 px-3 bg-primary-container text-on-primary rounded-full font-label-md text-label-md flex items-center justify-center shadow-[0_2px_8px_rgba(200,16,46,0.15)] transition-transform active:scale-95" data-path="dons" href="#">Donner</a><a aria-label="Espace membre" class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors" data-path="connexion" href="#"><span class="material-symbols-outlined text-[20px]">person</span></a></div></div></header><main class="flex flex-col relative w-full pt-16 pb-24 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Offline Sync Toast/Banner -->
+<div class="px-margin pt-space-sm">
+<div class="bg-surface-container-high rounded-lg p-space-sm flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<span class="material-symbols-outlined text-tertiary text-[20px] shrink-0">cloud_done</span>
+<p class="font-label-sm text-label-sm text-on-surface truncate">
+          Synchronisation locale active <span class="text-on-surface-variant font-normal">• Dispo hors-ligne</span>
+</p>
+</div>
+<button class="shrink-0 font-label-sm text-label-sm text-primary flex items-center gap-0.5 active:scale-95 transition-transform" id="btn-sync">
+<span class="material-symbols-outlined text-[16px]">sync</span>
+<span>Actualiser</span>
+</button>
+</div>
+</div>
+<!-- Header Section -->
+<header class="px-margin pt-space-md pb-space-sm flex flex-col gap-space-xs">
+<div class="inline-flex items-center self-start gap-1.5 px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed">
+<span class="material-symbols-outlined text-[14px]">local_fire_department</span>
+<span class="font-label-sm text-label-sm tracking-wider uppercase">AGENDA SPIRITUEL &amp; RASSEMBLEMENTS</span>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface tracking-tight">
+      Calendrier des Événements
+    </h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+      Cultes solennels, veillées d'intercession, conventions et campagnes d'évangélisation à travers le Cameroun.
+    </p>
+</header>
+<!-- View Controls & Month Selector -->
+<section class="px-margin py-space-sm flex flex-col gap-space-sm">
+<!-- View Switcher -->
+<div class="grid grid-cols-2 p-1 bg-surface-container rounded-full shadow-inner">
+<button class="h-10 rounded-full bg-surface-container-lowest text-primary shadow-sm font-label-md text-label-md flex items-center justify-center gap-1.5 transition-all" id="toggle-list">
+<span class="material-symbols-outlined text-[18px]">format_list_bulleted</span>
+<span>Vue Liste</span>
+</button>
+<button class="h-10 rounded-full text-on-surface-variant font-label-md text-label-md flex items-center justify-center gap-1.5 hover:text-on-surface transition-all" id="toggle-month">
+<span class="material-symbols-outlined text-[18px]">calendar_month</span>
+<span>Vue Mois</span>
+</button>
+</div>
+<!-- Month & Fast Jump Selector -->
+<div class="bg-surface-container-low rounded-xl p-space-sm flex items-center justify-between shadow-sm">
+<button aria-label="Mois précédent" class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:text-on-surface active:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[20px]">chevron_left</span>
+</button>
+<div class="flex items-center gap-2">
+<span class="font-title-md text-title-md text-on-surface font-bold">Mai 2025</span>
+<button class="px-2 py-0.5 rounded-full bg-primary/10 text-primary font-label-sm text-label-sm active:scale-95 transition-transform" id="btn-jump-now">
+          Aujourd'hui
+        </button>
+</div>
+<button aria-label="Mois suivant" class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:text-on-surface active:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</div>
+</section>
+<!-- Interactive Mini Calendar Strip -->
+<section class="px-margin py-space-xs">
+<div class="bg-surface-container-lowest rounded-xl p-space-sm shadow-sm flex flex-col gap-2">
+<div class="flex justify-between items-center text-on-surface-variant font-label-sm text-label-sm px-1">
+<span>Semaine de réveil</span>
+<span class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-primary-container"></span> Convention</span>
+<span class="inline-flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-secondary-container"></span> Veillée</span>
+<span class="inline-flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-tertiary-container"></span> Mission</span>
+</span>
+</div>
+<div class="grid grid-cols-7 gap-1 text-center">
+<div class="flex flex-col items-center py-1.5 rounded-lg text-on-surface-variant font-label-sm text-label-sm">
+<span>Lun</span>
+<span class="font-bold mt-0.5 text-on-surface">15</span>
+</div>
+<div class="flex flex-col items-center py-1.5 rounded-lg text-on-surface-variant font-label-sm text-label-sm">
+<span>Mar</span>
+<span class="font-bold mt-0.5 text-on-surface">16</span>
+</div>
+<div class="flex flex-col items-center py-1.5 rounded-lg text-on-surface-variant font-label-sm text-label-sm">
+<span>Mer</span>
+<span class="font-bold mt-0.5 text-on-surface">17</span>
+</div>
+<!-- Event Active Day (18) -->
+<div class="flex flex-col items-center py-1.5 rounded-lg bg-primary-container text-on-primary font-label-sm text-label-sm shadow-sm scale-105">
+<span>Jeu</span>
+<span class="font-bold mt-0.5">18</span>
+<span class="w-1.5 h-1.5 rounded-full bg-on-primary mt-1"></span>
+</div>
+<!-- Event Range (19) -->
+<div class="flex flex-col items-center py-1.5 rounded-lg bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm">
+<span>Ven</span>
+<span class="font-bold mt-0.5">19</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container mt-1"></span>
+</div>
+<!-- Event Range (20) -->
+<div class="flex flex-col items-center py-1.5 rounded-lg bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm">
+<span>Sam</span>
+<span class="font-bold mt-0.5">20</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container mt-1"></span>
+</div>
+<!-- Day with Night Prayer (26 indicated or normal 21) -->
+<div class="flex flex-col items-center py-1.5 rounded-lg text-on-surface-variant font-label-sm text-label-sm">
+<span>Dim</span>
+<span class="font-bold mt-0.5 text-on-surface">21</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Filters & Assembly Selector -->
+<section class="px-margin py-space-sm flex flex-col gap-space-sm">
+<!-- Horizontal Category Chips -->
+<div class="flex gap-2 overflow-x-auto pb-1 no-scrollbar">
+<button class="filter-chip active shrink-0 px-3.5 h-9 rounded-full bg-primary text-on-primary font-label-md text-label-md flex items-center gap-1 shadow-sm transition-transform active:scale-95" data-filter="all">
+<span>Tous</span>
+<span class="px-1.5 py-0.2 rounded-full bg-on-primary/20 text-on-primary text-[11px] font-bold">42</span>
+</button>
+<button class="filter-chip shrink-0 px-3.5 h-9 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md flex items-center transition-all hover:text-on-surface" data-filter="culte">
+        Culte spécial
+      </button>
+<button class="filter-chip shrink-0 px-3.5 h-9 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md flex items-center transition-all hover:text-on-surface" data-filter="veillee">
+        Veillée de prière
+      </button>
+<button class="filter-chip shrink-0 px-3.5 h-9 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md flex items-center transition-all hover:text-on-surface" data-filter="conference">
+        Conférence
+      </button>
+<button class="filter-chip shrink-0 px-3.5 h-9 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md flex items-center transition-all hover:text-on-surface" data-filter="seminaire">
+        Séminaire
+      </button>
+<button class="filter-chip shrink-0 px-3.5 h-9 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md flex items-center transition-all hover:text-on-surface" data-filter="evangelisation">
+        Évangélisation
+      </button>
+</div>
+<!-- Assembly dropdown & Capacity toggle -->
+<div class="flex flex-col gap-space-xs">
+<div class="relative w-full">
+<select aria-label="Filtrer par assemblée ou région" class="w-full h-11 px-3.5 pr-10 rounded-xl bg-surface-container-lowest text-on-surface font-body-sm text-body-sm shadow-sm appearance-none focus:outline-none focus:ring-2 focus:ring-primary/20">
+<option value="">Toutes les assemblées (National)</option>
+<option value="tsinga">Yaoundé - Tsinga</option>
+<option value="nkoelondo">Yaoundé - Nkoélondo</option>
+<option value="bepanda">Douala - Bépanda Omnisport</option>
+<option value="bonaberi">Douala - Bonabéri</option>
+<option value="bamenda">Bamenda - Station Church</option>
+<option value="bafoussam">Bafoussam - Central</option>
+<option value="grand-nord">Grand Nord (Garoua &amp; Maroua)</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none text-[20px]">
+          arrow_drop_down
+        </span>
+</div>
+<!-- Places disponibles toggle switch -->
+<label class="flex items-center justify-between p-2 rounded-xl bg-surface-container-low cursor-pointer">
+<span class="flex items-center gap-2 font-label-md text-label-md text-on-surface">
+<span class="material-symbols-outlined text-primary text-[18px]">event_available</span>
+          Uniquement places disponibles
+        </span>
+<input class="sr-only peer" id="available-toggle" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-surface-container-lowest after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-surface-container-lowest after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary relative"></div>
+</label>
+</div>
+</section>
+<!-- Events List Container -->
+<section class="px-margin pt-space-xs pb-space-lg flex flex-col gap-space-md" id="events-container">
+<!-- CARD 1: MAJOR / A LA UNE -->
+<article class="bg-surface-container-lowest rounded-xl shadow-md overflow-hidden flex flex-col transition-all duration-300">
+<div class="relative w-full h-44 bg-inverse-surface overflow-hidden">
+<img class="w-full h-full object-cover opacity-85" data-alt="Vibrant Pentecostal church worship convention in Cameroon with thousands of people praising together under warm golden stage lighting with red accents and raised hands in reverent devotion." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJKskIZUIERldaBg-r5chOQ-Fhab6QNMboeZsIXJg9nNFm8sXIIo2eV_ZCcqRM2zWWjRjfwY_zJdtUA8mlRwi-vrV4r5AVPAeL_YfOPILK7dVRY0CuVeQAZKu0q20Vl-Ypbz1qyAPCyPIaKUFhA4QS-8K9Gml_kP_hc2sLaQM5EsoF3qCa-41RKmAhpiYJLq8PmJxA12bn_HCyMcyhJF5YuvECYWxgKDDdGcRWDT4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface via-inverse-surface/40 to-transparent"></div>
+<!-- Flame Date Badge -->
+<div class="absolute top-3 left-3 bg-primary-container text-on-primary px-3 py-1.5 rounded-xl shadow-md flex flex-col items-center">
+<span class="font-headline-sm text-headline-sm font-extrabold leading-none">18-20</span>
+<span class="font-label-sm text-label-sm font-semibold tracking-wider mt-0.5">MAI</span>
+</div>
+<!-- Featured pill -->
+<div class="absolute top-3 right-3 bg-secondary-container text-on-secondary-container px-2.5 py-1 rounded-full shadow-sm flex items-center gap-1 font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[14px]">stars</span>
+<span>À LA UNE</span>
+</div>
+<div class="absolute bottom-3 left-3 right-3 flex flex-wrap gap-1.5">
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-lowest/90 backdrop-blur-sm text-primary font-label-sm text-label-sm font-semibold">
+            Convention Nationale
+          </span>
+<span class="px-2.5 py-0.5 rounded-full bg-inverse-surface/80 backdrop-blur-sm text-surface font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">location_on</span>
+            Yaoundé - Nkoélondo
+          </span>
+</div>
+</div>
+<div class="p-space-md flex flex-col gap-space-sm">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-tight">
+            Grande Convention Nationale de Pentecôte 2025
+          </h2>
+<p class="font-body-sm text-body-sm text-primary font-medium italic mt-1 bg-primary/5 p-2 rounded-lg">
+            « Remplis de l'Esprit pour embraser la nation » <span class="font-semibold text-on-surface-variant not-italic">(Actes 1:8)</span>
+</p>
+</div>
+<div class="flex flex-col gap-1 text-on-surface-variant font-body-sm text-body-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">church</span>
+<span>Temple de Nkoélondo, Yaoundé</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">schedule</span>
+<span>08h30 - 21h00 (3 sessions par jour)</span>
+</div>
+</div>
+<!-- Capacity Gauge -->
+<div class="bg-surface-container-low p-2.5 rounded-xl flex flex-col gap-1.5">
+<div class="flex justify-between items-center font-label-sm text-label-sm">
+<span class="font-medium text-on-surface">Jauge des participants</span>
+<span class="font-bold text-primary">8 420 / 10 000 (84%)</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full transition-all duration-500" style="width: 84%"></div>
+</div>
+<span class="text-on-surface-variant font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-tertiary">check_circle</span>
+            Plus que 1 580 places disponibles
+          </span>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-col gap-2 pt-1">
+<div class="grid grid-cols-2 gap-2">
+<button class="h-11 px-4 bg-primary-container text-on-primary rounded-full font-label-md text-label-md flex items-center justify-center gap-1.5 shadow-sm active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[18px]">how_to_reg</span>
+<span>S'inscrire (Gratuit)</span>
+</button>
+<button class="h-11 px-3 bg-surface-container text-on-surface rounded-full font-label-md text-label-md flex items-center justify-center gap-1.5 hover:bg-surface-container-high active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[18px]">calendar_add_on</span>
+<span class="truncate">Ajouter (.ics)</span>
+</button>
+</div>
+<button class="w-full h-9 rounded-full text-on-surface-variant hover:text-primary font-label-sm text-label-sm flex items-center justify-center gap-1 transition-colors">
+<span>Consulter le programme détaillé &amp; intervenants</span>
+<span class="material-symbols-outlined text-[16px]">expand_more</span>
+</button>
+</div>
+</div>
+</article>
+<!-- CARD 2: VEILLÉE DE PRIÈRE -->
+<article class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md flex flex-col gap-space-sm relative">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<!-- Gold date pill -->
+<div class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-xl flex flex-col items-center shrink-0">
+<span class="font-headline-sm text-headline-sm font-bold leading-none">26</span>
+<span class="font-label-sm text-label-sm font-semibold tracking-wider">MAI</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex flex-wrap items-center gap-1.5">
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm font-semibold">
+                Veillée de prière
+              </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+                19h00 - 05h00
+              </span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface font-bold mt-1 line-clamp-2">
+              Nuit Territoriale d'Intercession &amp; de Réveil
+            </h3>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-1 text-on-surface-variant font-body-sm text-body-sm">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] text-secondary shrink-0 mt-0.5">location_on</span>
+<span>Temple Central Tsinga, Yaoundé <span class="text-secondary font-medium">• Retransmis en direct dans 85 districts</span></span>
+</div>
+</div>
+<!-- Capacity gauge -->
+<div class="bg-surface-container-low p-2 rounded-xl flex flex-col gap-1">
+<div class="flex justify-between items-center font-label-sm text-label-sm">
+<span class="text-on-surface-variant">Capacité d'accueil</span>
+<span class="font-bold text-on-surface">1 200 / 1 500 places (80%)</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary-container h-full rounded-full" style="width: 80%"></div>
+</div>
+</div>
+<!-- Buttons -->
+<div class="grid grid-cols-2 gap-2 pt-1">
+<button class="h-10 px-3 bg-secondary-container text-on-secondary-container rounded-full font-label-md text-label-md font-semibold flex items-center justify-center gap-1 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[17px]">badge</span>
+<span>S'inscrire</span>
+</button>
+<button class="h-10 px-3 bg-surface-container text-on-surface rounded-full font-label-md text-label-md flex items-center justify-center gap-1 hover:bg-surface-container-high active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[17px]">event</span>
+<span>Ajouter (.ics)</span>
+</button>
+</div>
+</article>
+<!-- CARD 3: CONFÉRENCE DES DAMES -->
+<article class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md flex flex-col gap-space-sm relative">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="bg-primary text-on-primary px-2.5 py-1 rounded-xl flex flex-col items-center shrink-0">
+<span class="font-headline-sm text-headline-sm font-bold leading-none">02-04</span>
+<span class="font-label-sm text-label-sm font-semibold tracking-wider">JUIN</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex flex-wrap items-center gap-1.5">
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-semibold">
+                Conférence des Dames
+              </span>
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-bold">
+                Presque complet
+              </span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface font-bold mt-1 line-clamp-2">
+              Conférence Nationale du Ministère Dorcas
+            </h3>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-1 text-on-surface-variant font-body-sm text-body-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">stadium</span>
+<span>Bépanda Omnisport, Douala</span>
+</div>
+</div>
+<!-- Capacity gauge -->
+<div class="bg-surface-container-low p-2 rounded-xl flex flex-col gap-1">
+<div class="flex justify-between items-center font-label-sm text-label-sm">
+<span class="text-on-surface-variant">Jauge des déléguées</span>
+<span class="font-bold text-error">2 800 / 3 000 (93%)</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1.5 rounded-full overflow-hidden">
+<div class="bg-error h-full rounded-full" style="width: 93%"></div>
+</div>
+</div>
+<!-- Buttons -->
+<div class="grid grid-cols-2 gap-2 pt-1">
+<button class="h-10 px-3 bg-primary-container text-on-primary rounded-full font-label-md text-label-md flex items-center justify-center gap-1 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[17px]">how_to_reg</span>
+<span>S'inscrire</span>
+</button>
+<button class="h-10 px-3 bg-surface-container text-on-surface rounded-full font-label-md text-label-md flex items-center justify-center gap-1 hover:bg-surface-container-high active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[17px]">event</span>
+<span>Ajouter (.ics)</span>
+</button>
+</div>
+</article>
+<!-- CARD 4: ÉVANGÉLISATION GRAND NORD -->
+<article class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md flex flex-col gap-space-sm relative">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="bg-tertiary-container text-on-tertiary-container px-2.5 py-1 rounded-xl flex flex-col items-center shrink-0">
+<span class="font-headline-sm text-headline-sm font-bold leading-none">12-14</span>
+<span class="font-label-sm text-label-sm font-semibold tracking-wider">JUIN</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex flex-wrap items-center gap-1.5">
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-sm text-label-sm font-semibold">
+                Campagne d'Évangélisation
+              </span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-medium">
+                Plein air
+              </span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface font-bold mt-1 line-clamp-2">
+              Mission Pionnière Grand Nord : Moisson &amp; Miracles
+            </h3>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-1 text-on-surface-variant font-body-sm text-body-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-tertiary">near_me</span>
+<span>Place des Fêtes, Garoua</span>
+</div>
+<div class="flex items-center gap-1.5 text-tertiary font-medium mt-0.5">
+<span class="material-symbols-outlined text-[16px]">lock_open</span>
+<span>Entrée libre &amp; illimitée • Pas d'inscription requise</span>
+</div>
+</div>
+<!-- Action Button -->
+<div class="pt-1">
+<button class="w-full h-11 px-4 bg-surface-container text-on-surface hover:bg-surface-container-high rounded-full font-label-md text-label-md flex items-center justify-center gap-2 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[18px] text-tertiary">share</span>
+<span>Partager &amp; Définir un rappel (.ics)</span>
+</button>
+</div>
+</article>
+</section>
+<!-- Month Grid View Container (Hidden initially) -->
+<section class="hidden px-margin py-space-sm flex flex-col gap-space-sm" id="month-grid-view">
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex justify-between items-center">
+<span class="font-title-md text-title-md text-on-surface font-bold">Grille Mensuelle • Mai 2025</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">31 jours</span>
+</div>
+<!-- Day Headers -->
+<div class="grid grid-cols-7 text-center font-label-sm text-label-sm text-on-surface-variant font-semibold">
+<span>L</span><span>M</span><span>M</span><span>J</span><span>V</span><span>S</span><span>D</span>
+</div>
+<!-- Calendar days -->
+<div class="grid grid-cols-7 gap-1 text-center font-body-sm text-body-sm">
+<!-- Week 1 -->
+<span class="py-2 rounded-lg text-on-surface-variant/40">28</span>
+<span class="py-2 rounded-lg text-on-surface-variant/40">29</span>
+<span class="py-2 rounded-lg text-on-surface-variant/40">30</span>
+<span class="py-2 rounded-lg text-on-surface">1</span>
+<span class="py-2 rounded-lg text-on-surface">2</span>
+<span class="py-2 rounded-lg text-on-surface">3</span>
+<span class="py-2 rounded-lg text-on-surface">4</span>
+<!-- Week 2 -->
+<span class="py-2 rounded-lg text-on-surface">5</span>
+<span class="py-2 rounded-lg text-on-surface">6</span>
+<span class="py-2 rounded-lg text-on-surface">7</span>
+<span class="py-2 rounded-lg text-on-surface">8</span>
+<span class="py-2 rounded-lg text-on-surface">9</span>
+<span class="py-2 rounded-lg text-on-surface">10</span>
+<span class="py-2 rounded-lg text-on-surface">11</span>
+<!-- Week 3 -->
+<span class="py-2 rounded-lg text-on-surface">12</span>
+<span class="py-2 rounded-lg text-on-surface">13</span>
+<span class="py-2 rounded-lg text-on-surface">14</span>
+<span class="py-2 rounded-lg text-on-surface">15</span>
+<span class="py-2 rounded-lg text-on-surface">16</span>
+<span class="py-2 rounded-lg text-on-surface">17</span>
+<!-- Major Convention Day -->
+<div class="py-1 rounded-lg bg-primary-container text-on-primary font-bold flex flex-col items-center">
+<span>18</span>
+<span class="w-1.5 h-1.5 rounded-full bg-on-primary"></span>
+</div>
+<!-- Week 4 -->
+<div class="py-1 rounded-lg bg-primary-fixed text-on-primary-fixed font-bold flex flex-col items-center">
+<span>19</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+</div>
+<div class="py-1 rounded-lg bg-primary-fixed text-on-primary-fixed font-bold flex flex-col items-center">
+<span>20</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+</div>
+<span class="py-2 rounded-lg text-on-surface">21</span>
+<span class="py-2 rounded-lg text-on-surface">22</span>
+<span class="py-2 rounded-lg text-on-surface">23</span>
+<span class="py-2 rounded-lg text-on-surface">24</span>
+<span class="py-2 rounded-lg text-on-surface">25</span>
+<!-- Week 5 -->
+<div class="py-1 rounded-lg bg-secondary-container text-on-secondary-container font-bold flex flex-col items-center">
+<span>26</span>
+<span class="w-1.5 h-1.5 rounded-full bg-on-secondary-container"></span>
+</div>
+<span class="py-2 rounded-lg text-on-surface">27</span>
+<span class="py-2 rounded-lg text-on-surface">28</span>
+<span class="py-2 rounded-lg text-on-surface">29</span>
+<span class="py-2 rounded-lg text-on-surface">30</span>
+<span class="py-2 rounded-lg text-on-surface">31</span>
+<span class="py-2 rounded-lg text-on-surface-variant/40">1</span>
+</div>
+<div class="p-3 bg-surface-container-low rounded-xl text-on-surface-variant font-label-sm text-label-sm flex items-center justify-between">
+<span>Touchez un jour avec pastille pour filtrer</span>
+<span class="text-primary font-bold">3 événements ce mois</span>
+</div>
+</div>
+</section>
+<!-- Interactive script for client-side toggles & feedback -->
+<script>
+    (function() {
+      // Toggle List vs Month view
+      const btnList = document.getElementById('toggle-list');
+      const btnMonth = document.getElementById('toggle-month');
+      const listContainer = document.getElementById('events-container');
+      const monthContainer = document.getElementById('month-grid-view');
+
+      if (btnList && btnMonth && listContainer && monthContainer) {
+        btnList.addEventListener('click', function() {
+          btnList.classList.add('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
+          btnList.classList.remove('text-on-surface-variant');
+          btnMonth.classList.remove('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
+          btnMonth.classList.add('text-on-surface-variant');
+
+          listContainer.classList.remove('hidden');
+          monthContainer.classList.add('hidden');
+        });
+
+        btnMonth.addEventListener('click', function() {
+          btnMonth.classList.add('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
+          btnMonth.classList.remove('text-on-surface-variant');
+          btnList.classList.remove('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
+          btnList.classList.add('text-on-surface-variant');
+
+          monthContainer.classList.remove('hidden');
+          listContainer.classList.add('hidden');
+        });
+      }
+
+      // Filter chips activation
+      const filterChips = document.querySelectorAll('.filter-chip');
+      filterChips.forEach(function(chip) {
+        chip.addEventListener('click', function() {
+          filterChips.forEach(function(c) {
+            c.classList.remove('bg-primary', 'text-on-primary', 'shadow-sm');
+            c.classList.add('bg-surface-container', 'text-on-surface-variant');
+          });
+          chip.classList.add('bg-primary', 'text-on-primary', 'shadow-sm');
+          chip.classList.remove('bg-surface-container', 'text-on-surface-variant');
+        });
+      });
+
+      // Sync button feedback
+      const syncBtn = document.getElementById('btn-sync');
+      if (syncBtn) {
+        syncBtn.addEventListener('click', function() {
+          const icon = syncBtn.querySelector('.material-symbols-outlined');
+          if (icon) {
+            icon.classList.add('animate-spin');
+            setTimeout(function() {
+              icon.classList.remove('animate-spin');
+            }, 1000);
+          }
+        });
+      }
+    })();
+  </script>
+</div></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.05)]" data-active-classes="text-primary font-body-md-medium"><div class="flex justify-around items-center h-16 px-space-xs"><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] text-on-surface-variant transition-colors group" data-path="accueil" href="#"><span class="material-symbols-outlined text-[22px] group-hover:text-primary transition-colors">home</span><span class="font-label-sm text-label-sm tracking-tight mt-0.5">Accueil</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] text-on-surface-variant transition-colors group" data-path="assemblees" href="#"><span class="material-symbols-outlined text-[22px] group-hover:text-primary transition-colors">church</span><span class="font-label-sm text-label-sm tracking-tight mt-0.5">Assemblées</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] text-on-surface-variant transition-colors group" data-path="publications" href="#"><span class="material-symbols-outlined text-[22px] group-hover:text-primary transition-colors">menu_book</span><span class="font-label-sm text-label-sm tracking-tight mt-0.5">Publications</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] text-on-surface-variant transition-colors group" data-path="evenements" href="#"><span class="material-symbols-outlined text-[22px] group-hover:text-primary transition-colors">calendar_month</span><span class="font-label-sm text-label-sm tracking-tight mt-0.5">Événements</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] text-on-surface-variant transition-colors group" data-path="dons" href="#"><span class="material-symbols-outlined text-[22px] group-hover:text-primary transition-colors">volunteer_activism</span><span class="font-label-sm text-label-sm tracking-tight mt-0.5">Dons</span></a></div></nav></body></html>

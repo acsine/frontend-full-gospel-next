@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+
+<html lang="fr"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"background":"#fcf8fe","on-error-container":"#93000a","on-background":"#1b1b1f","primary-fixed-dim":"#ffb3b1","on-primary-container":"#ffdad8","error":"#ba1a1a","primary-fixed":"#ffdad8","surface-container-low":"#f6f2f8","surface-variant":"#e4e1e7","secondary":"#835400","inverse-surface":"#303034","on-surface":"#1b1b1f","on-secondary-fixed-variant":"#643f00","on-secondary":"#ffffff","outline":"#906f6e","surface-tint":"#bf0229","surface":"#fcf8fe","on-error":"#ffffff","secondary-fixed":"#ffddb5","on-tertiary-fixed-variant":"#005228","on-primary":"#ffffff","on-tertiary":"#ffffff","primary-container":"#c8102e","on-primary-fixed":"#410007","outline-variant":"#e5bdbb","surface-container":"#f0edf3","error-container":"#ffdad6","inverse-on-surface":"#f3eff6","on-tertiary-fixed":"#00210c","secondary-fixed-dim":"#ffb956","inverse-primary":"#ffb3b1","surface-dim":"#dcd9df","on-secondary-fixed":"#2a1800","on-primary-fixed-variant":"#92001c","surface-container-high":"#eae7ed","secondary-container":"#feb64e","surface-container-lowest":"#ffffff","on-tertiary-container":"#86faa7","primary":"#9e001f","tertiary":"#00592b","tertiary-fixed-dim":"#6add8d","on-surface-variant":"#5c403f","surface-bright":"#fcf8fe","tertiary-fixed":"#86faa7","tertiary-container":"#00743a","on-secondary-container":"#714800","surface-container-highest":"#e4e1e7"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"gutter":"1rem","space-md":"1rem","gutter-desktop":"2rem","margin-desktop":"3rem","gutter-tablet":"1.5rem","space-xl":"2.5rem","margin":"1rem","space-xs":"0.25rem","space-lg":"1.5rem","margin-tablet":"2rem","space-sm":"0.5rem"},"fontFamily":{"title-md":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"body-lg":["Inter"],"body-md":["Inter"],"display-lg-mobile":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"label-sm":["Inter"],"body-sm":["Inter"],"currency-display":["Plus Jakarta Sans"],"display-lg":["Plus Jakarta Sans"],"label-md":["Inter"],"body-md-medium":["Inter"],"headline-lg-mobile":["Plus Jakarta Sans"]},"fontSize":{"title-md":["18px",{"lineHeight":"26px","fontWeight":"600"}],"headline-sm":["20px",{"lineHeight":"28px","fontWeight":"600"}],"headline-md":["24px",{"lineHeight":"32px","fontWeight":"700"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"body-md":["16px",{"lineHeight":"24px","fontWeight":"400"}],"display-lg-mobile":["34px",{"lineHeight":"42px","fontWeight":"800"}],"headline-lg":["32px",{"lineHeight":"40px","fontWeight":"700"}],"label-sm":["12px",{"lineHeight":"16px","fontWeight":"600"}],"body-sm":["14px",{"lineHeight":"20px","fontWeight":"400"}],"currency-display":["28px",{"lineHeight":"36px","fontWeight":"700"}],"display-lg":["48px",{"lineHeight":"56px","fontWeight":"800"}],"label-md":["14px",{"lineHeight":"20px","fontWeight":"500"}],"body-md-medium":["16px",{"lineHeight":"24px","fontWeight":"500"}],"headline-lg-mobile":["26px",{"lineHeight":"34px","fontWeight":"700"}]}}}}</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><div class="fixed top-0 left-0 right-0 h-1 bg-surface-container-high z-50"><div class="h-full w-2/5 bg-primary transition-all duration-300"></div></div><aside class="fixed left-0 top-0 h-full w-72 bg-inverse-surface text-inverse-on-surface z-40 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.12)]"><div class="flex flex-col"><div class="h-16 px-space-lg flex items-center justify-between border-b border-inverse-surface/40"><div class="flex items-center gap-space-sm"><div class="w-9 h-9 rounded-lg bg-primary-container flex items-center justify-center text-on-primary shadow-sm"><span class="material-symbols-outlined text-[22px]">local_fire_department</span></div><div class="flex flex-col"><span class="font-title-md text-title-md tracking-tight text-surface-container-lowest leading-none">FULLGOPE</span><span class="font-label-sm text-label-sm text-surface-variant/80 tracking-wide">Mission du Plein Évangile</span></div></div><button class="w-8 h-8 rounded-lg flex items-center justify-center text-surface-variant hover:bg-surface-variant/10 hover:text-surface-container-lowest transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">keyboard_double_arrow_left</span></button></div><div class="px-space-md py-space-sm"><div class="bg-surface-variant/10 rounded-lg p-space-sm flex items-center gap-space-sm"><span class="material-symbols-outlined text-secondary-container text-[20px]">church</span><div class="flex flex-col min-w-0 flex-1"><span class="font-label-sm text-label-sm text-surface-container-lowest font-medium truncate">District Yaoundé-Centre</span><span class="font-label-sm text-label-sm text-surface-variant/70">Région du Centre • Cameroun</span></div></div></div><nav class="flex flex-col gap-space-xs px-space-md mt-space-xs overflow-y-auto max-h-[calc(100vh-180px)]" data-active-classes="bg-primary-container text-on-primary font-bold"><div class="px-space-sm pt-space-xs pb-space-xs font-label-sm text-label-sm uppercase tracking-wider text-surface-variant/60">Général</div><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-surface-variant hover:bg-surface-variant/10 hover:text-surface-container-lowest transition-all" data-path="accueil" href="#"><span class="material-symbols-outlined text-[20px]">dashboard</span><span class="font-label-md text-label-md">Accueil</span></a><div class="px-space-sm pt-space-sm pb-space-xs font-label-sm text-label-sm uppercase tracking-wider text-surface-variant/60">Communauté</div><a aria-current="page" class="flex items-center justify-between px-space-md py-space-sm rounded-lg transition-all bg-primary-container text-on-primary font-bold" data-path="membres" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">group</span><span class="font-label-md text-label-md">Membres</span></div><span class="px-space-xs py-0.5 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm">Actif</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-surface-variant hover:bg-surface-variant/10 hover:text-surface-container-lowest transition-all" data-path="departements" href="#"><span class="material-symbols-outlined text-[20px]">diversity_3</span><span class="font-label-md text-label-md">Départements</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-surface-variant hover:bg-surface-variant/10 hover:text-surface-container-lowest transition-all" data-path="organisation" href="#"><span class="material-symbols-outlined text-[20px]">account_tree</span><span class="font-label-md text-label-md">Organisation</span></a><div class="px-space-sm pt-space-sm pb-space-xs font-label-sm text-label-sm uppercase tracking-wider text-surface-variant/60">Ministère &amp; Activités</div><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-surface-variant hover:bg-surface-variant/10 hover:text-surface-container-lowest transition-all" data-path="rapports" href="#"><span class="material-symbols-outlined text-[20px]">assessment</span><span class="font-label-md text-label-md">Rapports</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-surface-variant hover:bg-surface-variant/10 hover:text-surface-container-lowest transition-all" data-path="publications" href="#"><span class="material-symbols-outlined text-[20px]">menu_book</span><span class="font-label-md text-label-md">Publications</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-surface-variant hover:bg-surface-variant/10 hover:text-surface-container-lowest transition-all" data-path="evenements" href="#"><span class="material-symbols-outlined text-[20px]">calendar_month</span><span class="font-label-md text-label-md">Événements</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-surface-variant hover:bg-surface-variant/10 hover:text-surface-container-lowest transition-all" data-path="messagerie" href="#"><span class="material-symbols-outlined text-[20px]">chat_bubble</span><span class="font-label-md text-label-md">Messagerie</span></a><div class="px-space-sm pt-space-sm pb-space-xs font-label-sm text-label-sm uppercase tracking-wider text-surface-variant/60">Intendance &amp; Gouvernance</div><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-surface-variant hover:bg-surface-variant/10 hover:text-surface-container-lowest transition-all" data-path="finances" href="#"><span class="material-symbols-outlined text-[20px]">payments</span><span class="font-label-md text-label-md">Finance (FCFA)</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-surface-variant hover:bg-surface-variant/10 hover:text-surface-container-lowest transition-all" data-path="dons-et-dimes" href="#"><span class="material-symbols-outlined text-[20px]">volunteer_activism</span><span class="font-label-md text-label-md">Dons &amp; Dîmes</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-surface-variant hover:bg-surface-variant/10 hover:text-surface-container-lowest transition-all" data-path="administration" href="#"><span class="material-symbols-outlined text-[20px]">admin_panel_settings</span><span class="font-label-md text-label-md">Administration</span></a></nav></div><div class="p-space-md border-t border-inverse-surface/40 flex items-center justify-between text-surface-variant"><div class="flex items-center gap-space-sm"><div class="w-2.5 h-2.5 rounded-full bg-tertiary-fixed"></div><span class="font-label-sm text-label-sm text-surface-variant/80">Plateforme en ligne</span></div><span class="font-label-sm text-label-sm text-surface-variant/50">v2.4</span></div></aside><div class="pl-72"><header class="fixed top-1 left-72 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-30 flex items-center justify-between px-gutter-desktop"><div class="flex items-center gap-space-md flex-1 max-w-lg"><div class="relative w-full flex items-center"><span class="material-symbols-outlined absolute left-space-md text-on-surface-variant text-[20px]">search</span><input class="w-full pl-11 pr-20 py-2.5 rounded-xl bg-surface-container-low text-on-surface font-body-sm text-body-sm placeholder:text-on-surface-variant/70 border-0 focus:outline-none focus:ring-2 focus:ring-primary-container" placeholder="Rechercher fidèles, assemblées, reçus..." type="text"/><kbd class="absolute right-space-md px-2 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-on-surface-variant">⌘K</kbd></div></div><div class="flex items-center gap-space-md"><div class="hidden xl:flex items-center gap-space-sm px-space-md py-1.5 rounded-full bg-secondary-fixed/30 text-on-secondary-fixed"><span class="material-symbols-outlined text-secondary text-[18px]">verified</span><span class="font-label-sm text-label-sm font-semibold">Rév. Pasteur Principal • District Centre</span></div><button class="relative w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-primary-container ring-2 ring-surface-container-lowest"></span></button><button class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">translate</span></button><div class="h-6 w-px bg-surface-container-high"></div><div class="flex items-center gap-space-sm pl-space-xs"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="hidden md:flex flex-col text-left"><span class="font-label-md text-label-md text-on-surface leading-tight font-semibold">Pasteur N. Samuel</span><span class="font-label-sm text-label-sm text-on-surface-variant leading-tight">Superviseur National</span></div></div></div></header><main class="relative pt-16 w-full min-h-screen bg-surface"><div class="flex flex-col w-full">
+<!-- Interactive View State Controller Header -->
+<div class="px-gutter-desktop pt-space-lg pb-space-md">
+<!-- Breadcrumb & Metas -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm mb-space-sm">
+<nav class="flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface-variant">
+<a class="hover:text-primary transition-colors flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[16px]">home</span>
+<span>Accueil</span>
+</a>
+<span class="text-outline-variant font-normal">/</span>
+<span class="hover:text-primary transition-colors cursor-pointer">Communauté</span>
+<span class="text-outline-variant font-normal">/</span>
+<span class="text-primary font-semibold">Membres</span>
+</nav>
+<!-- Testing & Simulation Playground Badges -->
+<div class="flex items-center gap-space-xs bg-surface-container-high p-1 rounded-full shadow-sm">
+<button class="flex items-center gap-1 px-3 py-1 rounded-full font-label-sm text-label-sm font-semibold transition-all bg-surface-container-lowest text-primary shadow-sm" id="btn-view-table" onclick="setViewMode('data')">
+<span class="material-symbols-outlined text-[15px]">table_rows</span>
+<span>Données réelles</span>
+</button>
+<button class="flex items-center gap-1 px-3 py-1 rounded-full font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-all" id="btn-view-skeleton" onclick="setViewMode('skeleton')">
+<span class="material-symbols-outlined text-[15px]">hourglass_empty</span>
+<span>Simulation Skeleton</span>
+</button>
+<button class="flex items-center gap-1 px-3 py-1 rounded-full font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-all" id="btn-view-empty" onclick="setViewMode('empty')">
+<span class="material-symbols-outlined text-[15px]">inbox</span>
+<span>État vide</span>
+</button>
+</div>
+</div>
+<!-- Page Title & Top Actions Bar -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="flex flex-col gap-1">
+<div class="flex items-center flex-wrap gap-space-sm">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Annuaire &amp; Registre des Membres</h1>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-bold shadow-sm">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+            1 450 fidèles enregistrés
+          </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Gestion ecclésiastique centralisée • 1 210 actifs, 140 catéchumènes, 65 autres statuts • District Yaoundé-Centre
+        </p>
+</div>
+<!-- Action Buttons -->
+<div class="flex items-center flex-wrap gap-space-sm">
+<button class="inline-flex items-center gap-2 px-space-md py-2.5 rounded-full bg-surface-container text-on-surface hover:bg-surface-container-high font-label-md text-label-md transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">file_upload</span>
+<span>Importer CSV / Excel</span>
+</button>
+<button class="inline-flex items-center gap-2 px-space-md py-2.5 rounded-full bg-surface-container text-on-surface hover:bg-surface-container-high font-label-md text-label-md transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">file_download</span>
+<span>Exporter (.xlsx, .pdf)</span>
+</button>
+<button class="inline-flex items-center gap-2 px-space-lg py-2.5 rounded-full bg-primary-container text-on-primary font-label-md text-label-md font-semibold hover:bg-primary transition-all shadow-md" type="button">
+<span class="material-symbols-outlined text-[20px]">person_add</span>
+<span>Nouveau membre</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Multi-criteria Filter Bar & Chips -->
+<div class="px-gutter-desktop py-space-sm">
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-md">
+<!-- Search & Assembly Dropdowns -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-space-md items-center">
+<!-- Search Input -->
+<div class="md:col-span-8 lg:col-span-8 relative">
+<span class="material-symbols-outlined absolute left-space-md top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">search</span>
+<input class="w-full pl-11 pr-space-md py-3 rounded-xl bg-surface-container-low text-on-surface placeholder:text-on-surface-variant font-body-sm text-body-sm focus:outline-none focus:bg-surface-container-lowest transition-all" id="memberSearchInput" oninput="handleSearch(this.value)" placeholder="Rechercher par nom, e-mail, téléphone (+237) ou matricule (ex: MBR-2026-00042)..." type="text"/>
+</div>
+<!-- Assembly Selector -->
+<div class="md:col-span-4 lg:col-span-4 relative">
+<span class="material-symbols-outlined absolute left-space-md top-1/2 -translate-y-1/2 text-secondary text-[20px]">church</span>
+<select class="w-full pl-11 pr-10 py-3 rounded-xl bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:outline-none appearance-none cursor-pointer">
+<option value="all">Toutes les assemblées (District)</option>
+<option selected="" value="tsinga">Temple Central de Tsinga (Yaoundé)</option>
+<option value="biyem-assi">Paroisse de Biyem-Assi</option>
+<option value="nkoelondo">Assemblée de Nkoélondo</option>
+<option value="douala-bepanda">Douala - Bépanda Casmando</option>
+</select>
+<span class="material-symbols-outlined absolute right-space-md top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none text-[18px]">expand_more</span>
+</div>
+</div>
+<!-- Status Filter Chips Pill Group -->
+<div class="flex items-center gap-space-xs overflow-x-auto pb-1 scrollbar-none">
+<button class="status-chip active shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-full font-label-sm text-label-sm font-semibold transition-all bg-on-surface text-surface shadow-sm" onclick="filterStatus('all')">
+<span>Tous</span>
+<span class="bg-surface/20 px-1.5 py-0.5 rounded-full text-[11px]">1 450</span>
+</button>
+<button class="status-chip shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-full font-label-sm text-label-sm transition-all bg-surface-container hover:bg-tertiary/10 text-on-surface" onclick="filterStatus('actif')">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span>Actif</span>
+<span class="text-tertiary font-bold">1 210</span>
+</button>
+<button class="status-chip shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-full font-label-sm text-label-sm transition-all bg-surface-container hover:bg-surface-variant text-on-surface" onclick="filterStatus('catechumene')">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span>Catéchumène</span>
+<span class="text-secondary font-bold">140</span>
+</button>
+<button class="status-chip shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-full font-label-sm text-label-sm transition-all bg-surface-container hover:bg-secondary-container/20 text-on-surface" onclick="filterStatus('suspendu')">
+<span class="w-2 h-2 rounded-full bg-secondary-container"></span>
+<span>Suspendu</span>
+<span class="text-secondary font-bold">18</span>
+</button>
+<button class="status-chip shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-full font-label-sm text-label-sm transition-all bg-surface-container hover:bg-primary-fixed text-on-surface" onclick="filterStatus('discipline')">
+<span class="w-2 h-2 rounded-full bg-primary-fixed-dim"></span>
+<span>Sous discipline</span>
+<span class="text-primary font-bold">12</span>
+</button>
+<button class="status-chip shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-full font-label-sm text-label-sm transition-all bg-surface-container hover:bg-surface-dim text-on-surface" onclick="filterStatus('transfere')">
+<span class="w-2 h-2 rounded-full bg-surface-dim"></span>
+<span>Transféré</span>
+<span class="text-on-surface-variant font-bold">45</span>
+</button>
+<button class="status-chip shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-full font-label-sm text-label-sm transition-all bg-surface-container hover:bg-secondary-fixed/50 text-on-surface" onclick="filterStatus('inactif')">
+<span class="w-2 h-2 rounded-full bg-secondary-fixed"></span>
+<span>Inactif</span>
+<span class="text-secondary font-bold">19</span>
+</button>
+<button class="status-chip shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-full font-label-sm text-label-sm transition-all bg-surface-container hover:bg-inverse-surface/10 text-on-surface" onclick="filterStatus('decede')">
+<span class="w-2 h-2 rounded-full bg-inverse-surface"></span>
+<span>Décédé</span>
+<span class="text-on-surface font-bold">6</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Bulk Action Float Banner (Revealed when items checked) -->
+<div class="px-gutter-desktop">
+<div class="hidden my-space-sm bg-inverse-surface text-inverse-on-surface rounded-xl p-space-md shadow-xl flex flex-wrap items-center justify-between gap-space-md transition-all" id="bulk-action-banner">
+<div class="flex items-center gap-space-md">
+<div class="w-8 h-8 rounded-lg bg-primary-container text-on-primary flex items-center justify-center font-bold font-label-md text-label-md">
+<span id="bulk-count">3</span>
+</div>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md font-bold text-surface-container-lowest">Fidèles sélectionnés</span>
+<span class="font-body-sm text-body-sm text-surface-variant/80">Opérations groupées sur la circonscription</span>
+</div>
+</div>
+<div class="flex items-center flex-wrap gap-space-sm">
+<button class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-surface-variant/20 hover:bg-surface-variant/30 text-surface-container-lowest font-label-md text-label-md transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">sms</span>
+<span>SMS collectif</span>
+</button>
+<button class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-surface-variant/20 hover:bg-surface-variant/30 text-surface-container-lowest font-label-md text-label-md transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">published_with_changes</span>
+<span>Changer de statut</span>
+</button>
+<button class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-surface-variant/20 hover:bg-surface-variant/30 text-surface-container-lowest font-label-md text-label-md transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">diversity_3</span>
+<span>Assigner département</span>
+</button>
+<button class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-surface-variant/20 hover:bg-surface-variant/30 text-surface-container-lowest font-label-md text-label-md transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Exporter</span>
+</button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-surface-variant hover:text-surface-container-lowest hover:bg-surface-variant/20 transition-colors ml-space-sm" onclick="clearSelection()" title="Désélectionner tout" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Main Data View Container -->
+<div class="px-gutter-desktop py-space-sm flex flex-col gap-space-md" id="view-data">
+<!-- Desktop Responsive Table Card -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden hidden md:block">
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-surface-container text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<tr>
+<th class="py-3.5 px-space-md w-12 text-center" scope="col">
+<input class="w-4 h-4 rounded text-primary focus:ring-0 cursor-pointer accent-primary" id="selectAllCheckbox" onchange="toggleSelectAll(this)" type="checkbox"/>
+</th>
+<th class="py-3.5 px-space-md" scope="col">Membre &amp; Profil</th>
+<th class="py-3.5 px-space-md" scope="col">Matricule</th>
+<th class="py-3.5 px-space-md" scope="col">Téléphone (+237)</th>
+<th class="py-3.5 px-space-md" scope="col">Assemblée Locale</th>
+<th class="py-3.5 px-space-md" scope="col">Statut Ecclésial</th>
+<th class="py-3.5 px-space-md" scope="col">Adhésion / Baptême</th>
+<th class="py-3.5 px-space-md text-right" scope="col">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container text-on-surface font-body-sm text-body-sm">
+<!-- Row 1 -->
+<tr class="member-row hover:bg-surface-container-low transition-colors group">
+<td class="py-4 px-space-md text-center">
+<input checked="" class="row-checkbox w-4 h-4 rounded text-primary focus:ring-0 cursor-pointer accent-primary" onchange="updateBulkCount()" type="checkbox"/>
+</td>
+<td class="py-4 px-space-md">
+<div class="flex items-center gap-space-md">
+<div class="relative w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center font-bold text-on-primary-fixed overflow-hidden shadow-sm shrink-0">
+<img class="w-full h-full object-cover" data-alt="Photo portrait nette et soignée de Monsieur Fossouo Jean-Claude, fidèle camerounais en costume sombre avec un léger sourire, fond architectural lumineux d'une église de Yaoundé." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLOpCsDe7gpasB9pq-PRR8fPjaJnMmQ8FSjJR-wa5UYMZKpYVzuWSYf9jV9aKV66i6gtttqL_5UPBfBnMqs3gSG01hl6CgK9BDy9OAbF6Ku3btHkhvNMDSq6IOQcv1F6MCgAC3014fKz9Eta1HLDdCQ_7_VLQdsjmavT4ReRvQpkcS9Ku7Mp81RFriRmNpEaWrPXyBpQluRFhIhGnGavYoU79W3EBvemigYX2YOxc"/>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md-medium text-body-md-medium font-semibold text-on-surface truncate">Fossouo Jean-Claude</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">42 ans • Frère de banc</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-space-md">
+<span class="font-mono text-label-sm font-semibold px-2 py-0.5 rounded bg-surface-container-high text-on-surface tracking-wider">
+                  MBR-2026-00042
+                </span>
+</td>
+<td class="py-4 px-space-md font-body-md-medium">
+<div class="flex items-center gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-tertiary">call</span>
+<span>+237 677 12 34 56</span>
+</div>
+</td>
+<td class="py-4 px-space-md">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">Tsinga</span>
+<span class="text-[12px] text-on-surface-variant">Centre Régional</span>
+</div>
+</td>
+<td class="py-4 px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-tertiary-fixed/30 text-on-tertiary-fixed-variant font-label-sm text-label-sm font-semibold">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+                  Actif
+                </span>
+</td>
+<td class="py-4 px-space-md">
+<div class="flex flex-col">
+<span class="font-medium text-on-surface">14 Janvier 2018</span>
+<span class="text-[12px] text-on-surface-variant">Baptême par immersion</span>
+</div>
+</td>
+<td class="py-4 px-space-md text-right">
+<div class="inline-flex items-center gap-1">
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors" title="Voir fiche individuelle" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:text-secondary hover:bg-surface-container-high transition-colors" title="Modifier" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="member-row hover:bg-surface-container-low transition-colors group">
+<td class="py-4 px-space-md text-center">
+<input checked="" class="row-checkbox w-4 h-4 rounded text-primary focus:ring-0 cursor-pointer accent-primary" onchange="updateBulkCount()" type="checkbox"/>
+</td>
+<td class="py-4 px-space-md">
+<div class="flex items-center gap-space-md">
+<div class="relative w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center font-bold text-on-secondary-fixed overflow-hidden shadow-sm shrink-0">
+<img class="w-full h-full object-cover" data-alt="Portrait serein d'une dame camerounaise élégante Ngo Ndjock Ruth Epse Biyaong portant un foulard en tissu pagne traditionnel africain chaud, visage doux et expressif, éclairage naturel du matin." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiOCYOHovjN6JxuDxpn8jZZSd33gB6RUgX3iNcl1aEkIfhe8_HkojEMcfBMlY5fe9MZKYwnope-lyvY1wofdBF7CgK7vePQGA_U1EcKxF0gjFHi2fB4-ylqAAdRXeimtO3k6HhtODQWFZAoFZWhTWXuUONkG7dn6T82Unea9XUP4NmNL_wlMZ_BTDKB5KLHuQBnNvGwLu67ChI1Z5rf-Gc4m5RTwLvP95YLUFjMfA"/>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md-medium text-body-md-medium font-semibold text-on-surface truncate">Ngo Ndjock Ruth Epse Biyaong</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">29 ans • Département des Dames</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-space-md">
+<span class="font-mono text-label-sm font-semibold px-2 py-0.5 rounded bg-surface-container-high text-on-surface tracking-wider">
+                  MBR-2026-00108
+                </span>
+</td>
+<td class="py-4 px-space-md font-body-md-medium">
+<div class="flex items-center gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-tertiary">call</span>
+<span>+237 699 45 67 89</span>
+</div>
+</td>
+<td class="py-4 px-space-md">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">Tsinga</span>
+<span class="text-[12px] text-on-surface-variant">Centre Régional</span>
+</div>
+</td>
+<td class="py-4 px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-fixed/40 text-on-secondary-fixed font-label-sm text-label-sm font-semibold">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+                  Catéchumène
+                </span>
+</td>
+<td class="py-4 px-space-md">
+<div class="flex flex-col">
+<span class="font-medium text-on-surface">05 Février 2024</span>
+<span class="text-[12px] text-on-surface-variant">En formation de baptême</span>
+</div>
+</td>
+<td class="py-4 px-space-md text-right">
+<div class="inline-flex items-center gap-1">
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors" title="Voir fiche individuelle" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:text-secondary hover:bg-surface-container-high transition-colors" title="Modifier" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="member-row hover:bg-surface-container-low transition-colors group">
+<td class="py-4 px-space-md text-center">
+<input checked="" class="row-checkbox w-4 h-4 rounded text-primary focus:ring-0 cursor-pointer accent-primary" onchange="updateBulkCount()" type="checkbox"/>
+</td>
+<td class="py-4 px-space-md">
+<div class="flex items-center gap-space-md">
+<div class="relative w-10 h-10 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-bold overflow-hidden shadow-sm shrink-0">
+<img class="w-full h-full object-cover" data-alt="Portrait révérencieux du Pasteur Ndifon Samuel, pasteur aîné camerounais respecté avec col pastoral sobre et veste de costume grise, regard bienveillant et sage, fond d'estrade d'église sobre." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDx_a0rbB6e0BJzwEFqw14a0NjlsyoGtbJMBHxV_gzjlaVJOzREIttgCVg49h3vdI-dCf7oeaHJOuw8q63mNeU4sExEZcebD44hA-yDgprZA3zoRjENBcDpCoECVj7YfqDqG5wFGMeDV-q7dsWzW0naWhm5tGywKz74pCLDsYtUr50IODNgiTosZtBX3Vo6Sjlp1bEpLkDQw2R6F4oajfe_OUsAcLvBCUU10Wi2WXA"/>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md-medium text-body-md-medium font-semibold text-on-surface truncate flex items-center gap-1.5">
+<span>Rév. Ndifon Samuel</span>
+<span class="material-symbols-outlined text-secondary text-[16px]" title="Corps pastoral">verified</span>
+</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">58 ans • Pasteur Résident</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-space-md">
+<span class="font-mono text-label-sm font-semibold px-2 py-0.5 rounded bg-primary-fixed/40 text-on-primary-fixed font-bold tracking-wider">
+                  MBR-2026-00001
+                </span>
+</td>
+<td class="py-4 px-space-md font-body-md-medium">
+<div class="flex items-center gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-tertiary">call</span>
+<span>+237 675 22 11 00</span>
+</div>
+</td>
+<td class="py-4 px-space-md">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">Tsinga</span>
+<span class="text-[12px] text-on-surface-variant">District Siège</span>
+</div>
+</td>
+<td class="py-4 px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-tertiary-fixed/30 text-on-tertiary-fixed-variant font-label-sm text-label-sm font-bold">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+                  Actif • Clergé
+                </span>
+</td>
+<td class="py-4 px-space-md">
+<div class="flex flex-col">
+<span class="font-medium text-on-surface">12 Octobre 1998</span>
+<span class="text-[12px] text-on-surface-variant">Consécration pastorale</span>
+</div>
+</td>
+<td class="py-4 px-space-md text-right">
+<div class="inline-flex items-center gap-1">
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors" title="Voir fiche individuelle" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:text-secondary hover:bg-surface-container-high transition-colors" title="Modifier" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="member-row hover:bg-surface-container-low transition-colors group">
+<td class="py-4 px-space-md text-center">
+<input class="row-checkbox w-4 h-4 rounded text-primary focus:ring-0 cursor-pointer accent-primary" onchange="updateBulkCount()" type="checkbox"/>
+</td>
+<td class="py-4 px-space-md">
+<div class="flex items-center gap-space-md">
+<div class="relative w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center font-bold text-on-surface-variant overflow-hidden shadow-sm shrink-0">
+<span class="font-title-md text-title-md">EM</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md-medium text-body-md-medium font-semibold text-on-surface truncate">Ebogo Manga Valentin</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">36 ans • Hommes d'Honneur</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-space-md">
+<span class="font-mono text-label-sm font-semibold px-2 py-0.5 rounded bg-surface-container-high text-on-surface tracking-wider">
+                  MBR-2026-00315
+                </span>
+</td>
+<td class="py-4 px-space-md font-body-md-medium">
+<div class="flex items-center gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-tertiary">call</span>
+<span>+237 651 88 99 00</span>
+</div>
+</td>
+<td class="py-4 px-space-md">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">Nkoélondo</span>
+<span class="text-[12px] text-on-surface-variant">Paroisse Annexe</span>
+</div>
+</td>
+<td class="py-4 px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary-fixed/30 text-on-primary-fixed-variant font-label-sm text-label-sm font-semibold">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+                  Sous discipline
+                </span>
+</td>
+<td class="py-4 px-space-md">
+<div class="flex flex-col">
+<span class="font-medium text-on-surface">22 Mars 2021</span>
+<span class="text-[12px] text-on-surface-variant">Entretien pastoral requis</span>
+</div>
+</td>
+<td class="py-4 px-space-md text-right">
+<div class="inline-flex items-center gap-1">
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:text-secondary hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="member-row hover:bg-surface-container-low transition-colors group">
+<td class="py-4 px-space-md text-center">
+<input class="row-checkbox w-4 h-4 rounded text-primary focus:ring-0 cursor-pointer accent-primary" onchange="updateBulkCount()" type="checkbox"/>
+</td>
+<td class="py-4 px-space-md">
+<div class="flex items-center gap-space-md">
+<div class="relative w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center font-bold text-on-surface-variant overflow-hidden shadow-sm shrink-0">
+<span class="font-title-md text-title-md">MH</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md-medium text-body-md-medium font-semibold text-on-surface truncate">Mballa Henriette</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">51 ans • Chorale Béthel</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-space-md">
+<span class="font-mono text-label-sm font-semibold px-2 py-0.5 rounded bg-surface-container-high text-on-surface tracking-wider">
+                  MBR-2026-00452
+                </span>
+</td>
+<td class="py-4 px-space-md font-body-md-medium">
+<div class="flex items-center gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-tertiary">call</span>
+<span>+237 678 33 44 55</span>
+</div>
+</td>
+<td class="py-4 px-space-md">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">Biyem-Assi</span>
+<span class="text-[12px] text-on-surface-variant">Vers Bamenda Station</span>
+</div>
+</td>
+<td class="py-4 px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-dim text-on-surface font-label-sm text-label-sm font-medium">
+<span class="w-2 h-2 rounded-full bg-on-surface-variant"></span>
+                  Transféré
+                </span>
+</td>
+<td class="py-4 px-space-md">
+<div class="flex flex-col">
+<span class="font-medium text-on-surface">19 Novembre 2015</span>
+<span class="text-[12px] text-on-surface-variant">Lettre de transfert émise</span>
+</div>
+</td>
+<td class="py-4 px-space-md text-right">
+<div class="inline-flex items-center gap-1">
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:text-secondary hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 6 -->
+<tr class="member-row hover:bg-surface-container-low transition-colors group">
+<td class="py-4 px-space-md text-center">
+<input class="row-checkbox w-4 h-4 rounded text-primary focus:ring-0 cursor-pointer accent-primary" onchange="updateBulkCount()" type="checkbox"/>
+</td>
+<td class="py-4 px-space-md">
+<div class="flex items-center gap-space-md">
+<div class="relative w-10 h-10 rounded-full bg-secondary-container/30 flex items-center justify-center font-bold text-on-secondary-container overflow-hidden shadow-sm shrink-0">
+<span class="font-title-md text-title-md">TC</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md-medium text-body-md-medium font-semibold text-on-surface truncate">Tagne Christian</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">24 ans • Jeunesse Flamme</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-space-md">
+<span class="font-mono text-label-sm font-semibold px-2 py-0.5 rounded bg-surface-container-high text-on-surface tracking-wider">
+                  MBR-2026-00512
+                </span>
+</td>
+<td class="py-4 px-space-md font-body-md-medium">
+<div class="flex items-center gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-tertiary">call</span>
+<span>+237 690 11 22 33</span>
+</div>
+</td>
+<td class="py-4 px-space-md">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">Tsinga</span>
+<span class="text-[12px] text-on-surface-variant">Centre Régional</span>
+</div>
+</td>
+<td class="py-4 px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-fixed/50 text-on-secondary-fixed font-label-sm text-label-sm font-semibold">
+<span class="w-2 h-2 rounded-full bg-secondary-container"></span>
+                  Suspendu
+                </span>
+</td>
+<td class="py-4 px-space-md">
+<div class="flex flex-col">
+<span class="font-medium text-on-surface">04 Juin 2022</span>
+<span class="text-[12px] text-on-surface-variant">Décision conseil des anciens</span>
+</div>
+</td>
+<td class="py-4 px-space-md text-right">
+<div class="inline-flex items-center gap-1">
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:text-secondary hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 7 -->
+<tr class="member-row hover:bg-surface-container-low transition-colors group">
+<td class="py-4 px-space-md text-center">
+<input class="row-checkbox w-4 h-4 rounded text-primary focus:ring-0 cursor-pointer accent-primary" onchange="updateBulkCount()" type="checkbox"/>
+</td>
+<td class="py-4 px-space-md">
+<div class="flex items-center gap-space-md">
+<div class="relative w-10 h-10 rounded-full bg-tertiary-fixed flex items-center justify-center font-bold text-on-tertiary-fixed overflow-hidden shadow-sm shrink-0">
+<span class="font-title-md text-title-md">MM</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md-medium text-body-md-medium font-semibold text-on-surface truncate">Menye Marie-Claire</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">33 ans • Évangélisation de Rue</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-space-md">
+<span class="font-mono text-label-sm font-semibold px-2 py-0.5 rounded bg-surface-container-high text-on-surface tracking-wider">
+                  MBR-2026-00620
+                </span>
+</td>
+<td class="py-4 px-space-md font-body-md-medium">
+<div class="flex items-center gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-tertiary">call</span>
+<span>+237 674 55 66 77</span>
+</div>
+</td>
+<td class="py-4 px-space-md">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">Tsinga</span>
+<span class="text-[12px] text-on-surface-variant">Centre Régional</span>
+</div>
+</td>
+<td class="py-4 px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-tertiary-fixed/30 text-on-tertiary-fixed-variant font-label-sm text-label-sm font-semibold">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+                  Actif
+                </span>
+</td>
+<td class="py-4 px-space-md">
+<div class="flex flex-col">
+<span class="font-medium text-on-surface">08 Août 2019</span>
+<span class="text-[12px] text-on-surface-variant">Baptême &amp; Confirmation</span>
+</div>
+</td>
+<td class="py-4 px-space-md text-right">
+<div class="inline-flex items-center gap-1">
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:text-secondary hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Mobile Stack Cards (Adaptive Layout for Screens < 768px) -->
+<div class="flex flex-col gap-space-sm md:hidden">
+<!-- Mobile Card 1 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-space-sm">
+<input checked="" class="row-checkbox w-4 h-4 rounded text-primary focus:ring-0 accent-primary" onchange="updateBulkCount()" type="checkbox"/>
+<div class="w-10 h-10 rounded-full bg-primary-fixed overflow-hidden flex items-center justify-center font-bold text-on-primary-fixed">
+<img class="w-full h-full object-cover" data-alt="Portrait gros plan d'un membre d'église camerounais attentif, souriant et habillé décemment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKTZjWh_6CARA_O6IYPi0FzduuRHSdVnFHQwg8Iye70fZEddihKd1zZHK9_o6a04-3HJaOD7MH4m4hMviiiK8MaZVsyrAu6h5LtL8KQxqwR5suTji8aE0Rjc897Kj6oc2uMf-ps4N6dCddOseaGxeN1hwrqDAS1hV5pW3CQKd-idfWWTgsVa-Itm3-oK2bK4On4vONFnw3qoyZuYC6WZbhyjASa5XFiwF96op6UJg"/>
+</div>
+<div>
+<span class="font-title-md text-title-md font-bold text-on-surface block leading-tight">Fossouo Jean-Claude</span>
+<span class="font-mono text-label-sm text-label-sm text-on-surface-variant">MBR-2026-00042</span>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-tertiary-fixed/30 text-on-tertiary-fixed-variant font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Actif
+          </span>
+</div>
+<div class="flex items-center justify-between text-body-sm text-on-surface-variant pt-space-xs border-t border-surface-container">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">church</span> Tsinga</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px] text-tertiary">call</span> +237 677 12 34 56</span>
+</div>
+<div class="flex items-center justify-end gap-space-sm pt-space-xs">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold">Consulter</button>
+<button class="px-3 py-1.5 rounded-lg bg-primary-container text-on-primary font-label-sm text-label-sm font-semibold">Gérer</button>
+</div>
+</div>
+<!-- Mobile Card 2 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-space-sm">
+<input checked="" class="row-checkbox w-4 h-4 rounded text-primary focus:ring-0 accent-primary" onchange="updateBulkCount()" type="checkbox"/>
+<div class="w-10 h-10 rounded-full bg-secondary-fixed overflow-hidden flex items-center justify-center font-bold text-on-secondary-fixed">
+<span class="text-label-md">RN</span>
+</div>
+<div>
+<span class="font-title-md text-title-md font-bold text-on-surface block leading-tight">Ngo Ndjock Ruth Epse Biyaong</span>
+<span class="font-mono text-label-sm text-label-sm text-on-surface-variant">MBR-2026-00108</span>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-fixed/40 text-on-secondary-fixed font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Catéchumène
+          </span>
+</div>
+<div class="flex items-center justify-between text-body-sm text-on-surface-variant pt-space-xs border-t border-surface-container">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">church</span> Tsinga</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px] text-tertiary">call</span> +237 699 45 67 89</span>
+</div>
+<div class="flex items-center justify-end gap-space-sm pt-space-xs">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold">Consulter</button>
+<button class="px-3 py-1.5 rounded-lg bg-primary-container text-on-primary font-label-sm text-label-sm font-semibold">Gérer</button>
+</div>
+</div>
+</div>
+<!-- Pagination & Footnotes Bar -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-md py-space-sm">
+<div class="flex items-center gap-space-md">
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+          Affichage de <span class="font-semibold text-on-surface">1</span> à <span class="font-semibold text-on-surface">10</span> sur <span class="font-semibold text-on-surface">1 450</span> membres
+        </span>
+<div class="flex items-center gap-1.5">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Lignes:</span>
+<select class="px-2 py-1 rounded-lg bg-surface-container-lowest text-on-surface font-label-sm text-label-sm focus:outline-none shadow-sm cursor-pointer">
+<option selected="">10 / page</option>
+<option>25 / page</option>
+<option>50 / page</option>
+<option>100 / page</option>
+</select>
+</div>
+</div>
+<!-- Page Numbers Group -->
+<div class="flex items-center gap-1">
+<button class="w-9 h-9 rounded-lg flex items-center justify-center text-on-surface-variant/40 cursor-not-allowed" disabled="" type="button">
+<span class="material-symbols-outlined text-[20px]">chevron_left</span>
+</button>
+<button class="w-9 h-9 rounded-lg flex items-center justify-center bg-primary text-on-primary font-label-md text-label-md font-bold shadow-sm" type="button">
+          1
+        </button>
+<button class="w-9 h-9 rounded-lg flex items-center justify-center text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors" type="button">
+          2
+        </button>
+<button class="w-9 h-9 rounded-lg flex items-center justify-center text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors" type="button">
+          3
+        </button>
+<span class="px-1 text-on-surface-variant">...</span>
+<button class="w-9 h-9 rounded-lg flex items-center justify-center text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors" type="button">
+          145
+        </button>
+<button class="w-9 h-9 rounded-lg flex items-center justify-center text-on-surface hover:bg-surface-container font-label-md text-label-md transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Interactive Simulation: Shimmer Skeleton View (Visible on toggling skeleton mode) -->
+<div class="hidden px-gutter-desktop py-space-sm flex flex-col gap-space-md" id="view-skeleton">
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
+<div class="flex items-center justify-between pb-space-md mb-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-4 h-4 rounded bg-surface-container-highest animate-pulse"></div>
+<div class="w-48 h-5 rounded bg-surface-container-highest animate-pulse"></div>
+</div>
+<div class="w-24 h-4 rounded bg-surface-container-highest animate-pulse"></div>
+</div>
+<div class="flex flex-col gap-space-md">
+<!-- Skeleton Line Item 1 -->
+<div class="flex items-center justify-between py-space-sm animate-pulse">
+<div class="flex items-center gap-space-md flex-1">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest shrink-0"></div>
+<div class="flex flex-col gap-2 w-1/3">
+<div class="h-4 bg-surface-container-highest rounded w-3/4"></div>
+<div class="h-3 bg-surface-container-high rounded w-1/2"></div>
+</div>
+<div class="h-4 bg-surface-container-high rounded w-28 hidden md:block"></div>
+<div class="h-4 bg-surface-container-high rounded w-24 hidden md:block"></div>
+</div>
+<div class="w-20 h-6 rounded-full bg-surface-container-highest"></div>
+</div>
+<!-- Skeleton Line Item 2 -->
+<div class="flex items-center justify-between py-space-sm animate-pulse">
+<div class="flex items-center gap-space-md flex-1">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest shrink-0"></div>
+<div class="flex flex-col gap-2 w-1/3">
+<div class="h-4 bg-surface-container-highest rounded w-4/5"></div>
+<div class="h-3 bg-surface-container-high rounded w-2/5"></div>
+</div>
+<div class="h-4 bg-surface-container-high rounded w-28 hidden md:block"></div>
+<div class="h-4 bg-surface-container-high rounded w-24 hidden md:block"></div>
+</div>
+<div class="w-24 h-6 rounded-full bg-surface-container-highest"></div>
+</div>
+<!-- Skeleton Line Item 3 -->
+<div class="flex items-center justify-between py-space-sm animate-pulse">
+<div class="flex items-center gap-space-md flex-1">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest shrink-0"></div>
+<div class="flex flex-col gap-2 w-1/3">
+<div class="h-4 bg-surface-container-highest rounded w-2/3"></div>
+<div class="h-3 bg-surface-container-high rounded w-1/3"></div>
+</div>
+<div class="h-4 bg-surface-container-high rounded w-28 hidden md:block"></div>
+<div class="h-4 bg-surface-container-high rounded w-24 hidden md:block"></div>
+</div>
+<div class="w-16 h-6 rounded-full bg-surface-container-highest"></div>
+</div>
+<!-- Skeleton Line Item 4 -->
+<div class="flex items-center justify-between py-space-sm animate-pulse">
+<div class="flex items-center gap-space-md flex-1">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest shrink-0"></div>
+<div class="flex flex-col gap-2 w-1/3">
+<div class="h-4 bg-surface-container-highest rounded w-3/4"></div>
+<div class="h-3 bg-surface-container-high rounded w-2/4"></div>
+</div>
+<div class="h-4 bg-surface-container-high rounded w-28 hidden md:block"></div>
+<div class="h-4 bg-surface-container-high rounded w-24 hidden md:block"></div>
+</div>
+<div class="w-20 h-6 rounded-full bg-surface-container-highest"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive Simulation: Empty State Illustrated View -->
+<div class="hidden px-gutter-desktop py-space-xl" id="view-empty">
+<div class="bg-surface-container-lowest rounded-xl p-space-xl shadow-sm max-w-2xl mx-auto flex flex-col items-center text-center">
+<!-- Illustrative Ecclesiastical Icon Cluster -->
+<div class="relative w-24 h-24 mb-space-md flex items-center justify-center">
+<div class="absolute inset-0 rounded-full bg-surface-container-high animate-ping opacity-25"></div>
+<div class="w-20 h-20 rounded-2xl bg-surface-container flex items-center justify-center text-primary-container shadow-inner">
+<span class="material-symbols-outlined text-[42px]">person_search</span>
+</div>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-space-xs">
+        Aucun membre trouvé
+      </h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md mb-space-lg">
+        Aucun fidèle ne correspond aux critères de recherche actuels ou au statut sélectionné dans le registre ecclésiastique.
+      </p>
+<div class="flex items-center gap-space-sm flex-wrap justify-center">
+<button class="inline-flex items-center gap-2 px-space-lg py-3 rounded-full bg-primary-container text-on-primary font-label-md text-label-md font-semibold hover:bg-primary transition-all shadow-md" onclick="resetFilters()">
+<span class="material-symbols-outlined text-[18px]">filter_alt_off</span>
+<span>Réinitialiser les filtres</span>
+</button>
+<button class="inline-flex items-center gap-2 px-space-md py-3 rounded-full bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-all" onclick="setViewMode('data')">
+<span>Revenir à la liste principale</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Bottom Metric Snapshot Widget (Full Gospel Diocesan Overview) -->
+<div class="px-gutter-desktop pt-space-md pb-space-xl">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-tertiary-fixed/30 text-tertiary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">verified_user</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Taux de fidélité active</span>
+<span class="font-headline-md text-headline-md font-bold text-on-surface">83.4%</span>
+<span class="text-[12px] text-tertiary font-semibold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> +2.1% ce trimestre
+          </span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-secondary-fixed/40 text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">water_drop</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Baptêmes récents (2024)</span>
+<span class="font-headline-md text-headline-md font-bold text-on-surface">64</span>
+<span class="text-[12px] text-on-surface-variant">Prochaine immersion: Mai</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-primary-fixed text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">groups</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Cellules de prière</span>
+<span class="font-headline-md text-headline-md font-bold text-on-surface">38</span>
+<span class="text-[12px] text-on-surface-variant">Réparties sur Yaoundé</span>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-surface-container-highest text-on-surface-variant flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">sync_saved_locally</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Dernière synchro cloud</span>
+<span class="font-title-md text-title-md font-bold text-on-surface">Aujourd'hui, 09:41</span>
+<span class="text-[12px] text-tertiary font-semibold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">cloud_done</span> Base nationale à jour
+          </span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function setViewMode(mode) {
+    const viewData = document.getElementById('view-data');
+    const viewSkeleton = document.getElementById('view-skeleton');
+    const viewEmpty = document.getElementById('view-empty');
+
+    const btnTable = document.getElementById('btn-view-table');
+    const btnSkeleton = document.getElementById('btn-view-skeleton');
+    const btnEmpty = document.getElementById('btn-view-empty');
+
+    // Hide all
+    viewData.classList.add('hidden');
+    viewSkeleton.classList.add('hidden');
+    viewEmpty.classList.add('hidden');
+
+    // Reset button appearances
+    [btnTable, btnSkeleton, btnEmpty].forEach(btn => {
+      btn.className = 'flex items-center gap-1 px-3 py-1 rounded-full font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-all';
+    });
+
+    const activeClasses = 'flex items-center gap-1 px-3 py-1 rounded-full font-label-sm text-label-sm font-semibold transition-all bg-surface-container-lowest text-primary shadow-sm';
+
+    if (mode === 'data') {
+      viewData.classList.remove('hidden');
+      btnTable.className = activeClasses;
+    } else if (mode === 'skeleton') {
+      viewSkeleton.classList.remove('hidden');
+      btnSkeleton.className = activeClasses;
+    } else if (mode === 'empty') {
+      viewEmpty.classList.remove('hidden');
+      btnEmpty.className = activeClasses;
+    }
+  }
+
+  function toggleSelectAll(master) {
+    const checkboxes = document.querySelectorAll('.row-checkbox');
+    checkboxes.forEach(cb => cb.checked = master.checked);
+    updateBulkCount();
+  }
+
+  function updateBulkCount() {
+    const checkedBoxes = document.querySelectorAll('.row-checkbox:checked');
+    const banner = document.getElementById('bulk-action-banner');
+    const countEl = document.getElementById('bulk-count');
+    const count = checkedBoxes.length;
+
+    if (count > 0) {
+      banner.classList.remove('hidden');
+      countEl.textContent = count;
+    } else {
+      banner.classList.add('hidden');
+      const selectAll = document.getElementById('selectAllCheckbox');
+      if (selectAll) selectAll.checked = false;
+    }
+  }
+
+  function clearSelection() {
+    const checkboxes = document.querySelectorAll('.row-checkbox');
+    checkboxes.forEach(cb => cb.checked = false);
+    const selectAll = document.getElementById('selectAllCheckbox');
+    if (selectAll) selectAll.checked = false;
+    updateBulkCount();
+  }
+
+  function filterStatus(status) {
+    const chips = document.querySelectorAll('.status-chip');
+    chips.forEach(c => {
+      c.classList.remove('bg-on-surface', 'text-surface', 'shadow-sm');
+      c.classList.add('bg-surface-container', 'text-on-surface');
+    });
+
+    event.currentTarget.classList.remove('bg-surface-container', 'text-on-surface');
+    event.currentTarget.classList.add('bg-on-surface', 'text-surface', 'shadow-sm');
+
+    if (status === 'decede' || status === 'inactif') {
+      // Simulate demonstration for empty records
+      setViewMode('empty');
+    } else {
+      setViewMode('data');
+    }
+  }
+
+  function handleSearch(term) {
+    if (term.toLowerCase().includes('inconnu') || term.length > 25) {
+      setViewMode('empty');
+    }
+  }
+
+  function resetFilters() {
+    const searchInput = document.getElementById('memberSearchInput');
+    if (searchInput) searchInput.value = '';
+    setViewMode('data');
+  }
+
+  // Initialize bulk count on page load
+  document.addEventListener('DOMContentLoaded', () => {
+    updateBulkCount();
+  });
+</script></main></div></body></html>

@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+
+<html lang="fr"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}.route-loader{position:fixed;top:0;left:0;height:3px;width:68%;background:#C8102E;z-index:9999;box-shadow:0 0 10px rgba(200,16,46,0.5);animation:pulse-bar 2s infinite ease-in-out;}@keyframes pulse-bar{0%{width:20%;opacity:0.8;}50%{width:85%;opacity:1;}100%{width:68%;opacity:0.9;}}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"on-primary":"#ffffff","surface-bright":"#fcf8fe","primary-fixed-dim":"#ffb3b1","surface-container-highest":"#e4e1e7","surface-variant":"#e4e1e7","secondary-fixed-dim":"#ffb956","on-error":"#ffffff","surface-dim":"#dcd9df","secondary-container":"#feb64e","on-secondary-container":"#714800","outline":"#906f6e","surface-tint":"#bf0229","on-tertiary":"#ffffff","inverse-on-surface":"#f3eff6","tertiary":"#00592b","on-secondary-fixed":"#2a1800","outline-variant":"#e5bdbb","on-tertiary-container":"#86faa7","on-error-container":"#93000a","on-primary-fixed-variant":"#92001c","secondary":"#835400","primary":"#9e001f","on-surface-variant":"#5c403f","surface-container":"#f0edf3","error":"#ba1a1a","on-background":"#1b1b1f","primary-container":"#c8102e","primary-fixed":"#ffdad8","surface-container-high":"#eae7ed","background":"#fcf8fe","error-container":"#ffdad6","tertiary-container":"#00743a","on-tertiary-fixed-variant":"#005228","on-primary-fixed":"#410007","on-secondary":"#ffffff","on-secondary-fixed-variant":"#643f00","tertiary-fixed":"#86faa7","on-tertiary-fixed":"#00210c","inverse-surface":"#303034","surface-container-low":"#f6f2f8","surface-container-lowest":"#ffffff","surface":"#fcf8fe","on-surface":"#1b1b1f","inverse-primary":"#ffb3b1","secondary-fixed":"#ffddb5","tertiary-fixed-dim":"#6add8d","on-primary-container":"#ffdad8"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-sm":"0.5rem","margin-desktop":"3rem","gutter":"1rem","space-lg":"1.5rem","space-xl":"2.5rem","space-xs":"0.25rem","gutter-desktop":"2rem","space-md":"1rem","margin":"1rem","margin-tablet":"2rem","gutter-tablet":"1.5rem"},"fontFamily":{"display-lg-mobile":["Plus Jakarta Sans"],"currency-display":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"label-md":["Inter"],"body-md":["Inter"],"headline-lg":["Plus Jakarta Sans"],"body-lg":["Inter"],"title-md":["Plus Jakarta Sans"],"body-md-medium":["Inter"],"label-sm":["Inter"],"body-sm":["Inter"],"headline-lg-mobile":["Plus Jakarta Sans"],"display-lg":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"]},"fontSize":{"display-lg-mobile":["34px",{"lineHeight":"42px","fontWeight":"800"}],"currency-display":["28px",{"lineHeight":"36px","fontWeight":"700"}],"headline-sm":["20px",{"lineHeight":"28px","fontWeight":"600"}],"label-md":["14px",{"lineHeight":"20px","fontWeight":"500"}],"body-md":["16px",{"lineHeight":"24px","fontWeight":"400"}],"headline-lg":["32px",{"lineHeight":"40px","fontWeight":"700"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"title-md":["18px",{"lineHeight":"26px","fontWeight":"600"}],"body-md-medium":["16px",{"lineHeight":"24px","fontWeight":"500"}],"label-sm":["12px",{"lineHeight":"16px","fontWeight":"600"}],"body-sm":["14px",{"lineHeight":"20px","fontWeight":"400"}],"headline-lg-mobile":["26px",{"lineHeight":"34px","fontWeight":"700"}],"display-lg":["48px",{"lineHeight":"56px","fontWeight":"800"}],"headline-md":["24px",{"lineHeight":"32px","fontWeight":"700"}]}}}}</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><div class="route-loader"></div><aside class="fixed left-0 top-0 h-full w-72 bg-inverse-surface text-inverse-on-surface z-50 flex flex-col justify-between hidden md:flex"><div class="flex flex-col flex-1 overflow-y-auto"><div class="px-space-md py-space-md flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-10 h-10 rounded-xl bg-primary-container flex items-center justify-center text-on-primary font-headline-sm text-headline-sm">FG</div><div><span class="font-headline-sm text-headline-sm tracking-tight text-surface-container-lowest block">FULLGOPE</span><span class="font-label-sm text-label-sm text-surface-variant flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-tertiary-fixed"></span>Connecté • Tsinga</span></div></div><button class="w-8 h-8 rounded-lg flex items-center justify-center text-surface-variant hover:text-surface-container-lowest transition-colors"><span class="material-symbols-outlined text-[20px]">dock_to_right</span></button></div><div class="px-space-md py-space-xs"><div class="bg-inverse-on-surface/5 rounded-lg px-space-sm py-1.5"><p class="font-label-sm text-label-sm text-secondary-fixed italic leading-tight">« No Other Christ, No Other Gospel »</p><p class="font-label-sm text-[10px] text-surface-dim uppercase tracking-wider mt-0.5">Mission du Plein Évangile (1961)</p></div></div><nav class="flex-1 px-space-sm py-space-md space-y-space-md" data-active-classes="bg-primary-container text-on-primary font-body-md-medium rounded-xl"><div class="space-y-1"><span class="px-space-sm font-label-sm text-label-sm uppercase tracking-wider text-surface-dim block mb-1">Principal</span><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="accueil" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">grid_view</span><span class="font-body-sm text-body-sm">Accueil</span></div></a></div><div class="space-y-1"><span class="px-space-sm font-label-sm text-label-sm uppercase tracking-wider text-surface-dim block mb-1">Communauté</span><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="membres" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">groups</span><span class="font-body-sm text-body-sm">Membres</span></div><span class="px-2 py-0.5 rounded-full font-label-sm text-[11px] bg-inverse-on-surface/15 text-surface-bright">1 450</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="departements" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">diversity_3</span><span class="font-body-sm text-body-sm">Départements</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="organisation" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">account_tree</span><span class="font-body-sm text-body-sm">Organisation</span></div></a></div><div class="space-y-1"><span class="px-space-sm font-label-sm text-label-sm uppercase tracking-wider text-surface-dim block mb-1">Ministère &amp; Activités</span><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="rapports" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">assignment</span><span class="font-body-sm text-body-sm">Rapports</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="publications" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">menu_book</span><span class="font-body-sm text-body-sm">Publications</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="evenements-et-plannings" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">calendar_month</span><span class="font-body-sm text-body-sm">Événements &amp; Plannings</span></div><span class="px-2 py-0.5 rounded-full font-label-sm text-[11px] bg-secondary-container text-on-secondary-container font-bold">3</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="reseau-social" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">hub</span><span class="font-body-sm text-body-sm">Réseau social</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="messagerie" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">chat_bubble</span><span class="font-body-sm text-body-sm">Messagerie</span></div><span class="px-2 py-0.5 rounded-full font-label-sm text-[11px] bg-primary text-on-primary font-bold">12</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="mediatheque" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">video_library</span><span class="font-body-sm text-body-sm">Médiathèque</span></div></a></div><div class="space-y-1"><span class="px-space-sm font-label-sm text-label-sm uppercase tracking-wider text-surface-dim block mb-1">Intendance &amp; Gouvernance</span><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="finance" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">payments</span><span class="font-body-sm text-body-sm">Finance</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="dons-et-campagnes" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">volunteer_activism</span><span class="font-body-sm text-body-sm">Dons &amp; Campagnes</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="administration" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">admin_panel_settings</span><span class="font-body-sm text-body-sm">Administration</span></div></a></div></nav></div><div class="p-space-md bg-inverse-on-surface/5 flex items-center justify-between"><div class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-tertiary-fixed-dim"></span><span class="font-label-sm text-label-sm text-surface-variant">Serveur Yaoundé • v2.4</span></div><button class="text-surface-dim hover:text-surface-container-lowest transition-colors"><span class="material-symbols-outlined text-[18px]">help</span></button></div></aside><div class="md:pl-72"><header class="fixed top-0 left-0 md:left-72 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 px-space-md flex items-center justify-between"><div class="flex items-center gap-space-sm flex-1 max-w-xl"><button class="md:hidden w-10 h-10 rounded-xl flex items-center justify-center text-on-surface hover:bg-surface-container"><span class="material-symbols-outlined">menu</span></button><div class="relative flex-1 hidden sm:block"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">search</span><input class="w-full h-10 pl-10 pr-20 bg-surface-container-low rounded-xl font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant/70 focus:outline-none focus:bg-surface-container-lowest" placeholder="Rechercher fidèles, assemblées, reçus MoMo/Orange..." type="text"/><kbd class="absolute right-2.5 top-1/2 -translate-y-1/2 px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-[11px]">&amp;#8984;K</kbd></div><div class="hidden lg:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface"><span class="material-symbols-outlined text-primary text-[18px]">church</span><span class="font-body-md-medium text-body-md-medium">Pasteur Titulaire</span><span class="text-on-surface-variant">•</span><span class="text-on-surface-variant">District Centre (Temple Tsinga)</span></div></div><div class="flex items-center gap-space-sm"><div class="flex items-center gap-1 p-1 bg-surface-container-low rounded-full"><button class="px-2.5 py-1 rounded-full font-label-sm text-label-sm font-bold bg-inverse-surface text-surface-container-lowest">FR</button><button class="px-2.5 py-1 rounded-full font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface">EN</button></div><button class="h-9 px-2.5 rounded-xl bg-surface-container text-on-surface-variant hover:text-on-surface flex items-center gap-1.5 font-label-sm text-label-sm" title="Basculer l'état de chargement skeleton"><span class="material-symbols-outlined text-[18px] text-secondary">hourglass_empty</span><span class="hidden xl:inline">Skeleton</span></button><button class="relative w-10 h-10 rounded-xl flex items-center justify-center text-on-surface hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2 right-2 w-2.5 h-2.5 rounded-full bg-primary-container ring-2 ring-surface-container-lowest"></span></button><div class="flex items-center gap-2 pl-2 border-l border-surface-container-high"><div class="relative"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-tertiary-container ring-2 ring-surface-container-lowest"></span></div><div class="hidden sm:block text-left"><span class="font-label-md text-label-md text-on-surface block leading-tight">Rev. N. Samuel</span><span class="font-label-sm text-label-sm text-on-surface-variant block leading-tight">District Tsinga</span></div><span class="material-symbols-outlined text-on-surface-variant text-[18px]">arrow_drop_down</span></div></div></header><main class="w-full pt-16 bg-surface min-h-screen px-space-md md:px-gutter-desktop py-space-lg pb-24 md:pb-space-lg"><div class="flex flex-col w-full relative">
+<!-- OVERLAY / CLOCHE DROPDOWN POPOVER (Positionné en haut à droite pour simuler l'ancrage sous l'icône de cloche du shell) -->
+<div class="fixed top-16 right-4 sm:right-8 lg:right-16 z-50 w-[92vw] sm:w-[420px] bg-surface-container-lowest rounded-xl shadow-2xl transition-all duration-300 transform origin-top-right" id="bellPopover">
+<!-- Popover Header -->
+<div class="p-space-md bg-surface-container-low rounded-t-xl flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface">Notifications</span>
+<span class="px-2 py-0.5 rounded-full font-label-sm text-[11px] bg-primary-container text-on-primary font-bold" id="popoverUnreadBadge">5 non lues</span>
+</div>
+<button class="font-label-sm text-label-sm text-primary hover:text-primary-container font-medium transition-colors flex items-center gap-1" onclick="markAllNotificationsAsRead()">
+<span class="material-symbols-outlined text-[16px]">done_all</span> Tout lire
+      </button>
+</div>
+<!-- Quick Notification Preview Stream -->
+<div class="max-h-[380px] overflow-y-auto divide-y-0 space-y-1 p-2">
+<!-- Item 1: Don reçu -->
+<a class="group flex items-start gap-3 p-2.5 rounded-lg hover:bg-surface-container transition-all relative" href="#feed-item-1" onclick="togglePopover()">
+<div class="w-9 h-9 rounded-full bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">payments</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1 mb-0.5">
+<span class="font-body-md-medium text-body-sm text-on-surface truncate group-hover:text-primary transition-colors">Nouveau don • 150 000 XAF</span>
+<span class="w-2 h-2 rounded-full bg-primary-container shrink-0 animate-pulse"></span>
+</div>
+<p class="font-body-sm text-[12px] text-on-surface-variant line-clamp-1 leading-snug">Frère Belinga via MTN MoMo (Sono District)</p>
+<span class="font-label-sm text-[10px] text-on-surface-variant/70 mt-1 block">Il y a 25 min</span>
+</div>
+</a>
+<!-- Item 2: Avis Révocation Charge -->
+<a class="group flex items-start gap-3 p-2.5 rounded-lg hover:bg-surface-container transition-all relative" href="#feed-item-2" onclick="togglePopover()">
+<div class="w-9 h-9 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">gavel</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1 mb-0.5">
+<span class="font-body-md-medium text-body-sm text-on-surface truncate group-hover:text-primary transition-colors">Révocation charge pastorale</span>
+<span class="w-2 h-2 rounded-full bg-primary-container shrink-0 animate-pulse"></span>
+</div>
+<p class="font-body-sm text-[12px] text-on-surface-variant line-clamp-1 leading-snug">Suspension Officier de Culte (Conseil District)</p>
+<span class="font-label-sm text-[10px] text-on-surface-variant/70 mt-1 block">Aujourd'hui à 10:14</span>
+</div>
+</a>
+<!-- Item 3: Passation de charge -->
+<a class="group flex items-start gap-3 p-2.5 rounded-lg hover:bg-surface-container transition-all relative" href="#feed-item-3" onclick="togglePopover()">
+<div class="w-9 h-9 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">key</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1 mb-0.5">
+<span class="font-body-md-medium text-body-sm text-on-surface truncate group-hover:text-primary transition-colors">Passation : Diaconat Central</span>
+<span class="w-2 h-2 rounded-full bg-primary-container shrink-0 animate-pulse"></span>
+</div>
+<p class="font-body-sm text-[12px] text-on-surface-variant line-clamp-1 leading-snug">Ancien Mbarga vers Diacre Pierre Mba (Dimanche)</p>
+<span class="font-label-sm text-[10px] text-on-surface-variant/70 mt-1 block">Aujourd'hui à 08:45</span>
+</div>
+</a>
+<!-- Item 4: Transfert de Membre -->
+<a class="group flex items-start gap-3 p-2.5 rounded-lg hover:bg-surface-container transition-all relative" href="#feed-item-5" onclick="togglePopover()">
+<div class="w-9 h-9 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">sync_alt</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1 mb-0.5">
+<span class="font-body-md-medium text-body-sm text-on-surface truncate group-hover:text-primary transition-colors">Transfert validé #TR-014</span>
+<span class="w-2 h-2 rounded-full bg-primary-container shrink-0"></span>
+</div>
+<p class="font-body-sm text-[12px] text-on-surface-variant line-clamp-1 leading-snug">Sœur Marie Ngo (Nkolbisson → Tsinga)</p>
+<span class="font-label-sm text-[10px] text-on-surface-variant/70 mt-1 block">Hier à 14:10</span>
+</div>
+</a>
+</div>
+<!-- Popover Footer -->
+<div class="p-space-sm bg-surface-container-lowest rounded-b-xl flex items-center justify-between shadow-[0_-4px_12px_rgba(0,0,0,0.03)]">
+<button class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface flex items-center gap-1.5 py-1 px-2 rounded-lg hover:bg-surface-container transition-colors" onclick="togglePopover()">
+<span class="material-symbols-outlined text-[16px]">settings</span> Préférences alertes
+      </button>
+<button class="font-label-sm text-label-sm text-primary-container font-bold hover:underline flex items-center gap-1 py-1 px-2" onclick="togglePopover()">
+        Fermer le volet <span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+</div>
+<!-- BREADCRUMB & METRICS HEADER -->
+<div class="flex flex-col gap-space-sm mb-space-lg">
+<!-- Breadcrumb -->
+<nav aria-label="Fil d'Ariane" class="flex items-center gap-2 font-label-sm text-label-sm text-on-surface-variant">
+<span class="hover:text-primary cursor-pointer transition-colors">Accueil</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="hover:text-primary cursor-pointer transition-colors">Administration &amp; Vie d'Église</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-on-surface font-semibold">Centre de Notifications &amp; Alertes</span>
+</nav>
+<!-- Main Title & Action Bar -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Centre de Notifications &amp; Flux d'Activité</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-0.5">
+          Historique des alertes statutaires, mouvements pastoraux, validations financières et rapports d'assemblée.
+        </p>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-wrap items-center gap-2 sm:gap-space-sm shrink-0">
+<!-- Floating Bell Toggle Simulator -->
+<button class="h-10 px-3.5 rounded-full bg-surface-container-high text-on-surface hover:bg-surface-container-highest transition-all flex items-center gap-2 font-label-md text-label-md shadow-sm" onclick="togglePopover()">
+<span class="material-symbols-outlined text-[18px] text-primary">notifications_active</span>
+<span class="hidden sm:inline">Volet cloche</span>
+</button>
+<!-- Tout marquer comme lu -->
+<button class="h-10 px-4 rounded-full bg-primary-container text-on-primary hover:bg-primary transition-all flex items-center gap-2 font-label-md text-label-md shadow-sm" onclick="markAllNotificationsAsRead()">
+<span class="material-symbols-outlined text-[18px]">done_all</span>
+<span>Tout marquer comme lu</span>
+</button>
+<!-- Paramètres Canaux -->
+<button class="h-10 px-3.5 rounded-full bg-surface-container-lowest text-on-surface hover:bg-surface-container-low transition-all flex items-center gap-2 font-label-md text-label-md shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-secondary">tune</span>
+<span class="hidden md:inline">Canaux SMS &amp; Web</span>
+</button>
+</div>
+</div>
+</div>
+<!-- CONTROL & SIMULATOR BAR (State switcher + KPI Metrics) -->
+<div class="grid grid-cols-1 xl:grid-cols-4 gap-space-md mb-space-lg">
+<!-- State Simulation Switcher Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-[11px] uppercase tracking-wider text-on-surface-variant font-bold">Simulateur d'état interface</span>
+<span class="material-symbols-outlined text-secondary text-[18px]">visibility</span>
+</div>
+<div class="grid grid-cols-3 gap-1 bg-surface-container-low p-1 rounded-lg">
+<button class="py-1.5 px-2 rounded-md font-label-sm text-[12px] font-bold bg-primary-container text-on-primary transition-all text-center" id="btnStateNormal" onclick="setViewState('normal')">
+          Actif
+        </button>
+<button class="py-1.5 px-2 rounded-md font-label-sm text-[12px] font-medium text-on-surface-variant hover:text-on-surface transition-all text-center" id="btnStateEmpty" onclick="setViewState('empty')">
+          Vide
+        </button>
+<button class="py-1.5 px-2 rounded-md font-label-sm text-[12px] font-medium text-on-surface-variant hover:text-on-surface transition-all text-center" id="btnStateSkeleton" onclick="setViewState('skeleton')">
+          Skeleton
+        </button>
+</div>
+</div>
+<!-- KPI 1: Non Lues -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex items-center justify-between">
+<div>
+<span class="font-label-sm text-[11px] uppercase tracking-wider text-on-surface-variant font-medium">Urgences à traiter</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-currency-display text-currency-display text-primary font-bold" id="kpiUnreadCount">5</span>
+<span class="font-label-sm text-label-sm text-primary">actions requises</span>
+</div>
+</div>
+<div class="w-11 h-11 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed">
+<span class="material-symbols-outlined text-[22px]">priority_high</span>
+</div>
+</div>
+<!-- KPI 2: Finances 24h -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex items-center justify-between">
+<div>
+<span class="font-label-sm text-[11px] uppercase tracking-wider text-on-surface-variant font-medium">Flux MoMo / Orange</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-currency-display text-currency-display text-tertiary font-bold">630 000</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">FCFA</span>
+</div>
+</div>
+<div class="w-11 h-11 rounded-full bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed">
+<span class="material-symbols-outlined text-[22px]">account_balance_wallet</span>
+</div>
+</div>
+<!-- KPI 3: Canaux Connectés -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex items-center justify-between">
+<div>
+<span class="font-label-sm text-[11px] uppercase tracking-wider text-on-surface-variant font-medium">Relais Canaux Déployés</span>
+<div class="flex items-center gap-2 mt-2">
+<span class="inline-flex items-center gap-1 font-label-sm text-[11px] text-tertiary font-semibold bg-tertiary-fixed/40 px-2 py-0.5 rounded-full">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Push Web OK
+          </span>
+<span class="inline-flex items-center gap-1 font-label-sm text-[11px] text-secondary font-semibold bg-secondary-fixed/50 px-2 py-0.5 rounded-full">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> SMS MT 98%
+          </span>
+</div>
+</div>
+<div class="w-11 h-11 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[22px]">cell_tower</span>
+</div>
+</div>
+</div>
+<!-- CATEGORY FILTER CHIPS -->
+<div class="flex items-center gap-2 overflow-x-auto pb-space-sm mb-space-md scrollbar-none">
+<button class="category-chip shrink-0 h-9 px-4 rounded-full font-label-md text-label-md font-semibold bg-primary-container text-on-primary transition-all flex items-center gap-2 shadow-sm" onclick="filterCategory('all', this)">
+<span>Toutes</span>
+<span class="px-1.5 py-0.2 rounded-full font-label-sm text-[11px] bg-surface-container-lowest text-primary font-bold" id="badgeTotalAll">18</span>
+</button>
+<button class="category-chip shrink-0 h-9 px-4 rounded-full font-label-md text-label-md bg-surface-container-lowest text-on-surface hover:bg-surface-container-high transition-all flex items-center gap-2 shadow-sm" onclick="filterCategory('unread', this)">
+<span>Non lues</span>
+<span class="px-2 py-0.5 rounded-full font-label-sm text-[11px] bg-primary-container text-on-primary font-bold" id="badgeTotalUnread">5</span>
+</button>
+<button class="category-chip shrink-0 h-9 px-4 rounded-full font-label-md text-label-md bg-surface-container-lowest text-on-surface hover:bg-surface-container-high transition-all flex items-center gap-2 shadow-sm" onclick="filterCategory('charges', this)">
+<span class="material-symbols-outlined text-[16px] text-secondary">workspace_premium</span>
+<span>Mouvements &amp; Charges</span>
+</button>
+<button class="category-chip shrink-0 h-9 px-4 rounded-full font-label-md text-label-md bg-surface-container-lowest text-on-surface hover:bg-surface-container-high transition-all flex items-center gap-2 shadow-sm" onclick="filterCategory('finance', this)">
+<span class="material-symbols-outlined text-[16px] text-tertiary">savings</span>
+<span>Finance &amp; Dons</span>
+</button>
+<button class="category-chip shrink-0 h-9 px-4 rounded-full font-label-md text-label-md bg-surface-container-lowest text-on-surface hover:bg-surface-container-high transition-all flex items-center gap-2 shadow-sm" onclick="filterCategory('rapports', this)">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">verified</span>
+<span>Rapports &amp; Audit</span>
+</button>
+<button class="category-chip shrink-0 h-9 px-4 rounded-full font-label-md text-label-md bg-surface-container-lowest text-on-surface hover:bg-surface-container-high transition-all flex items-center gap-2 shadow-sm" onclick="filterCategory('transferts', this)">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">move_up</span>
+<span>Transferts de Membres</span>
+</button>
+</div>
+<!-- MAIN DYNAMIC CONTENT CONTAINER -->
+<div class="w-full">
+<!-- VIEW 1: REGULAR GROUPED NOTIFICATION LIST -->
+<div class="space-y-space-lg" id="viewNormal">
+<!-- SECTION A: AUJOURD'HUI -->
+<section class="space-y-space-sm" data-group="today">
+<div class="flex items-center justify-between px-1">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Aujourd'hui — 29 Mars 2025</h2>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">3 alertes récentes</span>
+</div>
+<div class="space-y-3">
+<!-- Item 1: Don reçu & Quittance -->
+<article class="notification-card group bg-surface-container-lowest hover:bg-surface-bright rounded-xl p-space-md shadow-sm transition-all duration-200 relative overflow-hidden flex flex-col md:flex-row md:items-center justify-between gap-space-md" data-category="finance" data-status="unread" id="feed-item-1">
+<!-- Left Red Indicator Stripe for unread -->
+<div class="unread-indicator absolute left-0 top-0 bottom-0 w-1.5 bg-primary-container"></div>
+<div class="flex items-start gap- space-md pl-2 flex-1">
+<div class="w-12 h-12 rounded-xl bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center shrink-0 shadow-sm mt-0.5">
+<span class="material-symbols-outlined text-[24px]">price_check</span>
+</div>
+<div class="space-y-1">
+<div class="flex flex-wrap items-center gap-2">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full font-label-sm text-[11px] font-bold bg-tertiary text-on-tertiary">
+                    Don En Ligne • MTN MoMo
+                  </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Il y a 25 min</span>
+<span class="unread-dot w-2 h-2 rounded-full bg-primary-container shrink-0"></span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface font-bold">Nouveau don reçu en ligne • 150 000 XAF</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-3xl leading-relaxed">
+                  Le frère <strong class="text-on-surface">Jean-Pierre Belinga</strong> a versé une offrande spéciale <span class="text-primary italic">« Achat Sono District »</span> via MTN Mobile Money. Reçu officiel <strong class="text-on-surface">#REC-2025-0489</strong> émis automatiquement.
+                </p>
+</div>
+</div>
+<!-- Action buttons -->
+<div class="flex items-center gap-2 pl-2 md:pl-0 shrink-0 self-end md:self-center">
+<button class="h-9 px-3 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-label-sm text-label-sm transition-colors" onclick="markSingleRead('feed-item-1')" title="Marquer comme lu">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</button>
+<button class="h-10 px-4 rounded-xl bg-surface-container-high hover:bg-primary-container hover:text-on-primary text-on-surface font-label-md text-label-md font-semibold transition-all flex items-center gap-1.5 shadow-sm">
+<span>Voir la quittance financière</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</article>
+<!-- Item 2: Rôle révoqué / Modification de charge -->
+<article class="notification-card group bg-surface-container-lowest hover:bg-surface-bright rounded-xl p-space-md shadow-sm transition-all duration-200 relative overflow-hidden flex flex-col md:flex-row md:items-center justify-between gap-space-md" data-category="charges" data-status="unread" id="feed-item-2">
+<div class="unread-indicator absolute left-0 top-0 bottom-0 w-1.5 bg-primary-container"></div>
+<div class="flex items-start gap-space-md pl-2 flex-1">
+<div class="w-12 h-12 rounded-xl bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0 shadow-sm mt-0.5">
+<span class="material-symbols-outlined text-[24px]">gavel</span>
+</div>
+<div class="space-y-1">
+<div class="flex flex-wrap items-center gap-2">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full font-label-sm text-[11px] font-bold bg-secondary text-on-secondary">
+                    Conseil Pastoral de District
+                  </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">10:14</span>
+<span class="unread-dot w-2 h-2 rounded-full bg-primary-container shrink-0"></span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface font-bold">Avis de révocation de charge pastorale</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-3xl leading-relaxed">
+                  Le statut d'<strong class="text-on-surface">Officier de Culte</strong> a été suspendu pour le frère K. conformément à la résolution N° 12-CPD du Conseil Pastoral de district réunie en session extraordinaire le 28 Mars.
+                </p>
+</div>
+</div>
+<!-- Action buttons -->
+<div class="flex items-center gap-2 pl-2 md:pl-0 shrink-0 self-end md:self-center">
+<button class="h-9 px-3 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-label-sm text-label-sm transition-colors" onclick="markSingleRead('feed-item-2')" title="Marquer comme lu">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</button>
+<button class="h-10 px-4 rounded-xl bg-surface-container-high hover:bg-secondary-container hover:text-on-secondary-container text-on-surface font-label-md text-label-md font-semibold transition-all flex items-center gap-1.5 shadow-sm">
+<span>Consulter la fiche membre</span>
+<span class="material-symbols-outlined text-[18px]">badge</span>
+</button>
+</div>
+</article>
+<!-- Item 3: Passation de charge programmée -->
+<article class="notification-card group bg-surface-container-lowest hover:bg-surface-bright rounded-xl p-space-md shadow-sm transition-all duration-200 relative overflow-hidden flex flex-col md:flex-row md:items-center justify-between gap-space-md" data-category="charges" data-status="unread" id="feed-item-3">
+<div class="unread-indicator absolute left-0 top-0 bottom-0 w-1.5 bg-primary-container"></div>
+<div class="flex items-start gap-space-md pl-2 flex-1">
+<div class="w-12 h-12 rounded-xl bg-primary-fixed text-on-primary-fixed flex items-center justify-center shrink-0 shadow-sm mt-0.5">
+<span class="material-symbols-outlined text-[24px]">assignment_ind</span>
+</div>
+<div class="space-y-1">
+<div class="flex flex-wrap items-center gap-2">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full font-label-sm text-[11px] font-bold bg-primary text-on-primary">
+                    Liturgie &amp; Investiture
+                  </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">08:45</span>
+<span class="unread-dot w-2 h-2 rounded-full bg-primary-container shrink-0"></span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface font-bold">Passation de charge programmée : Diaconat Central</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-3xl leading-relaxed">
+                  Cérémonie solennelle de passation de charge entre l'<strong class="text-on-surface">Ancien Mbarga</strong> et le <strong class="text-on-surface">Diacre Pierre Mba</strong> prévue ce Dimanche 30 Mars lors du premier culte d'adoration (07h00 - 09h30).
+                </p>
+</div>
+</div>
+<!-- Action buttons -->
+<div class="flex items-center gap-2 pl-2 md:pl-0 shrink-0 self-end md:self-center">
+<button class="h-9 px-3 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-label-sm text-label-sm transition-colors" onclick="markSingleRead('feed-item-3')" title="Marquer comme lu">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</button>
+<button class="h-10 px-4 rounded-xl bg-surface-container-high hover:bg-primary-container hover:text-on-primary text-on-surface font-label-md text-label-md font-semibold transition-all flex items-center gap-1.5 shadow-sm">
+<span>Voir le protocole &amp; planning</span>
+<span class="material-symbols-outlined text-[18px]">event_note</span>
+</button>
+</div>
+</article>
+</div>
+</section>
+<!-- SECTION B: HIER -->
+<section class="space-y-space-sm" data-group="yesterday">
+<div class="flex items-center justify-between px-1">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-surface-dim"></span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Hier — 28 Mars 2025</h2>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">2 alertes enregistrées</span>
+</div>
+<div class="space-y-3">
+<!-- Item 4: Rapport évalué & visé (Déjà lu) -->
+<article class="notification-card group bg-surface-container-lowest/80 hover:bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all duration-200 relative overflow-hidden flex flex-col md:flex-row md:items-center justify-between gap-space-md" data-category="rapports" data-status="read" id="feed-item-4">
+<div class="flex items-start gap-space-md pl-2 flex-1 opacity-90 group-hover:opacity-100 transition-opacity">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high text-on-surface flex items-center justify-center shrink-0 shadow-sm mt-0.5">
+<span class="material-symbols-outlined text-[24px]">verified</span>
+</div>
+<div class="space-y-1">
+<div class="flex flex-wrap items-center gap-2">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full font-label-sm text-[11px] font-medium bg-surface-container text-on-surface-variant">
+                    Supervision Régionale
+                  </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Hier à 17:30</span>
+<span class="font-label-sm text-[11px] text-tertiary font-semibold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">done_all</span> Lu
+                  </span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface font-medium">Rapport mensuel d'Assemblée validé</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-3xl leading-relaxed">
+                  Le rapport statistique et financier du mois de Février du <strong class="text-on-surface">Temple Tsinga</strong> a été approuvé avec mention d'excellence par le Surintendant Régional Centre 1.
+                </p>
+</div>
+</div>
+<!-- Action buttons -->
+<div class="flex items-center gap-2 pl-2 md:pl-0 shrink-0 self-end md:self-center">
+<button class="h-10 px-4 rounded-xl bg-surface-container-low hover:bg-surface-container-high text-on-surface font-label-md text-label-md font-semibold transition-all flex items-center gap-1.5 shadow-sm">
+<span>Télécharger synthèse visée</span>
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+</div>
+</article>
+<!-- Item 5: Demande de transfert de membre validée (Non lu) -->
+<article class="notification-card group bg-surface-container-lowest hover:bg-surface-bright rounded-xl p-space-md shadow-sm transition-all duration-200 relative overflow-hidden flex flex-col md:flex-row md:items-center justify-between gap-space-md" data-category="transferts" data-status="unread" id="feed-item-5">
+<div class="unread-indicator absolute left-0 top-0 bottom-0 w-1.5 bg-primary-container"></div>
+<div class="flex items-start gap-space-md pl-2 flex-1">
+<div class="w-12 h-12 rounded-xl bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center shrink-0 shadow-sm mt-0.5">
+<span class="material-symbols-outlined text-[24px]">swap_horiz</span>
+</div>
+<div class="space-y-1">
+<div class="flex flex-wrap items-center gap-2">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full font-label-sm text-[11px] font-bold bg-secondary-container text-on-secondary-container">
+                    Régulation Pastorale
+                  </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Hier à 14:10</span>
+<span class="unread-dot w-2 h-2 rounded-full bg-primary-container shrink-0"></span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface font-bold">Demande de transfert de membre validée</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-3xl leading-relaxed">
+                  Le transfert de la sœur <strong class="text-on-surface">Marie Ngo</strong> de l'Assemblée locale de <span class="italic">Nkolbisson</span> vers le <strong class="text-on-surface">Temple Central de Tsinga</strong> a été conjointement entériné par les pasteurs référents.
+                </p>
+</div>
+</div>
+<!-- Action buttons -->
+<div class="flex items-center gap-2 pl-2 md:pl-0 shrink-0 self-end md:self-center">
+<button class="h-9 px-3 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-label-sm text-label-sm transition-colors" onclick="markSingleRead('feed-item-5')" title="Marquer comme lu">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</button>
+<button class="h-10 px-4 rounded-xl bg-surface-container-high hover:bg-secondary-fixed-dim text-on-secondary-fixed hover:text-on-surface font-label-md text-label-md font-semibold transition-all flex items-center gap-1.5 shadow-sm">
+<span>Dossier #TR-2025-014</span>
+<span class="material-symbols-outlined text-[18px]">folder_shared</span>
+</button>
+</div>
+</article>
+</div>
+</section>
+<!-- SECTION C: PLUS TÔT CETTE SEMAINE -->
+<section class="space-y-space-sm" data-group="earlier">
+<div class="flex items-center justify-between px-1">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-surface-dim"></span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Plus tôt cette semaine — 25 Mars 2025</h2>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">1 opération archivée</span>
+</div>
+<div class="space-y-3">
+<!-- Item 6: Versement Quota Statutaire (Lu) -->
+<article class="notification-card group bg-surface-container-lowest/80 hover:bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all duration-200 relative overflow-hidden flex flex-col md:flex-row md:items-center justify-between gap-space-md" data-category="finance" data-status="read" id="feed-item-6">
+<div class="flex items-start gap-space-md pl-2 flex-1 opacity-90 group-hover:opacity-100 transition-opacity">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high text-on-surface flex items-center justify-center shrink-0 shadow-sm mt-0.5">
+<span class="material-symbols-outlined text-[24px]">account_balance</span>
+</div>
+<div class="space-y-1">
+<div class="flex flex-wrap items-center gap-2">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full font-label-sm text-[11px] font-medium bg-surface-container text-on-surface-variant">
+                    Trésorerie District
+                  </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">25 Mars à 11:00</span>
+<span class="font-label-sm text-[11px] text-tertiary font-semibold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">done_all</span> Traité
+                  </span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface font-medium">Versement de quota statutaire reçu • Assemblée Oyom-Abang</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-3xl leading-relaxed">
+                  Versement de <strong class="text-on-surface font-semibold">480 000 XAF</strong> au titre de la contribution mensuelle statutaire réceptionné sur le compte de district.
+                </p>
+</div>
+</div>
+<!-- Action buttons -->
+<div class="flex items-center gap-2 pl-2 md:pl-0 shrink-0 self-end md:self-center">
+<button class="h-10 px-4 rounded-xl bg-surface-container-low hover:bg-surface-container-high text-on-surface font-label-md text-label-md font-semibold transition-all flex items-center gap-1.5 shadow-sm">
+<span>Écriture comptable</span>
+<span class="material-symbols-outlined text-[18px]">receipt_long</span>
+</button>
+</div>
+</article>
+</div>
+</section>
+<!-- Pagination / Load more button -->
+<div class="pt-space-md text-center">
+<button class="px-6 py-2.5 rounded-full bg-surface-container-lowest hover:bg-surface-container-high text-on-surface font-label-md text-label-md font-semibold transition-all shadow-sm inline-flex items-center gap-2">
+<span>Charger l'historique antérieur (Mars 2025)</span>
+<span class="material-symbols-outlined text-[18px]">expand_more</span>
+</button>
+</div>
+</div>
+<!-- VIEW 2: ÉTAT VIDE ("AUCUNE NOTIFICATION POUR LE MOMENT") -->
+<div class="hidden bg-surface-container-lowest rounded-2xl p-space-xl text-center shadow-sm max-w-2xl mx-auto my-8" id="viewEmpty">
+<div class="relative w-24 h-24 mx-auto mb-space-md flex items-center justify-center">
+<div class="absolute inset-0 rounded-full bg-tertiary-fixed/30 animate-ping opacity-60"></div>
+<div class="w-20 h-20 rounded-full bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center shadow-md relative z-10">
+<span class="material-symbols-outlined text-[40px]">notifications_paused</span>
+</div>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-2">Vous êtes à jour dans vos alertes !</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md mx-auto mb-space-lg leading-relaxed">
+        Aucune notification non lue ou tâche canonique en attente d'arbitrage. Que la paix et la grâce du Seigneur reposent sur votre saint ministère pastoral.
+      </p>
+<div class="flex flex-wrap items-center justify-center gap-space-sm">
+<button class="h-11 px-5 rounded-full bg-primary-container text-on-primary hover:bg-primary font-label-md text-label-md font-semibold transition-all flex items-center gap-2 shadow-sm" onclick="setViewState('normal')">
+<span class="material-symbols-outlined text-[18px]">refresh</span>
+<span>Actualiser le flux</span>
+</button>
+<button class="h-11 px-5 rounded-full bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-md text-label-md font-semibold transition-all flex items-center gap-2" onclick="setViewState('normal')">
+<span class="material-symbols-outlined text-[18px]">history</span>
+<span>Consulter les archives annuelles</span>
+</button>
+</div>
+</div>
+<!-- VIEW 3: ÉTAT SKELETON (Réseau basse connectivité Yaoundé/Districts) -->
+<div class="hidden space-y-space-md" id="viewSkeleton">
+<div class="h-6 w-48 bg-surface-container-high rounded-md animate-pulse"></div>
+<!-- Skeleton Item 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex items-start gap-4">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high animate-pulse shrink-0"></div>
+<div class="flex-1 space-y-3">
+<div class="flex gap-2">
+<div class="h-4 w-28 bg-surface-container-high rounded-full animate-pulse"></div>
+<div class="h-4 w-16 bg-surface-container-high rounded-full animate-pulse"></div>
+</div>
+<div class="h-6 w-3/4 bg-surface-container-high rounded-md animate-pulse"></div>
+<div class="h-4 w-full bg-surface-container-high rounded-md animate-pulse"></div>
+<div class="h-4 w-4/5 bg-surface-container-high rounded-md animate-pulse"></div>
+</div>
+<div class="h-9 w-32 bg-surface-container-high rounded-xl animate-pulse hidden md:block"></div>
+</div>
+<!-- Skeleton Item 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex items-start gap-4">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high animate-pulse shrink-0"></div>
+<div class="flex-1 space-y-3">
+<div class="flex gap-2">
+<div class="h-4 w-32 bg-surface-container-high rounded-full animate-pulse"></div>
+<div class="h-4 w-14 bg-surface-container-high rounded-full animate-pulse"></div>
+</div>
+<div class="h-6 w-2/3 bg-surface-container-high rounded-md animate-pulse"></div>
+<div class="h-4 w-full bg-surface-container-high rounded-md animate-pulse"></div>
+</div>
+<div class="h-9 w-28 bg-surface-container-high rounded-xl animate-pulse hidden md:block"></div>
+</div>
+<!-- Skeleton Item 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex items-start gap-4">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high animate-pulse shrink-0"></div>
+<div class="flex-1 space-y-3">
+<div class="flex gap-2">
+<div class="h-4 w-24 bg-surface-container-high rounded-full animate-pulse"></div>
+<div class="h-4 w-20 bg-surface-container-high rounded-full animate-pulse"></div>
+</div>
+<div class="h-6 w-4/5 bg-surface-container-high rounded-md animate-pulse"></div>
+<div class="h-4 w-11/12 bg-surface-container-high rounded-md animate-pulse"></div>
+</div>
+<div class="h-9 w-36 bg-surface-container-high rounded-xl animate-pulse hidden md:block"></div>
+</div>
+</div>
+</div>
+<!-- INLINE CLIENT INTERACTION LOGIC -->
+<script>
+    function togglePopover() {
+      const popover = document.getElementById('bellPopover');
+      if (popover.classList.contains('hidden')) {
+        popover.classList.remove('hidden');
+      } else {
+        popover.classList.add('hidden');
+      }
+    }
+
+    function setViewState(state) {
+      const vNormal = document.getElementById('viewNormal');
+      const vEmpty = document.getElementById('viewEmpty');
+      const vSkeleton = document.getElementById('viewSkeleton');
+
+      const btnN = document.getElementById('btnStateNormal');
+      const btnE = document.getElementById('btnStateEmpty');
+      const btnS = document.getElementById('btnStateSkeleton');
+
+      // Reset classes
+      [btnN, btnE, btnS].forEach(btn => {
+        btn.className = "py-1.5 px-2 rounded-md font-label-sm text-[12px] font-medium text-on-surface-variant hover:text-on-surface transition-all text-center";
+      });
+
+      vNormal.classList.add('hidden');
+      vEmpty.classList.add('hidden');
+      vSkeleton.classList.add('hidden');
+
+      if (state === 'normal') {
+        vNormal.classList.remove('hidden');
+        btnN.className = "py-1.5 px-2 rounded-md font-label-sm text-[12px] font-bold bg-primary-container text-on-primary transition-all text-center";
+      } else if (state === 'empty') {
+        vEmpty.classList.remove('hidden');
+        btnE.className = "py-1.5 px-2 rounded-md font-label-sm text-[12px] font-bold bg-primary-container text-on-primary transition-all text-center";
+      } else if (state === 'skeleton') {
+        vSkeleton.classList.remove('hidden');
+        btnS.className = "py-1.5 px-2 rounded-md font-label-sm text-[12px] font-bold bg-primary-container text-on-primary transition-all text-center";
+      }
+    }
+
+    function markAllNotificationsAsRead() {
+      // Retirer les bandeaux rouges et indicateurs de lecture
+      const cards = document.querySelectorAll('.notification-card[data-status="unread"]');
+      cards.forEach(card => {
+        card.setAttribute('data-status', 'read');
+        card.classList.remove('bg-surface-container-lowest');
+        card.classList.add('bg-surface-container-lowest/80');
+
+        const indicator = card.querySelector('.unread-indicator');
+        if (indicator) indicator.remove();
+
+        const dot = card.querySelector('.unread-dot');
+        if (dot) dot.remove();
+      });
+
+      // Mettre à jour les compteurs
+      const kpi = document.getElementById('kpiUnreadCount');
+      if (kpi) kpi.innerText = '0';
+
+      const badgeUnread = document.getElementById('badgeTotalUnread');
+      if (badgeUnread) badgeUnread.innerText = '0';
+
+      const popBadge = document.getElementById('popoverUnreadBadge');
+      if (popBadge) {
+        popBadge.innerText = '0 non lue';
+        popBadge.className = 'px-2 py-0.5 rounded-full font-label-sm text-[11px] bg-surface-container-high text-on-surface-variant font-medium';
+      }
+    }
+
+    function markSingleRead(id) {
+      const card = document.getElementById(id);
+      if (!card || card.getAttribute('data-status') === 'read') return;
+
+      card.setAttribute('data-status', 'read');
+      card.classList.remove('bg-surface-container-lowest');
+      card.classList.add('bg-surface-container-lowest/80');
+
+      const indicator = card.querySelector('.unread-indicator');
+      if (indicator) indicator.remove();
+
+      const dot = card.querySelector('.unread-dot');
+      if (dot) dot.remove();
+
+      // Décrémenter les compteurs
+      const kpi = document.getElementById('kpiUnreadCount');
+      if (kpi) {
+        const current = parseInt(kpi.innerText) || 0;
+        const updated = Math.max(0, current - 1);
+        kpi.innerText = updated;
+
+        const badgeUnread = document.getElementById('badgeTotalUnread');
+        if (badgeUnread) badgeUnread.innerText = updated;
+
+        const popBadge = document.getElementById('popoverUnreadBadge');
+        if (popBadge) {
+          popBadge.innerText = updated + ' non lues';
+          if (updated === 0) {
+            popBadge.className = 'px-2 py-0.5 rounded-full font-label-sm text-[11px] bg-surface-container-high text-on-surface-variant font-medium';
+          }
+        }
+      }
+    }
+
+    function filterCategory(category, buttonElement) {
+      // Toggle styles sur les boutons filtres
+      document.querySelectorAll('.category-chip').forEach(btn => {
+        btn.classList.remove('bg-primary-container', 'text-on-primary');
+        btn.classList.add('bg-surface-container-lowest', 'text-on-surface');
+      });
+      buttonElement.classList.add('bg-primary-container', 'text-on-primary');
+      buttonElement.classList.remove('bg-surface-container-lowest', 'text-on-surface');
+
+      const cards = document.querySelectorAll('.notification-card');
+      cards.forEach(card => {
+        if (category === 'all') {
+          card.classList.remove('hidden');
+        } else if (category === 'unread') {
+          if (card.getAttribute('data-status') === 'unread') {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        } else {
+          if (card.getAttribute('data-category') === category) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        }
+      });
+    }
+  </script>
+</div></main></div><div class="md:hidden fixed bottom-0 left-0 right-0 h-16 bg-surface-container-lowest/95 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.06)] z-50 flex items-center justify-around px-2"><a class="flex flex-col items-center justify-center flex-1 py-1 text-primary-container" href="#"><span class="material-symbols-outlined text-[22px]">grid_view</span><span class="font-label-sm text-[10px] mt-0.5">Accueil</span></a><a class="flex flex-col items-center justify-center flex-1 py-1 text-on-surface-variant" href="#"><span class="material-symbols-outlined text-[22px]">groups</span><span class="font-label-sm text-[10px] mt-0.5">Membres</span></a><a class="flex flex-col items-center justify-center flex-1 py-1 text-on-surface-variant" href="#"><span class="material-symbols-outlined text-[22px]">payments</span><span class="font-label-sm text-[10px] mt-0.5">Finance</span></a><a class="flex flex-col items-center justify-center flex-1 py-1 text-on-surface-variant relative" href="#"><span class="material-symbols-outlined text-[22px]">chat_bubble</span><span class="absolute top-1 right-5 w-2 h-2 rounded-full bg-primary-container"></span><span class="font-label-sm text-[10px] mt-0.5">Messages</span></a><button class="flex flex-col items-center justify-center flex-1 py-1 text-on-surface-variant"><span class="material-symbols-outlined text-[22px]">menu_open</span><span class="font-label-sm text-[10px] mt-0.5">Plus</span></button></div></body></html>

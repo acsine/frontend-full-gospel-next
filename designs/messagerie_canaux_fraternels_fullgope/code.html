@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+
+<html lang="fr"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}.route-loader{position:fixed;top:0;left:0;height:3px;width:68%;background:#C8102E;z-index:9999;box-shadow:0 0 10px rgba(200,16,46,0.5);animation:pulse-bar 2s infinite ease-in-out;}@keyframes pulse-bar{0%{width:20%;opacity:0.8;}50%{width:85%;opacity:1;}100%{width:68%;opacity:0.9;}}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"on-primary":"#ffffff","surface-bright":"#fcf8fe","primary-fixed-dim":"#ffb3b1","surface-container-highest":"#e4e1e7","surface-variant":"#e4e1e7","secondary-fixed-dim":"#ffb956","on-error":"#ffffff","surface-dim":"#dcd9df","secondary-container":"#feb64e","on-secondary-container":"#714800","outline":"#906f6e","surface-tint":"#bf0229","on-tertiary":"#ffffff","inverse-on-surface":"#f3eff6","tertiary":"#00592b","on-secondary-fixed":"#2a1800","outline-variant":"#e5bdbb","on-tertiary-container":"#86faa7","on-error-container":"#93000a","on-primary-fixed-variant":"#92001c","secondary":"#835400","primary":"#9e001f","on-surface-variant":"#5c403f","surface-container":"#f0edf3","error":"#ba1a1a","on-background":"#1b1b1f","primary-container":"#c8102e","primary-fixed":"#ffdad8","surface-container-high":"#eae7ed","background":"#fcf8fe","error-container":"#ffdad6","tertiary-container":"#00743a","on-tertiary-fixed-variant":"#005228","on-primary-fixed":"#410007","on-secondary":"#ffffff","on-secondary-fixed-variant":"#643f00","tertiary-fixed":"#86faa7","on-tertiary-fixed":"#00210c","inverse-surface":"#303034","surface-container-low":"#f6f2f8","surface-container-lowest":"#ffffff","surface":"#fcf8fe","on-surface":"#1b1b1f","inverse-primary":"#ffb3b1","secondary-fixed":"#ffddb5","tertiary-fixed-dim":"#6add8d","on-primary-container":"#ffdad8"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-sm":"0.5rem","margin-desktop":"3rem","gutter":"1rem","space-lg":"1.5rem","space-xl":"2.5rem","space-xs":"0.25rem","gutter-desktop":"2rem","space-md":"1rem","margin":"1rem","margin-tablet":"2rem","gutter-tablet":"1.5rem"},"fontFamily":{"display-lg-mobile":["Plus Jakarta Sans"],"currency-display":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"label-md":["Inter"],"body-md":["Inter"],"headline-lg":["Plus Jakarta Sans"],"body-lg":["Inter"],"title-md":["Plus Jakarta Sans"],"body-md-medium":["Inter"],"label-sm":["Inter"],"body-sm":["Inter"],"headline-lg-mobile":["Plus Jakarta Sans"],"display-lg":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"]},"fontSize":{"display-lg-mobile":["34px",{"lineHeight":"42px","fontWeight":"800"}],"currency-display":["28px",{"lineHeight":"36px","fontWeight":"700"}],"headline-sm":["20px",{"lineHeight":"28px","fontWeight":"600"}],"label-md":["14px",{"lineHeight":"20px","fontWeight":"500"}],"body-md":["16px",{"lineHeight":"24px","fontWeight":"400"}],"headline-lg":["32px",{"lineHeight":"40px","fontWeight":"700"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"title-md":["18px",{"lineHeight":"26px","fontWeight":"600"}],"body-md-medium":["16px",{"lineHeight":"24px","fontWeight":"500"}],"label-sm":["12px",{"lineHeight":"16px","fontWeight":"600"}],"body-sm":["14px",{"lineHeight":"20px","fontWeight":"400"}],"headline-lg-mobile":["26px",{"lineHeight":"34px","fontWeight":"700"}],"display-lg":["48px",{"lineHeight":"56px","fontWeight":"800"}],"headline-md":["24px",{"lineHeight":"32px","fontWeight":"700"}]}}}}</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><div class="route-loader"></div><aside class="fixed left-0 top-0 h-full w-72 bg-inverse-surface text-inverse-on-surface z-50 flex flex-col justify-between hidden md:flex"><div class="flex flex-col flex-1 overflow-y-auto"><div class="px-space-md py-space-md flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-10 h-10 rounded-xl bg-primary-container flex items-center justify-center text-on-primary font-headline-sm text-headline-sm">FG</div><div><span class="font-headline-sm text-headline-sm tracking-tight text-surface-container-lowest block">FULLGOPE</span><span class="font-label-sm text-label-sm text-surface-variant flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-tertiary-fixed"></span>Connecté • Tsinga</span></div></div><button class="w-8 h-8 rounded-lg flex items-center justify-center text-surface-variant hover:text-surface-container-lowest transition-colors"><span class="material-symbols-outlined text-[20px]">dock_to_right</span></button></div><div class="px-space-md py-space-xs"><div class="bg-inverse-on-surface/5 rounded-lg px-space-sm py-1.5"><p class="font-label-sm text-label-sm text-secondary-fixed italic leading-tight">« No Other Christ, No Other Gospel »</p><p class="font-label-sm text-[10px] text-surface-dim uppercase tracking-wider mt-0.5">Mission du Plein Évangile (1961)</p></div></div><nav class="flex-1 px-space-sm py-space-md space-y-space-md" data-active-classes="bg-primary-container text-on-primary font-body-md-medium rounded-xl"><div class="space-y-1"><span class="px-space-sm font-label-sm text-label-sm uppercase tracking-wider text-surface-dim block mb-1">Principal</span><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="accueil" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">grid_view</span><span class="font-body-sm text-body-sm">Accueil</span></div></a></div><div class="space-y-1"><span class="px-space-sm font-label-sm text-label-sm uppercase tracking-wider text-surface-dim block mb-1">Communauté</span><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="membres" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">groups</span><span class="font-body-sm text-body-sm">Membres</span></div><span class="px-2 py-0.5 rounded-full font-label-sm text-[11px] bg-inverse-on-surface/15 text-surface-bright">1 450</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="departements" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">diversity_3</span><span class="font-body-sm text-body-sm">Départements</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="organisation" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">account_tree</span><span class="font-body-sm text-body-sm">Organisation</span></div></a></div><div class="space-y-1"><span class="px-space-sm font-label-sm text-label-sm uppercase tracking-wider text-surface-dim block mb-1">Ministère &amp; Activités</span><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="rapports" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">assignment</span><span class="font-body-sm text-body-sm">Rapports</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="publications" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">menu_book</span><span class="font-body-sm text-body-sm">Publications</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="evenements-et-plannings" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">calendar_month</span><span class="font-body-sm text-body-sm">Événements &amp; Plannings</span></div><span class="px-2 py-0.5 rounded-full font-label-sm text-[11px] bg-secondary-container text-on-secondary-container font-bold">3</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="reseau-social" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">hub</span><span class="font-body-sm text-body-sm">Réseau social</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="messagerie" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">chat_bubble</span><span class="font-body-sm text-body-sm">Messagerie</span></div><span class="px-2 py-0.5 rounded-full font-label-sm text-[11px] bg-primary text-on-primary font-bold">12</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="mediatheque" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">video_library</span><span class="font-body-sm text-body-sm">Médiathèque</span></div></a></div><div class="space-y-1"><span class="px-space-sm font-label-sm text-label-sm uppercase tracking-wider text-surface-dim block mb-1">Intendance &amp; Gouvernance</span><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="finance" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">payments</span><span class="font-body-sm text-body-sm">Finance</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="dons-et-campagnes" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">volunteer_activism</span><span class="font-body-sm text-body-sm">Dons &amp; Campagnes</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="administration" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">admin_panel_settings</span><span class="font-body-sm text-body-sm">Administration</span></div></a></div></nav></div><div class="p-space-md bg-inverse-on-surface/5 flex items-center justify-between"><div class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-tertiary-fixed-dim"></span><span class="font-label-sm text-label-sm text-surface-variant">Serveur Yaoundé • v2.4</span></div><button class="text-surface-dim hover:text-surface-container-lowest transition-colors"><span class="material-symbols-outlined text-[18px]">help</span></button></div></aside><div class="md:pl-72"><header class="fixed top-0 left-0 md:left-72 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 px-space-md flex items-center justify-between"><div class="flex items-center gap-space-sm flex-1 max-w-xl"><button class="md:hidden w-10 h-10 rounded-xl flex items-center justify-center text-on-surface hover:bg-surface-container"><span class="material-symbols-outlined">menu</span></button><div class="relative flex-1 hidden sm:block"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">search</span><input class="w-full h-10 pl-10 pr-20 bg-surface-container-low rounded-xl font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant/70 focus:outline-none focus:bg-surface-container-lowest" placeholder="Rechercher fidèles, assemblées, reçus MoMo/Orange..." type="text"/><kbd class="absolute right-2.5 top-1/2 -translate-y-1/2 px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-[11px]">&amp;#8984;K</kbd></div><div class="hidden lg:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface"><span class="material-symbols-outlined text-primary text-[18px]">church</span><span class="font-body-md-medium text-body-md-medium">Pasteur Titulaire</span><span class="text-on-surface-variant">•</span><span class="text-on-surface-variant">District Centre (Temple Tsinga)</span></div></div><div class="flex items-center gap-space-sm"><div class="flex items-center gap-1 p-1 bg-surface-container-low rounded-full"><button class="px-2.5 py-1 rounded-full font-label-sm text-label-sm font-bold bg-inverse-surface text-surface-container-lowest">FR</button><button class="px-2.5 py-1 rounded-full font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface">EN</button></div><button class="h-9 px-2.5 rounded-xl bg-surface-container text-on-surface-variant hover:text-on-surface flex items-center gap-1.5 font-label-sm text-label-sm" title="Basculer l'état de chargement skeleton"><span class="material-symbols-outlined text-[18px] text-secondary">hourglass_empty</span><span class="hidden xl:inline">Skeleton</span></button><button class="relative w-10 h-10 rounded-xl flex items-center justify-center text-on-surface hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2 right-2 w-2.5 h-2.5 rounded-full bg-primary-container ring-2 ring-surface-container-lowest"></span></button><div class="flex items-center gap-2 pl-2 border-l border-surface-container-high"><div class="relative"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-tertiary-container ring-2 ring-surface-container-lowest"></span></div><div class="hidden sm:block text-left"><span class="font-label-md text-label-md text-on-surface block leading-tight">Rev. N. Samuel</span><span class="font-label-sm text-label-sm text-on-surface-variant block leading-tight">District Tsinga</span></div><span class="material-symbols-outlined text-on-surface-variant text-[18px]">arrow_drop_down</span></div></div></header><main class="w-full pt-16 bg-surface min-h-screen px-space-md md:px-gutter-desktop py-space-lg pb-24 md:pb-space-lg"><div class="flex flex-col w-full">
+<!-- EN-TÊTE SUPÉRIEUR & BREADCRUMB -->
+<div class="mb-space-lg flex flex-col gap-space-sm">
+<div class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm">
+<span class="hover:text-primary transition-colors cursor-pointer">Accueil</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="hover:text-primary transition-colors cursor-pointer">Communauté &amp; Fraternité</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-primary font-bold">Messagerie &amp; Canaux Canoniques</span>
+</div>
+<div class="flex flex-col xl:flex-row xl:items-center justify-between gap-space-md">
+<div>
+<div class="flex items-center gap-space-sm">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Messagerie Fraternelle &amp; Canaux d'Annonces</h1>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-tertiary-fixed/40 text-on-tertiary-fixed font-label-sm text-label-sm font-semibold">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+            En ligne • Yaoundé v2.4 (Chiffré)
+          </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+          Échanges pastoraux directs, groupes de ministères et canaux institutionnels sécurisés de la Full Gospel Mission Cameroun.
+        </p>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm">
+<button class="h-12 px-space-md rounded-full bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-md text-label-md flex items-center gap-2 transition-all" id="open-announcements-banner">
+<span class="material-symbols-outlined text-secondary text-[20px]">campaign</span>
+<span>Canal d'annonces officiel</span>
+</button>
+<button class="h-12 px-space-lg rounded-full bg-primary-container text-on-primary hover:opacity-95 shadow-md hover:shadow-lg font-label-md text-label-md flex items-center gap-2 transition-all" id="open-new-chat-btn">
+<span class="material-symbols-outlined text-[20px]">add</span>
+<span>Nouvelle conversation / Groupe</span>
+</button>
+</div>
+</div>
+</div>
+<!-- BANDEAU ACCORDÉON / NOTIFICATION CANAL OFFICIEL (TOGGLABLE) -->
+<div class="mb-space-md p-space-md rounded-2xl bg-secondary-fixed/30 text-on-secondary-fixed flex flex-col md:flex-row items-start md:items-center justify-between gap-space-sm shadow-sm" id="announcement-banner-card">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-secondary-container text-on-secondary-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">lock</span>
+</div>
+<div>
+<p class="font-title-md text-title-md leading-tight">Canal d'annonces officiel en lecture seule</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Seuls les pasteurs de district et membres du Bureau Exécutif publient les communiqués canoniques.</p>
+</div>
+</div>
+<div class="flex items-center gap-2 self-end md:self-auto">
+<span class="px-2.5 py-1 rounded-full bg-secondary text-on-secondary font-label-sm text-[11px] font-bold uppercase tracking-wider">Modération stricte</span>
+<button class="w-8 h-8 rounded-full hover:bg-on-secondary-fixed/10 flex items-center justify-center text-on-secondary-fixed" onclick="document.getElementById('announcement-banner-card').classList.add('hidden')">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+</div>
+<!-- CADRE PRINCIPAL À DEUX VOLETS (SPLIT PANE CHAT) -->
+<div class="relative w-full rounded-3xl bg-surface-container-lowest shadow-sm flex flex-col lg:flex-row overflow-hidden h-[calc(100vh-250px)] min-h-[660px]">
+<!-- VOLET GAUCHE : LISTE DES CONVERSATIONS (380px) -->
+<div class="w-full lg:w-[380px] lg:min-w-[380px] bg-surface-container-low flex flex-col h-full z-10">
+<!-- Zone Recherche & Filtres -->
+<div class="p-space-md flex flex-col gap-space-sm bg-surface-container-low">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">search</span>
+<input class="w-full h-11 pl-11 pr-4 rounded-xl bg-surface-container-lowest font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant/70 focus:outline-none focus:bg-surface-container-lowest transition-all" placeholder="Rechercher un frère, un groupe, un canal..." type="text"/>
+</div>
+<!-- Filtres Pills -->
+<div class="flex items-center gap-1.5 overflow-x-auto pb-1 scrollbar-none">
+<button class="chat-tab-btn active px-3.5 py-1.5 rounded-full font-label-sm text-label-sm bg-primary-container text-on-primary font-bold flex items-center gap-1.5 shadow-sm">
+<span>Tous</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container-lowest/20 text-on-primary text-[10px]">12</span>
+</button>
+<button class="chat-tab-btn px-3 py-1.5 rounded-full font-label-sm text-label-sm bg-surface-container hover:bg-surface-container-high text-on-surface-variant flex items-center gap-1.5 transition-colors">
+<span>Directs</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container-highest text-on-surface-variant text-[10px]">4</span>
+</button>
+<button class="chat-tab-btn px-3 py-1.5 rounded-full font-label-sm text-label-sm bg-surface-container hover:bg-surface-container-high text-on-surface-variant flex items-center gap-1.5 transition-colors">
+<span>Groupes</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container-highest text-on-surface-variant text-[10px]">5</span>
+</button>
+<button class="chat-tab-btn px-3 py-1.5 rounded-full font-label-sm text-label-sm bg-surface-container hover:bg-surface-container-high text-on-surface-variant flex items-center gap-1.5 transition-colors">
+<span>Canaux</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container-highest text-on-surface-variant text-[10px]">3</span>
+</button>
+</div>
+</div>
+<!-- Liste Déroulante des Conversations -->
+<div class="flex-1 overflow-y-auto divide-y-0 px-2 space-y-1 py-1">
+<!-- ITEM 1 : ACTIF SÉLECTIONNÉ (Rév. Dr. Ndifon Samuel) -->
+<div class="group relative p-3 rounded-2xl bg-surface-container-lowest shadow-sm flex items-start gap-3 cursor-pointer transition-all">
+<div class="absolute left-0 top-3 bottom-3 w-1.5 rounded-r-full bg-primary-container"></div>
+<div class="relative flex-shrink-0">
+<div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed font-headline-sm text-headline-sm overflow-hidden shadow-inner">
+<span class="material-symbols-outlined text-[28px] text-primary">person</span>
+</div>
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full bg-tertiary-container ring-2 ring-surface-container-lowest"></span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<div class="flex items-center gap-1 min-w-0">
+<span class="font-title-md text-title-md text-on-surface truncate">Rév. Dr. Ndifon Samuel</span>
+<span class="material-symbols-outlined text-primary text-[16px] flex-shrink-0" title="Pasteur agréé">verified</span>
+</div>
+<span class="font-label-sm text-[11px] text-primary font-bold flex-shrink-0">10:42</span>
+</div>
+<p class="font-label-sm text-[11px] text-primary-container font-semibold truncate mt-0.5">Surintendant Régional Centre 1</p>
+<div class="flex items-center justify-between gap-2 mt-1">
+<p class="font-body-sm text-body-sm text-on-surface font-medium truncate">Que la paix du Seigneur soit avec vous. Bien reçu le rapport...</p>
+<span class="w-5 h-5 rounded-full bg-primary-container text-on-primary font-label-sm text-[10px] font-bold flex items-center justify-center flex-shrink-0">2</span>
+</div>
+</div>
+</div>
+<!-- ITEM 2 : CANAL OFFICIEL DISTRICT TSINGA -->
+<div class="p-3 rounded-2xl hover:bg-surface-container-high/60 flex items-start gap-3 cursor-pointer transition-all">
+<div class="relative flex-shrink-0">
+<div class="w-12 h-12 rounded-2xl bg-secondary-fixed/50 flex items-center justify-center text-on-secondary-fixed">
+<span class="material-symbols-outlined text-[26px] text-secondary">campaign</span>
+</div>
+<span class="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-secondary flex items-center justify-center text-on-secondary text-[10px]">
+<span class="material-symbols-outlined text-[10px]">volume_up</span>
+</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<span class="font-title-md text-title-md text-on-surface truncate">Annonces - Tsinga</span>
+<span class="font-label-sm text-[11px] text-on-surface-variant flex-shrink-0">Hier</span>
+</div>
+<p class="font-label-sm text-[11px] text-secondary font-semibold uppercase tracking-wider mt-0.5">Canal Officiel District</p>
+<div class="flex items-center justify-between gap-2 mt-1">
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Rappel : Veillée de prière générale ce vendredi à 22h...</p>
+<span class="w-5 h-5 rounded-full bg-primary-container text-on-primary font-label-sm text-[10px] font-bold flex items-center justify-center flex-shrink-0">5</span>
+</div>
+</div>
+</div>
+<!-- ITEM 3 : GROUPE CHORALE & LOUANGE -->
+<div class="p-3 rounded-2xl hover:bg-surface-container-high/60 flex items-start gap-3 cursor-pointer transition-all">
+<div class="relative flex-shrink-0">
+<div class="w-12 h-12 rounded-2xl bg-surface-container-highest flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[26px] text-primary">library_music</span>
+</div>
+<div class="absolute -bottom-1 -right-1 flex -space-x-1">
+<span class="w-4 h-4 rounded-full bg-tertiary-container ring-1 ring-surface text-on-tertiary text-[9px] flex items-center justify-center font-bold">C</span>
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<span class="font-title-md text-title-md text-on-surface truncate">Chorale &amp; Louange CGL</span>
+<span class="font-label-sm text-[11px] text-on-surface-variant flex-shrink-0">Hier</span>
+</div>
+<p class="font-label-sm text-[11px] text-on-surface-variant truncate mt-0.5">Groupe de Ministère • 38 membres</p>
+<div class="flex items-center justify-between gap-2 mt-1">
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate"><span class="font-semibold text-on-surface">Sr. Mireille:</span> Voici la grille des chants...</p>
+<span class="material-symbols-outlined text-primary text-[18px]">done_all</span>
+</div>
+</div>
+</div>
+<!-- ITEM 4 : DIRECT - PASTEUR ASSOCIÉ DANIEL EBOGO -->
+<div class="p-3 rounded-2xl hover:bg-surface-container-high/60 flex items-start gap-3 cursor-pointer transition-all">
+<div class="relative flex-shrink-0">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface font-headline-sm text-headline-sm">
+<span class="font-semibold text-on-surface">DE</span>
+</div>
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full bg-surface-dim ring-2 ring-surface-container-lowest"></span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<span class="font-title-md text-title-md text-on-surface truncate">Pasteur Daniel Ebogo</span>
+<span class="font-label-sm text-[11px] text-on-surface-variant flex-shrink-0">Mercredi</span>
+</div>
+<p class="font-label-sm text-[11px] text-on-surface-variant truncate mt-0.5">Pasteur Associé • Jeunesse</p>
+<div class="flex items-center justify-between gap-2 mt-1">
+<div class="flex items-center gap-1.5 text-on-surface-variant font-body-sm text-body-sm truncate">
+<span class="material-symbols-outlined text-[16px] text-primary">mic</span>
+<span>Note vocale (0:45)</span>
+</div>
+<span class="material-symbols-outlined text-outline text-[18px]">done_all</span>
+</div>
+</div>
+</div>
+<!-- ITEM 5 : GROUPE - COLLÈGE DES DIACRES & INTENDANCE -->
+<div class="p-3 rounded-2xl hover:bg-surface-container-high/60 flex items-start gap-3 cursor-pointer transition-all">
+<div class="relative flex-shrink-0">
+<div class="w-12 h-12 rounded-2xl bg-surface-container-highest flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[24px]">account_balance</span>
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<span class="font-title-md text-title-md text-on-surface truncate">Collège des Diacres</span>
+<span class="font-label-sm text-[11px] text-on-surface-variant flex-shrink-0">Mardi</span>
+</div>
+<p class="font-label-sm text-[11px] text-on-surface-variant truncate mt-0.5">Gouvernance &amp; Intendance</p>
+<div class="flex items-center justify-between gap-2 mt-1">
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate"><span class="font-semibold text-on-surface">Diacre Pierre:</span> Reçu de comptage validé.</p>
+<span class="material-symbols-outlined text-outline text-[18px]">done</span>
+</div>
+</div>
+</div>
+<!-- ITEM 6 : CANAL - BUREAU NATIONAL FGM -->
+<div class="p-3 rounded-2xl hover:bg-surface-container-high/60 flex items-start gap-3 cursor-pointer transition-all">
+<div class="relative flex-shrink-0">
+<div class="w-12 h-12 rounded-2xl bg-surface-container-high flex items-center justify-center text-on-surface">
+<span class="font-bold text-[18px] text-primary">🇨🇲</span>
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<span class="font-title-md text-title-md text-on-surface truncate">Bureau National FGM</span>
+<span class="font-label-sm text-[11px] text-on-surface-variant flex-shrink-0">15 Mars</span>
+</div>
+<p class="font-label-sm text-[11px] text-primary font-semibold truncate mt-0.5">Direction Nationale (Siège)</p>
+<div class="flex items-center justify-between gap-2 mt-1">
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Circulaire Apostolique n° 2025/02 sur la fête de Pâques...</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Statut de synchronisation bas de volet gauche -->
+<div class="p-3 bg-surface-container flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-tertiary text-[16px]">cloud_done</span>
+<span>Chiffrement bout en bout actif</span>
+</span>
+<button class="hover:text-primary transition-colors flex items-center">
+<span class="material-symbols-outlined text-[18px]">settings</span>
+</button>
+</div>
+</div>
+<!-- VOLET DROIT : CONVERSATION ACTIVE & COMPOSITEUR -->
+<div class="flex-1 flex flex-col h-full bg-surface-container-lowest overflow-hidden">
+<!-- EN-TÊTE DE LA CONVERSATION -->
+<div class="h-20 px-space-md lg:px-space-lg bg-surface-container-lowest shadow-sm flex items-center justify-between flex-shrink-0 z-10">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="relative flex-shrink-0">
+<div class="w-11 h-11 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed font-headline-sm text-headline-sm">
+<span class="material-symbols-outlined text-[26px] text-primary">person</span>
+</div>
+<span class="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-tertiary-container ring-2 ring-surface-container-lowest"></span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-2">
+<h2 class="font-title-md text-title-md text-on-surface font-bold truncate">Rév. Dr. Ndifon Samuel</h2>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-[10px] font-bold uppercase tracking-wider">Surintendant Titulaire</span>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant truncate flex items-center gap-1.5 mt-0.5">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+<span>En ligne • Région Centre 1 • Temple Central de Tsinga</span>
+</p>
+</div>
+</div>
+<!-- Actions de contact pastorales -->
+<div class="flex items-center gap-1 sm:gap-2 flex-shrink-0">
+<button class="w-10 h-10 rounded-xl hover:bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors" title="Rechercher dans ce fil">
+<span class="material-symbols-outlined text-[22px]">search</span>
+</button>
+<button class="w-10 h-10 rounded-xl hover:bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors" title="Appel pastoral direct">
+<span class="material-symbols-outlined text-[22px]">call</span>
+</button>
+<button class="w-10 h-10 rounded-xl hover:bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors" title="Visioconférence d'édification">
+<span class="material-symbols-outlined text-[22px]">videocam</span>
+</button>
+<button class="h-10 px-3 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm hidden md:flex items-center gap-1.5 transition-colors" title="Consulter la fiche pastorale">
+<span class="material-symbols-outlined text-[18px]">badge</span>
+<span>Fiche Pastorale</span>
+</button>
+<button class="w-10 h-10 rounded-xl hover:bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[22px]">more_vert</span>
+</button>
+</div>
+</div>
+<!-- CORPS DU CHAT (FIL DES MESSAGES SCROLLABLE) -->
+<div class="flex-1 overflow-y-auto p-space-md lg:p-space-lg space-y-space-md bg-surface-container-low/40" id="chat-messages-container">
+<!-- Séparateur de Date Canonique -->
+<div class="flex items-center justify-center">
+<div class="px-4 py-1.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm shadow-sm flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+<span>Aujourd'hui, 28 Mars 2025</span>
+</div>
+</div>
+<!-- MESSAGE 1 (REÇU : Rév. Ndifon avec Quote Reply) -->
+<div class="flex items-start gap-3 max-w-2xl">
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center flex-shrink-0 text-on-primary-fixed mt-1">
+<span class="material-symbols-outlined text-[18px] text-primary">person</span>
+</div>
+<div class="flex flex-col gap-1">
+<div class="p-space-md rounded-2xl rounded-tl-sm bg-surface-container-lowest text-on-surface shadow-sm space-y-space-sm">
+<div class="flex items-center justify-between gap-3">
+<span class="font-label-sm text-label-sm font-bold text-primary">Rév. Dr. Ndifon Samuel</span>
+<span class="font-label-sm text-[11px] text-on-surface-variant">10:15</span>
+</div>
+<!-- Quote Box Réponse Intégrée -->
+<div class="p-2.5 rounded-xl bg-surface-container-low border-l-4 border-primary text-on-surface-variant font-body-sm text-body-sm">
+<p class="font-label-sm text-[11px] font-semibold text-primary">Fr. Jean-Claude Fossouo</p>
+<p class="italic text-on-surface-variant truncate">« Ci-joint le brouillon du programme de louange et adoration pour le dimanche de Pâques... »</p>
+</div>
+<!-- Corps du texte -->
+<p class="font-body-md text-body-md leading-relaxed text-on-surface">
+                Bien-aimé frère Fossouo, j'ai attentivement parcouru la programmation des cantiques. L'orientation spirituelle est excellente. Veillez à intégrer expressément le <span class="font-semibold text-primary">cantique n° 42 du recueil</span> (« À toi la gloire ») lors de l'appel solennel à la conversion.
+              </p>
+</div>
+<span class="font-label-sm text-[11px] text-on-surface-variant pl-2">Reçu par le serveur Tsinga • 10:15</span>
+</div>
+</div>
+<!-- MESSAGE 2 (ENVOYÉ : Par l'utilisateur avec Note Vocale Interactive) -->
+<div class="flex flex-col items-end self-end max-w-xl ml-auto">
+<div class="p-space-md rounded-2xl rounded-tr-sm bg-primary-container text-on-primary shadow-md space-y-space-sm w-full">
+<div class="flex items-center justify-between gap-4">
+<span class="font-label-sm text-label-sm font-bold opacity-90">Vous (Fr. Fossouo J.C.)</span>
+<span class="font-label-sm text-[11px] opacity-80">10:28</span>
+</div>
+<!-- COMPOSANT NOTE VOCALE -->
+<div class="p-3 rounded-xl bg-on-primary/10 flex flex-col gap-2">
+<div class="flex items-center gap-3">
+<!-- Bouton Play/Pause -->
+<button class="w-10 h-10 rounded-full bg-surface-container-lowest text-primary flex items-center justify-center shadow-md hover:scale-105 active:scale-95 transition-all flex-shrink-0" id="voice-play-btn">
+<span class="material-symbols-outlined text-[24px]" id="voice-icon">play_arrow</span>
+</button>
+<!-- Audio Waveform stylisée FGM -->
+<div class="flex-1 flex items-center gap-1 h-8 px-1">
+<span class="w-1 bg-on-primary rounded-full h-2"></span>
+<span class="w-1 bg-on-primary rounded-full h-4"></span>
+<span class="w-1 bg-on-primary rounded-full h-6"></span>
+<span class="w-1 bg-on-primary rounded-full h-3"></span>
+<span class="w-1 bg-on-primary rounded-full h-7"></span>
+<span class="w-1 bg-on-primary rounded-full h-8"></span>
+<span class="w-1 bg-on-primary rounded-full h-5"></span>
+<span class="w-1 bg-on-primary rounded-full h-4"></span>
+<span class="w-1 bg-on-primary/40 rounded-full h-7"></span>
+<span class="w-1 bg-on-primary/40 rounded-full h-6"></span>
+<span class="w-1 bg-on-primary/40 rounded-full h-3"></span>
+<span class="w-1 bg-on-primary/40 rounded-full h-5"></span>
+<span class="w-1 bg-on-primary/40 rounded-full h-2"></span>
+<span class="w-1 bg-on-primary/40 rounded-full h-6"></span>
+<span class="w-1 bg-on-primary/40 rounded-full h-4"></span>
+<span class="w-1 bg-on-primary/40 rounded-full h-3"></span>
+<span class="w-1 bg-on-primary/40 rounded-full h-5"></span>
+</div>
+<!-- Durée & Sélecteur Vitesse -->
+<div class="flex items-center gap-2">
+<span class="font-currency-display text-[13px] font-bold text-on-primary tabular-nums">01:24</span>
+<div class="flex items-center bg-on-primary/20 rounded-lg p-0.5 font-label-sm text-[10px]">
+<button class="px-1.5 py-0.5 rounded font-bold bg-surface-container-lowest text-primary">1x</button>
+<button class="px-1.5 py-0.5 rounded hover:bg-on-primary/20 transition-colors">1.5x</button>
+<button class="px-1.5 py-0.5 rounded hover:bg-on-primary/20 transition-colors">2x</button>
+</div>
+</div>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-primary leading-relaxed">
+              Amen Révérend ! C'est noté avec joie. Voici l'explication sur la transition musicale avec les cordes et la section des cuivres de la jeunesse.
+            </p>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant font-label-sm text-[11px] pr-2 mt-1">
+<span>10:28</span>
+<span class="material-symbols-outlined text-primary text-[16px]" title="Lu par Rév. Ndifon">done_all</span>
+</div>
+</div>
+<!-- MESSAGE 3 (REÇU : DOCUMENT PDF PARTAGÉ) -->
+<div class="flex items-start gap-3 max-w-xl">
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center flex-shrink-0 text-on-primary-fixed mt-1">
+<span class="material-symbols-outlined text-[18px] text-primary">person</span>
+</div>
+<div class="flex flex-col gap-1">
+<div class="p-space-md rounded-2xl rounded-tl-sm bg-surface-container-lowest text-on-surface shadow-sm space-y-space-sm">
+<div class="flex items-center justify-between gap-3">
+<span class="font-label-sm text-label-sm font-bold text-primary">Rév. Dr. Ndifon Samuel</span>
+<span class="font-label-sm text-[11px] text-on-surface-variant">10:35</span>
+</div>
+<!-- Carte Document Téléchargeable -->
+<div class="p-3 rounded-xl bg-surface-container flex items-center justify-between gap-3 hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-10 h-10 rounded-lg bg-primary-fixed flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[24px]">picture_as_pdf</span>
+</div>
+<div class="min-w-0">
+<p class="font-title-md text-[14px] font-bold text-on-surface truncate">Circulaire_Pastorale_Semaine_Sainte_2025.pdf</p>
+<p class="font-label-sm text-[11px] text-on-surface-variant flex items-center gap-1">
+<span>1.4 Mo</span>
+<span>•</span>
+<span class="text-tertiary font-semibold">Validé Conseil Pastoral</span>
+</p>
+</div>
+</div>
+<button class="w-9 h-9 rounded-full bg-surface-container-lowest hover:bg-primary hover:text-on-primary flex items-center justify-center text-on-surface transition-all shadow-sm flex-shrink-0" title="Télécharger">
+<span class="material-symbols-outlined text-[20px]">download</span>
+</button>
+</div>
+<p class="font-body-md text-body-md text-on-surface">
+                Veuillez distribuer cette note officielle aux responsables de la louange et aux conducteurs de culte du district.
+              </p>
+</div>
+<span class="font-label-sm text-[11px] text-on-surface-variant pl-2">10:35</span>
+</div>
+</div>
+<!-- MESSAGE 4 (REÇU : PHOTO MINIATURE CULTE TSINGA) -->
+<div class="flex items-start gap-3 max-w-xl">
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center flex-shrink-0 text-on-primary-fixed mt-1">
+<span class="material-symbols-outlined text-[18px] text-primary">person</span>
+</div>
+<div class="flex flex-col gap-1">
+<div class="p-2.5 rounded-2xl rounded-tl-sm bg-surface-container-lowest text-on-surface shadow-sm space-y-2">
+<div class="flex items-center justify-between gap-3 px-1">
+<span class="font-label-sm text-label-sm font-bold text-primary">Rév. Dr. Ndifon Samuel</span>
+<span class="font-label-sm text-[11px] text-on-surface-variant">10:40</span>
+</div>
+<!-- Photo de culte avec alt détaillé -->
+<div class="relative rounded-xl overflow-hidden shadow-inner group">
+<img class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Chœur de louange de la Full Gospel Mission répétant avec ferveur dans le sanctuaire du Temple de Tsinga à Yaoundé, sous une lumière dorée et chaleureuse, musiciens au piano et violonistes vêtus avec dignité, acoustique ecclésiale sacrée et communion fraternelle." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCI0vFfduqgDAd0DlJUtajlMGWit5NUwsTRWi9_WPXP6JQ6fWuJeBdDfHB3CG8hzHLppF6G8oTZLoFo_oWbz6xVEYXD7pt_K5n39KlZpx_rt7D6ObfcLlXt7ipm36ND81_vlkChQw3E66AT-QSzLvkDwmRLRiTypXV5Ig_7lIba-J7V__4rhZhNTFS15oywBEnx2HWP-HLmGCZsTQwXvjgfKoTbh0R8eNhO6hIxgmw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-transparent to-transparent flex items-end p-3">
+<p class="font-label-sm text-label-sm text-surface-container-lowest">Vue de la préparation du chœur hier soir au sanctuaire</p>
+</div>
+</div>
+</div>
+<span class="font-label-sm text-[11px] text-on-surface-variant pl-2">10:40</span>
+</div>
+</div>
+<!-- MESSAGE 5 (REÇU : APPEL À PRIÈRE AVANT LA VEILLÉE) -->
+<div class="flex items-start gap-3 max-w-xl">
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center flex-shrink-0 text-on-primary-fixed mt-1">
+<span class="material-symbols-outlined text-[18px] text-primary">person</span>
+</div>
+<div class="flex flex-col gap-1">
+<div class="p-space-md rounded-2xl rounded-tl-sm bg-surface-container-lowest text-on-surface shadow-sm space-y-space-xs">
+<div class="flex items-center justify-between gap-3">
+<span class="font-label-sm text-label-sm font-bold text-primary">Rév. Dr. Ndifon Samuel</span>
+<span class="font-label-sm text-[11px] text-on-surface-variant">10:42</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface">
+                Que la grâce abonde dans vos préparatifs. Êtes-vous disponible pour une brève prière d'onction pastorale avant la veillée de ce soir ?
+              </p>
+</div>
+<span class="font-label-sm text-[11px] text-on-surface-variant pl-2">10:42</span>
+</div>
+</div>
+<!-- INDICATEUR EN TRAIN D'ÉCRIRE (TYPING INDICATOR) -->
+<div class="flex items-center gap-2 pl-2 text-on-surface-variant">
+<div class="w-6 h-6 rounded-full bg-primary-fixed flex items-center justify-center text-primary text-[12px]">
+<span class="material-symbols-outlined text-[14px]">person</span>
+</div>
+<div class="px-3 py-1.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm flex items-center gap-2">
+<span>Rév. Dr. Ndifon Samuel est en train d'écrire</span>
+<span class="flex gap-1 items-center">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-bounce"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-bounce [animation-delay:0.2s]"></span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-bounce [animation-delay:0.4s]"></span>
+</span>
+</div>
+</div>
+</div>
+<!-- COMPOSITEUR DE MESSAGE & BARRE D'OUTILS BAS DE PAGE -->
+<div class="p-space-md bg-surface-container-lowest shadow-[0_-4px_16px_rgba(0,0,0,0.03)] flex flex-col gap-2">
+<!-- Suggestions de Réactions Fraternelles Rapides -->
+<div class="flex items-center justify-between gap-2 overflow-x-auto pb-1 text-on-surface-variant font-label-sm text-label-sm">
+<div class="flex items-center gap-1.5">
+<span class="text-[11px] uppercase tracking-wider text-on-surface-variant/70 font-bold">Réponses fraternelles :</span>
+<button class="px-2.5 py-1 rounded-full bg-surface-container-low hover:bg-surface-container-high transition-colors flex items-center gap-1 text-[13px]">
+<span>🙏</span> <span>Amen pasteur</span>
+</button>
+<button class="px-2.5 py-1 rounded-full bg-surface-container-low hover:bg-surface-container-high transition-colors flex items-center gap-1 text-[13px]">
+<span>📖</span> <span>À vos ordres</span>
+</button>
+<button class="px-2.5 py-1 rounded-full bg-surface-container-low hover:bg-surface-container-high transition-colors flex items-center gap-1 text-[13px]">
+<span>🕊️</span> <span>Que Dieu bénisse</span>
+</button>
+</div>
+<span class="text-[11px] text-tertiary flex items-center gap-1 font-semibold flex-shrink-0">
+<span class="material-symbols-outlined text-[14px]">lock</span> Chiffré AES-256
+          </span>
+</div>
+<!-- Barre Principale d'Input -->
+<div class="flex items-center gap-2">
+<!-- Menu Pièce Jointe & Verset -->
+<div class="relative">
+<button class="w-11 h-11 rounded-full bg-surface-container-low hover:bg-surface-container-high text-on-surface flex items-center justify-center transition-all" id="attachment-menu-btn" title="Joindre un fichier ou verset">
+<span class="material-symbols-outlined text-[22px]">attach_file</span>
+</button>
+<!-- Dropdown Popover (Caché par défaut) -->
+<div class="hidden absolute bottom-14 left-0 w-60 rounded-2xl bg-surface-container-lowest shadow-xl p-2 z-30 flex flex-col gap-1" id="attachment-dropdown">
+<button class="w-full px-3 py-2 rounded-xl hover:bg-surface-container-low text-left font-label-sm text-label-sm flex items-center gap-2.5 text-on-surface">
+<span class="material-symbols-outlined text-primary text-[20px]">description</span>
+<span>Document PDF / Rapport</span>
+</button>
+<button class="w-full px-3 py-2 rounded-xl hover:bg-surface-container-low text-left font-label-sm text-label-sm flex items-center gap-2.5 text-on-surface">
+<span class="material-symbols-outlined text-secondary text-[20px]">image</span>
+<span>Photo / Vidéo de culte</span>
+</button>
+<button class="w-full px-3 py-2 rounded-xl hover:bg-surface-container-low text-left font-label-sm text-label-sm flex items-center gap-2.5 text-on-surface">
+<span class="material-symbols-outlined text-tertiary text-[20px]">auto_stories</span>
+<span>Insérer Verset Biblique</span>
+</button>
+<button class="w-full px-3 py-2 rounded-xl hover:bg-surface-container-low text-left font-label-sm text-label-sm flex items-center gap-2.5 text-on-surface">
+<span class="material-symbols-outlined text-outline text-[20px]">badge</span>
+<span>Partager Contact / Fidèle</span>
+</button>
+</div>
+</div>
+<!-- Champ Texte Ergonomique -->
+<div class="flex-1 relative">
+<input class="w-full h-12 pl-4 pr-12 rounded-2xl bg-surface-container-low font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant/70 focus:outline-none focus:bg-surface-container-lowest transition-all" id="chat-input" placeholder="Écrire un message d'édification au Révérend Dr. Ndifon..." type="text"/>
+<button class="absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant hover:text-primary transition-colors" title="Emojis">
+<span class="material-symbols-outlined text-[22px]">sentiment_satisfied</span>
+</button>
+</div>
+<!-- Bouton Micro Vocal -->
+<button class="h-12 px-3 sm:px-4 rounded-2xl bg-surface-container-low hover:bg-surface-container-high text-on-surface flex items-center gap-2 transition-all group" title="Maintenir pour enregistrer une note vocale">
+<span class="material-symbols-outlined text-primary text-[22px] group-hover:scale-110 transition-transform">mic</span>
+<span class="font-label-sm text-[12px] text-on-surface-variant hidden xl:inline">Vocale</span>
+</button>
+<!-- Bouton Envoyer ROUGE BRAND -->
+<button class="w-12 h-12 rounded-2xl bg-primary-container text-on-primary hover:opacity-90 active:scale-95 shadow-md flex items-center justify-center transition-all flex-shrink-0" id="send-msg-btn" title="Envoyer le message">
+<span class="material-symbols-outlined text-[22px]">send</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- MODAL FLOTTANTE : NOUVELLE CONVERSATION / NOUVEAU GROUPE FRATERNEL -->
+<div class="fixed inset-0 bg-inverse-surface/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden" id="new-chat-modal">
+<div class="w-full max-w-lg rounded-3xl bg-surface-container-lowest shadow-2xl overflow-hidden flex flex-col max-h-[921px] animate-in fade-in zoom-in-95 duration-200">
+<!-- Modal Header -->
+<div class="p-space-md lg:p-space-lg bg-surface-container-low flex items-center justify-between">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Créer une conversation fraternelle</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Échange individuel ou groupe de ministère / cellule de prière</p>
+</div>
+<button class="w-9 h-9 rounded-full bg-surface-container hover:bg-surface-container-high flex items-center justify-center text-on-surface-variant transition-colors" id="close-modal-btn">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Type Selector Tabs -->
+<div class="p-space-md flex gap-2 bg-surface-container-lowest">
+<button class="flex-1 py-2.5 rounded-xl font-label-md text-label-md font-bold bg-primary-container text-on-primary text-center">
+          Message Direct
+        </button>
+<button class="flex-1 py-2.5 rounded-xl font-label-md text-label-md font-semibold bg-surface-container text-on-surface-variant text-center hover:bg-surface-container-high transition-colors">
+          Groupe / Cellule
+        </button>
+</div>
+<!-- Recherche de membres -->
+<div class="px-space-md">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">search</span>
+<input class="w-full h-10 pl-10 pr-4 rounded-xl bg-surface-container-low font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant/70 focus:outline-none" placeholder="Rechercher par nom, assemblée ou ministère..." type="text"/>
+</div>
+</div>
+<!-- Liste des fidèles avec sélection -->
+<div class="p-space-md flex-1 overflow-y-auto space-y-2">
+<p class="font-label-sm text-[11px] uppercase tracking-wider text-on-surface-variant font-bold">Membres suggérés • District Tsinga</p>
+<label class="flex items-center justify-between p-2.5 rounded-2xl hover:bg-surface-container-low cursor-pointer transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center font-bold text-primary">MN</div>
+<div>
+<p class="font-title-md text-[14px] text-on-surface font-bold">Maman Ndifon Elisabeth</p>
+<p class="font-label-sm text-[12px] text-on-surface-variant">Présidente Département des Dames</p>
+</div>
+</div>
+<input class="w-5 h-5 rounded accent-primary cursor-pointer" type="checkbox"/>
+</label>
+<label class="flex items-center justify-between p-2.5 rounded-2xl hover:bg-surface-container-low cursor-pointer transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center font-bold text-secondary">TK</div>
+<div>
+<p class="font-title-md text-[14px] text-on-surface font-bold">Ancien Thomas Kouam</p>
+<p class="font-label-sm text-[12px] text-on-surface-variant">Conseil des Anciens • Yaoundé</p>
+</div>
+</div>
+<input class="w-5 h-5 rounded accent-primary cursor-pointer" type="checkbox"/>
+</label>
+<label class="flex items-center justify-between p-2.5 rounded-2xl hover:bg-surface-container-low cursor-pointer transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center font-bold text-on-surface">AB</div>
+<div>
+<p class="font-title-md text-[14px] text-on-surface font-bold">Fr. Alain Bisseck</p>
+<p class="font-label-sm text-[12px] text-on-surface-variant">Responsable Multimédia &amp; Sono</p>
+</div>
+</div>
+<input class="w-5 h-5 rounded accent-primary cursor-pointer" type="checkbox"/>
+</label>
+<label class="flex items-center justify-between p-2.5 rounded-2xl hover:bg-surface-container-low cursor-pointer transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed flex items-center justify-center font-bold text-on-tertiary-fixed">SO</div>
+<div>
+<p class="font-title-md text-[14px] text-on-surface font-bold">Pasteur Samuel Ondoa</p>
+<p class="font-label-sm text-[12px] text-on-surface-variant">District Sud • Évangélisation</p>
+</div>
+</div>
+<input class="w-5 h-5 rounded accent-primary cursor-pointer" type="checkbox"/>
+</label>
+</div>
+<!-- Modal Footer -->
+<div class="p-space-md bg-surface-container-low flex items-center justify-end gap-2">
+<button class="h-11 px-space-md rounded-xl hover:bg-surface-container text-on-surface-variant font-label-md text-label-md transition-colors" id="cancel-modal-btn">
+          Annuler
+        </button>
+<button class="h-11 px-space-lg rounded-xl bg-primary-container text-on-primary font-label-md text-label-md font-bold shadow-md hover:opacity-90 transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+<span>Démarrer la discussion</span>
+</button>
+</div>
+</div>
+</div>
+<!-- SCRIPT LOGIQUE INTERACTIVE -->
+<script>
+    // Toggle Modal Nouvelle Conversation
+    const newChatModal = document.getElementById('new-chat-modal');
+    const openNewChatBtn = document.getElementById('open-new-chat-btn');
+    const closeModalBtn = document.getElementById('close-modal-btn');
+    const cancelModalBtn = document.getElementById('cancel-modal-btn');
+
+    if (openNewChatBtn) {
+      openNewChatBtn.addEventListener('click', () => {
+        newChatModal.classList.remove('hidden');
+      });
+    }
+
+    [closeModalBtn, cancelModalBtn].forEach(btn => {
+      if (btn) {
+        btn.addEventListener('click', () => {
+          newChatModal.classList.add('hidden');
+        });
+      }
+    });
+
+    // Dropdown Pièces Jointes
+    const attachBtn = document.getElementById('attachment-menu-btn');
+    const attachDropdown = document.getElementById('attachment-dropdown');
+
+    if (attachBtn && attachDropdown) {
+      attachBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        attachDropdown.classList.toggle('hidden');
+      });
+
+      document.addEventListener('click', () => {
+        attachDropdown.classList.add('hidden');
+      });
+    }
+
+    // Toggle Voice Note Play/Pause Micro-interaction
+    const voiceBtn = document.getElementById('voice-play-btn');
+    const voiceIcon = document.getElementById('voice-icon');
+    let isPlaying = false;
+
+    if (voiceBtn && voiceIcon) {
+      voiceBtn.addEventListener('click', () => {
+        isPlaying = !isPlaying;
+        voiceIcon.textContent = isPlaying ? 'pause' : 'play_arrow';
+      });
+    }
+
+    // Message Sender Micro-interaction
+    const sendBtn = document.getElementById('send-msg-btn');
+    const chatInput = document.getElementById('chat-input');
+    const chatContainer = document.getElementById('chat-messages-container');
+
+    if (sendBtn && chatInput && chatContainer) {
+      const handleSend = () => {
+        const text = chatInput.value.trim();
+        if (!text) return;
+
+        const now = new Date();
+        const timeStr = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
+
+        const msgHtml = `
+          <div class="flex flex-col items-end self-end max-w-xl ml-auto animate-in fade-in slide-in-from-bottom-2 duration-200">
+            <div class="p-space-md rounded-2xl rounded-tr-sm bg-primary-container text-on-primary shadow-md space-y-1 w-full">
+              <div class="flex items-center justify-between gap-4">
+                <span class="font-label-sm text-label-sm font-bold opacity-90">Vous (Fr. Fossouo J.C.)</span>
+                <span class="font-label-sm text-[11px] opacity-80">${timeStr}</span>
+              </div>
+              <p class="font-body-md text-body-md text-on-primary leading-relaxed">${text}</p>
+            </div>
+            <div class="flex items-center gap-1 text-on-surface-variant font-label-sm text-[11px] pr-2 mt-1">
+              <span>${timeStr}</span>
+              <span class="material-symbols-outlined text-outline text-[16px]">done</span>
+            </div>
+          </div>
+        `;
+
+        chatContainer.insertAdjacentHTML('beforeend', msgHtml);
+        chatInput.value = '';
+        chatContainer.scrollTop = chatContainer.scrollHeight;
+      };
+
+      sendBtn.addEventListener('click', handleSend);
+      chatInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') handleSend();
+      });
+    }
+
+    // Tab Filtres Bascule
+    const tabs = document.querySelectorAll('.chat-tab-btn');
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => {
+          t.classList.remove('bg-primary-container', 'text-on-primary', 'font-bold', 'shadow-sm');
+          t.classList.add('bg-surface-container', 'text-on-surface-variant');
+        });
+        tab.classList.remove('bg-surface-container', 'text-on-surface-variant');
+        tab.classList.add('bg-primary-container', 'text-on-primary', 'font-bold', 'shadow-sm');
+      });
+    });
+  </script>
+</div></main></div><div class="md:hidden fixed bottom-0 left-0 right-0 h-16 bg-surface-container-lowest/95 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.06)] z-50 flex items-center justify-around px-2"><a class="flex flex-col items-center justify-center flex-1 py-1 text-primary-container" href="#"><span class="material-symbols-outlined text-[22px]">grid_view</span><span class="font-label-sm text-[10px] mt-0.5">Accueil</span></a><a class="flex flex-col items-center justify-center flex-1 py-1 text-on-surface-variant" href="#"><span class="material-symbols-outlined text-[22px]">groups</span><span class="font-label-sm text-[10px] mt-0.5">Membres</span></a><a class="flex flex-col items-center justify-center flex-1 py-1 text-on-surface-variant" href="#"><span class="material-symbols-outlined text-[22px]">payments</span><span class="font-label-sm text-[10px] mt-0.5">Finance</span></a><a class="flex flex-col items-center justify-center flex-1 py-1 text-on-surface-variant relative" href="#"><span class="material-symbols-outlined text-[22px]">chat_bubble</span><span class="absolute top-1 right-5 w-2 h-2 rounded-full bg-primary-container"></span><span class="font-label-sm text-[10px] mt-0.5">Messages</span></a><button class="flex flex-col items-center justify-center flex-1 py-1 text-on-surface-variant"><span class="material-symbols-outlined text-[22px]">menu_open</span><span class="font-label-sm text-[10px] mt-0.5">Plus</span></button></div></body></html>

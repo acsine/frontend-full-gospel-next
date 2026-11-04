@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+
+<html lang="fr"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-tint": "#bf0229", "primary": "#9e001f", "inverse-surface": "#303034", "surface-variant": "#e4e1e7", "tertiary-fixed": "#86faa7", "on-tertiary-container": "#86faa7", "tertiary-container": "#00743a", "on-secondary-fixed-variant": "#643f00", "surface-container-lowest": "#ffffff", "surface": "#fcf8fe", "on-primary-fixed-variant": "#92001c", "surface-container-highest": "#e4e1e7", "on-error": "#ffffff", "on-primary": "#ffffff", "on-primary-fixed": "#410007", "surface-bright": "#fcf8fe", "primary-fixed": "#ffdad8", "surface-container-high": "#eae7ed", "outline": "#906f6e", "on-surface-variant": "#5c403f", "tertiary": "#00592b", "surface-dim": "#dcd9df", "on-tertiary": "#ffffff", "secondary-fixed": "#ffddb5", "on-tertiary-fixed": "#00210c", "background": "#fcf8fe", "on-surface": "#1b1b1f", "on-primary-container": "#ffdad8", "primary-fixed-dim": "#ffb3b1", "inverse-primary": "#ffb3b1", "on-secondary": "#ffffff", "secondary-container": "#feb64e", "error-container": "#ffdad6", "primary-container": "#c8102e", "outline-variant": "#e5bdbb", "surface-container": "#f0edf3", "secondary": "#835400", "error": "#ba1a1a", "on-secondary-fixed": "#2a1800", "surface-container-low": "#f6f2f8", "on-secondary-container": "#714800", "on-background": "#1b1b1f", "inverse-on-surface": "#f3eff6", "tertiary-fixed-dim": "#6add8d", "on-error-container": "#93000a", "secondary-fixed-dim": "#ffb956", "on-tertiary-fixed-variant": "#005228" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin": "1rem", "margin-desktop": "3rem", "space-xs": "0.25rem", "gutter-tablet": "1.5rem", "margin-tablet": "2rem", "space-xl": "2.5rem", "space-sm": "0.5rem", "gutter-desktop": "2rem", "gutter": "1rem", "space-lg": "1.5rem", "space-md": "1rem" }, "fontFamily": { "display-lg": ["Plus Jakarta Sans"], "body-sm": ["Inter"], "body-lg": ["Inter"], "title-md": ["Plus Jakarta Sans"], "label-sm": ["Inter"], "label-md": ["Inter"], "headline-sm": ["Plus Jakarta Sans"], "display-lg-mobile": ["Plus Jakarta Sans"], "currency-display": ["Plus Jakarta Sans"], "body-md": ["Inter"], "headline-md": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "body-md-medium": ["Inter"], "headline-lg-mobile": ["Plus Jakarta Sans"] }, "fontSize": { "display-lg": ["48px", { "lineHeight": "56px", "fontWeight": "800" }], "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "title-md": ["18px", { "lineHeight": "26px", "fontWeight": "600" }], "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "600" }], "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }], "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "display-lg-mobile": ["34px", { "lineHeight": "42px", "fontWeight": "800" }], "currency-display": ["28px", { "lineHeight": "36px", "fontWeight": "700" }], "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "700" }], "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }], "body-md-medium": ["16px", { "lineHeight": "24px", "fontWeight": "500" }], "headline-lg-mobile": ["26px", { "lineHeight": "34px", "fontWeight": "700" }] } } } }</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;background-color:#fcf8fe;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="w-full h-[3px] bg-primary-container relative overflow-hidden"><div class="absolute inset-y-0 left-0 w-1/3 bg-primary animate-pulse"></div></div><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0 flex-shrink-0"><img alt="Logo Full Gospel Mission Cameroun" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VtR_Amnvhju8fh_HutLzNg-PTJjLKTQagr709OXkSveuYiSe61lp9WlYO7Q4k6MV2bwG96w7F7Y-QIQTu0gsrx8_UMHBiMfnxYxpr-U11CXcnSHhy_4v_98oLtqgEG16dZFla3ixnfZc_RQ_sf-Wna8pSjDxL8VmYf-xqCp4efW0Y-xzZTQf72swwUuMWB02PjtbU5XSFO1_y0qthSeYkQoQwyUeWXPobUkXa7RjE"/><div class="flex flex-col"><span class="font-title-md text-title-md text-primary leading-tight truncate font-bold">FULLGOPE</span><span class="font-label-sm text-label-sm text-on-surface-variant truncate">Dons &amp; Campagnes</span></div></div><div class="flex items-center gap-space-xs flex-shrink-0"><div aria-label="Sélecteur de langue" class="flex items-center bg-surface-container rounded-full p-0.5" role="group"><button class="min-w-[28px] h-7 px-1.5 rounded-full bg-surface-container-lowest text-on-surface font-label-sm text-label-sm shadow-[0_1px_4px_rgba(0,0,0,0.06)] flex items-center justify-center transition-all" type="button">FR</button><button class="min-w-[28px] h-7 px-1.5 rounded-full text-on-surface-variant font-label-sm text-label-sm flex items-center justify-center transition-all" type="button">EN</button></div><button aria-label="Basculer le thème" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">light_mode</span></button><a class="h-10 px-4 bg-primary-container text-on-primary rounded-full font-label-md text-label-md flex items-center justify-center shadow-[0_2px_8px_rgba(200,16,46,0.2)] transition-transform active:scale-95 gap-1" data-path="dons-campagnes" href="#"><span class="material-symbols-outlined text-[18px]">volunteer_activism</span><span>Donner</span></a></div></div></header><main class="flex flex-col relative w-full pt-16 pb-24 bg-surface min-h-screen"><div class="flex flex-col w-full pb-10">
+<!-- Top Navigation & Trust Header -->
+<div class="px-margin pt-space-sm pb-space-sm flex items-center justify-between">
+<a class="flex items-center gap-space-xs text-on-surface-variant hover:text-primary transition-colors py-space-xs pr-space-sm rounded-full active:scale-95" data-path="dons-campagnes" href="#">
+<span class="material-symbols-outlined text-[20px]">arrow_back</span>
+<span class="font-label-md text-label-md">Campagnes</span>
+</a>
+<div class="flex items-center gap-1.5 px-3 py-1 bg-surface-container rounded-full text-tertiary">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">lock</span>
+<span class="font-label-sm text-label-sm font-semibold tracking-tight text-on-surface">Paiement 100% Sécurisé</span>
+</div>
+</div>
+<!-- Hero Stepper Visual -->
+<div class="px-margin mb-space-md">
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between relative">
+<div class="absolute left-6 right-6 top-1/2 -translate-y-1/2 h-1 bg-surface-container -z-0">
+<div class="h-full bg-primary transition-all duration-300 w-1/2"></div>
+</div>
+<!-- Step 1 Complete -->
+<div class="flex flex-col items-center gap-1 relative z-10">
+<div class="w-9 h-9 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[20px]">check</span>
+</div>
+<span class="font-label-sm text-label-sm font-semibold text-primary">Montant</span>
+</div>
+<!-- Step 2 Active -->
+<div class="flex flex-col items-center gap-1 relative z-10">
+<div class="w-9 h-9 rounded-full bg-primary-container text-on-primary flex items-center justify-center shadow-md animate-pulse">
+<span class="font-label-md text-label-md font-bold">2</span>
+</div>
+<span class="font-label-sm text-label-sm font-bold text-on-surface">Paiement</span>
+</div>
+<!-- Step 3 Idle -->
+<div class="flex flex-col items-center gap-1 relative z-10">
+<div class="w-9 h-9 rounded-full bg-surface-container text-on-surface-variant flex items-center justify-center">
+<span class="font-label-md text-label-md">3</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Reçu</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Warm Pastoral Encouragement Card -->
+<div class="px-margin mb-space-md">
+<div class="bg-primary-fixed rounded-xl p-space-md flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-full bg-surface-container-lowest flex items-center justify-center text-primary flex-shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[26px]" style="font-variation-settings: 'FILL' 1;">volunteer_activism</span>
+</div>
+<div class="flex flex-col">
+<p class="font-label-sm text-label-sm uppercase tracking-wider text-on-primary-fixed-variant font-bold">2 Corinthiens 9:7</p>
+<p class="font-body-sm text-body-sm text-on-primary-fixed leading-tight italic">« Que chacun donne comme il l'a résolu en son cœur, sans tristesse ni contrainte; car Dieu aime celui qui donne avec joie. »</p>
+</div>
+</div>
+</div>
+<!-- SECTION 1: DÉTAILS DU DON -->
+<div class="px-margin mb-space-lg">
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-md">
+<!-- Type de Don Selector -->
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<label class="font-title-md text-title-md text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[20px]">category</span>
+            Type d'Offrande ou Don
+          </label>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Requis</span>
+</div>
+<div class="grid grid-cols-2 gap-space-xs mt-2" id="donation-type-group">
+<button class="donation-type-btn flex items-center gap-2 px-3 py-2.5 rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md transition-all active:scale-95 text-left" data-value="offrande" type="button">
+<span class="material-symbols-outlined text-[18px] text-primary">diversity_3</span>
+<span class="truncate">Offrande ordinaire</span>
+</button>
+<button class="donation-type-btn flex items-center gap-2 px-3 py-2.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md transition-all active:scale-95 text-left shadow-sm" data-value="dime" type="button">
+<span class="material-symbols-outlined text-[18px]">workspace_premium</span>
+<span class="truncate font-semibold">Dîme du Seigneur</span>
+</button>
+<button class="donation-type-btn flex items-center gap-2 px-3 py-2.5 rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md transition-all active:scale-95 text-left" data-value="action-de-grace" type="button">
+<span class="material-symbols-outlined text-[18px] text-secondary">celebration</span>
+<span class="truncate">Action de grâce</span>
+</button>
+<button class="donation-type-btn flex items-center gap-2 px-3 py-2.5 rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md transition-all active:scale-95 text-left" data-value="don-special" type="button">
+<span class="material-symbols-outlined text-[18px] text-tertiary">card_giftcard</span>
+<span class="truncate">Don spécial</span>
+</button>
+<button class="col-span-2 donation-type-btn flex items-center justify-center gap-2 px-3 py-2.5 rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md transition-all active:scale-95" data-value="projet" type="button">
+<span class="material-symbols-outlined text-[18px] text-primary">foundation</span>
+<span>Campagne &amp; Projet d'édification (Yaoundé / Nord)</span>
+</button>
+</div>
+</div>
+<!-- Hiérarchie Bénéficiaire -->
+<div class="pt-space-xs">
+<label class="font-title-md text-title-md text-on-surface flex items-center gap-1.5 mb-2">
+<span class="material-symbols-outlined text-primary text-[20px]">church</span>
+          Bénéficiaire / Assemblée
+        </label>
+<div class="relative">
+<select class="w-full h-12 bg-surface-container-low text-on-surface font-body-md text-body-md rounded-xl px-4 appearance-none focus:outline-none focus:bg-surface-container-lowest" id="beneficiary-select">
+<option selected="" value="tsinga">Assemblée Locale — Temple Tsinga (Yaoundé)</option>
+<option value="bastos">Assemblée Locale — District Bastos-Mballa II</option>
+<option value="douala-bonaberi">Assemblée Locale — Temple Central Bonabéri (Douala)</option>
+<option value="district-centre">District Ecclésiastique — Yaoundé Centre</option>
+<option value="region-centre">Région Centre-Sud (Full Gospel Cameroon)</option>
+<option value="bureau-national">Bureau National — Siège Bamenda / Yaoundé</option>
+<option value="mission-nord">Projet Missionnaire Évangélisation Grand Nord</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">unfold_more</span>
+</div>
+</div>
+<!-- Sélecteur de Montant -->
+<div class="pt-space-xs">
+<div class="flex items-center justify-between mb-2">
+<label class="font-title-md text-title-md text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[20px]">payments</span>
+            Montant de votre offrande
+          </label>
+<span class="font-label-sm text-label-sm text-primary font-bold">XAF / FCFA</span>
+</div>
+<!-- Chips de Montant -->
+<div class="grid grid-cols-3 gap-space-xs mb-3">
+<button class="amount-chip h-11 rounded-full font-label-md text-label-md bg-surface-container-low text-on-surface transition-all active:scale-95 flex items-center justify-center" data-amount="1000" type="button">
+            1 000 F
+          </button>
+<button class="amount-chip h-11 rounded-full font-label-md text-label-md bg-surface-container-low text-on-surface transition-all active:scale-95 flex items-center justify-center" data-amount="5000" type="button">
+            5 000 F
+          </button>
+<button class="amount-chip h-11 rounded-full font-label-md text-label-md bg-primary text-on-primary shadow-sm font-semibold transition-all active:scale-95 flex items-center justify-center" data-amount="10000" type="button">
+            10 000 F
+          </button>
+<button class="amount-chip h-11 rounded-full font-label-md text-label-md bg-surface-container-low text-on-surface transition-all active:scale-95 flex items-center justify-center" data-amount="25000" type="button">
+            25 000 F
+          </button>
+<button class="amount-chip h-11 rounded-full font-label-md text-label-md bg-surface-container-low text-on-surface transition-all active:scale-95 flex items-center justify-center" data-amount="50000" type="button">
+            50 000 F
+          </button>
+<button class="amount-chip h-11 rounded-full font-label-md text-label-md bg-surface-container-low text-on-surface transition-all active:scale-95 flex items-center justify-center" data-amount="100000" type="button">
+            100 000 F
+          </button>
+</div>
+<!-- Custom Amount Free Input -->
+<div class="relative flex items-center">
+<input class="w-full h-14 bg-surface-container-low rounded-xl px-4 text-headline-sm font-headline-sm text-primary font-bold focus:outline-none focus:bg-surface-container-lowest tracking-tight" id="custom-amount-input" min="100" placeholder="Autre montant..." step="500" type="number" value="10000"/>
+<div class="absolute right-4 flex items-center gap-1 pointer-events-none">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface-variant">FCFA</span>
+</div>
+</div>
+</div>
+<!-- Anonymous Toggle -->
+<label class="flex items-start gap-3 p-3 bg-surface-container-low rounded-xl cursor-pointer">
+<input class="mt-1 w-5 h-5 rounded accent-primary text-on-primary cursor-pointer" id="anon-checkbox" type="checkbox"/>
+<div class="flex flex-col">
+<span class="font-body-md-medium text-body-md-medium text-on-surface font-semibold">Faire ce don de manière anonyme</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Seul le trésorier recevra la notification comptable sans affichage public lors du culte.</span>
+</div>
+</label>
+<!-- Prayer note input -->
+<div>
+<label class="font-label-md text-label-md text-on-surface flex items-center gap-1.5 mb-1.5">
+<span class="material-symbols-outlined text-secondary text-[18px]">edit_note</span>
+          Intention de prière ou sujet d'intercession (Optionnel)
+        </label>
+<textarea class="w-full p-3 bg-surface-container-low rounded-xl text-body-sm font-body-sm text-on-surface focus:outline-none focus:bg-surface-container-lowest placeholder:text-on-surface-variant/60 resize-none" placeholder="Ex: Action de grâce pour la guérison de notre fille et prospérité spirituelle de l'assemblée..." rows="2">Action de grâce pour la guérison de notre fille et prospérité spirituelle de l'assemblée.</textarea>
+</div>
+</div>
+</div>
+<!-- SECTION 2: MÉTHODE DE PAIEMENT CAMEROUN -->
+<div class="px-margin mb-space-lg">
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<label class="font-title-md text-title-md text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[22px]">contactless</span>
+          Moyen de paiement
+        </label>
+<span class="font-label-sm text-label-sm bg-tertiary/10 text-tertiary px-2 py-0.5 rounded-full font-bold">Instantané</span>
+</div>
+<!-- 3 Payment Method Cards -->
+<div class="flex flex-col gap-space-sm" id="payment-methods-group">
+<!-- MTN Mobile Money (Selected Default) -->
+<div class="payment-card cursor-pointer rounded-xl p-space-md transition-all active:scale-[0.99] bg-secondary-fixed/30 flex items-center justify-between" data-method="mtn">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-12 h-12 rounded-xl bg-secondary-container text-on-secondary-container flex items-center justify-center font-bold text-[15px] flex-shrink-0 shadow-sm">
+              MTN
+            </div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-body-md-medium text-body-md-medium font-bold text-on-surface truncate">MTN Mobile Money</span>
+<span class="bg-secondary text-on-secondary px-2 py-0.5 rounded-full font-label-sm text-label-sm font-bold tracking-wider">*126#</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Débit automatique via prompt USSD</span>
+</div>
+</div>
+<div class="w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center flex-shrink-0 method-radio-check shadow-sm">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+</div>
+<!-- Orange Money Cameroun -->
+<div class="payment-card cursor-pointer rounded-xl p-space-md transition-all active:scale-[0.99] bg-surface-container-low flex items-center justify-between" data-method="orange">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-12 h-12 rounded-xl bg-inverse-surface text-surface flex items-center justify-center font-bold text-[14px] flex-shrink-0 shadow-sm">
+<span class="text-secondary-fixed-dim">OM</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-body-md-medium text-body-md-medium font-bold text-on-surface truncate">Orange Money</span>
+<span class="bg-surface-container-highest text-on-surface px-2 py-0.5 rounded-full font-label-sm text-label-sm font-bold tracking-wider">#150#</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Confirmation instantanée avec code PIN</span>
+</div>
+</div>
+<div class="w-6 h-6 rounded-full bg-surface-container text-transparent flex items-center justify-center flex-shrink-0 method-radio-check">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+</div>
+<!-- Carte Bancaire GIMAC / Visa -->
+<div class="payment-card cursor-pointer rounded-xl p-space-md transition-all active:scale-[0.99] bg-surface-container-low flex items-center justify-between" data-method="card">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high text-on-surface flex items-center justify-center flex-shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[24px]">credit_card</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-body-md-medium text-body-md-medium font-bold text-on-surface truncate">Carte Bancaire / GIMAC</span>
+<span class="bg-surface-container-highest text-on-surface px-1.5 py-0.5 rounded-full font-label-sm text-label-sm font-semibold">Afrique &amp; Diaspora</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Visa, Mastercard, Cartes régionales</span>
+</div>
+</div>
+<div class="w-6 h-6 rounded-full bg-surface-container text-transparent flex items-center justify-center flex-shrink-0 method-radio-check">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+</div>
+</div>
+<!-- Phone Number Input with +237 -->
+<div class="pt-space-xs" id="phone-input-section">
+<label class="font-label-md text-label-md text-on-surface flex items-center justify-between mb-1.5">
+<span class="flex items-center gap-1.5 font-semibold">
+<span class="material-symbols-outlined text-primary text-[18px]">phone_android</span>
+            Numéro de téléphone payeur
+          </span>
+<span class="font-label-sm text-label-sm text-tertiary flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+            Compte valide
+          </span>
+</label>
+<div class="relative flex items-center">
+<div class="absolute left-3 flex items-center gap-1.5 bg-surface-container px-2.5 py-1.5 rounded-lg text-on-surface font-body-md-medium text-body-md-medium font-bold">
+<span class="text-sm">🇨🇲</span>
+<span>+237</span>
+</div>
+<input class="w-full h-14 bg-surface-container-low rounded-xl pl-28 pr-12 text-body-lg font-body-lg font-semibold text-on-surface focus:outline-none focus:bg-surface-container-lowest" placeholder="6 XX XX XX XX" type="tel" value="6 77 12 34 56"/>
+<div class="absolute right-4 text-tertiary">
+<span class="material-symbols-outlined text-[24px]">verified</span>
+</div>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1.5 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">info</span>
+          Un message d'approbation USSD s'affichera directement sur ce téléphone.
+        </p>
+</div>
+<!-- Transparency Fee Breakdown -->
+<div class="bg-surface-container-low rounded-xl p-space-md flex flex-col gap-2 mt-2">
+<div class="flex items-center justify-between font-body-sm text-body-sm text-on-surface-variant">
+<span>Montant de l'offrande :</span>
+<span class="font-semibold text-on-surface" id="summary-offering">10 000 FCFA</span>
+</div>
+<div class="flex items-center justify-between font-body-sm text-body-sm text-on-surface-variant">
+<span class="flex items-center gap-1">
+            Frais de transaction opérateur :
+            <span class="material-symbols-outlined text-[14px] text-tertiary" title="Frais 100% pris en charge par FULLGOPE">help</span>
+</span>
+<span class="text-tertiary font-semibold">0 FCFA (Offerts)</span>
+</div>
+<div class="h-px bg-surface-container-highest my-1"></div>
+<div class="flex items-center justify-between">
+<span class="font-body-md-medium text-body-md-medium font-bold text-on-surface">Total net à débiter :</span>
+<span class="font-headline-sm text-headline-sm font-extrabold text-primary" id="summary-total">10 000 FCFA</span>
+</div>
+</div>
+<!-- Main Action Call to Action Button -->
+<button class="w-full h-14 rounded-full bg-primary-container text-on-primary font-headline-sm text-headline-sm flex items-center justify-center gap-2 shadow-lg transition-all active:scale-[0.98] mt-2" id="pay-confirm-btn" type="button">
+<span class="material-symbols-outlined text-[24px]">lock</span>
+<span id="btn-pay-text">Confirmer et Payer 10 000 FCFA</span>
+</button>
+<!-- Institutional Guarantees & Certifications -->
+<div class="flex flex-col items-center justify-center gap-2 pt-2 text-center">
+<div class="flex items-center gap-4 text-on-surface-variant opacity-80">
+<div class="flex items-center gap-1 font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px] text-tertiary">verified_user</span>
+<span>Régulation CEMAC / BEAC</span>
+</div>
+<span class="text-surface-container-highest">•</span>
+<div class="flex items-center gap-1 font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px] text-secondary">shield</span>
+<span>Chiffrement Bancaire GIMAC</span>
+</div>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant/80">
+          Mission du Plein Évangile Cameroun • Fondée en 1961 • N° Enregistrement L/108/MINAT
+        </p>
+</div>
+</div>
+</div>
+<!-- Interactive script for reactive amount toggles and payment selection -->
+<script>
+    (function() {
+      // Type toggles
+      const typeBtns = document.querySelectorAll('.donation-type-btn');
+      typeBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          typeBtns.forEach(b => {
+            b.classList.remove('bg-primary', 'text-on-primary', 'shadow-sm');
+            b.classList.add('bg-surface-container-low', 'text-on-surface');
+            const icon = b.querySelector('.material-symbols-outlined');
+            if (icon && !icon.classList.contains('text-secondary') && !icon.classList.contains('text-tertiary')) {
+              icon.classList.add('text-primary');
+            }
+          });
+          btn.classList.remove('bg-surface-container-low', 'text-on-surface');
+          btn.classList.add('bg-primary', 'text-on-primary', 'shadow-sm');
+          const activeIcon = btn.querySelector('.material-symbols-outlined');
+          if (activeIcon) {
+            activeIcon.classList.remove('text-primary');
+          }
+        });
+      });
+
+      // Amount logic
+      const chips = document.querySelectorAll('.amount-chip');
+      const customInput = document.getElementById('custom-amount-input');
+      const summaryOffering = document.getElementById('summary-offering');
+      const summaryTotal = document.getElementById('summary-total');
+      const btnPayText = document.getElementById('btn-pay-text');
+
+      function updateAmount(val) {
+        const formatted = new Intl.NumberFormat('fr-FR').format(val);
+        summaryOffering.textContent = formatted + ' FCFA';
+        summaryTotal.textContent = formatted + ' FCFA';
+        btnPayText.textContent = 'Confirmer et Payer ' + formatted + ' FCFA';
+      }
+
+      chips.forEach(chip => {
+        chip.addEventListener('click', () => {
+          chips.forEach(c => {
+            c.classList.remove('bg-primary', 'text-on-primary', 'shadow-sm', 'font-semibold');
+            c.classList.add('bg-surface-container-low', 'text-on-surface');
+          });
+          chip.classList.remove('bg-surface-container-low', 'text-on-surface');
+          chip.classList.add('bg-primary', 'text-on-primary', 'shadow-sm', 'font-semibold');
+          const amt = parseInt(chip.getAttribute('data-amount'), 10);
+          customInput.value = amt;
+          updateAmount(amt);
+        });
+      });
+
+      customInput.addEventListener('input', (e) => {
+        const val = parseInt(e.target.value, 10) || 0;
+        chips.forEach(c => {
+          if (parseInt(c.getAttribute('data-amount'), 10) === val) {
+            c.classList.remove('bg-surface-container-low', 'text-on-surface');
+            c.classList.add('bg-primary', 'text-on-primary', 'shadow-sm', 'font-semibold');
+          } else {
+            c.classList.remove('bg-primary', 'text-on-primary', 'shadow-sm', 'font-semibold');
+            c.classList.add('bg-surface-container-low', 'text-on-surface');
+          }
+        });
+        updateAmount(val);
+      });
+
+      // Payment method selection
+      const paymentCards = document.querySelectorAll('.payment-card');
+      const phoneSection = document.getElementById('phone-input-section');
+
+      paymentCards.forEach(card => {
+        card.addEventListener('click', () => {
+          paymentCards.forEach(c => {
+            c.classList.remove('bg-secondary-fixed/30');
+            c.classList.add('bg-surface-container-low');
+            const check = c.querySelector('.method-radio-check');
+            check.classList.remove('bg-primary', 'text-on-primary', 'shadow-sm');
+            check.classList.add('bg-surface-container', 'text-transparent');
+          });
+
+          card.classList.remove('bg-surface-container-low');
+          card.classList.add('bg-secondary-fixed/30');
+          const activeCheck = card.querySelector('.method-radio-check');
+          activeCheck.classList.remove('bg-surface-container', 'text-transparent');
+          activeCheck.classList.add('bg-primary', 'text-on-primary', 'shadow-sm');
+
+          const method = card.getAttribute('data-method');
+          if (method === 'card') {
+            phoneSection.style.display = 'none';
+          } else {
+            phoneSection.style.display = 'block';
+          }
+        });
+      });
+
+      // Pay button click feedback
+      const payBtn = document.getElementById('pay-confirm-btn');
+      payBtn.addEventListener('click', () => {
+        const originalHtml = payBtn.innerHTML;
+        payBtn.innerHTML = '<span class="material-symbols-outlined animate-spin text-[24px]">progress_activity</span><span>Envoi de la requête USSD...</span>';
+        payBtn.classList.add('opacity-90');
+        setTimeout(() => {
+          alert("Requête de débit envoyée ! Veuillez composer votre code secret sur votre téléphone.");
+          payBtn.innerHTML = originalHtml;
+          payBtn.classList.remove('opacity-90');
+        }, 1200);
+      });
+    })();
+  </script>
+</div></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/95 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.05)]" data-active-classes="text-primary font-body-md-medium"><div class="flex justify-around items-center h-16 px-space-xs"><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] text-on-surface-variant transition-colors group" data-path="accueil" href="#"><span class="material-symbols-outlined text-[22px] group-hover:text-primary transition-colors">home</span><span class="font-label-sm text-label-sm tracking-tight mt-0.5">Accueil</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] text-on-surface-variant transition-colors group" data-path="trouver-une-assemblee" href="#"><span class="material-symbols-outlined text-[22px] group-hover:text-primary transition-colors">church</span><span class="font-label-sm text-label-sm tracking-tight mt-0.5">Assemblées</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] text-on-surface-variant transition-colors group" data-path="publications-enseignements" href="#"><span class="material-symbols-outlined text-[22px] group-hover:text-primary transition-colors">menu_book</span><span class="font-label-sm text-label-sm tracking-tight mt-0.5">Publications</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] text-on-surface-variant transition-colors group" data-path="calendrier-evenements" href="#"><span class="material-symbols-outlined text-[22px] group-hover:text-primary transition-colors">calendar_month</span><span class="font-label-sm text-label-sm tracking-tight mt-0.5">Événements</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] text-on-surface-variant transition-colors group relative" data-path="dons-campagnes" href="#"><div class="relative flex items-center justify-center"><span class="material-symbols-outlined text-[22px] group-hover:text-primary transition-colors">volunteer_activism</span><span class="absolute -top-0.5 -right-1 w-2 h-2 rounded-full bg-primary-container ring-2 ring-surface"></span></div><span class="font-label-sm text-label-sm tracking-tight mt-0.5">Dons</span></a></div></nav></body></html>

@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+
+<html lang="fr"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-tint": "#bf0229", "primary": "#9e001f", "inverse-surface": "#303034", "surface-variant": "#e4e1e7", "tertiary-fixed": "#86faa7", "on-tertiary-container": "#86faa7", "tertiary-container": "#00743a", "on-secondary-fixed-variant": "#643f00", "surface-container-lowest": "#ffffff", "surface": "#fcf8fe", "on-primary-fixed-variant": "#92001c", "surface-container-highest": "#e4e1e7", "on-error": "#ffffff", "on-primary": "#ffffff", "on-primary-fixed": "#410007", "surface-bright": "#fcf8fe", "primary-fixed": "#ffdad8", "surface-container-high": "#eae7ed", "outline": "#906f6e", "on-surface-variant": "#5c403f", "tertiary": "#00592b", "surface-dim": "#dcd9df", "on-tertiary": "#ffffff", "secondary-fixed": "#ffddb5", "on-tertiary-fixed": "#00210c", "background": "#fcf8fe", "on-surface": "#1b1b1f", "on-primary-container": "#ffdad8", "primary-fixed-dim": "#ffb3b1", "inverse-primary": "#ffb3b1", "on-secondary": "#ffffff", "secondary-container": "#feb64e", "error-container": "#ffdad6", "primary-container": "#c8102e", "outline-variant": "#e5bdbb", "surface-container": "#f0edf3", "secondary": "#835400", "error": "#ba1a1a", "on-secondary-fixed": "#2a1800", "surface-container-low": "#f6f2f8", "on-secondary-container": "#714800", "on-background": "#1b1b1f", "inverse-on-surface": "#f3eff6", "tertiary-fixed-dim": "#6add8d", "on-error-container": "#93000a", "secondary-fixed-dim": "#ffb956", "on-tertiary-fixed-variant": "#005228" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin": "1rem", "margin-desktop": "3rem", "space-xs": "0.25rem", "gutter-tablet": "1.5rem", "margin-tablet": "2rem", "space-xl": "2.5rem", "space-sm": "0.5rem", "gutter-desktop": "2rem", "gutter": "1rem", "space-lg": "1.5rem", "space-md": "1rem" }, "fontFamily": { "display-lg": ["Plus Jakarta Sans"], "body-sm": ["Inter"], "body-lg": ["Inter"], "title-md": ["Plus Jakarta Sans"], "label-sm": ["Inter"], "label-md": ["Inter"], "headline-sm": ["Plus Jakarta Sans"], "display-lg-mobile": ["Plus Jakarta Sans"], "currency-display": ["Plus Jakarta Sans"], "body-md": ["Inter"], "headline-md": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "body-md-medium": ["Inter"], "headline-lg-mobile": ["Plus Jakarta Sans"] }, "fontSize": { "display-lg": ["48px", { "lineHeight": "56px", "fontWeight": "800" }], "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "title-md": ["18px", { "lineHeight": "26px", "fontWeight": "600" }], "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "600" }], "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }], "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "display-lg-mobile": ["34px", { "lineHeight": "42px", "fontWeight": "800" }], "currency-display": ["28px", { "lineHeight": "36px", "fontWeight": "700" }], "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "700" }], "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }], "body-md-medium": ["16px", { "lineHeight": "24px", "fontWeight": "500" }], "headline-lg-mobile": ["26px", { "lineHeight": "34px", "fontWeight": "700" }] } } } }</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;background-color:#fcf8fe;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style></head><body class="bg-surface font-body-md text-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="w-full h-[3px] bg-primary-container relative overflow-hidden"><div class="absolute inset-y-0 left-0 w-1/3 bg-primary animate-pulse"></div></div><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0 flex-shrink-0"><img alt="Logo Full Gospel Mission Cameroun" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VtR_Amnvhju8fh_HutLzNg-PTJjLKTQagr709OXkSveuYiSe61lp9WlYO7Q4k6MV2bwG96w7F7Y-QIQTu0gsrx8_UMHBiMfnxYxpr-U11CXcnSHhy_4v_98oLtqgEG16dZFla3ixnfZc_RQ_sf-Wna8pSjDxL8VmYf-xqCp4efW0Y-xzZTQf72swwUuMWB02PjtbU5XSFO1_y0qthSeYkQoQwyUeWXPobUkXa7RjE"/><div class="flex flex-col"><span class="font-title-md text-title-md text-primary leading-tight truncate font-bold">FULLGOPE</span><span class="font-label-sm text-label-sm text-on-surface-variant truncate">Accueil</span></div></div><div class="flex items-center gap-space-xs flex-shrink-0"><div aria-label="Langue" class="flex items-center bg-surface-container rounded-full p-0.5" role="group"><button class="min-w-[28px] h-7 px-1.5 rounded-full bg-surface-container-lowest text-on-surface font-label-sm text-label-sm shadow-[0_1px_4px_rgba(0,0,0,0.06)] flex items-center justify-center transition-all" type="button">FR</button><button class="min-w-[28px] h-7 px-1.5 rounded-full text-on-surface-variant font-label-sm text-label-sm flex items-center justify-center transition-all" type="button">EN</button></div><button aria-label="Basculer le thème" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">light_mode</span></button><a class="h-9 px-3 bg-primary-container text-on-primary rounded-full font-label-md text-label-md flex items-center justify-center shadow-[0_2px_8px_rgba(200,16,46,0.15)] transition-transform active:scale-95" data-path="dons" href="#">Donner</a><a class="h-9 px-2.5 rounded-full text-on-surface font-label-md text-label-md flex items-center justify-center hover:bg-surface-container-high transition-colors" data-path="connexion" href="#">Connexion</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center ml-1"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-24 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- 1. HERO SECTION PLEIN ÉCRAN -->
+<section class="relative w-full overflow-hidden bg-inverse-surface text-on-primary">
+<!-- Image de culte authentique en arrière-plan -->
+<div class="absolute inset-0 z-0">
+<img alt="Assemblée Full Gospel Mission en célébration vivante" class="w-full h-full object-cover object-center scale-105 transform duration-1000 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJRenLuMDzAL9YGidusBINcmK8PejNUV1WLd4GA-DNO3n_VDBpJBdm2hvz2cc6eE6j3IgwYMox8wA9No6gPxzR9oqnjBBiWjKL_-f2HbdC85DUZSMzLPEeDE8GxmE7siE14qTvXAJyUDGfaueg-SpQadsBY1JkexlFfmtoxnlh2pj-m9gMN8yTmc6mR7Q8YRwVd-mlrfRQ2ofDWc-c8vr6N6VKIe7wr8y3qBknPqg"/>
+<!-- Voile sombre subtil pour contraste parfait -->
+<div class="absolute inset-0 bg-inverse-surface/65 backdrop-blur-[0.5px]"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface via-transparent to-inverse-surface/70"></div>
+</div>
+<!-- Contenu du Hero -->
+<div class="relative z-10 px-margin pt-10 pb-20 flex flex-col items-center text-center">
+<!-- Badge Décret & Année -->
+<div class="inline-flex items-center gap-space-xs px-3 py-1 rounded-full bg-surface-container-lowest/15 backdrop-blur-md mb-4 shadow-sm">
+<span class="w-2 h-2 rounded-full bg-secondary-container animate-ping"></span>
+<span class="font-label-sm text-label-sm tracking-wider uppercase text-surface-bright font-semibold">
+          Depuis 1961 • Décret N°69/DF/144
+        </span>
+</div>
+<!-- Titre Majestueux -->
+<h1 class="font-display-lg-mobile text-display-lg-mobile text-surface-bright tracking-tight mb-2 drop-shadow-md">
+        FULL GOSPEL MISSION
+      </h1>
+<!-- Devise Gravée -->
+<div class="inline-block px-3 py-1 rounded-lg bg-surface-container-lowest/10 backdrop-blur-sm mb-3">
+<p class="font-label-md text-label-md tracking-wider uppercase text-secondary-container font-bold">
+          No Other Christ – No Other Gospel – No Other Spirit
+        </p>
+</div>
+<!-- Sous-titre bienveillant -->
+<p class="font-body-md text-body-md text-surface-container-high max-w-sm mb-8 leading-relaxed">
+        Une grande famille de foi, d'adoration vibrante et de puissance spirituelle pour le salut et la transformation intégrale du Cameroun.
+      </p>
+<!-- Deux boutons d'action (min 48px) -->
+<div class="w-full flex flex-col sm:flex-row gap-space-sm max-w-xs justify-center items-stretch">
+<a class="h-12 px-6 rounded-full bg-primary-container text-on-primary font-label-md text-label-md flex items-center justify-center gap-2 shadow-lg hover:brightness-110 active:scale-95 transition-all" data-path="assemblees" href="#">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">location_on</span>
+<span>Trouver une assemblée</span>
+</a>
+<a class="h-12 px-6 rounded-full bg-surface-container-lowest/15 text-surface-bright font-label-md text-label-md flex items-center justify-center gap-2 backdrop-blur-md hover:bg-surface-container-lowest/25 active:scale-95 transition-all shadow-sm" data-path="dons" href="#">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">volunteer_activism</span>
+<span>Faire un don</span>
+</a>
+</div>
+</div>
+</section>
+<!-- 2. BARRE DE RECHERCHE FLOTTANTE D'ASSEMBLÉES (Chevauchement Hero) -->
+<div class="relative z-20 px-margin -mt-8 mb-8 w-full max-w-md mx-auto">
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-xl">
+<!-- Input et Actions -->
+<div class="flex flex-col gap-space-sm">
+<div class="relative flex items-center">
+<span class="absolute left-3 text-on-surface-variant material-symbols-outlined text-[20px]">search</span>
+<input class="w-full h-12 pl-10 pr-24 rounded-lg bg-surface-container-low font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant/70 focus:outline-none focus:bg-surface-container-lowest transition-colors" placeholder="Rechercher par ville, nom ou quartier..." type="text"/>
+<button class="absolute right-1.5 h-9 px-3 rounded-lg bg-primary-container text-on-primary font-label-sm text-label-sm flex items-center gap-1 active:scale-95 transition-transform" type="button">
+<span>Chercher</span>
+</button>
+</div>
+<!-- Bouton Près de moi -->
+<button class="w-full h-11 rounded-lg bg-primary-fixed text-on-primary-fixed font-label-md text-label-md flex items-center justify-center gap-2 active:scale-98 transition-transform" type="button">
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">my_location</span>
+<span>Localiser les assemblées près de moi (GPS)</span>
+</button>
+<!-- Filtres rapides en pilules -->
+<div class="flex items-center gap-1.5 overflow-x-auto pt-1 no-scrollbar">
+<span class="font-label-sm text-label-sm text-on-surface-variant pr-1 flex-shrink-0">Villes :</span>
+<button class="px-3 py-1 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface flex-shrink-0 hover:bg-surface-container-high transition-colors" type="button">Yaoundé</button>
+<button class="px-3 py-1 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface flex-shrink-0 hover:bg-surface-container-high transition-colors" type="button">Douala</button>
+<button class="px-3 py-1 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface flex-shrink-0 hover:bg-surface-container-high transition-colors" type="button">Bamenda</button>
+<button class="px-3 py-1 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface flex-shrink-0 hover:bg-surface-container-high transition-colors" type="button">Bafoussam</button>
+<button class="px-3 py-1 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface flex-shrink-0 hover:bg-surface-container-high transition-colors" type="button">Buea</button>
+<button class="px-3 py-1 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface flex-shrink-0 hover:bg-surface-container-high transition-colors" type="button">Garoua</button>
+</div>
+</div>
+</div>
+</div>
+<!-- SÉLECTEUR SKELETON DEMO (MOMENT DE DÉLICE / INTERACTION CRÉATIVE) -->
+<div class="px-margin mb-6 flex justify-end">
+<button class="px-3 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm flex items-center gap-1.5 shadow-sm active:scale-95 transition-all" id="toggle-skeleton-btn" type="button">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+<span id="skeleton-status-label">Simuler chargement réseau (Skeleton)</span>
+</button>
+</div>
+<!-- CONTENEUR PRINCIPAL DE CONTENU AVEC ÉTAT LIVE ET ÉTAT SKELETON -->
+<div class="flex flex-col gap-space-xl" id="content-display-area">
+<!-- 3. SECTION 1 : NOTRE HISTOIRE & CHIFFRES CLÉS -->
+<section class="px-margin flex flex-col gap-space-md">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">HÉRITAGE &amp; VISION</span>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface font-headline-lg">
+          Plus de 60 ans d'impact au Cameroun
+        </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">
+          Née du souffle apostolique en 1961 à Bamenda et reconnue officiellement par l'État du Cameroun par Décret Présidentiel n°69/DF/144, la Mission du Plein Évangile proclame inlassablement la Parole de grâce.
+        </p>
+</div>
+<!-- 4 Cartes Statistiques en grille 2x2 -->
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div class="w-9 h-9 rounded-lg bg-secondary-fixed/50 flex items-center justify-center text-secondary mb-2">
+<span class="material-symbols-outlined text-[22px]">public</span>
+</div>
+<span class="font-currency-display text-currency-display text-secondary tracking-tight">10</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Régions couvertes</span>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div class="w-9 h-9 rounded-lg bg-secondary-fixed/50 flex items-center justify-center text-secondary mb-2">
+<span class="material-symbols-outlined text-[22px]">hub</span>
+</div>
+<span class="font-currency-display text-currency-display text-secondary tracking-tight">85+</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Districts apostoliques</span>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div class="w-9 h-9 rounded-lg bg-secondary-fixed/50 flex items-center justify-center text-secondary mb-2">
+<span class="material-symbols-outlined text-[22px]">church</span>
+</div>
+<span class="font-currency-display text-currency-display text-secondary tracking-tight">1 450+</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Assemblées locales</span>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div class="w-9 h-9 rounded-lg bg-secondary-fixed/50 flex items-center justify-center text-secondary mb-2">
+<span class="material-symbols-outlined text-[22px]">groups</span>
+</div>
+<span class="font-currency-display text-currency-display text-secondary tracking-tight">320 000+</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Membres baptisés</span>
+</div>
+</div>
+</section>
+<!-- 4. SECTION 2 : LA VISION ET LE LOGO EXPLIQUÉ -->
+<section class="px-margin">
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">verified</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">Identité Spirituelle</span>
+<h3 class="font-title-md text-title-md text-on-surface">Le Symbolisme du Sceau Officiel</h3>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Chaque élément du logo officiel porte un fondement scripturaire irrévocable qui guide la foi de chaque croyant.
+        </p>
+<!-- 3 Piliers Graphiques Expliqués -->
+<div class="flex flex-col gap-space-sm">
+<!-- Le Vase Blanc -->
+<div class="p-space-sm rounded-lg bg-surface-container flex items-start gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-surface-container-lowest flex items-center justify-center text-on-surface flex-shrink-0 shadow-sm mt-0.5">
+<span class="material-symbols-outlined text-[18px]">sanitizer</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Le Vase d'Argile</span>
+<span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-surface-container-highest text-on-surface-variant">2 Tim 2:20-21</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-[13px] leading-snug mt-0.5">
+                La sainteté personnelle et la disponibilité à être un instrument sanctifié, utile entre les mains du Maître.
+              </p>
+</div>
+</div>
+<!-- La Flamme Rouge -->
+<div class="p-space-sm rounded-lg bg-primary-fixed/40 flex items-start gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center flex-shrink-0 shadow-sm mt-0.5">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-primary font-semibold">La Flamme Rouge</span>
+<span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-primary text-on-primary">Actes 2:3-4</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-[13px] leading-snug mt-0.5">
+                Le baptême et l'effusion permanente du Saint-Esprit pour le témoignage avec puissance et hardiesse.
+              </p>
+</div>
+</div>
+<!-- La Croix Noire -->
+<div class="p-space-sm rounded-lg bg-surface-container flex items-start gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-inverse-surface text-inverse-on-surface flex items-center justify-center flex-shrink-0 shadow-sm mt-0.5">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface font-semibold">La Croix Centrale</span>
+<span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-surface-container-highest text-on-surface-variant">1 Cor 1:18</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-[13px] leading-snug mt-0.5">
+                L'œuvre rédemptrice exclusive de Jésus-Christ, mort et ressuscité pour la réconciliation des hommes avec Dieu.
+              </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. SECTION 3 : DÉFILEMENT "NOS MINISTÈRES" -->
+<section class="flex flex-col gap-space-sm">
+<div class="px-margin flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">COMMUNAUTÉ ACTIVE</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-headline-sm">Nos Ministères Nationaux</h2>
+</div>
+<a class="font-label-sm text-label-sm text-primary flex items-center font-semibold" data-path="ministeres" href="#">
+          Tous <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</a>
+</div>
+<!-- Carrousel Défilant -->
+<div class="flex gap-space-md overflow-x-auto px-margin pt-1 pb-3 no-scrollbar snap-x snap-mandatory">
+<!-- 1. Dames -->
+<div class="min-w-[240px] max-w-[240px] rounded-xl bg-surface-container-lowest p-space-md shadow-sm flex flex-col justify-between snap-start">
+<div>
+<div class="w-10 h-10 rounded-full bg-secondary-fixed/40 text-secondary flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">face_3</span>
+</div>
+<span class="px-2 py-0.5 rounded-full text-[11px] font-semibold bg-surface-container text-on-surface-variant">Dorcas Ministry</span>
+<h4 class="font-title-md text-title-md text-on-surface mt-2 font-bold">Ministère des Femmes</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-[13px] mt-1 line-clamp-2">
+              Prière, affermissement des foyers chrétiens, entraide et évangélisation de proximité.
+            </p>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">120+ Groupes</span>
+<span class="material-symbols-outlined text-primary text-[18px]">arrow_forward</span>
+</div>
+</div>
+<!-- 2. Hommes -->
+<div class="min-w-[240px] max-w-[240px] rounded-xl bg-surface-container-lowest p-space-md shadow-sm flex flex-col justify-between snap-start">
+<div>
+<div class="w-10 h-10 rounded-full bg-primary-fixed text-primary flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">man</span>
+</div>
+<span class="px-2 py-0.5 rounded-full text-[11px] font-semibold bg-surface-container text-on-surface-variant">Men of Action</span>
+<h4 class="font-title-md text-title-md text-on-surface mt-2 font-bold">Hommes d'Action</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-[13px] mt-1 line-clamp-2">
+              Leadership éthique, bâtisseurs d'églises locales et mentorat des pères spirituels.
+            </p>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">95+ Sections</span>
+<span class="material-symbols-outlined text-primary text-[18px]">arrow_forward</span>
+</div>
+</div>
+<!-- 3. Jeunesse & Étudiants -->
+<div class="min-w-[240px] max-w-[240px] rounded-xl bg-surface-container-lowest p-space-md shadow-sm flex flex-col justify-between snap-start">
+<div>
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed text-tertiary flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+<span class="px-2 py-0.5 rounded-full text-[11px] font-semibold bg-surface-container text-on-surface-variant">Youth for Christ</span>
+<h4 class="font-title-md text-title-md text-on-surface mt-2 font-bold">Jeunesse &amp; Campus</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-[13px] mt-1 line-clamp-2">
+              Une génération consacrée enflammée pour la mission, l'excellence académique et la pureté.
+            </p>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">45K+ Jeunes</span>
+<span class="material-symbols-outlined text-primary text-[18px]">arrow_forward</span>
+</div>
+</div>
+<!-- 4. ECODIM -->
+<div class="min-w-[240px] max-w-[240px] rounded-xl bg-surface-container-lowest p-space-md shadow-sm flex flex-col justify-between snap-start">
+<div>
+<div class="w-10 h-10 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-[20px]">child_care</span>
+</div>
+<span class="px-2 py-0.5 rounded-full text-[11px] font-semibold bg-surface-container text-on-surface-variant">ECODIM</span>
+<h4 class="font-title-md text-title-md text-on-surface mt-2 font-bold">École du Dimanche</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-[13px] mt-1 line-clamp-2">
+              Enseignement biblique adapté aux petits enfants dès le plus jeune âge.
+            </p>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Chaque Dimanche</span>
+<span class="material-symbols-outlined text-primary text-[18px]">arrow_forward</span>
+</div>
+</div>
+<!-- 5. Musique & Louange -->
+<div class="min-w-[240px] max-w-[240px] rounded-xl bg-surface-container-lowest p-space-md shadow-sm flex flex-col justify-between snap-start">
+<div>
+<div class="w-10 h-10 rounded-full bg-secondary-fixed/40 text-secondary flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-[20px]">queue_music</span>
+</div>
+<span class="px-2 py-0.5 rounded-full text-[11px] font-semibold bg-surface-container text-on-surface-variant">Chorales &amp; Louange</span>
+<h4 class="font-title-md text-title-md text-on-surface mt-2 font-bold">Musique &amp; Adoration</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-[13px] mt-1 line-clamp-2">
+              Chants de réveil, cantiques sacrés et louange inspirée célébrant le Roi des rois.
+            </p>
+</div>
+<div class="mt-4 pt-3 flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Harmonie vocale</span>
+<span class="material-symbols-outlined text-primary text-[18px]">arrow_forward</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. SECTION 4 : PROCHAINS ÉVÉNEMENTS NATIONAUX (3 CARTES DÉTAILLÉES) -->
+<section class="px-margin flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">AGENDA SPIRITUEL</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-headline-sm">Grands Rendez-vous 2025</h2>
+</div>
+</div>
+<div class="flex flex-col gap-space-sm">
+<!-- Event 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="px-2.5 py-1.5 rounded-lg bg-primary text-on-primary text-center leading-none">
+<span class="font-label-sm text-[11px] uppercase block tracking-wider">AVR</span>
+<span class="font-headline-sm text-headline-sm font-bold block">18-20</span>
+</div>
+<div>
+<span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-primary-fixed text-on-primary-fixed uppercase">National</span>
+<h3 class="font-title-md text-title-md text-on-surface font-bold mt-0.5 leading-snug">Convention Nationale de Pâques 2025</h3>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4 text-on-surface-variant font-body-sm text-body-sm">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span class="text-[13px]">Yaoundé - Nkolndongo</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+<span class="text-[13px]">08h30 - 20h00</span>
+</div>
+</div>
+<button class="w-full h-11 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md flex items-center justify-center gap-2 hover:bg-surface-container-high transition-colors active:scale-98" type="button">
+<span>Détails &amp; Programme complet</span>
+<span class="material-symbols-outlined text-[16px]">open_in_new</span>
+</button>
+</div>
+<!-- Event 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="px-2.5 py-1.5 rounded-lg bg-secondary-container text-on-secondary-container text-center leading-none">
+<span class="font-label-sm text-[11px] uppercase block tracking-wider font-bold">MAI</span>
+<span class="font-headline-sm text-headline-sm font-bold block">02-04</span>
+</div>
+<div>
+<span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-secondary-fixed text-on-secondary-fixed uppercase">Département Femmes</span>
+<h3 class="font-title-md text-title-md text-on-surface font-bold mt-0.5 leading-snug">Conférence Annuelle des Dames</h3>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4 text-on-surface-variant font-body-sm text-body-sm">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+<span class="text-[13px]">Douala - Bepanda Temple</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">group</span>
+<span class="text-[13px]">Délégations 10 Régions</span>
+</div>
+</div>
+<button class="w-full h-11 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md flex items-center justify-center gap-2 hover:bg-surface-container-high transition-colors active:scale-98" type="button">
+<span>Informations hébergement &amp; Inscription</span>
+</button>
+</div>
+<!-- Event 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="px-2.5 py-1.5 rounded-lg bg-inverse-surface text-inverse-on-surface text-center leading-none">
+<span class="font-label-sm text-[11px] uppercase block tracking-wider font-bold">MAI</span>
+<span class="font-headline-sm text-headline-sm font-bold block">30</span>
+</div>
+<div>
+<span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-surface-container-high text-on-surface uppercase">Veillée Territoriale</span>
+<h3 class="font-title-md text-title-md text-on-surface font-bold mt-0.5 leading-snug">Nuit Nationale d'Intercession</h3>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4 text-on-surface-variant font-body-sm text-body-sm">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">sensors</span>
+<span class="text-[13px]">En direct &amp; dans chaque district</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">bedtime</span>
+<span class="text-[13px]">21h00 - 05h00</span>
+</div>
+</div>
+<button class="w-full h-11 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md flex items-center justify-center gap-2 hover:bg-surface-container-high transition-colors active:scale-98" type="button">
+<span>Rejoindre la diffusion en direct</span>
+</button>
+</div>
+</div>
+</section>
+<!-- 7. SECTION 5 : DERNIÈRES ACTUALITÉS ET ENSEIGNEMENTS AUDIO -->
+<section class="px-margin flex flex-col gap-space-md">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">PAROLE &amp; ÉDIFICATION</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-headline-sm">Enseignements &amp; Échos</h2>
+</div>
+<!-- Carte 1 : Message Pastoral -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-primary text-on-primary">Lettre Pastorale</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Bureau Exécutif National</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface font-bold">
+          « Demeurer inébranlables dans la saine doctrine biblique face aux dérives »
+        </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-3">
+          Une exhortation solennelle du Révérend Président National à toute la communauté pour persévérer dans la prière fervente, l'intégrité morale et l'amour fraternel.
+        </p>
+<div class="flex items-center justify-between pt-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Lecture : 4 min</span>
+<a class="font-label-md text-label-md text-primary font-semibold flex items-center gap-1" href="#">
+            Lire l'épître <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Carte 2 : Lecteur Audio Réveil Grand Nord -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-secondary-fixed text-on-secondary-fixed">Podcast &amp; Témoignage</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Mission Pionnière</span>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary font-bold flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span> 34 min
+          </span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface font-bold">
+          Rapport du réveil spirituel et des implantations d'églises dans le Grand Nord
+        </h3>
+<!-- Lecteur Audio Interactif Custom -->
+<div class="bg-surface-container rounded-lg p-3 flex flex-col gap-2">
+<div class="flex items-center gap-3">
+<button class="w-11 h-11 rounded-full bg-primary-container text-on-primary flex items-center justify-center flex-shrink-0 shadow-md active:scale-95 transition-transform" id="audio-play-button" type="button">
+<span class="material-symbols-outlined text-[24px]" id="audio-icon">play_arrow</span>
+</button>
+<div class="flex-1 min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-medium truncate block">Extrait : Prédication &amp; baptêmes de Garoua</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Évangéliste District Adamaoua-Nord</span>
+</div>
+</div>
+<!-- Barre de progression audio -->
+<div class="w-full flex items-center gap-2 pt-1">
+<span class="font-label-sm text-[11px] text-on-surface-variant">04:12</span>
+<div class="flex-1 h-1.5 rounded-full bg-surface-container-highest overflow-hidden relative cursor-pointer">
+<div class="w-2/5 h-full bg-primary-container rounded-full"></div>
+</div>
+<span class="font-label-sm text-[11px] text-on-surface-variant">34:50</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 8. SECTION 6 : BANDEAU SOMBRE "SOUTENIR LA MISSION" -->
+<section class="px-margin">
+<div class="rounded-xl bg-inverse-surface text-inverse-on-surface p-space-lg shadow-lg flex flex-col gap-space-md">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container animate-pulse"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary-fixed-dim font-bold">Projet d'Impact National</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-surface-bright font-bold">
+            Soutenir la mission &amp; l'évangélisation
+          </h2>
+<p class="font-body-sm text-body-sm text-surface-variant/80 mt-1">
+            Participez à la construction du nouveau Complexe Théologique Régional et à l'envoi de missionnaires dans les zones reculées.
+          </p>
+</div>
+<!-- Jauge de progression -->
+<div class="p-space-md rounded-lg bg-surface-container-lowest/10 backdrop-blur-sm flex flex-col gap-2">
+<div class="flex items-baseline justify-between">
+<span class="font-currency-display text-[22px] text-secondary-container font-bold">14 250 000 FCFA</span>
+<span class="font-label-sm text-label-sm text-surface-variant">Objectif : 25 000 000</span>
+</div>
+<div class="w-full h-2.5 rounded-full bg-surface-container-highest/20 overflow-hidden">
+<div class="w-[57%] h-full bg-primary-container rounded-full"></div>
+</div>
+<div class="flex justify-between items-center text-[12px] text-surface-variant">
+<span>57% financés par la grâce de Dieu</span>
+<span>Reste : 10 750 000 FCFA</span>
+</div>
+</div>
+<!-- Moyens de paiement Cameroun Sécurisés -->
+<div class="flex flex-col gap-space-sm">
+<span class="font-label-sm text-label-sm text-surface-variant">Règlement instantané sécurisé par opérateur national :</span>
+<div class="flex items-center gap-2">
+<div class="flex-1 h-10 px-3 rounded-lg bg-surface-container-lowest/10 flex items-center justify-center gap-2">
+<span class="w-3 h-3 rounded-full bg-[#FF7900]"></span>
+<span class="font-label-md text-label-md text-surface-bright font-semibold">Orange Money</span>
+</div>
+<div class="flex-1 h-10 px-3 rounded-lg bg-surface-container-lowest/10 flex items-center justify-center gap-2">
+<span class="w-3 h-3 rounded-full bg-[#FFCC00]"></span>
+<span class="font-label-md text-label-md text-surface-bright font-semibold">MTN MoMo</span>
+</div>
+</div>
+</div>
+<!-- Bouton Action MoMo -->
+<a class="h-12 w-full rounded-full bg-primary-container text-on-primary font-label-md text-label-md flex items-center justify-center gap-2 font-bold shadow-lg hover:brightness-110 active:scale-95 transition-all" data-path="dons" href="#">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">send_to_mobile</span>
+<span>Participer par Mobile Money (FCFA)</span>
+</a>
+</div>
+</section>
+<!-- 9. SECTION 7 : TÉMOIGNAGES & VIE D'ÉGLISE -->
+<section class="px-margin flex flex-col gap-space-md">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">FRATERNITÉ &amp; FOI</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-headline-sm">Témoignages de nos fidèles</h2>
+</div>
+<div class="flex flex-col gap-space-sm">
+<!-- Témoignage 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-3">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed font-bold text-lg">
+              EA
+            </div>
+<div>
+<h4 class="font-title-md text-title-md text-on-surface leading-tight font-bold">Elder Emmanuel A.</h4>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Assemblée Centrale Tsinga, Yaoundé</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface leading-relaxed italic">
+            « Depuis plus de 35 ans dans la Mission du Plein Évangile, j'ai vu la main puissante du Seigneur restaurer des familles, délivrer des cœurs et former des serviteurs fidèles selon la pureté de la Parole. Gloire à Jésus ! »
+          </p>
+<div class="flex items-center text-secondary text-[14px]">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<!-- Témoignage 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-3">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed font-bold text-lg">
+              CN
+            </div>
+<div>
+<h4 class="font-title-md text-title-md text-on-surface leading-tight font-bold">Sœur Clarisse N.</h4>
+<span class="font-label-sm text-label-sm text-on-surface-variant">District Bonamoussadi, Douala</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface leading-relaxed italic">
+            « Le ministère Dorcas m'a relevée après une épreuve difficile. Au travers de la prière constante et de l'amour sans faux-semblant des sœurs, j'ai retrouvé la joie du service et la paix divine dans mon foyer. »
+          </p>
+<div class="flex items-center text-secondary text-[14px]">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 10. SECTION 8 : PIED DE PAGE NOIR COMPLET & ACCESSIBLE -->
+<footer class="mt-4 bg-inverse-surface text-inverse-on-surface px-margin py-8 flex flex-col gap-space-lg">
+<div class="flex flex-col gap-3">
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-primary-container"></div>
+<span class="font-title-md text-title-md text-surface-bright font-bold tracking-tight">
+            FULL GOSPEL MISSION CAMEROON
+          </span>
+</div>
+<p class="font-body-sm text-body-sm text-surface-variant/80">
+          Mission du Plein Évangile Cameroun • Société ecclésiastique reconnue d'utilité publique par Décret Fédéral N°69/DF/144.
+        </p>
+</div>
+<!-- Liens rapides utiles -->
+<div class="grid grid-cols-2 gap-y-2 gap-x-4 font-body-sm text-body-sm">
+<a class="text-surface-variant hover:text-surface-bright transition-colors py-1" href="#">À propos de nous</a>
+<a class="text-surface-variant hover:text-surface-bright transition-colors py-1" data-path="assemblees" href="#">Trouver un culte</a>
+<a class="text-surface-variant hover:text-surface-bright transition-colors py-1" data-path="ministeres" href="#">Nos Ministères</a>
+<a class="text-surface-variant hover:text-surface-bright transition-colors py-1" href="#">Déclaration de foi</a>
+<a class="text-surface-variant hover:text-surface-bright transition-colors py-1" data-path="dons" href="#">Dons &amp; Dîmes en ligne</a>
+<a class="text-surface-variant hover:text-surface-bright transition-colors py-1" href="#">Contact &amp; Secrétariat</a>
+</div>
+<!-- Coordonnées & Siège -->
+<div class="p-space-md rounded-lg bg-surface-container-lowest/5 flex flex-col gap-1 text-[13px] text-surface-variant">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<span>Siège National : Bamenda / Secrétariat Général : Yaoundé</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">mail</span>
+<span>contact@fullgospelcameroon.org</span>
+</div>
+</div>
+<!-- Sélecteur Bilingue & Copyright -->
+<div class="pt-4 border-none flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2 bg-surface-container-lowest/10 rounded-full p-1">
+<span class="px-2.5 py-0.5 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm font-bold">FR</span>
+<span class="px-2.5 py-0.5 rounded-full text-surface-variant font-label-sm text-label-sm">EN</span>
+</div>
+<span class="font-label-sm text-label-sm text-surface-variant/70">Cameroun • Bilingue</span>
+</div>
+<p class="font-label-sm text-[12px] text-surface-variant/60 leading-normal text-center mt-2">
+          © 2025 Mission du Plein Évangile Cameroun. Tous droits réservés. L'Évangile intégral pour tout l'homme.
+        </p>
+</div>
+</footer>
+</div>
+<!-- SKELETON DISPLAY (INITIALLEMENT CACHÉ) -->
+<div class="hidden px-margin flex flex-col gap-space-lg animate-pulse pb-12" id="skeleton-area">
+<div class="h-40 rounded-xl bg-surface-container-highest"></div>
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="h-24 rounded-xl bg-surface-container-highest"></div>
+<div class="h-24 rounded-xl bg-surface-container-highest"></div>
+<div class="h-24 rounded-xl bg-surface-container-highest"></div>
+<div class="h-24 rounded-xl bg-surface-container-highest"></div>
+</div>
+<div class="h-48 rounded-xl bg-surface-container-highest"></div>
+<div class="h-64 rounded-xl bg-surface-container-highest"></div>
+</div>
+</div>
+<script>
+  (function initFullgopeHome() {
+    const toggleBtn = document.getElementById('toggle-skeleton-btn');
+    const contentArea = document.getElementById('content-display-area');
+    const skeletonArea = document.getElementById('skeleton-area');
+    const statusLabel = document.getElementById('skeleton-status-label');
+    const audioBtn = document.getElementById('audio-play-button');
+    const audioIcon = document.getElementById('audio-icon');
+
+    let isSkeletonMode = false;
+    let isPlaying = false;
+
+    // Toggle simulation skeleton shimmer
+    if (toggleBtn && contentArea && skeletonArea && statusLabel) {
+      toggleBtn.addEventListener('click', () => {
+        isSkeletonMode = !isSkeletonMode;
+        if (isSkeletonMode) {
+          contentArea.classList.add('hidden');
+          skeletonArea.classList.remove('hidden');
+          statusLabel.textContent = 'Revenir à la vue complète';
+          toggleBtn.classList.add('bg-primary-container', 'text-on-primary');
+          toggleBtn.classList.remove('bg-surface-container-high', 'text-on-surface-variant');
+        } else {
+          contentArea.classList.remove('hidden');
+          skeletonArea.classList.add('hidden');
+          statusLabel.textContent = 'Simuler chargement réseau (Skeleton)';
+          toggleBtn.classList.remove('bg-primary-container', 'text-on-primary');
+          toggleBtn.classList.add('bg-surface-container-high', 'text-on-surface-variant');
+        }
+      });
+    }
+
+    // Micro-interaction Audio Play/Pause simulation
+    if (audioBtn && audioIcon) {
+      audioBtn.addEventListener('click', () => {
+        isPlaying = !isPlaying;
+        if (isPlaying) {
+          audioIcon.textContent = 'pause';
+          audioBtn.classList.add('scale-105');
+        } else {
+          audioIcon.textContent = 'play_arrow';
+          audioBtn.classList.remove('scale-105');
+        }
+      });
+    }
+  })();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.05)]" data-active-classes="text-primary font-body-md-medium"><div class="flex justify-around items-center h-16 px-space-xs"><a aria-current="page" class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] transition-colors group text-primary font-body-md-medium" data-path="accueil" href="#"><span class="material-symbols-outlined text-[22px] group-hover:text-primary transition-colors">home</span><span class="font-label-sm text-label-sm tracking-tight mt-0.5">Accueil</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] text-on-surface-variant transition-colors group" data-path="assemblees" href="#"><span class="material-symbols-outlined text-[22px] group-hover:text-primary transition-colors">church</span><span class="font-label-sm text-label-sm tracking-tight mt-0.5">Assemblées</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] text-on-surface-variant transition-colors group" data-path="ministeres" href="#"><span class="material-symbols-outlined text-[22px] group-hover:text-primary transition-colors">groups</span><span class="font-label-sm text-label-sm tracking-tight mt-0.5">Ministères</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] text-on-surface-variant transition-colors group" data-path="dons" href="#"><span class="material-symbols-outlined text-[22px] group-hover:text-primary transition-colors">volunteer_activism</span><span class="font-label-sm text-label-sm tracking-tight mt-0.5">Dons</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] text-on-surface-variant transition-colors group" data-path="connexion" href="#"><span class="material-symbols-outlined text-[22px] group-hover:text-primary transition-colors">account_circle</span><span class="font-label-sm text-label-sm tracking-tight mt-0.5">Connexion</span></a></div></nav></body></html>

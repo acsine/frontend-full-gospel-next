@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #9e001f;
+  --color-primary-container: #c8102e;
+  --color-on-primary: #ffffff;
+  --color-on-primary-container: #ffdad8;
+  --color-primary-fixed: #ffdad8;
+  --color-primary-fixed-dim: #ffb3b1;
+  --color-on-primary-fixed: #410007;
+  --color-on-primary-fixed-variant: #92001c;
+  --color-inverse-primary: #ffb3b1;
+
+  --color-secondary: #835400;
+  --color-secondary-container: #feb64e;
+  --color-on-secondary: #ffffff;
+  --color-on-secondary-container: #714800;
+  --color-secondary-fixed: #ffddb5;
+  --color-secondary-fixed-dim: #ffb956;
+  --color-on-secondary-fixed: #2a1800;
+  --color-on-secondary-fixed-variant: #643f00;
+
+  --color-tertiary: #00592b;
+  --color-tertiary-container: #00743a;
+  --color-on-tertiary: #ffffff;
+  --color-on-tertiary-container: #86faa7;
+  --color-tertiary-fixed: #86faa7;
+  --color-tertiary-fixed-dim: #6add8d;
+  --color-on-tertiary-fixed: #00210c;
+  --color-on-tertiary-fixed-variant: #005228;
+
+  --color-surface: #fcf8fe;
+  --color-surface-bright: #fcf8fe;
+  --color-surface-dim: #dcd9df;
+  --color-surface-variant: #e4e1e7;
+  --color-surface-tint: #bf0229;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f6f2f8;
+  --color-surface-container: #f0edf3;
+  --color-surface-container-high: #eae7ed;
+  --color-surface-container-highest: #e4e1e7;
+  --color-on-surface: #1b1b1f;
+  --color-on-surface-variant: #5c403f;
+  --color-inverse-surface: #303034;
+  --color-inverse-on-surface: #f3eff6;
+
+  --color-background: #fcf8fe;
+  --color-on-background: #1b1b1f;
+
+  --color-outline: #906f6e;
+  --color-outline-variant: #e5bdbb;
+
+  --color-error: #ba1a1a;
+  --color-error-container: #ffdad6;
+  --color-on-error: #ffffff;
+  --color-on-error-container: #93000a;
+
+  --spacing-space-xs: 0.25rem;
+  --spacing-space-sm: 0.5rem;
+  --spacing-space-md: 1rem;
+  --spacing-space-lg: 1.5rem;
+  --spacing-space-xl: 2.5rem;
+  --spacing-margin: 1rem;
+  --spacing-margin-tablet: 2rem;
+  --spacing-margin-desktop: 3rem;
+  --spacing-gutter: 1rem;
+  --spacing-gutter-tablet: 1.5rem;
+  --spacing-gutter-desktop: 2rem;
+
+  --font-display-lg: "Plus Jakarta Sans", sans-serif;
+  --font-headline-lg: "Plus Jakarta Sans", sans-serif;
+  --font-headline-md: "Plus Jakarta Sans", sans-serif;
+  --font-headline-sm: "Plus Jakarta Sans", sans-serif;
+  --font-title-md: "Plus Jakarta Sans", sans-serif;
+  --font-body-lg: "Inter", sans-serif;
+  --font-body-md: "Inter", sans-serif;
+  --font-body-md-medium: "Inter", sans-serif;
+  --font-body-sm: "Inter", sans-serif;
+  --font-label-md: "Inter", sans-serif;
+  --font-label-sm: "Inter", sans-serif;
+}
+
+@layer base {
+  html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #fcf8fe;
+    color: #1b1b1f;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined', 'Material Icons', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  font-feature-settings: 'liga';
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  -webkit-font-smoothing: antialiased;
+}
+
+.material-symbols-fill {
+  font-variation-settings: 'FILL' 1, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Custom Visible Scrollbar */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(156, 163, 175, 0.6) transparent;
+}
+.custom-scrollbar::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.03);
+  border-radius: 8px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(156, 163, 175, 0.6);
+  border-radius: 8px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(107, 114, 128, 0.85);
+}
+
+/* Dynamic Route Loader Bar at the top of the page (only animated when navigating) */
+.route-loader-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #9e001f, #c8102e, #feb64e);
+  z-index: 99999;
+  box-shadow: 0 0 10px rgba(200, 16, 46, 0.7), 0 0 4px #c8102e;
+  transition: width 0.25s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease;
+  pointer-events: none;
+}
+
+/* Red Spinner inside buttons during page loading */
+.page-btn-spinner {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border: 2.5px solid rgba(200, 16, 46, 0.25);
+  border-top-color: #c8102e;
+  border-radius: 50%;
+  animation: btn-spin 0.65s linear infinite;
+  vertical-align: middle;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+/* Spacing only for buttons that do not use flex gap */
+button:not([class*="gap"]) > .page-btn-spinner:first-child:not(:only-child),
+a:not([class*="gap"]) > .page-btn-spinner:first-child:not(:only-child) {
+  margin-right: 6px;
+}
+
+/* Hide any element marked as replaced by the spinner */
+[data-replaced-by-spinner="true"] {
+  display: none !important;
+}
+
+/* High contrast on primary colored buttons */
+button[class*="bg-primary"] .page-btn-spinner,
+a[class*="bg-primary"] .page-btn-spinner {
+  border-color: rgba(255, 255, 255, 0.35);
+  border-top-color: #ffffff;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
+}
+
+@keyframes btn-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Custom Leaflet Map styling */
+.leaflet-container {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  z-index: 10;
+}
+
+.custom-assembly-marker {
+  background: transparent !important;
+  border: none !important;
+}
+
+.custom-leaflet-popup .leaflet-popup-content-wrapper {
+  border-radius: 1rem !important;
+  padding: 0.5rem !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1) !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+.custom-leaflet-popup .leaflet-popup-tip {
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Print stylesheet for pastoral recommendation letters and member record sheets */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 8mm;
+  }
+  html, body {
+    height: auto !important;
+    min-height: 100% !important;
+    overflow: visible !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  /* Prevent any wrapper container from clipping or scroll-locking in print */
+  #__next,
+  main,
+  body > div,
+  div {
+    overflow: visible !important;
+    height: auto !important;
+    max-height: none !important;
+  }
+
+  /* Hide interactive UI elements, navigation bars, buttons, and sidebars */
+  header,
+  nav,
+  aside,
+  footer,
+  button,
+  input,
+  .no-print,
+  [data-no-print],
+  .portal-screen-content {
+    display: none !important;
+  }
+
+  /* Explicit print container */
+  .print-only-container {
+    display: block !important;
+    visibility: visible !important;
+    position: static !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+  }
+
+  .printable-a4-sheet,
+  .printable-a4-sheet * {
+    visibility: visible !important;
+  }
+
+  .printable-a4-sheet {
+    display: flex !important;
+    position: static !important;
+    width: 100% !important;
+    max-width: 210mm !important;
+    min-height: 297mm !important;
+    margin: 0 auto !important;
+    padding: 10mm 12mm !important;
+    box-shadow: none !important;
+    border: none !important;
+    background: #ffffff !important;
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}
+
+
+

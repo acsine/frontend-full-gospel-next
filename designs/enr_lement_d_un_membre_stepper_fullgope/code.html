@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+
+<html lang="fr"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}.route-loader{position:fixed;top:0;left:0;height:3px;width:68%;background:#C8102E;z-index:9999;box-shadow:0 0 10px rgba(200,16,46,0.5);animation:pulse-bar 2s infinite ease-in-out;}@keyframes pulse-bar{0%{width:20%;opacity:0.8;}50%{width:85%;opacity:1;}100%{width:68%;opacity:0.9;}}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"on-primary":"#ffffff","surface-bright":"#fcf8fe","primary-fixed-dim":"#ffb3b1","surface-container-highest":"#e4e1e7","surface-variant":"#e4e1e7","secondary-fixed-dim":"#ffb956","on-error":"#ffffff","surface-dim":"#dcd9df","secondary-container":"#feb64e","on-secondary-container":"#714800","outline":"#906f6e","surface-tint":"#bf0229","on-tertiary":"#ffffff","inverse-on-surface":"#f3eff6","tertiary":"#00592b","on-secondary-fixed":"#2a1800","outline-variant":"#e5bdbb","on-tertiary-container":"#86faa7","on-error-container":"#93000a","on-primary-fixed-variant":"#92001c","secondary":"#835400","primary":"#9e001f","on-surface-variant":"#5c403f","surface-container":"#f0edf3","error":"#ba1a1a","on-background":"#1b1b1f","primary-container":"#c8102e","primary-fixed":"#ffdad8","surface-container-high":"#eae7ed","background":"#fcf8fe","error-container":"#ffdad6","tertiary-container":"#00743a","on-tertiary-fixed-variant":"#005228","on-primary-fixed":"#410007","on-secondary":"#ffffff","on-secondary-fixed-variant":"#643f00","tertiary-fixed":"#86faa7","on-tertiary-fixed":"#00210c","inverse-surface":"#303034","surface-container-low":"#f6f2f8","surface-container-lowest":"#ffffff","surface":"#fcf8fe","on-surface":"#1b1b1f","inverse-primary":"#ffb3b1","secondary-fixed":"#ffddb5","tertiary-fixed-dim":"#6add8d","on-primary-container":"#ffdad8"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-sm":"0.5rem","margin-desktop":"3rem","gutter":"1rem","space-lg":"1.5rem","space-xl":"2.5rem","space-xs":"0.25rem","gutter-desktop":"2rem","space-md":"1rem","margin":"1rem","margin-tablet":"2rem","gutter-tablet":"1.5rem"},"fontFamily":{"display-lg-mobile":["Plus Jakarta Sans"],"currency-display":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"label-md":["Inter"],"body-md":["Inter"],"headline-lg":["Plus Jakarta Sans"],"body-lg":["Inter"],"title-md":["Plus Jakarta Sans"],"body-md-medium":["Inter"],"label-sm":["Inter"],"body-sm":["Inter"],"headline-lg-mobile":["Plus Jakarta Sans"],"display-lg":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"]},"fontSize":{"display-lg-mobile":["34px",{"lineHeight":"42px","fontWeight":"800"}],"currency-display":["28px",{"lineHeight":"36px","fontWeight":"700"}],"headline-sm":["20px",{"lineHeight":"28px","fontWeight":"600"}],"label-md":["14px",{"lineHeight":"20px","fontWeight":"500"}],"body-md":["16px",{"lineHeight":"24px","fontWeight":"400"}],"headline-lg":["32px",{"lineHeight":"40px","fontWeight":"700"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"title-md":["18px",{"lineHeight":"26px","fontWeight":"600"}],"body-md-medium":["16px",{"lineHeight":"24px","fontWeight":"500"}],"label-sm":["12px",{"lineHeight":"16px","fontWeight":"600"}],"body-sm":["14px",{"lineHeight":"20px","fontWeight":"400"}],"headline-lg-mobile":["26px",{"lineHeight":"34px","fontWeight":"700"}],"display-lg":["48px",{"lineHeight":"56px","fontWeight":"800"}],"headline-md":["24px",{"lineHeight":"32px","fontWeight":"700"}]}}}}</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><div class="route-loader"></div><aside class="fixed left-0 top-0 h-full w-72 bg-inverse-surface text-inverse-on-surface z-50 flex flex-col justify-between hidden md:flex"><div class="flex flex-col flex-1 overflow-y-auto"><div class="px-space-md py-space-md flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-10 h-10 rounded-xl bg-primary-container flex items-center justify-center text-on-primary font-headline-sm text-headline-sm">FG</div><div><span class="font-headline-sm text-headline-sm tracking-tight text-surface-container-lowest block">FULLGOPE</span><span class="font-label-sm text-label-sm text-surface-variant flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-tertiary-fixed"></span>Connecté • Tsinga</span></div></div><button class="w-8 h-8 rounded-lg flex items-center justify-center text-surface-variant hover:text-surface-container-lowest transition-colors"><span class="material-symbols-outlined text-[20px]">dock_to_right</span></button></div><div class="px-space-md py-space-xs"><div class="bg-inverse-on-surface/5 rounded-lg px-space-sm py-1.5"><p class="font-label-sm text-label-sm text-secondary-fixed italic leading-tight">« No Other Christ, No Other Gospel »</p><p class="font-label-sm text-[10px] text-surface-dim uppercase tracking-wider mt-0.5">Mission du Plein Évangile (1961)</p></div></div><nav class="flex-1 px-space-sm py-space-md space-y-space-md" data-active-classes="bg-primary-container text-on-primary font-body-md-medium rounded-xl"><div class="space-y-1"><span class="px-space-sm font-label-sm text-label-sm uppercase tracking-wider text-surface-dim block mb-1">Principal</span><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="accueil" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">grid_view</span><span class="font-body-sm text-body-sm">Accueil</span></div></a></div><div class="space-y-1"><span class="px-space-sm font-label-sm text-label-sm uppercase tracking-wider text-surface-dim block mb-1">Communauté</span><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="membres" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">groups</span><span class="font-body-sm text-body-sm">Membres</span></div><span class="px-2 py-0.5 rounded-full font-label-sm text-[11px] bg-inverse-on-surface/15 text-surface-bright">1 450</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="departements" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">diversity_3</span><span class="font-body-sm text-body-sm">Départements</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="organisation" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">account_tree</span><span class="font-body-sm text-body-sm">Organisation</span></div></a></div><div class="space-y-1"><span class="px-space-sm font-label-sm text-label-sm uppercase tracking-wider text-surface-dim block mb-1">Ministère &amp; Activités</span><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="rapports" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">assignment</span><span class="font-body-sm text-body-sm">Rapports</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="publications" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">menu_book</span><span class="font-body-sm text-body-sm">Publications</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="evenements-et-plannings" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">calendar_month</span><span class="font-body-sm text-body-sm">Événements &amp; Plannings</span></div><span class="px-2 py-0.5 rounded-full font-label-sm text-[11px] bg-secondary-container text-on-secondary-container font-bold">3</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="reseau-social" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">hub</span><span class="font-body-sm text-body-sm">Réseau social</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="messagerie" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">chat_bubble</span><span class="font-body-sm text-body-sm">Messagerie</span></div><span class="px-2 py-0.5 rounded-full font-label-sm text-[11px] bg-primary text-on-primary font-bold">12</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="mediatheque" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">video_library</span><span class="font-body-sm text-body-sm">Médiathèque</span></div></a></div><div class="space-y-1"><span class="px-space-sm font-label-sm text-label-sm uppercase tracking-wider text-surface-dim block mb-1">Intendance &amp; Gouvernance</span><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="finance" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">payments</span><span class="font-body-sm text-body-sm">Finance</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="dons-et-campagnes" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">volunteer_activism</span><span class="font-body-sm text-body-sm">Dons &amp; Campagnes</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="administration" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">admin_panel_settings</span><span class="font-body-sm text-body-sm">Administration</span></div></a></div></nav></div><div class="p-space-md bg-inverse-on-surface/5 flex items-center justify-between"><div class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-tertiary-fixed-dim"></span><span class="font-label-sm text-label-sm text-surface-variant">Serveur Yaoundé • v2.4</span></div><button class="text-surface-dim hover:text-surface-container-lowest transition-colors"><span class="material-symbols-outlined text-[18px]">help</span></button></div></aside><div class="md:pl-72"><header class="fixed top-0 left-0 md:left-72 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 px-space-md flex items-center justify-between"><div class="flex items-center gap-space-sm flex-1 max-w-xl"><button class="md:hidden w-10 h-10 rounded-xl flex items-center justify-center text-on-surface hover:bg-surface-container"><span class="material-symbols-outlined">menu</span></button><div class="relative flex-1 hidden sm:block"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">search</span><input class="w-full h-10 pl-10 pr-20 bg-surface-container-low rounded-xl font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant/70 focus:outline-none focus:bg-surface-container-lowest" placeholder="Rechercher fidèles, assemblées, reçus MoMo/Orange..." type="text"/><kbd class="absolute right-2.5 top-1/2 -translate-y-1/2 px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-[11px]">&amp;#8984;K</kbd></div><div class="hidden lg:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface"><span class="material-symbols-outlined text-primary text-[18px]">church</span><span class="font-body-md-medium text-body-md-medium">Pasteur Titulaire</span><span class="text-on-surface-variant">•</span><span class="text-on-surface-variant">District Centre (Temple Tsinga)</span></div></div><div class="flex items-center gap-space-sm"><div class="flex items-center gap-1 p-1 bg-surface-container-low rounded-full"><button class="px-2.5 py-1 rounded-full font-label-sm text-label-sm font-bold bg-inverse-surface text-surface-container-lowest">FR</button><button class="px-2.5 py-1 rounded-full font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface">EN</button></div><button class="h-9 px-2.5 rounded-xl bg-surface-container text-on-surface-variant hover:text-on-surface flex items-center gap-1.5 font-label-sm text-label-sm" title="Basculer l'état de chargement skeleton"><span class="material-symbols-outlined text-[18px] text-secondary">hourglass_empty</span><span class="hidden xl:inline">Skeleton</span></button><button class="relative w-10 h-10 rounded-xl flex items-center justify-center text-on-surface hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2 right-2 w-2.5 h-2.5 rounded-full bg-primary-container ring-2 ring-surface-container-lowest"></span></button><div class="flex items-center gap-2 pl-2 border-l border-surface-container-high"><div class="relative"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-tertiary-container ring-2 ring-surface-container-lowest"></span></div><div class="hidden sm:block text-left"><span class="font-label-md text-label-md text-on-surface block leading-tight">Rev. N. Samuel</span><span class="font-label-sm text-label-sm text-on-surface-variant block leading-tight">District Tsinga</span></div><span class="material-symbols-outlined text-on-surface-variant text-[18px]">arrow_drop_down</span></div></div></header><main class="w-full pt-16 bg-surface min-h-screen px-space-md md:px-gutter-desktop py-space-lg pb-24 md:pb-space-lg"><div class="flex flex-col w-full">
+<!-- En-tête de page & Contexte administratif -->
+<header class="flex flex-col gap-space-sm mb-space-lg">
+<!-- Fil d'Ariane -->
+<nav aria-label="Breadcrumb" class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm">
+<a class="hover:text-primary transition-colors flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[16px]">church</span>
+<span>Accueil</span>
+</a>
+<span class="text-surface-variant font-bold">/</span>
+<a class="hover:text-primary transition-colors" href="#">Communauté</a>
+<span class="text-surface-variant font-bold">/</span>
+<a class="hover:text-primary transition-colors" href="#">Membres</a>
+<span class="text-surface-variant font-bold">/</span>
+<span class="text-primary font-bold">Nouvel Enrôlement</span>
+</nav>
+<!-- Titre et Barre d'actions pastorale -->
+<div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-space-md">
+<div class="space-y-1">
+<div class="flex items-center gap-3">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Enrôlement d'un Nouveau Membre</h1>
+<span class="px-2.5 py-0.5 rounded-full font-label-sm text-label-sm bg-primary-fixed text-on-primary-fixed font-bold tracking-wide">
+            Matricule Provisoire : MBR-2026-00143
+          </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Fiche d'enregistrement ecclésial officiel • Base nationale centralisée de la Full Gospel Mission Cameroon (fondée en 1961)
+        </p>
+</div>
+<!-- Statut de synchronisation & Boutons rapides -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface-variant shadow-sm">
+<span class="relative flex h-2.5 w-2.5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-tertiary-container"></span>
+</span>
+<span class="font-body-md-medium text-on-surface">Sauvegarde active</span>
+<span class="text-surface-dim">•</span>
+<span class="text-on-surface-variant" id="draftTimestamp">14:32:18</span>
+</div>
+<button class="h-10 px-3.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors flex items-center gap-1.5" title="Restaurer la dernière version" type="button">
+<span class="material-symbols-outlined text-[18px]">history</span>
+<span class="hidden sm:inline">Restaurer</span>
+</button>
+<button class="h-10 px-3.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors flex items-center gap-1.5" title="Enregistrer le brouillon localement" type="button">
+<span class="material-symbols-outlined text-[18px]">save</span>
+<span class="hidden sm:inline">Brouillon</span>
+</button>
+<button class="h-10 px-3 rounded-xl bg-error-container text-on-error-container hover:bg-error/20 font-label-md text-label-md transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+<span>Annuler</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Stepper de Progression Moderne -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm mb-space-lg">
+<div class="flex flex-col md:flex-row items-center justify-between gap-space-md relative">
+<!-- Indicateur 1 -->
+<button class="step-indicator group flex items-center gap-3 w-full md:w-auto text-left cursor-pointer" id="stepTab-1" onclick="goToStep(1)" type="button">
+<div class="w-10 h-10 rounded-full flex items-center justify-center font-headline-sm text-headline-sm transition-all bg-primary-container text-on-primary shadow-md" id="stepBadge-1">
+<span class="material-symbols-outlined text-[20px]">person</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Étape 1</span>
+<span class="font-title-md text-title-md text-primary font-bold" id="stepLabel-1">Identité Civile</span>
+</div>
+</button>
+<!-- Trait de liaison 1-2 -->
+<div class="hidden md:block flex-1 h-1 bg-surface-container rounded-full mx-2 overflow-hidden">
+<div class="h-full bg-primary-container transition-all duration-300 w-full" id="stepProgress-1"></div>
+</div>
+<!-- Indicateur 2 -->
+<button class="step-indicator group flex items-center gap-3 w-full md:w-auto text-left cursor-pointer opacity-80 hover:opacity-100" id="stepTab-2" onclick="goToStep(2)" type="button">
+<div class="w-10 h-10 rounded-full flex items-center justify-center font-headline-sm text-headline-sm transition-all bg-surface-container text-on-surface-variant" id="stepBadge-2">
+<span class="material-symbols-outlined text-[20px]">contact_phone</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Étape 2</span>
+<span class="font-title-md text-title-md text-on-surface font-medium" id="stepLabel-2">Coordonnées</span>
+</div>
+</button>
+<!-- Trait de liaison 2-3 -->
+<div class="hidden md:block flex-1 h-1 bg-surface-container rounded-full mx-2 overflow-hidden">
+<div class="h-full bg-primary-container transition-all duration-300 w-0" id="stepProgress-2"></div>
+</div>
+<!-- Indicateur 3 -->
+<button class="step-indicator group flex items-center gap-3 w-full md:w-auto text-left cursor-pointer opacity-80 hover:opacity-100" id="stepTab-3" onclick="goToStep(3)" type="button">
+<div class="w-10 h-10 rounded-full flex items-center justify-center font-headline-sm text-headline-sm transition-all bg-surface-container text-on-surface-variant" id="stepBadge-3">
+<span class="material-symbols-outlined text-[20px]">local_fire_department</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Étape 3</span>
+<span class="font-title-md text-title-md text-on-surface font-medium" id="stepLabel-3">Parcours Spirituel</span>
+</div>
+</button>
+<!-- Trait de liaison 3-4 -->
+<div class="hidden md:block flex-1 h-1 bg-surface-container rounded-full mx-2 overflow-hidden">
+<div class="h-full bg-primary-container transition-all duration-300 w-0" id="stepProgress-3"></div>
+</div>
+<!-- Indicateur 4 -->
+<button class="step-indicator group flex items-center gap-3 w-full md:w-auto text-left cursor-pointer opacity-80 hover:opacity-100" id="stepTab-4" onclick="goToStep(4)" type="button">
+<div class="w-10 h-10 rounded-full flex items-center justify-center font-headline-sm text-headline-sm transition-all bg-surface-container text-on-surface-variant" id="stepBadge-4">
+<span class="material-symbols-outlined text-[20px]">verified_user</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Étape 4</span>
+<span class="font-title-md text-title-md text-on-surface font-medium" id="stepLabel-4">Famille &amp; Synthèse</span>
+</div>
+</button>
+</div>
+<!-- Barre d'avancement globale mobile -->
+<div class="md:hidden mt-space-md">
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant mb-1">
+<span>Progression globale</span>
+<span class="font-bold text-primary" id="mobileProgressPercent">25%</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary-container transition-all duration-300 w-1/4" id="mobileProgressBar"></div>
+</div>
+</div>
+</div>
+<!-- Formulaire Principal Multipages -->
+<form class="space-y-space-lg" id="enrollmentForm" onsubmit="event.preventDefault(); submitEnrollment();">
+<!-- ========================================== -->
+<!-- ÉTAPE 1 : IDENTITÉ CIVILE                 -->
+<!-- ========================================== -->
+<section class="step-pane" id="stepSection-1">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Bloc Identité Formulaire (8 cols) -->
+<div class="lg:col-span-8 bg-surface-container-lowest rounded-xl p-space-lg shadow-sm space-y-space-md">
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container">badge</span>
+<h2 class="font-title-md text-title-md text-on-surface">État Civil &amp; Informations Légales</h2>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container px-2 py-0.5 rounded-full">* Champs obligatoires</span>
+</div>
+<!-- Noms & Prénoms -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-on-surface flex items-center justify-between" for="nomFamille">
+<span>Nom de Famille <span class="text-primary font-bold">*</span></span>
+</label>
+<input class="w-full h-12 px-3.5 bg-surface-container-low focus:bg-surface-container-lowest rounded-xl font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant/60 focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" id="nomFamille" oninput="updateLiveSummary()" placeholder="Ex: TCHANA" required="" type="text"/>
+<p class="hidden text-error font-label-sm text-label-sm items-center gap-1 mt-1" id="err-nomFamille">
+<span class="material-symbols-outlined text-[16px]">error</span> Le nom est requis.
+              </p>
+</div>
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-on-surface flex items-center justify-between" for="prenomMembre">
+<span>Prénoms <span class="text-primary font-bold">*</span></span>
+</label>
+<input class="w-full h-12 px-3.5 bg-surface-container-low focus:bg-surface-container-lowest rounded-xl font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant/60 focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" id="prenomMembre" oninput="updateLiveSummary()" placeholder="Ex: Jean-Baptiste" required="" type="text"/>
+</div>
+</div>
+<!-- Genre & Date de Naissance -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-on-surface">
+                Genre <span class="text-primary font-bold">*</span>
+</label>
+<div class="grid grid-cols-2 gap-2 h-12">
+<label class="relative flex items-center justify-center rounded-xl bg-surface-container-low hover:bg-surface-container cursor-pointer transition-all has-[:checked]:bg-primary-fixed has-[:checked]:text-on-primary-fixed font-body-md-medium text-body-md-medium">
+<input checked="" class="sr-only" name="genre" onchange="updateLiveSummary()" type="radio" value="M"/>
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">male</span> Homme
+                  </span>
+</label>
+<label class="relative flex items-center justify-center rounded-xl bg-surface-container-low hover:bg-surface-container cursor-pointer transition-all has-[:checked]:bg-primary-fixed has-[:checked]:text-on-primary-fixed font-body-md-medium text-body-md-medium">
+<input class="sr-only" name="genre" onchange="updateLiveSummary()" type="radio" value="F"/>
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">female</span> Femme
+                  </span>
+</label>
+</div>
+</div>
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-on-surface flex items-center justify-between" for="dateNaissance">
+<span>Date de Naissance <span class="text-primary font-bold">*</span></span>
+</label>
+<input class="w-full h-12 px-3.5 bg-surface-container-low focus:bg-surface-container-lowest rounded-xl font-body-md text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" id="dateNaissance" onchange="validateBirthDate(); updateLiveSummary();" required="" type="date"/>
+<p class="hidden text-error font-label-sm text-label-sm items-center gap-1 mt-1" id="err-dateNaissance">
+<span class="material-symbols-outlined text-[16px]">error</span> La date de naissance ne peut pas être située dans le futur.
+              </p>
+</div>
+</div>
+<!-- Situation Matrimoniale & Profession -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-on-surface" for="situationMatrimoniale">Situation Matrimoniale</label>
+<div class="relative">
+<select class="w-full h-12 px-3.5 pr-10 bg-surface-container-low focus:bg-surface-container-lowest rounded-xl font-body-md text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary shadow-sm appearance-none" id="situationMatrimoniale">
+<option value="Célibataire">Célibataire</option>
+<option value="Marié(e) religieusement &amp; civilement">Marié(e) religieusement &amp; civilement</option>
+<option value="Marié(e) coutumièrement">Marié(e) coutumièrement</option>
+<option value="Veuf / Veuve">Veuf / Veuve</option>
+<option value="Divorcé(e)">Divorcé(e)</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none text-[20px]">expand_more</span>
+</div>
+</div>
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-on-surface" for="profession">Profession / Activité</label>
+<input class="w-full h-12 px-3.5 bg-surface-container-low focus:bg-surface-container-lowest rounded-xl font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant/60 focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" id="profession" placeholder="Ex: Comptable, Enseignant, Étudiant..." type="text"/>
+</div>
+</div>
+<!-- Nationalité & Langue d'usage -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-on-surface" for="nationalite">Nationalité</label>
+<div class="relative">
+<select class="w-full h-12 px-3.5 pr-10 bg-surface-container-low focus:bg-surface-container-lowest rounded-xl font-body-md text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary shadow-sm appearance-none" id="nationalite">
+<option selected="" value="Camerounaise">🇨🇲 Camerounaise</option>
+<option value="Nigériane">🇳🇬 Nigériane</option>
+<option value="Tchadienne">🇹🇩 Tchadienne</option>
+<option value="Centrafricaine">🇨🇫 Centrafricaine</option>
+<option value="Gabonaise">🇬🇦 Gabonaise</option>
+<option value="Autre">🌍 Autre nationalité</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none text-[20px]">expand_more</span>
+</div>
+</div>
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-on-surface" for="languePref">Langue d'expression préférentielle</label>
+<div class="relative">
+<select class="w-full h-12 px-3.5 pr-10 bg-surface-container-low focus:bg-surface-container-lowest rounded-xl font-body-md text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary shadow-sm appearance-none" id="languePref">
+<option value="Français">Français (FR)</option>
+<option value="English">English (EN)</option>
+<option value="Bilingue">Bilingue (FR &amp; EN)</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none text-[20px]">expand_more</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bloc Photo Officielle & Carte d'identité (4 cols) -->
+<div class="lg:col-span-4 bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div class="space-y-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">add_a_photo</span>
+<h2 class="font-title-md text-title-md text-on-surface">Photo d'Identité Ecclésiale</h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Format 1:1 pour émission directe de la carte de membre PVC et fiche paroissiale.
+            </p>
+<!-- Zone de téléversement et aperçu -->
+<div class="mt-4 flex flex-col items-center">
+<div class="relative w-44 h-44 rounded-2xl bg-surface-container overflow-hidden group shadow-inner flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="Official clean studio portrait of an African church member smiling warmly, plain light beige background, sharp photographic lighting, passport crop 1:1" id="photoPreview" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDppwTKLmFEW-jasT1csPl7GxIO4G9Qyn63nSfj6PR99ktD5NMO8VSD-53JoC3GETJwsbDpp5mWP5EuO3aA3O1fGQYUKhaVX5f_cCWIaXF9wxdgme0UuG6e4oSLlP7s5xKYHsa23s8lnFxGAvNHWgZafihXUO7L1wlOHmyzqWf6mu_cbyaKtRbkiIxIlitSPNi5CCpajXbQbuzhgXUOSHS6w47jPAw0FlJ4VjmXub0"/>
+<div class="absolute inset-0 bg-inverse-surface/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center gap-2 text-surface-container-lowest p-2 text-center">
+<span class="material-symbols-outlined text-[28px]">crop</span>
+<span class="font-label-sm text-label-sm">Recadrer le cliché</span>
+</div>
+</div>
+<!-- Boutons action photo -->
+<div class="w-full mt-4 flex flex-col gap-2">
+<input accept="image/*" class="sr-only" id="photoInput" onchange="previewUploadedPhoto(event)" type="file"/>
+<button class="w-full h-11 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center justify-center gap-2 transition-colors" onclick="document.getElementById('photoInput').click()" type="button">
+<span class="material-symbols-outlined text-[18px]">upload</span>
+<span>Téléverser la photo</span>
+</button>
+<div class="flex items-center justify-center gap-2 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-tertiary">check_circle</span>
+<span>JPG, PNG max 4 Mo • Ratio carré</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Encadré Mémo Pastoral -->
+<div class="mt-space-md p-3 rounded-xl bg-surface-container-low text-on-surface-variant font-body-sm text-body-sm">
+<span class="font-body-md-medium text-on-surface block text-label-sm uppercase tracking-wide mb-1">Rappel Déontologique</span>
+            La photo servira pour l'annuaire des ouvriers et le contrôle des assemblées générales de district.
+          </div>
+</div>
+</div>
+</section>
+<!-- ========================================== -->
+<!-- ÉTAPE 2 : COORDONNÉES & LOCALISATION       -->
+<!-- ========================================== -->
+<section class="step-pane hidden" id="stepSection-2">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<div class="lg:col-span-8 bg-surface-container-lowest rounded-xl p-space-lg shadow-sm space-y-space-md">
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container">contact_phone</span>
+<h2 class="font-title-md text-title-md text-on-surface">Canaux de Communication Directs</h2>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container px-2.5 py-0.5 rounded-full">Préfixe national +237</span>
+</div>
+<!-- Téléphone Principal avec formatage auto & Détecteur d'opérateur -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div class="space-y-1">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md text-on-surface" for="telPrincipal">
+                  Téléphone Principal <span class="text-primary font-bold">*</span>
+</label>
+<span class="hidden px-2 py-0.5 rounded-full font-label-sm text-[11px] font-bold" id="carrierBadge"></span>
+</div>
+<div class="relative">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 font-body-md-medium text-body-md text-on-surface-variant pointer-events-none">+237</span>
+<input class="w-full h-12 pl-16 pr-4 bg-surface-container-low focus:bg-surface-container-lowest rounded-xl font-body-md text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" id="telPrincipal" maxlength="12" oninput="formatCamerounPhone(this); updateCarrierBadge(this.value); updateLiveSummary();" placeholder="6XX XX XX XX" required="" type="tel"/>
+</div>
+<p class="hidden text-error font-label-sm text-label-sm items-center gap-1 mt-1" id="err-phone">
+<span class="material-symbols-outlined text-[16px]">error</span> Le numéro doit comporter 9 chiffres valides.
+              </p>
+</div>
+<!-- Téléphone WhatsApp -->
+<div class="space-y-1">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md text-on-surface" for="telWhatsapp">Numéro WhatsApp</label>
+<label class="flex items-center gap-1 text-label-sm text-primary font-label-sm cursor-pointer select-none">
+<input class="rounded text-primary" id="syncWhatsapp" onchange="toggleWhatsappSync(this)" type="checkbox"/>
+<span>Même numéro</span>
+</label>
+</div>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-tertiary text-[20px]">chat</span>
+<input class="w-full h-12 pl-10 pr-4 bg-surface-container-low focus:bg-surface-container-lowest rounded-xl font-body-md text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" id="telWhatsapp" placeholder="+237 6XX XX XX XX" type="tel"/>
+</div>
+</div>
+</div>
+<!-- Email -->
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-on-surface" for="emailMembre">Adresse Électronique (Email)</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">mail</span>
+<input class="w-full h-12 pl-10 pr-4 bg-surface-container-low focus:bg-surface-container-lowest rounded-xl font-body-md text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" id="emailMembre" onchange="validateEmailField(this)" placeholder="jean.baptiste@domaine.cm" type="email"/>
+</div>
+<p class="hidden text-error font-label-sm text-label-sm items-center gap-1 mt-1" id="err-email">
+<span class="material-symbols-outlined text-[16px]">error</span> Format d'adresse électronique invalide.
+            </p>
+</div>
+<!-- Ville & Quartier -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md pt-2">
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-on-surface" for="villeResidence">
+                Ville de Résidence <span class="text-primary font-bold">*</span>
+</label>
+<div class="relative">
+<select class="w-full h-12 px-3.5 pr-10 bg-surface-container-low focus:bg-surface-container-lowest rounded-xl font-body-md text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary shadow-sm appearance-none" id="villeResidence" onchange="updateLiveSummary()">
+<option selected="" value="Yaoundé">Yaoundé (Région du Centre)</option>
+<option value="Douala">Douala (Région du Littoral)</option>
+<option value="Bafoussam">Bafoussam (Région de l'Ouest)</option>
+<option value="Bamenda">Bamenda (Région du Nord-Ouest)</option>
+<option value="Buea">Buea (Région du Sud-Ouest)</option>
+<option value="Garoua">Garoua (Région du Nord)</option>
+<option value="Maroua">Maroua (Extrême-Nord)</option>
+<option value="Ngaoundéré">Ngaoundéré (Adamaoua)</option>
+<option value="Bertoua">Bertoua (Est)</option>
+<option value="Ebolowa">Ebolowa (Sud)</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none text-[20px]">expand_more</span>
+</div>
+</div>
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-on-surface" for="quartierResidence">Quartier &amp; Repère géodésique</label>
+<input class="w-full h-12 px-3.5 bg-surface-container-low focus:bg-surface-container-lowest rounded-xl font-body-md text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" id="quartierResidence" oninput="updateLiveSummary()" placeholder="Ex: Tsinga, Rue 1.452 face Chefferie" type="text"/>
+</div>
+</div>
+</div>
+<!-- Panneau de Localisation d'assemblée de quartier (4 cols) -->
+<div class="lg:col-span-4 bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div class="space-y-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">map</span>
+<h2 class="font-title-md text-title-md text-on-surface">Secteur Pastoral</h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Rattachement automatique à la cellule de maison la plus proche du lieu d'habitation.
+            </p>
+<div class="w-full h-44 bg-cover bg-center rounded-xl overflow-hidden shadow-inner relative flex items-end p-3" data-alt="Aerial view map of Tsinga neighborhood in Yaounde Cameroon showing streets and houses with warm golden sunlight, subtle cartographic overlay style" data-location="Tsinga, Yaounde, Cameroon" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDljJH934oHqmu8hdz-O2UXUuqzR2W8RGjhVaLlcXKaKRiM2gmLJ2b2PcL4KfNWQ8VDDB702VABgVzHWUwccpq_v3_ohxw9njvIpm-9pTYkNMRN_DY4TCy__OpdhFZre-pZPCM-X1jMMJc0Bl-_I-vzwPX-jSYnVdfLEKxa5IuhngJLbmSMMecnWQKNjAxNow_JPh0x7Ay2aIe2srrrsGmttJ-F60wJ326s6kuH5nk')">
+<div class="bg-surface-container-lowest/90 backdrop-blur-md px-3 py-1.5 rounded-lg flex items-center gap-2 shadow-sm">
+<span class="material-symbols-outlined text-primary text-[18px]">home_pin</span>
+<span class="font-label-sm text-label-sm font-bold text-on-surface">Cellule Tsinga-Palais</span>
+</div>
+</div>
+<div class="p-3 bg-surface-container-low rounded-xl space-y-1">
+<div class="flex items-center justify-between text-label-sm">
+<span class="text-on-surface-variant">Responsable de cellule :</span>
+<span class="font-bold text-on-surface">Ancien M. Jean-Paul</span>
+</div>
+<div class="flex items-center justify-between text-label-sm">
+<span class="text-on-surface-variant">Jour de partage :</span>
+<span class="font-bold text-on-surface">Mercredi 18h30</span>
+</div>
+</div>
+</div>
+<div class="pt-4">
+<button class="w-full h-11 rounded-xl bg-surface-container text-on-surface hover:bg-surface-container-high font-label-md text-label-md flex items-center justify-center gap-2 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">near_me</span>
+<span>Localiser sur le cadastre paroissial</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================== -->
+<!-- ÉTAPE 3 : PARCOURS SPIRITUEL & ASSEMBLÉE   -->
+<!-- ========================================== -->
+<section class="step-pane hidden" id="stepSection-3">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Colonne Principale Sacrements & Rattachement (8 cols) -->
+<div class="lg:col-span-8 bg-surface-container-lowest rounded-xl p-space-lg shadow-sm space-y-space-md">
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container">local_fire_department</span>
+<h2 class="font-title-md text-title-md text-on-surface">Parcours Spirituel &amp; Sacrements</h2>
+</div>
+<span class="px-2.5 py-0.5 rounded-full font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed font-bold">
+              Confession de Foi 1961
+            </span>
+</div>
+<!-- Hiérarchie Ecclésiale en cascade -->
+<div class="p-space-md rounded-xl bg-surface-container-low space-y-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-bold block">
+              Rattachement Église Locale
+            </span>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm">
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant">Région</label>
+<div class="relative">
+<select class="w-full h-11 px-3 bg-surface-container-lowest rounded-lg font-body-sm text-body-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary appearance-none" id="selectRegion">
+<option selected="" value="Centre">Région Centre</option>
+<option value="Littoral">Région Littoral</option>
+<option value="Ouest">Région Ouest</option>
+<option value="Nord-Ouest">Région Nord-Ouest</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none text-[18px]">expand_more</span>
+</div>
+</div>
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant">District Apostolique</label>
+<div class="relative">
+<select class="w-full h-11 px-3 bg-surface-container-lowest rounded-lg font-body-sm text-body-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary appearance-none" id="selectDistrict">
+<option selected="" value="District Centre">District Centre</option>
+<option value="District Yaoundé-Est">District Yaoundé-Est</option>
+<option value="District Mfoundi-Sud">District Mfoundi-Sud</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none text-[18px]">expand_more</span>
+</div>
+</div>
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant">Assemblée Locale</label>
+<div class="relative">
+<select class="w-full h-11 px-3 bg-surface-container-lowest rounded-lg font-body-sm text-body-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary appearance-none" id="selectTemple" onchange="updateLiveSummary()">
+<option selected="" value="Temple Central Tsinga">Temple Tsinga</option>
+<option value="Assemblée de Bastos">Assemblée de Bastos</option>
+<option value="Assemblée de Biyem-Assi">Biyem-Assi</option>
+<option value="Temple de Mokolo">Mokolo</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none text-[18px]">expand_more</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Statut ecclésial initial & Date d'entrée -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-on-surface" for="statutEcclesial">Statut d'intégration</label>
+<div class="relative">
+<select class="w-full h-12 px-3.5 pr-10 bg-surface-container-low focus:bg-surface-container-lowest rounded-xl font-body-md text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary shadow-sm appearance-none" id="statutEcclesial" onchange="updateLiveSummary()">
+<option value="Nouveau Converti">Nouveau Converti</option>
+<option value="Catéchumène">Catéchumène (En formation)</option>
+<option selected="" value="Membre Actif Titulaire">Membre Actif Titulaire</option>
+<option value="En transfert d'une autre mission">En transfert d'une autre communauté</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none text-[20px]">expand_more</span>
+</div>
+</div>
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-on-surface" for="dateAdhesion">Date d'accueil / 1ère Visite</label>
+<input class="w-full h-12 px-3.5 bg-surface-container-low focus:bg-surface-container-lowest rounded-xl font-body-md text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" id="dateAdhesion" type="date"/>
+</div>
+</div>
+<!-- Sacrements : Nouvelle Naissance & Baptême d'eau -->
+<div class="space-y-space-md pt-2">
+<!-- Nouvelle Naissance -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-on-surface" for="dateNouvelleNaissance">Nouvelle Naissance en Christ</label>
+<input class="w-full h-12 px-3.5 bg-surface-container-low focus:bg-surface-container-lowest rounded-xl font-body-md text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" id="dateNouvelleNaissance" type="date"/>
+</div>
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-on-surface">Baptisé d'eau par immersion ?</label>
+<div class="grid grid-cols-2 gap-2 h-12">
+<label class="flex items-center justify-center rounded-xl bg-surface-container-low cursor-pointer transition-all has-[:checked]:bg-primary-fixed has-[:checked]:text-on-primary-fixed font-body-md-medium text-body-md-medium">
+<input checked="" class="sr-only" name="baptiseEau" onchange="toggleBaptemeFields(true)" type="radio" value="oui"/>
+<span>Oui</span>
+</label>
+<label class="flex items-center justify-center rounded-xl bg-surface-container-low cursor-pointer transition-all has-[:checked]:bg-primary-fixed has-[:checked]:text-on-primary-fixed font-body-md-medium text-body-md-medium">
+<input class="sr-only" name="baptiseEau" onchange="toggleBaptemeFields(false)" type="radio" value="non"/>
+<span>Non</span>
+</label>
+</div>
+</div>
+</div>
+<!-- Détails du baptême d'eau avec validation doctrinale immédiate -->
+<div class="p-space-md rounded-xl bg-surface-container-low space-y-space-sm" id="detailsBapteme">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm text-on-surface font-semibold" for="dateBaptemeEau">Date du baptême d'eau</label>
+<input class="w-full h-11 px-3 bg-surface-container-lowest rounded-lg font-body-sm text-body-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" id="dateBaptemeEau" onchange="validateBaptismDate(); updateLiveSummary();" type="date"/>
+<p class="hidden text-error font-label-sm text-label-sm items-center gap-1 mt-1" id="err-baptemeDoctrinal">
+<span class="material-symbols-outlined text-[16px]">warning</span> Incohérence doctrinale : la date de baptême ne peut pas précéder la naissance !
+                  </p>
+</div>
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm text-on-surface font-semibold" for="pasteurBapteme">Pasteur Officiant / Temple</label>
+<input class="w-full h-11 px-3 bg-surface-container-lowest rounded-lg font-body-sm text-body-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" id="pasteurBapteme" placeholder="Ex: Pasteur Titulaire Tsinga" type="text"/>
+</div>
+</div>
+</div>
+<!-- Baptême du Saint-Esprit (Pneumatologie) -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<div class="space-y-0.5">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-container">electric_bolt</span>
+<span class="font-body-md-medium text-body-md-medium text-on-surface">Baptême du Saint-Esprit (Actes 2:4)</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Avec le signe initial biblique du parler en d'autres langues.</p>
+</div>
+<div class="flex items-center gap-3">
+<label class="px-4 py-2 rounded-xl bg-surface-container-lowest cursor-pointer font-body-md-medium text-body-md-medium has-[:checked]:bg-secondary-container has-[:checked]:text-on-secondary-container transition-all">
+<input checked="" class="sr-only" name="baptemeEsprit" type="radio" value="oui"/>
+<span>Oui, baptisé(e)</span>
+</label>
+<label class="px-4 py-2 rounded-xl bg-surface-container-lowest cursor-pointer font-body-md-medium text-body-md-medium has-[:checked]:bg-secondary-container has-[:checked]:text-on-secondary-container transition-all">
+<input class="sr-only" name="baptemeEsprit" type="radio" value="non"/>
+<span>En attente</span>
+</label>
+</div>
+</div>
+</div>
+</div>
+<!-- Colonne Ministères & Départements d'engagement (4 cols) -->
+<div class="lg:col-span-4 bg-surface-container-lowest rounded-xl p-space-lg shadow-sm space-y-space-md">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">diversity_3</span>
+<h2 class="font-title-md text-title-md text-on-surface">Départements &amp; Dons</h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Affectation dans les ailes ministérielles de la mission.</p>
+</div>
+<div class="space-y-2">
+<label class="flex items-center justify-between p-3 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors cursor-pointer">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary text-[20px]">group</span>
+<span class="font-body-md-medium text-body-md text-on-surface">Jeunesse (Youth Movement)</span>
+</div>
+<input class="w-5 h-5 rounded text-primary" name="deptJeunesse" type="checkbox"/>
+</label>
+<label class="flex items-center justify-between p-3 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors cursor-pointer">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-secondary text-[20px]">female</span>
+<span class="font-body-md-medium text-body-md text-on-surface">Mouvement des Femmes (WFM)</span>
+</div>
+<input class="w-5 h-5 rounded text-primary" name="deptFemmes" type="checkbox"/>
+</label>
+<label class="flex items-center justify-between p-3 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors cursor-pointer">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-tertiary text-[20px]">male</span>
+<span class="font-body-md-medium text-body-md text-on-surface">Mouvement des Hommes (MMF)</span>
+</div>
+<input checked="" class="w-5 h-5 rounded text-primary" name="deptHommes" type="checkbox"/>
+</label>
+<label class="flex items-center justify-between p-3 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors cursor-pointer">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">library_music</span>
+<span class="font-body-md-medium text-body-md text-on-surface">Chorale &amp; Louange</span>
+</div>
+<input class="w-5 h-5 rounded text-primary" name="deptChorale" type="checkbox"/>
+</label>
+<label class="flex items-center justify-between p-3 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors cursor-pointer">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">school</span>
+<span class="font-body-md-medium text-body-md text-on-surface">Moniteurs ECODIM (Enfants)</span>
+</div>
+<input class="w-5 h-5 rounded text-primary" name="deptEcodim" type="checkbox"/>
+</label>
+</div>
+<div class="pt-2">
+<label class="font-label-sm text-label-sm text-on-surface-variant block mb-1" for="autreOrigine">Ancienne église ou communauté d'origine (si transfert)</label>
+<input class="w-full h-11 px-3 bg-surface-container-low focus:bg-surface-container-lowest rounded-xl font-body-sm text-body-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" id="autreOrigine" placeholder="Ex: EEC, Baptiste, Diaspora..." type="text"/>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================== -->
+<!-- ÉTAPE 4 : FAMILLE, COMPTE & SYNTHÈSE      -->
+<!-- ========================================== -->
+<section class="step-pane hidden" id="stepSection-4">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Formulaire Foyer & Options Digitales (7 cols) -->
+<div class="lg:col-span-7 bg-surface-container-lowest rounded-xl p-space-lg shadow-sm space-y-space-md">
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container">family_restroom</span>
+<h2 class="font-title-md text-title-md text-on-surface">Foyer Chrétien &amp; Sécurité Numérique</h2>
+</div>
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed">Étape finale</span>
+</div>
+<!-- Conjoint(e) -->
+<div class="space-y-1">
+<label class="font-label-md text-label-md text-on-surface" for="conjointSearch">Conjoint(e) (Recherche dans le registre FULLGOPE)</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">search</span>
+<input class="w-full h-12 pl-10 pr-4 bg-surface-container-low focus:bg-surface-container-lowest rounded-xl font-body-md text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" id="conjointSearch" placeholder="Rechercher par Matricule ou Nom complet..." type="text"/>
+</div>
+</div>
+<!-- Enfants à charge à l'ECODIM -->
+<div class="space-y-2">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md text-on-surface">Enfants à charge (Inscrits à l'École du Dimanche)</label>
+<button class="font-label-sm text-label-sm text-primary font-bold hover:underline flex items-center gap-1" onclick="addChildRow()" type="button">
+<span class="material-symbols-outlined text-[16px]">add_circle</span> Ajouter un enfant
+              </button>
+</div>
+<div class="space-y-2" id="childrenContainer">
+<div class="flex items-center gap-2 p-2 bg-surface-container-low rounded-xl">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">child_care</span>
+<input class="flex-1 h-9 px-2 bg-surface-container-lowest rounded-lg font-body-sm text-body-sm text-on-surface focus:outline-none" placeholder="Prénom &amp; Nom de l'enfant" type="text"/>
+<input class="w-16 h-9 px-2 bg-surface-container-lowest rounded-lg font-body-sm text-body-sm text-on-surface focus:outline-none" max="17" min="0" placeholder="Âge" type="number"/>
+<button class="text-on-surface-variant hover:text-error p-1" onclick="this.parentElement.remove()" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Contact d'urgence ecclésial -->
+<div class="p-space-md rounded-xl bg-surface-container-low space-y-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-bold block">
+              Contact d'Urgence Immédiat
+            </span>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+<input class="h-11 px-3 bg-surface-container-lowest rounded-lg font-body-sm text-body-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" placeholder="Nom complet du tuteur / parent" type="text"/>
+<input class="h-11 px-3 bg-surface-container-lowest rounded-lg font-body-sm text-body-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" placeholder="Téléphone (+237 6XX...)" type="tel"/>
+</div>
+</div>
+<!-- Création de Compte & SMS de Bienvenue -->
+<div class="p-space-md rounded-xl bg-primary-fixed/30 space-y-3">
+<label class="flex items-start gap-3 cursor-pointer">
+<input checked="" class="mt-1 w-5 h-5 rounded text-primary" id="createAccountCheck" type="checkbox"/>
+<div class="space-y-0.5">
+<span class="font-body-md-medium text-body-md-medium text-on-surface block">
+                  Activer immédiatement l'accès mobile &amp; web FULLGOPE
+                </span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Génère un identifiant sécurisé et envoie par SMS le mot de passe initial avec le lien de téléchargement.
+                </p>
+</div>
+</label>
+</div>
+<!-- Consentement officiel RGPD / Cameroun -->
+<div class="pt-2">
+<label class="flex items-start gap-2.5 cursor-pointer">
+<input checked="" class="mt-1 w-4 h-4 rounded text-primary" required="" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+                Le fidèle consent à l'enregistrement de ses informations dans le registre national de la Full Gospel Mission Cameroun, conformément à la loi camerounaise sur la protection des données et aux règlements ecclésiaux en vigueur.
+              </span>
+</label>
+</div>
+</div>
+<!-- Fiche Synthèse / Visualisation de la Carte de Membre (5 cols) -->
+<div class="lg:col-span-5 flex flex-col gap-space-md">
+<!-- Carte d'Aperçu Format PVC FULLGOPE -->
+<div class="bg-gradient-to-br from-primary via-primary-container to-on-primary-fixed rounded-2xl p-6 text-on-primary shadow-xl relative overflow-hidden flex flex-col justify-between h-72">
+<!-- Décoration flamme en fond -->
+<span class="material-symbols-outlined absolute -right-6 -bottom-6 text-[180px] text-on-primary/10 select-none pointer-events-none">local_fire_department</span>
+<!-- Haut de carte -->
+<div class="flex items-center justify-between relative z-10">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-lg bg-surface-container-lowest flex items-center justify-center text-primary font-headline-sm text-headline-sm font-bold shadow-sm">
+                  FG
+                </div>
+<div>
+<span class="font-title-md text-title-md font-extrabold tracking-tight block leading-tight">FULLGOPE</span>
+<span class="font-label-sm text-[10px] text-primary-fixed block uppercase tracking-widest">Mission du Plein Évangile</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-lowest/20 backdrop-blur-md font-label-sm text-[11px] font-mono">
+                2026-TITULAIRE
+              </span>
+</div>
+<!-- Centre de carte : Photo & Données -->
+<div class="flex items-center gap-4 relative z-10 my-2">
+<div class="w-16 h-16 rounded-xl bg-surface-container-lowest/20 border border-on-primary/30 overflow-hidden flex-shrink-0 shadow-md">
+<img class="w-full h-full object-cover" data-alt="Small thumbnail preview of African church member smiling warmly for official credential membership badge card" id="cardPhotoSummary" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqtqO5z_N0ZJYvRG3DGT8LQXHstt1IG6J5JtrTnjMaNqYFajC9WUZvAmYxpKTGH_qiU5_lgWyjXcqLP8Mw_YAG_RmqwyFLTyyQIBoQprfVv7vhFZTTilb1DelgFg1V9IYLpluFBkD4VsY2BuQ97ijjQL8XMD626ThSx6nu2AhjfUjJiNf18XR2xcCabrv6Bhm7gO0mE_qTu8NRA1YGXD6UQb1UW76W7_n2cCgIsOQ"/>
+</div>
+<div class="min-w-0 flex-1">
+<span class="font-headline-sm text-headline-sm font-bold block truncate leading-tight" id="cardNomPrenom">
+                  TCHANA Jean-Baptiste
+                </span>
+<span class="font-body-sm text-body-sm text-primary-fixed block truncate mt-0.5" id="cardTemple">
+                  Temple Central Tsinga
+                </span>
+<span class="font-label-sm text-label-sm font-mono text-secondary-fixed block mt-1" id="cardMatricule">
+                  MBR-2026-00143
+                </span>
+</div>
+</div>
+<!-- Bas de carte -->
+<div class="flex items-center justify-between border-t border-on-primary/20 pt-3 relative z-10 font-label-sm text-label-sm text-primary-fixed">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span>Enrôlement Officiel</span>
+</div>
+<span class="font-mono text-[11px] text-surface-container-lowest">Yaoundé • Cameroun</span>
+</div>
+</div>
+<!-- Panneau Synthétique d'Enrôlement -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm space-y-space-sm flex-1">
+<div class="flex items-center justify-between pb-2 border-b border-surface-container">
+<span class="font-title-md text-title-md text-on-surface">Fiche de Synthèse</span>
+<span class="px-2 py-0.5 rounded-full font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-container"></span> Prêt pour validation
+              </span>
+</div>
+<dl class="space-y-2 text-body-sm text-body-sm">
+<div class="flex justify-between py-1">
+<dt class="text-on-surface-variant">Nom et Prénom :</dt>
+<dd class="font-bold text-on-surface" id="resumeNom">TCHANA Jean-Baptiste</dd>
+</div>
+<div class="flex justify-between py-1">
+<dt class="text-on-surface-variant">Téléphone principal :</dt>
+<dd class="font-mono text-on-surface" id="resumeTel">+237 670 00 00 00</dd>
+</div>
+<div class="flex justify-between py-1">
+<dt class="text-on-surface-variant">Résidence :</dt>
+<dd class="text-on-surface" id="resumeVille">Yaoundé (Tsinga)</dd>
+</div>
+<div class="flex justify-between py-1">
+<dt class="text-on-surface-variant">Assemblée :</dt>
+<dd class="text-on-surface" id="resumeTemple">Temple Central Tsinga</dd>
+</div>
+<div class="flex justify-between py-1">
+<dt class="text-on-surface-variant">Statut Sacramental :</dt>
+<dd class="text-on-surface font-medium text-tertiary" id="resumeBapteme">Baptisé par immersion</dd>
+</div>
+</dl>
+<div class="p-3 rounded-lg bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-secondary">security</span>
+<span>Signature pastorale numérique apposée dès la finalisation.</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================== -->
+<!-- BARRE D'ACTIONS FIXE & NAVIGATION          -->
+<!-- ========================================== -->
+<div class="sticky bottom-0 z-30 bg-surface-container-lowest/95 backdrop-blur-md rounded-2xl p-space-md shadow-xl flex items-center justify-between gap-space-md">
+<div>
+<button class="h-12 px-6 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface disabled:opacity-40 disabled:cursor-not-allowed font-label-md text-label-md flex items-center gap-2 transition-all" disabled="" id="prevBtn" onclick="navigateStep(-1)" type="button">
+<span class="material-symbols-outlined text-[20px]">arrow_back</span>
+<span>Précédent</span>
+</button>
+</div>
+<div class="flex items-center gap-3">
+<span class="hidden sm:inline font-label-sm text-label-sm text-on-surface-variant" id="stepCountIndicator">
+          Étape 1 sur 4
+        </span>
+<!-- Bouton Étape Suivante -->
+<button class="h-12 px-8 rounded-full bg-primary-container hover:bg-primary text-on-primary font-label-md text-label-md flex items-center gap-2 shadow-md transition-all active:scale-95" id="nextBtn" onclick="navigateStep(1)" type="button">
+<span>Continuer</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+<!-- Bouton Final de Soumission & Impression -->
+<button class="hidden h-12 px-8 rounded-full bg-primary-container hover:bg-primary text-on-primary font-label-md text-label-md flex items-center gap-2 shadow-lg transition-all active:scale-95" id="submitBtn" type="submit">
+<span class="hidden animate-spin" id="submitSpinner">
+<svg class="w-5 h-5 text-on-primary" fill="none" viewbox="0 0 24 24">
+<circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+<path class="opacity-75" d="M4 12a8 8 0 018-8v8H4z" fill="currentColor"></path>
+</svg>
+</span>
+<span class="material-symbols-outlined text-[20px]">badge</span>
+<span>Enregistrer &amp; Imprimer la Carte</span>
+</button>
+</div>
+</div>
+</form>
+<!-- Modal / Toast de Succès Pastorale (Caché au départ) -->
+<div class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-inverse-surface/60 backdrop-blur-sm" id="successModal">
+<div class="bg-surface-container-lowest max-w-md w-full rounded-2xl p-space-lg shadow-2xl space-y-space-md text-center animate-fade-in">
+<div class="w-16 h-16 rounded-full bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center mx-auto shadow-md">
+<span class="material-symbols-outlined text-[36px]">how_to_reg</span>
+</div>
+<div class="space-y-1">
+<h3 class="font-headline-md text-headline-md text-on-surface">Enrôlement Enregistré !</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Le fidèle a été inscrit avec succès sous le matricule officiel <span class="font-bold text-primary">MBR-2026-00143</span>.
+        </p>
+</div>
+<div class="p-3 bg-surface-container-low rounded-xl text-left font-body-sm text-body-sm space-y-1">
+<div class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-tertiary text-[18px]">mark_email_read</span>
+<span>SMS d'accueil FULLGOPE transmis.</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface">
+<span class="material-symbols-outlined text-primary text-[18px]">print</span>
+<span>Impression badge PVC déclenchée.</span>
+</div>
+</div>
+<div class="flex flex-col gap-2 pt-2">
+<button class="w-full h-12 rounded-xl bg-primary-container text-on-primary font-label-md text-label-md flex items-center justify-center gap-2 shadow-md" onclick="window.location.reload()" type="button">
+<span>Nouvel Enrôlement</span>
+</button>
+<button class="w-full h-11 rounded-xl bg-surface-container text-on-surface font-label-md text-label-md" onclick="document.getElementById('successModal').classList.add('hidden')" type="button">
+<span>Fermer et Consulter la Fiche</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  let currentStep = 1;
+  const totalSteps = 4;
+
+  function goToStep(step) {
+    if (step < 1 || step > totalSteps) return;
+    
+    // Si on avance, petite validation préventive
+    if (step > currentStep && !validateCurrentStep(currentStep)) {
+      return;
+    }
+
+    currentStep = step;
+    renderStepView();
+  }
+
+  function navigateStep(direction) {
+    const targetStep = currentStep + direction;
+    if (targetStep < 1 || targetStep > totalSteps) return;
+
+    if (direction > 0 && !validateCurrentStep(currentStep)) {
+      return;
+    }
+
+    currentStep = targetStep;
+    renderStepView();
+  }
+
+  function validateCurrentStep(step) {
+    if (step === 1) {
+      const nom = document.getElementById('nomFamille').value.trim();
+      const errNom = document.getElementById('err-nomFamille');
+      if (!nom) {
+        errNom.classList.remove('hidden');
+        errNom.classList.add('flex');
+        document.getElementById('nomFamille').focus();
+        return false;
+      } else {
+        errNom.classList.add('hidden');
+        errNom.classList.remove('flex');
+      }
+
+      if (!validateBirthDate()) return false;
+    }
+
+    if (step === 2) {
+      const tel = document.getElementById('telPrincipal').value.replace(/\s+/g, '');
+      const errPhone = document.getElementById('err-phone');
+      if (tel.length < 9) {
+        errPhone.classList.remove('hidden');
+        errPhone.classList.add('flex');
+        document.getElementById('telPrincipal').focus();
+        return false;
+      } else {
+        errPhone.classList.add('hidden');
+        errPhone.classList.remove('flex');
+      }
+    }
+
+    if (step === 3) {
+      if (!validateBaptismDate()) return false;
+    }
+
+    return true;
+  }
+
+  function renderStepView() {
+    // Masquer / afficher sections
+    for (let i = 1; i <= totalSteps; i++) {
+      const sec = document.getElementById(`stepSection-${i}`);
+      if (sec) {
+        if (i === currentStep) {
+          sec.classList.remove('hidden');
+        } else {
+          sec.classList.add('hidden');
+        }
+      }
+
+      // Mettre à jour l'état du stepper en haut
+      const badge = document.getElementById(`stepBadge-${i}`);
+      const label = document.getElementById(`stepLabel-${i}`);
+      
+      if (i < currentStep) {
+        // Validé
+        badge.className = "w-10 h-10 rounded-full flex items-center justify-center font-headline-sm text-headline-sm transition-all bg-tertiary-container text-on-tertiary shadow-sm";
+        badge.innerHTML = '<span class="material-symbols-outlined text-[20px]">done</span>';
+        label.className = "font-title-md text-title-md text-on-surface font-semibold";
+      } else if (i === currentStep) {
+        // En cours
+        badge.className = "w-10 h-10 rounded-full flex items-center justify-center font-headline-sm text-headline-sm transition-all bg-primary-container text-on-primary shadow-md";
+        badge.innerHTML = getStepDefaultIcon(i);
+        label.className = "font-title-md text-title-md text-primary font-bold";
+      } else {
+        // Non atteint
+        badge.className = "w-10 h-10 rounded-full flex items-center justify-center font-headline-sm text-headline-sm transition-all bg-surface-container text-on-surface-variant";
+        badge.innerHTML = getStepDefaultIcon(i);
+        label.className = "font-title-md text-title-md text-on-surface-variant font-medium";
+      }
+
+      // Trait de liaison
+      if (i < totalSteps) {
+        const line = document.getElementById(`stepProgress-${i}`);
+        if (line) {
+          line.style.width = (i < currentStep) ? "100%" : "0%";
+        }
+      }
+    }
+
+    // Progression mobile
+    const percent = Math.round((currentStep / totalSteps) * 100);
+    const mobileBar = document.getElementById('mobileProgressBar');
+    const mobileText = document.getElementById('mobileProgressPercent');
+    if (mobileBar) mobileBar.style.width = `${percent}%`;
+    if (mobileText) mobileText.textContent = `${percent}%`;
+
+    // Gestion des boutons bas de page
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const submitBtn = document.getElementById('submitBtn');
+    const stepCountIndicator = document.getElementById('stepCountIndicator');
+
+    prevBtn.disabled = (currentStep === 1);
+    stepCountIndicator.textContent = `Étape ${currentStep} sur ${totalSteps}`;
+
+    if (currentStep === totalSteps) {
+      nextBtn.classList.add('hidden');
+      submitBtn.classList.remove('hidden');
+    } else {
+      nextBtn.classList.remove('hidden');
+      submitBtn.classList.add('hidden');
+    }
+
+    // Scroll doux vers le haut du formulaire
+    window.scrollTo({ top: 120, behavior: 'smooth' });
+    updateLiveSummary();
+  }
+
+  function getStepDefaultIcon(step) {
+    switch (step) {
+      case 1: return '<span class="material-symbols-outlined text-[20px]">person</span>';
+      case 2: return '<span class="material-symbols-outlined text-[20px]">contact_phone</span>';
+      case 3: return '<span class="material-symbols-outlined text-[20px]">local_fire_department</span>';
+      case 4: return '<span class="material-symbols-outlined text-[20px]">verified_user</span>';
+      default: return '';
+    }
+  }
+
+  // Formatage du Téléphone Camerounais (ex: 6XX XX XX XX)
+  function formatCamerounPhone(input) {
+    let raw = input.value.replace(/\D/g, '');
+    if (raw.startsWith('237')) {
+      raw = raw.substring(3);
+    }
+    raw = raw.substring(0, 9);
+    
+    // Groupement par 3 2 2 2
+    let formatted = '';
+    if (raw.length > 0) formatted += raw.substring(0, 3);
+    if (raw.length > 3) formatted += ' ' + raw.substring(3, 5);
+    if (raw.length > 5) formatted += ' ' + raw.substring(5, 7);
+    if (raw.length > 7) formatted += ' ' + raw.substring(7, 9);
+
+    input.value = formatted;
+  }
+
+  // Détection de l'opérateur (MTN, Orange, Camtel)
+  function updateCarrierBadge(val) {
+    const raw = val.replace(/\s+/g, '');
+    const badge = document.getElementById('carrierBadge');
+    if (raw.length < 2) {
+      badge.classList.add('hidden');
+      return;
+    }
+
+    badge.classList.remove('hidden');
+    const prefix2 = raw.substring(0, 2);
+    const prefix3 = raw.substring(0, 3);
+
+    // MTN Cameroun : 67X, 650-654, 680-683
+    if (prefix2 === '67' || (raw.startsWith('65') && ['650','651','652','653','654'].includes(prefix3)) || prefix2 === '68') {
+      badge.textContent = 'MTN Cameroon';
+      badge.className = 'px-2 py-0.5 rounded-full font-label-sm text-[11px] font-bold bg-[#FFCC00]/20 text-[#8B6B00]';
+    } 
+    // Orange Cameroun : 69X, 655-659
+    else if (prefix2 === '69' || (raw.startsWith('65') && ['655','656','657','658','659'].includes(prefix3))) {
+      badge.textContent = 'Orange Cameroun';
+      badge.className = 'px-2 py-0.5 rounded-full font-label-sm text-[11px] font-bold bg-[#FF7900]/20 text-[#C45300]';
+    } 
+    // Camtel : 62X, 242X, etc.
+    else if (prefix2 === '62' || raw.startsWith('242') || raw.startsWith('222')) {
+      badge.textContent = 'Camtel Blue';
+      badge.className = 'px-2 py-0.5 rounded-full font-label-sm text-[11px] font-bold bg-secondary-fixed text-on-secondary-fixed';
+    } else {
+      badge.textContent = 'Opérateur Local';
+      badge.className = 'px-2 py-0.5 rounded-full font-label-sm text-[11px] font-bold bg-surface-container text-on-surface-variant';
+    }
+  }
+
+  function toggleWhatsappSync(checkbox) {
+    const mainTel = document.getElementById('telPrincipal').value;
+    const waInput = document.getElementById('telWhatsapp');
+    if (checkbox.checked) {
+      waInput.value = mainTel ? '+237 ' + mainTel : '';
+      waInput.readOnly = true;
+    } else {
+      waInput.readOnly = false;
+    }
+  }
+
+  function validateBirthDate() {
+    const bDateInput = document.getElementById('dateNaissance');
+    const err = document.getElementById('err-dateNaissance');
+    if (!bDateInput.value) return true;
+
+    const bDate = new Date(bDateInput.value);
+    const today = new Date();
+    if (bDate > today) {
+      err.classList.remove('hidden');
+      err.classList.add('flex');
+      return false;
+    } else {
+      err.classList.add('hidden');
+      err.classList.remove('flex');
+      return true;
+    }
+  }
+
+  function validateBaptismDate() {
+    const bDateInput = document.getElementById('dateNaissance');
+    const bapInput = document.getElementById('dateBaptemeEau');
+    const err = document.getElementById('err-baptemeDoctrinal');
+
+    if (!bapInput.value || !bDateInput.value) return true;
+
+    const bDate = new Date(bDateInput.value);
+    const bapDate = new Date(bapInput.value);
+
+    if (bapDate < bDate) {
+      err.classList.remove('hidden');
+      err.classList.add('flex');
+      return false;
+    } else {
+      err.classList.add('hidden');
+      err.classList.remove('flex');
+      return true;
+    }
+  }
+
+  function validateEmailField(input) {
+    const err = document.getElementById('err-email');
+    if (!input.value) {
+      err.classList.add('hidden');
+      return;
+    }
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!regex.test(input.value)) {
+      err.classList.remove('hidden');
+      err.classList.add('flex');
+    } else {
+      err.classList.add('hidden');
+      err.classList.remove('flex');
+    }
+  }
+
+  function toggleBaptemeFields(isYes) {
+    const box = document.getElementById('detailsBapteme');
+    if (isYes) {
+      box.classList.remove('hidden');
+    } else {
+      box.classList.add('hidden');
+    }
+    updateLiveSummary();
+  }
+
+  function previewUploadedPhoto(event) {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        document.getElementById('photoPreview').src = e.target.result;
+        document.getElementById('cardPhotoSummary').src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+  }
+
+  function addChildRow() {
+    const container = document.getElementById('childrenContainer');
+    const div = document.createElement('div');
+    div.className = "flex items-center gap-2 p-2 bg-surface-container-low rounded-xl";
+    div.innerHTML = `
+      <span class="material-symbols-outlined text-on-surface-variant text-[20px]">child_care</span>
+      <input type="text" placeholder="Prénom & Nom de l'enfant" class="flex-1 h-9 px-2 bg-surface-container-lowest rounded-lg font-body-sm text-body-sm text-on-surface focus:outline-none">
+      <input type="number" placeholder="Âge" min="0" max="17" class="w-16 h-9 px-2 bg-surface-container-lowest rounded-lg font-body-sm text-body-sm text-on-surface focus:outline-none">
+      <button type="button" onclick="this.parentElement.remove()" class="text-on-surface-variant hover:text-error p-1">
+        <span class="material-symbols-outlined text-[18px]">delete</span>
+      </button>
+    `;
+    container.appendChild(div);
+  }
+
+  function updateLiveSummary() {
+    const nom = document.getElementById('nomFamille').value.trim() || 'TCHANA';
+    const prenom = document.getElementById('prenomMembre').value.trim() || 'Jean-Baptiste';
+    const fullName = `${nom} ${prenom}`;
+
+    const tel = document.getElementById('telPrincipal').value || '670 00 00 00';
+    const ville = document.getElementById('villeResidence').value || 'Yaoundé';
+    const quartier = document.getElementById('quartierResidence').value || 'Tsinga';
+    const temple = document.getElementById('selectTemple').value || 'Temple Central Tsinga';
+
+    const baptiseEau = document.querySelector('input[name="baptiseEau"]:checked')?.value === 'oui';
+
+    // Maj Carte PVC
+    document.getElementById('cardNomPrenom').textContent = fullName;
+    document.getElementById('cardTemple').textContent = temple;
+
+    // Maj Fiche Résumé
+    document.getElementById('resumeNom').textContent = fullName;
+    document.getElementById('resumeTel').textContent = '+237 ' + tel;
+    document.getElementById('resumeVille').textContent = `${ville} (${quartier})`;
+    document.getElementById('resumeTemple').textContent = temple;
+    document.getElementById('resumeBapteme').textContent = baptiseEau ? 'Baptisé(e) par immersion' : 'Non baptisé(e) d\'eau';
+  }
+
+  function submitEnrollment() {
+    const submitBtn = document.getElementById('submitBtn');
+    const spinner = document.getElementById('submitSpinner');
+
+    submitBtn.disabled = true;
+    spinner.classList.remove('hidden');
+
+    setTimeout(() => {
+      submitBtn.disabled = false;
+      spinner.classList.add('hidden');
+      document.getElementById('successModal').classList.remove('hidden');
+    }, 1200);
+  }
+
+  // Mise à jour de l'horodatage automatique du brouillon
+  setInterval(() => {
+    const now = new Date();
+    const timeStr = now.toTimeString().split(' ')[0];
+    const draftElem = document.getElementById('draftTimestamp');
+    if (draftElem) draftElem.textContent = timeStr;
+  }, 45000);
+</script></main></div><div class="md:hidden fixed bottom-0 left-0 right-0 h-16 bg-surface-container-lowest/95 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.06)] z-50 flex items-center justify-around px-2"><a class="flex flex-col items-center justify-center flex-1 py-1 text-primary-container" href="#"><span class="material-symbols-outlined text-[22px]">grid_view</span><span class="font-label-sm text-[10px] mt-0.5">Accueil</span></a><a class="flex flex-col items-center justify-center flex-1 py-1 text-on-surface-variant" href="#"><span class="material-symbols-outlined text-[22px]">groups</span><span class="font-label-sm text-[10px] mt-0.5">Membres</span></a><a class="flex flex-col items-center justify-center flex-1 py-1 text-on-surface-variant" href="#"><span class="material-symbols-outlined text-[22px]">payments</span><span class="font-label-sm text-[10px] mt-0.5">Finance</span></a><a class="flex flex-col items-center justify-center flex-1 py-1 text-on-surface-variant relative" href="#"><span class="material-symbols-outlined text-[22px]">chat_bubble</span><span class="absolute top-1 right-5 w-2 h-2 rounded-full bg-primary-container"></span><span class="font-label-sm text-[10px] mt-0.5">Messages</span></a><button class="flex flex-col items-center justify-center flex-1 py-1 text-on-surface-variant"><span class="material-symbols-outlined text-[22px]">menu_open</span><span class="font-label-sm text-[10px] mt-0.5">Plus</span></button></div></body></html>

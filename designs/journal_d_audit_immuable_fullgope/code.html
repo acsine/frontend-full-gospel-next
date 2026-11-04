@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+
+<html lang="fr"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}.route-loader{position:fixed;top:0;left:0;height:3px;width:68%;background:#C8102E;z-index:9999;box-shadow:0 0 10px rgba(200,16,46,0.5);animation:pulse-bar 2s infinite ease-in-out;}@keyframes pulse-bar{0%{width:20%;opacity:0.8;}50%{width:85%;opacity:1;}100%{width:68%;opacity:0.9;}}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"on-primary":"#ffffff","surface-bright":"#fcf8fe","primary-fixed-dim":"#ffb3b1","surface-container-highest":"#e4e1e7","surface-variant":"#e4e1e7","secondary-fixed-dim":"#ffb956","on-error":"#ffffff","surface-dim":"#dcd9df","secondary-container":"#feb64e","on-secondary-container":"#714800","outline":"#906f6e","surface-tint":"#bf0229","on-tertiary":"#ffffff","inverse-on-surface":"#f3eff6","tertiary":"#00592b","on-secondary-fixed":"#2a1800","outline-variant":"#e5bdbb","on-tertiary-container":"#86faa7","on-error-container":"#93000a","on-primary-fixed-variant":"#92001c","secondary":"#835400","primary":"#9e001f","on-surface-variant":"#5c403f","surface-container":"#f0edf3","error":"#ba1a1a","on-background":"#1b1b1f","primary-container":"#c8102e","primary-fixed":"#ffdad8","surface-container-high":"#eae7ed","background":"#fcf8fe","error-container":"#ffdad6","tertiary-container":"#00743a","on-tertiary-fixed-variant":"#005228","on-primary-fixed":"#410007","on-secondary":"#ffffff","on-secondary-fixed-variant":"#643f00","tertiary-fixed":"#86faa7","on-tertiary-fixed":"#00210c","inverse-surface":"#303034","surface-container-low":"#f6f2f8","surface-container-lowest":"#ffffff","surface":"#fcf8fe","on-surface":"#1b1b1f","inverse-primary":"#ffb3b1","secondary-fixed":"#ffddb5","tertiary-fixed-dim":"#6add8d","on-primary-container":"#ffdad8"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-sm":"0.5rem","margin-desktop":"3rem","gutter":"1rem","space-lg":"1.5rem","space-xl":"2.5rem","space-xs":"0.25rem","gutter-desktop":"2rem","space-md":"1rem","margin":"1rem","margin-tablet":"2rem","gutter-tablet":"1.5rem"},"fontFamily":{"display-lg-mobile":["Plus Jakarta Sans"],"currency-display":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"label-md":["Inter"],"body-md":["Inter"],"headline-lg":["Plus Jakarta Sans"],"body-lg":["Inter"],"title-md":["Plus Jakarta Sans"],"body-md-medium":["Inter"],"label-sm":["Inter"],"body-sm":["Inter"],"headline-lg-mobile":["Plus Jakarta Sans"],"display-lg":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"]},"fontSize":{"display-lg-mobile":["34px",{"lineHeight":"42px","fontWeight":"800"}],"currency-display":["28px",{"lineHeight":"36px","fontWeight":"700"}],"headline-sm":["20px",{"lineHeight":"28px","fontWeight":"600"}],"label-md":["14px",{"lineHeight":"20px","fontWeight":"500"}],"body-md":["16px",{"lineHeight":"24px","fontWeight":"400"}],"headline-lg":["32px",{"lineHeight":"40px","fontWeight":"700"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"title-md":["18px",{"lineHeight":"26px","fontWeight":"600"}],"body-md-medium":["16px",{"lineHeight":"24px","fontWeight":"500"}],"label-sm":["12px",{"lineHeight":"16px","fontWeight":"600"}],"body-sm":["14px",{"lineHeight":"20px","fontWeight":"400"}],"headline-lg-mobile":["26px",{"lineHeight":"34px","fontWeight":"700"}],"display-lg":["48px",{"lineHeight":"56px","fontWeight":"800"}],"headline-md":["24px",{"lineHeight":"32px","fontWeight":"700"}]}}}}</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><div class="route-loader"></div><aside class="fixed left-0 top-0 h-full w-72 bg-inverse-surface text-inverse-on-surface z-50 flex flex-col justify-between hidden md:flex"><div class="flex flex-col flex-1 overflow-y-auto"><div class="px-space-md py-space-md flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-10 h-10 rounded-xl bg-primary-container flex items-center justify-center text-on-primary font-headline-sm text-headline-sm">FG</div><div><span class="font-headline-sm text-headline-sm tracking-tight text-surface-container-lowest block">FULLGOPE</span><span class="font-label-sm text-label-sm text-surface-variant flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-tertiary-fixed"></span>Connecté • Tsinga</span></div></div><button class="w-8 h-8 rounded-lg flex items-center justify-center text-surface-variant hover:text-surface-container-lowest transition-colors"><span class="material-symbols-outlined text-[20px]">dock_to_right</span></button></div><div class="px-space-md py-space-xs"><div class="bg-inverse-on-surface/5 rounded-lg px-space-sm py-1.5"><p class="font-label-sm text-label-sm text-secondary-fixed italic leading-tight">« No Other Christ, No Other Gospel »</p><p class="font-label-sm text-[10px] text-surface-dim uppercase tracking-wider mt-0.5">Mission du Plein Évangile (1961)</p></div></div><nav class="flex-1 px-space-sm py-space-md space-y-space-md" data-active-classes="bg-primary-container text-on-primary font-body-md-medium rounded-xl"><div class="space-y-1"><span class="px-space-sm font-label-sm text-label-sm uppercase tracking-wider text-surface-dim block mb-1">Principal</span><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="accueil" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">grid_view</span><span class="font-body-sm text-body-sm">Accueil</span></div></a></div><div class="space-y-1"><span class="px-space-sm font-label-sm text-label-sm uppercase tracking-wider text-surface-dim block mb-1">Communauté</span><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="membres" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">groups</span><span class="font-body-sm text-body-sm">Membres</span></div><span class="px-2 py-0.5 rounded-full font-label-sm text-[11px] bg-inverse-on-surface/15 text-surface-bright">1 450</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="departements" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">diversity_3</span><span class="font-body-sm text-body-sm">Départements</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="organisation" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">account_tree</span><span class="font-body-sm text-body-sm">Organisation</span></div></a></div><div class="space-y-1"><span class="px-space-sm font-label-sm text-label-sm uppercase tracking-wider text-surface-dim block mb-1">Ministère &amp; Activités</span><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="rapports" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">assignment</span><span class="font-body-sm text-body-sm">Rapports</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="publications" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">menu_book</span><span class="font-body-sm text-body-sm">Publications</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="evenements-et-plannings" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">calendar_month</span><span class="font-body-sm text-body-sm">Événements &amp; Plannings</span></div><span class="px-2 py-0.5 rounded-full font-label-sm text-[11px] bg-secondary-container text-on-secondary-container font-bold">3</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="reseau-social" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">hub</span><span class="font-body-sm text-body-sm">Réseau social</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="messagerie" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">chat_bubble</span><span class="font-body-sm text-body-sm">Messagerie</span></div><span class="px-2 py-0.5 rounded-full font-label-sm text-[11px] bg-primary text-on-primary font-bold">12</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="mediatheque" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">video_library</span><span class="font-body-sm text-body-sm">Médiathèque</span></div></a></div><div class="space-y-1"><span class="px-space-sm font-label-sm text-label-sm uppercase tracking-wider text-surface-dim block mb-1">Intendance &amp; Gouvernance</span><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="finance" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">payments</span><span class="font-body-sm text-body-sm">Finance</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="dons-et-campagnes" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">volunteer_activism</span><span class="font-body-sm text-body-sm">Dons &amp; Campagnes</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="administration" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">admin_panel_settings</span><span class="font-body-sm text-body-sm">Administration</span></div></a></div></nav></div><div class="p-space-md bg-inverse-on-surface/5 flex items-center justify-between"><div class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-tertiary-fixed-dim"></span><span class="font-label-sm text-label-sm text-surface-variant">Serveur Yaoundé • v2.4</span></div><button class="text-surface-dim hover:text-surface-container-lowest transition-colors"><span class="material-symbols-outlined text-[18px]">help</span></button></div></aside><div class="md:pl-72"><header class="fixed top-0 left-0 md:left-72 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 px-space-md flex items-center justify-between"><div class="flex items-center gap-space-sm flex-1 max-w-xl"><button class="md:hidden w-10 h-10 rounded-xl flex items-center justify-center text-on-surface hover:bg-surface-container"><span class="material-symbols-outlined">menu</span></button><div class="relative flex-1 hidden sm:block"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">search</span><input class="w-full h-10 pl-10 pr-20 bg-surface-container-low rounded-xl font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant/70 focus:outline-none focus:bg-surface-container-lowest" placeholder="Rechercher fidèles, assemblées, reçus MoMo/Orange..." type="text"/><kbd class="absolute right-2.5 top-1/2 -translate-y-1/2 px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-[11px]">&amp;#8984;K</kbd></div><div class="hidden lg:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface"><span class="material-symbols-outlined text-primary text-[18px]">church</span><span class="font-body-md-medium text-body-md-medium">Pasteur Titulaire</span><span class="text-on-surface-variant">•</span><span class="text-on-surface-variant">District Centre (Temple Tsinga)</span></div></div><div class="flex items-center gap-space-sm"><div class="flex items-center gap-1 p-1 bg-surface-container-low rounded-full"><button class="px-2.5 py-1 rounded-full font-label-sm text-label-sm font-bold bg-inverse-surface text-surface-container-lowest">FR</button><button class="px-2.5 py-1 rounded-full font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface">EN</button></div><button class="h-9 px-2.5 rounded-xl bg-surface-container text-on-surface-variant hover:text-on-surface flex items-center gap-1.5 font-label-sm text-label-sm" title="Basculer l'état de chargement skeleton"><span class="material-symbols-outlined text-[18px] text-secondary">hourglass_empty</span><span class="hidden xl:inline">Skeleton</span></button><button class="relative w-10 h-10 rounded-xl flex items-center justify-center text-on-surface hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2 right-2 w-2.5 h-2.5 rounded-full bg-primary-container ring-2 ring-surface-container-lowest"></span></button><div class="flex items-center gap-2 pl-2 border-l border-surface-container-high"><div class="relative"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-tertiary-container ring-2 ring-surface-container-lowest"></span></div><div class="hidden sm:block text-left"><span class="font-label-md text-label-md text-on-surface block leading-tight">Rev. N. Samuel</span><span class="font-label-sm text-label-sm text-on-surface-variant block leading-tight">District Tsinga</span></div><span class="material-symbols-outlined text-on-surface-variant text-[18px]">arrow_drop_down</span></div></div></header><main class="w-full pt-16 bg-surface min-h-screen px-space-md md:px-gutter-desktop py-space-lg pb-24 md:pb-space-lg"><div class="flex flex-col w-full">
+<!-- Fil d'Ariane & Contexte Institutionnel -->
+<div class="flex flex-wrap items-center justify-between gap-4 mb-4">
+<nav class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm">
+<a class="hover:text-primary transition-colors flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[16px]">home</span>
+<span>Accueil</span>
+</a>
+<span class="text-outline-variant">/</span>
+<span class="hover:text-primary transition-colors">Administration &amp; Sécurité</span>
+<span class="text-outline-variant">/</span>
+<span class="text-primary font-bold">Journal d'Audit Immuable</span>
+</nav>
+<div class="flex items-center gap-2.5">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-tertiary/10 text-tertiary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] animate-pulse">lock</span>
+<span>Chiffrement SHA-256 Actif</span>
+</span>
+<span class="hidden sm:inline-flex items-center gap-1 px-3 py-1 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span>WORM Certifié RFC 3161</span>
+</span>
+</div>
+</div>
+<!-- En-tête Titre & Actions Stratégiques -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6">
+<div class="space-y-1">
+<div class="flex items-center gap-3">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+          Journal d'Audit Immuable &amp; Registre Inaltérable (WORM)
+        </h1>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-2">
+<span class="inline-block w-2 h-2 rounded-full bg-primary-container"></span>
+<span class="font-body-md-medium text-body-md-medium text-primary">Manuel d'Ordre et de Discipline 1961</span>
+<span>— Dispositif de Traçabilité Absolue &amp; Non-Répudiation Juridictionnelle</span>
+</p>
+</div>
+<!-- Actions d'En-tête -->
+<div class="flex flex-wrap items-center gap-3">
+<button class="h-12 px-5 rounded-full bg-primary-container hover:bg-primary text-on-primary font-title-md text-title-md flex items-center gap-2.5 shadow-sm transition-all transform active:scale-95" id="verify-chain-btn" onclick="triggerVerification()">
+<span class="material-symbols-outlined text-[20px]" id="verify-spinner">security_update_good</span>
+<span>Vérifier la chaîne de scellés</span>
+</button>
+<!-- Menu Déroulant Exporter -->
+<div class="relative">
+<button class="h-12 px-5 rounded-full bg-surface-container-lowest hover:bg-surface-container-low text-on-surface font-title-md text-title-md flex items-center gap-2 shadow-sm transition-all" id="export-dropdown-toggle" onclick="toggleExportMenu()">
+<span class="material-symbols-outlined text-secondary text-[20px]">download</span>
+<span>Exporter le registre</span>
+<span class="material-symbols-outlined text-[18px]">expand_more</span>
+</button>
+<!-- Dropdown Popover -->
+<div class="hidden absolute right-0 mt-2 w-72 bg-surface-container-lowest rounded-xl shadow-xl p-2 z-50 transition-all animate-in fade-in slide-in-from-top-2 duration-150" id="export-menu">
+<div class="px-3 py-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block">Formats d'Audit Légaux</span>
+</div>
+<a class="flex items-start gap-3 p-3 rounded-lg hover:bg-surface-container transition-colors group" href="#" onclick="closeExportMenu()">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">code</span>
+</div>
+<div>
+<span class="font-body-md-medium text-body-md-medium text-on-surface block leading-tight">JSON crypté (SHA-256)</span>
+<span class="font-label-sm text-[11px] text-on-surface-variant block mt-0.5">Payloads &amp; métadonnées brutes</span>
+</div>
+</a>
+<a class="flex items-start gap-3 p-3 rounded-lg hover:bg-surface-container transition-colors group" href="#" onclick="closeExportMenu()">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-on-secondary transition-colors">
+<span class="material-symbols-outlined text-[18px]">table_view</span>
+</div>
+<div>
+<span class="font-body-md-medium text-body-md-medium text-on-surface block leading-tight">CSV Auditeur Externe</span>
+<span class="font-label-sm text-[11px] text-on-surface-variant block mt-0.5">Normalisé OHADA &amp; Commissariat</span>
+</div>
+</a>
+<a class="flex items-start gap-3 p-3 rounded-lg hover:bg-surface-container transition-colors group" href="#" onclick="closeExportMenu()">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-tertiary group-hover:bg-tertiary group-hover:text-on-tertiary transition-colors">
+<span class="material-symbols-outlined text-[18px]">picture_as_pdf</span>
+</div>
+<div>
+<span class="font-body-md-medium text-body-md-medium text-on-surface block leading-tight">Rapport PDF Certifié</span>
+<span class="font-label-sm text-[11px] text-on-surface-variant block mt-0.5">Scellement numérique avec QR-Code</span>
+</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Cartes d'Indicateurs de Gouvernance & Cryptographie (Bento Style) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 mb-6">
+<!-- Indicateur 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant block mb-1">Événements consignés (30j)</span>
+<span class="font-headline-lg text-headline-lg text-on-surface font-extrabold tracking-tight">48 920</span>
+</div>
+<div class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[26px]">database</span>
+</div>
+</div>
+<div class="mt-4 flex items-center gap-2">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-tertiary">
+<span class="material-symbols-outlined text-[16px]">trending_up</span>
+<span>+3,2% ce mois</span>
+</span>
+<span class="text-outline-variant">•</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">100% scellés à l'écriture</span>
+</div>
+</div>
+<!-- Indicateur 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant block mb-1">Intégrité cryptographique</span>
+<span class="font-headline-lg text-headline-lg text-tertiary font-extrabold tracking-tight">100%</span>
+</div>
+<div class="w-12 h-12 rounded-xl bg-tertiary/10 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[26px]">verified_user</span>
+</div>
+</div>
+<div class="mt-4 flex items-center gap-2">
+<div class="w-2.5 h-2.5 rounded-full bg-tertiary animate-pulse"></div>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate">Merkle Tree intact • Zéro rupture</span>
+</div>
+</div>
+<!-- Indicateur 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant block mb-1">Alertes critiques / Anomalies</span>
+<span class="font-headline-lg text-headline-lg text-on-surface font-extrabold tracking-tight">0</span>
+</div>
+<div class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[26px]">gavel</span>
+</div>
+</div>
+<div class="mt-4 flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-tertiary font-bold">Aucun dossier en litige</span>
+<span class="text-outline-variant">•</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Quorum validé</span>
+</div>
+</div>
+<!-- Indicateur 4 -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant block mb-1">Rétention légale statutaire</span>
+<span class="font-headline-lg text-headline-lg text-on-surface font-extrabold tracking-tight">10 Ans</span>
+</div>
+<div class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[26px]">history_edu</span>
+</div>
+</div>
+<div class="mt-4 flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Norme Synodale 1961 • Immuable</span>
+</div>
+</div>
+</div>
+<!-- Barre de Recherche & Filtres Avancés -->
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-sm mb-6 space-y-3">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-3">
+<!-- Recherche Plein Texte -->
+<div class="lg:col-span-4 relative">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">search</span>
+<input class="w-full h-12 pl-11 pr-4 bg-surface-container-low rounded-xl font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant/70 focus:outline-none focus:bg-surface-container-lowest transition-all" id="filter-search" oninput="filterTable()" placeholder="Rechercher mot-clé, ID scellé #SHA, IP, matricule..." type="text"/>
+</div>
+<!-- Filtre Action Canonique -->
+<div class="lg:col-span-3">
+<div class="relative">
+<select class="w-full h-12 pl-3 pr-9 bg-surface-container-low rounded-xl font-body-sm text-body-sm text-on-surface appearance-none focus:outline-none focus:bg-surface-container-lowest cursor-pointer" id="filter-action" onchange="filterTable()">
+<option value="">Toutes les actions canoniques</option>
+<option value="Connexion">Connexion réussie / Session</option>
+<option value="Révocation">Révocation de rôle statutaire</option>
+<option value="Clôture">Clôture de caisse &amp; PV</option>
+<option value="Passation">Passation pastorale / Mutation</option>
+<option value="Décaissement">Décaissement financier / Trésor</option>
+<option value="Modification">Modification d'ordonnateur</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none text-[20px]">expand_more</span>
+</div>
+</div>
+<!-- Filtre Juridiction / Entité -->
+<div class="lg:col-span-3">
+<div class="relative">
+<select class="w-full h-12 pl-3 pr-9 bg-surface-container-low rounded-xl font-body-sm text-body-sm text-on-surface appearance-none focus:outline-none focus:bg-surface-container-lowest cursor-pointer" id="filter-entity" onchange="filterTable()">
+<option value="">Toutes les juridictions / entités</option>
+<option value="Temple Tsinga">Assemblée Centrale Tsinga</option>
+<option value="District Centre 1">District Centre 1 (Yaoundé)</option>
+<option value="Conseil Régional">Conseil Régional Sud/Centre</option>
+<option value="Bureau National">Bureau National Éxécutif</option>
+<option value="Caisse Centrale">Caisse Centrale de Solidarité</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none text-[20px]">expand_more</span>
+</div>
+</div>
+<!-- Sélecteur de Période -->
+<div class="lg:col-span-2">
+<div class="relative">
+<select class="w-full h-12 pl-3 pr-9 bg-surface-container-low rounded-xl font-body-sm text-body-sm text-on-surface appearance-none focus:outline-none focus:bg-surface-container-lowest cursor-pointer" id="filter-period">
+<option value="today">Aujourd'hui</option>
+<option selected="" value="7d">7 derniers jours</option>
+<option value="march2025">Mars 2025</option>
+<option value="custom">Période personnalisée...</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none text-[20px]">date_range</span>
+</div>
+</div>
+</div>
+<!-- Filtres Rapides / Tags de Filtrage Populaire -->
+<div class="flex flex-wrap items-center gap-2 pt-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Auteurs fréquents :</span>
+<button class="px-3 py-1 rounded-full bg-surface-container-low hover:bg-surface-container font-label-sm text-label-sm text-on-surface transition-all flex items-center gap-1.5" onclick="quickFilterAuthor('Rev. Samuel N.')">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+<span>Rev. Samuel N. [PAS-1998-0012]</span>
+</button>
+<button class="px-3 py-1 rounded-full bg-surface-container-low hover:bg-surface-container font-label-sm text-label-sm text-on-surface transition-all flex items-center gap-1.5" onclick="quickFilterAuthor('Diacre Pierre Mba')">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span>Diacre Pierre Mba [TR-2004-019]</span>
+</button>
+<button class="px-3 py-1 rounded-full bg-surface-container-low hover:bg-surface-container font-label-sm text-label-sm text-on-surface transition-all flex items-center gap-1.5" onclick="quickFilterAuthor('Super Admin')">
+<span class="w-2 h-2 rounded-full bg-inverse-surface"></span>
+<span>Super Admin [SYS-SEC-01]</span>
+</button>
+<button class="px-3 py-1 rounded-full bg-surface-container-low hover:bg-surface-container font-label-sm text-label-sm text-on-surface transition-all flex items-center gap-1.5" onclick="quickFilterAuthor('Fr. Moïse Ngongang')">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span>Fr. Moïse Ngongang [CPT-2015-088]</span>
+</button>
+<button class="ml-auto font-label-sm text-label-sm text-primary hover:underline flex items-center gap-1" onclick="resetFilters()">
+<span class="material-symbols-outlined text-[16px]">restart_alt</span>
+<span>Réinitialiser les filtres</span>
+</button>
+</div>
+</div>
+<!-- Disposition Principale : Tableau Haute Fidélité + Panneau Latéral d'Inspection -->
+<div class="relative flex flex-col xl:flex-row gap-6 items-start">
+<!-- Table Container (Prend toute la largeur si panneau fermé, se redimensionne si ouvert) -->
+<div class="w-full xl:w-2/3 transition-all duration-300" id="table-wrapper">
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<div class="px-6 py-4 flex items-center justify-between bg-surface-container-low/50">
+<div class="flex items-center gap-3">
+<span class="font-headline-sm text-headline-sm text-on-surface">Grand Livre des Événements Cryptés</span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface-variant font-bold" id="log-count">6 entrées affichées</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary"></span>
+<span class="font-label-sm text-label-sm text-tertiary font-bold">Synchronisation en temps réel (Yaoundé Node #1)</span>
+</div>
+</div>
+<!-- Table Responsive Scrollable -->
+<div class="overflow-x-auto">
+<table class="w-full text-left" id="audit-table">
+<thead>
+<tr class="bg-surface-container font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">
+<th class="py-3.5 px-4 font-bold">Horodatage &amp; Scellé</th>
+<th class="py-3.5 px-4 font-bold">Utilisateur / Matricule</th>
+<th class="py-3.5 px-4 font-bold">Action Canonique</th>
+<th class="py-3.5 px-4 font-bold">Entité Cible</th>
+<th class="py-3.5 px-4 font-bold">Description de l'Opération</th>
+<th class="py-3.5 px-4 font-bold">IP &amp; Terminal</th>
+<th class="py-3.5 px-4 font-bold text-right">Inspection</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-transparent font-body-sm text-body-sm text-on-surface" id="audit-tbody">
+<!-- Log 1 (Sélectionné par défaut pour le panneau d'inspection) -->
+<tr class="hover:bg-surface-container-low/60 transition-colors bg-surface-container-low/40 cursor-pointer" id="row-log-1" onclick="selectLog(1)">
+<td class="py-4 px-4 whitespace-nowrap">
+<div class="font-body-md-medium text-body-md-medium text-on-surface">29/03/2025 11:42:09</div>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="font-label-sm text-[11px] px-2 py-0.5 rounded-md bg-tertiary/10 text-tertiary font-mono font-bold">#SHA-89a1c</span>
+<span class="text-on-surface-variant text-[11px]">WAT</span>
+</div>
+</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-xl bg-primary-container text-on-primary flex items-center justify-center font-headline-sm text-headline-sm font-bold">
+                      SN
+                    </div>
+<div>
+<div class="font-body-md-medium text-body-md-medium text-on-surface leading-tight">Rev. Samuel N.</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant font-mono">PAS-1998-0012</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 text-primary font-label-sm text-label-sm font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                    Révocation de rôle
+                  </span>
+</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<div class="font-body-md-medium text-body-md-medium text-on-surface">District Centre 1</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Comité des Dîmes</div>
+</td>
+<td class="py-4 px-4 max-w-xs">
+<p class="truncate font-body-sm text-body-sm text-on-surface" title="Révocation immédiate des droits d'ordonnancement pour cause d'affectation pastorale statutaire.">
+                    Révocation des droits d'ordonnancement suite à affectation statutaire.
+                  </p>
+</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<div class="font-label-sm text-label-sm font-mono text-on-surface">129.0.21.84</div>
+<div class="font-label-sm text-[11px] text-on-surface-variant">CAMTEL Yaoundé • Chrome / macOS</div>
+</td>
+<td class="py-4 px-4 text-right whitespace-nowrap">
+<button class="h-9 px-3 rounded-lg bg-primary-container text-on-primary font-label-sm text-label-sm hover:bg-primary transition-all flex items-center gap-1 ml-auto">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+<span>Inspecter</span>
+</button>
+</td>
+</tr>
+<!-- Log 2 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors cursor-pointer" id="row-log-2" onclick="selectLog(2)">
+<td class="py-4 px-4 whitespace-nowrap">
+<div class="font-body-md-medium text-body-md-medium text-on-surface">29/03/2025 10:15:33</div>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="font-label-sm text-[11px] px-2 py-0.5 rounded-md bg-tertiary/10 text-tertiary font-mono font-bold">#SHA-42f0b</span>
+<span class="text-on-surface-variant text-[11px]">WAT</span>
+</div>
+</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-xl bg-secondary text-on-secondary flex items-center justify-center font-headline-sm text-headline-sm font-bold">
+                      PM
+                    </div>
+<div>
+<div class="font-body-md-medium text-body-md-medium text-on-surface leading-tight">Diacre Pierre Mba</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant font-mono">TR-2004-019</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-highest text-on-surface font-label-sm text-label-sm font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-on-surface"></span>
+                    Clôture de caisse &amp; PV
+                  </span>
+</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<div class="font-body-md-medium text-body-md-medium text-on-surface">Temple Tsinga</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Caisse Espèces Principale</div>
+</td>
+<td class="py-4 px-4 max-w-xs">
+<p class="truncate font-body-sm text-body-sm text-on-surface" title="Clôture contradictoire du compte de caisse et validation par visa pastoral certifié.">
+                    Clôture contradictoire du compte de caisse et visa pastoral certifié (4 850 000 FCFA).
+                  </p>
+</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<div class="font-label-sm text-label-sm font-mono text-on-surface">41.202.219.12</div>
+<div class="font-label-sm text-[11px] text-on-surface-variant">Orange CM • Safari / iOS</div>
+</td>
+<td class="py-4 px-4 text-right whitespace-nowrap">
+<button class="h-9 px-3 rounded-lg bg-surface-container text-on-surface font-label-sm text-label-sm hover:bg-surface-container-high transition-all flex items-center gap-1 ml-auto">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+<span>Inspecter</span>
+</button>
+</td>
+</tr>
+<!-- Log 3 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors cursor-pointer" id="row-log-3" onclick="selectLog(3)">
+<td class="py-4 px-4 whitespace-nowrap">
+<div class="font-body-md-medium text-body-md-medium text-on-surface">29/03/2025 08:30:12</div>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="font-label-sm text-[11px] px-2 py-0.5 rounded-md bg-tertiary/10 text-tertiary font-mono font-bold">#SHA-e190d</span>
+<span class="text-on-surface-variant text-[11px]">WAT</span>
+</div>
+</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-xl bg-tertiary text-on-tertiary flex items-center justify-center font-headline-sm text-headline-sm font-bold">
+                      MN
+                    </div>
+<div>
+<div class="font-body-md-medium text-body-md-medium text-on-surface leading-tight">Fr. Moïse Ngongang</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant font-mono">CPT-2015-088</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-tertiary/10 text-tertiary font-label-sm text-label-sm font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                    Décaissement financier
+                  </span>
+</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<div class="font-body-md-medium text-body-md-medium text-on-surface">Caisse Centrale</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Compte Afriland #4029</div>
+</td>
+<td class="py-4 px-4 max-w-xs">
+<p class="truncate font-body-sm text-body-sm text-on-surface" title="Virement programme d'évangélisation rurale Nord-Cameroun (Mission Adamaoua).">
+                    Virement programme d'évangélisation rurale Nord (Mission Adamaoua).
+                  </p>
+</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<div class="font-label-sm text-label-sm font-mono text-on-surface">197.234.221.5</div>
+<div class="font-label-sm text-[11px] text-on-surface-variant">MTN Business • Firefox / Windows</div>
+</td>
+<td class="py-4 px-4 text-right whitespace-nowrap">
+<button class="h-9 px-3 rounded-lg bg-surface-container text-on-surface font-label-sm text-label-sm hover:bg-surface-container-high transition-all flex items-center gap-1 ml-auto">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+<span>Inspecter</span>
+</button>
+</td>
+</tr>
+<!-- Log 4 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors cursor-pointer" id="row-log-4" onclick="selectLog(4)">
+<td class="py-4 px-4 whitespace-nowrap">
+<div class="font-body-md-medium text-body-md-medium text-on-surface">28/03/2025 21:04:47</div>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="font-label-sm text-[11px] px-2 py-0.5 rounded-md bg-tertiary/10 text-tertiary font-mono font-bold">#SHA-99bc7</span>
+<span class="text-on-surface-variant text-[11px]">WAT</span>
+</div>
+</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-xl bg-inverse-surface text-inverse-on-surface flex items-center justify-center font-headline-sm text-headline-sm font-bold">
+                      SA
+                    </div>
+<div>
+<div class="font-body-md-medium text-body-md-medium text-on-surface leading-tight">Super Admin</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant font-mono">SYS-SEC-01</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-fixed/30 text-secondary font-label-sm text-label-sm font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                    Modification d'ordonnateur
+                  </span>
+</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<div class="font-body-md-medium text-body-md-medium text-on-surface">Bureau National</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Signature Double Clé</div>
+</td>
+<td class="py-4 px-4 max-w-xs">
+<p class="truncate font-body-sm text-body-sm text-on-surface" title="Mise à jour des signataires autorisés pour la convention triennale FGM 2025-2028.">
+                    Mise à jour des signataires autorisés convention triennale 2025-2028.
+                  </p>
+</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<div class="font-label-sm text-label-sm font-mono text-on-surface">102.164.200.18</div>
+<div class="font-label-sm text-[11px] text-on-surface-variant">CAMTEL Yaoundé • Linux / Edge</div>
+</td>
+<td class="py-4 px-4 text-right whitespace-nowrap">
+<button class="h-9 px-3 rounded-lg bg-surface-container text-on-surface font-label-sm text-label-sm hover:bg-surface-container-high transition-all flex items-center gap-1 ml-auto">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+<span>Inspecter</span>
+</button>
+</td>
+</tr>
+<!-- Log 5 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors cursor-pointer" id="row-log-5" onclick="selectLog(5)">
+<td class="py-4 px-4 whitespace-nowrap">
+<div class="font-body-md-medium text-body-md-medium text-on-surface">28/03/2025 18:22:10</div>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="font-label-sm text-[11px] px-2 py-0.5 rounded-md bg-tertiary/10 text-tertiary font-mono font-bold">#SHA-77aa1</span>
+<span class="text-on-surface-variant text-[11px]">WAT</span>
+</div>
+</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-xl bg-primary-container text-on-primary flex items-center justify-center font-headline-sm text-headline-sm font-bold">
+                      SN
+                    </div>
+<div>
+<div class="font-body-md-medium text-body-md-medium text-on-surface leading-tight">Rev. Samuel N.</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant font-mono">PAS-1998-0012</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-tertiary-fixed/40 text-on-tertiary-fixed-variant font-label-sm text-label-sm font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                    Passation pastorale
+                  </span>
+</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<div class="font-body-md-medium text-body-md-medium text-on-surface">Conseil Régional</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Paroisse de Mendong</div>
+</td>
+<td class="py-4 px-4 max-w-xs">
+<p class="truncate font-body-sm text-body-sm text-on-surface" title="Validation de l'inventaire matériel et spirituel lors de la transition pastorale.">
+                    Validation inventaire matériel &amp; spirituel transition pastorale Mendong.
+                  </p>
+</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<div class="font-label-sm text-label-sm font-mono text-on-surface">129.0.21.84</div>
+<div class="font-label-sm text-[11px] text-on-surface-variant">CAMTEL Yaoundé • Chrome / macOS</div>
+</td>
+<td class="py-4 px-4 text-right whitespace-nowrap">
+<button class="h-9 px-3 rounded-lg bg-surface-container text-on-surface font-label-sm text-label-sm hover:bg-surface-container-high transition-all flex items-center gap-1 ml-auto">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+<span>Inspecter</span>
+</button>
+</td>
+</tr>
+<!-- Log 6 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors cursor-pointer" id="row-log-6" onclick="selectLog(6)">
+<td class="py-4 px-4 whitespace-nowrap">
+<div class="font-body-md-medium text-body-md-medium text-on-surface">28/03/2025 14:02:18</div>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="font-label-sm text-[11px] px-2 py-0.5 rounded-md bg-tertiary/10 text-tertiary font-mono font-bold">#SHA-31dd8</span>
+<span class="text-on-surface-variant text-[11px]">WAT</span>
+</div>
+</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-xl bg-surface-container-highest text-on-surface-variant flex items-center justify-center font-headline-sm text-headline-sm font-bold">
+                      SEC
+                    </div>
+<div>
+<div class="font-body-md-medium text-body-md-medium text-on-surface leading-tight">Secrétariat Général</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant font-mono">SEC-NAT-004</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                    Connexion sécurisée
+                  </span>
+</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<div class="font-body-md-medium text-body-md-medium text-on-surface">Bureau National</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Console Administrative</div>
+</td>
+<td class="py-4 px-4 max-w-xs">
+<p class="truncate font-body-sm text-body-sm text-on-surface" title="Authentification forte 2FA par clé physique FIDO2 pour session trimestrielle.">
+                    Authentification forte 2FA réussie par clé physique FIDO2.
+                  </p>
+</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<div class="font-label-sm text-label-sm font-mono text-on-surface">195.24.198.54</div>
+<div class="font-label-sm text-[11px] text-on-surface-variant">Camtel Fiber • Firefox / Linux</div>
+</td>
+<td class="py-4 px-4 text-right whitespace-nowrap">
+<button class="h-9 px-3 rounded-lg bg-surface-container text-on-surface font-label-sm text-label-sm hover:bg-surface-container-high transition-all flex items-center gap-1 ml-auto">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+<span>Inspecter</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination Épurée & Métadonnées -->
+<div class="p-4 bg-surface-container-lowest flex flex-wrap items-center justify-between gap-4">
+<div class="flex items-center gap-2 font-label-sm text-label-sm text-on-surface-variant">
+<span>Affichage de 1 à 6 sur 48 920 entrées scellées</span>
+<span>•</span>
+<span>Indexation WORM #BLK-2025-09</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="w-9 h-9 rounded-lg bg-surface-container-low text-on-surface-variant flex items-center justify-center hover:bg-surface-container transition-colors disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="w-9 h-9 rounded-lg bg-primary-container text-on-primary font-bold font-label-sm text-label-sm">1</button>
+<button class="w-9 h-9 rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container font-label-sm text-label-sm">2</button>
+<button class="w-9 h-9 rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container font-label-sm text-label-sm">3</button>
+<span class="px-2 text-on-surface-variant">...</span>
+<button class="w-9 h-9 rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container font-label-sm text-label-sm">815</button>
+<button class="w-9 h-9 rounded-lg bg-surface-container-low text-on-surface-variant flex items-center justify-center hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- PANNEAU LATÉRAL D'INSPECTION DÉTAILLÉE DU LOG (Volet d'audit ouvert à droite) -->
+<div class="w-full xl:w-1/3 bg-surface-container-lowest rounded-xl shadow-lg p-5 flex flex-col gap-5 sticky top-20 transition-all duration-300" id="inspector-panel">
+<!-- En-tête du volet latéral -->
+<div class="flex items-start justify-between pb-3">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-primary-container animate-ping"></span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-tight" id="inspector-title">
+              Détail de l'Événement #AUD-2025-88421
+            </h2>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">
+            Preuve d'intégrité canonique &amp; Sceau cryptographique WORM
+          </p>
+</div>
+<button class="w-9 h-9 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface-variant flex items-center justify-center transition-colors" onclick="closeInspector()">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Badges de Niveau de Gravité & Statut -->
+<div class="flex flex-wrap items-center gap-2">
+<span class="px-3 py-1 rounded-full bg-primary/10 text-primary font-label-sm text-label-sm font-bold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">priority_high</span>
+<span>Niveau : Statutaire / Critique</span>
+</span>
+<span class="px-3 py-1 rounded-full bg-tertiary/10 text-tertiary font-label-sm text-label-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span>Sceau Merkle Valide</span>
+</span>
+<span class="px-3 py-1 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface-variant">
+          Non-répudiable
+        </span>
+</div>
+<!-- Empreinte Cryptographique Hash SHA-256 Complet -->
+<div class="bg-surface-container-low rounded-xl p-3.5 space-y-2">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-bold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary">fingerprint</span>
+<span>Empreinte Cryptographique SHA-256</span>
+</span>
+<button class="text-primary hover:text-primary-container font-label-sm text-label-sm font-bold flex items-center gap-1 transition-colors" onclick="copyHash()">
+<span class="material-symbols-outlined text-[16px]" id="copy-icon">content_copy</span>
+<span id="copy-text">Copier le hash</span>
+</button>
+</div>
+<div class="bg-surface-container-lowest p-3 rounded-lg font-mono text-[12px] text-on-surface break-all select-all leading-relaxed">
+<span id="sha-hash">8f92a4bc89e1d4400a9829f029a73862ecb6200234199aa56730df87bb3c3a09</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-[11px] pt-1">
+<span>Précédent : ...d4a19e2</span>
+<span>•</span>
+<span>Arbre : Root-098-CMR</span>
+<span>•</span>
+<span class="text-tertiary font-bold">100% Vérifié</span>
+</div>
+</div>
+<!-- Métadonnées Complètes de Session -->
+<div class="space-y-2.5">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-bold block">
+          Métadonnées &amp; Contexte d'Exécution
+        </span>
+<div class="grid grid-cols-2 gap-2 text-on-surface font-body-sm text-body-sm">
+<div class="bg-surface-container-low p-2.5 rounded-lg">
+<span class="font-label-sm text-[11px] text-on-surface-variant block">ID de Session / UUID</span>
+<span class="font-mono text-label-sm font-bold truncate block">sess_88fa-91b-c12</span>
+</div>
+<div class="bg-surface-container-low p-2.5 rounded-lg">
+<span class="font-label-sm text-[11px] text-on-surface-variant block">Jeton 2FA Authentifié</span>
+<span class="font-mono text-label-sm font-bold text-tertiary flex items-center gap-1 truncate">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+              FIDO2-U2F-Hardware
+            </span>
+</div>
+<div class="bg-surface-container-low p-2.5 rounded-lg">
+<span class="font-label-sm text-[11px] text-on-surface-variant block">Fournisseur Réseau</span>
+<span class="font-body-md-medium text-body-md-medium text-on-surface block truncate">CAMTEL Fibre Yaoundé</span>
+</div>
+<div class="bg-surface-container-low p-2.5 rounded-lg">
+<span class="font-label-sm text-[11px] text-on-surface-variant block">Géolocalisation BSS</span>
+<span class="font-body-md-medium text-body-md-medium text-on-surface block truncate">Yaoundé, Tsinga (CMR)</span>
+</div>
+</div>
+</div>
+<!-- Diff / Payload JSON avant/après (State Before vs State After) -->
+<div class="space-y-2">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-bold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary">difference</span>
+<span>Diff Écriture (State Before vs After)</span>
+</span>
+<span class="font-label-sm text-[11px] text-on-surface-variant font-mono">schema: fgg-audit.v2</span>
+</div>
+<!-- Bloc de Code Thématique Sombre & Épuré -->
+<div class="bg-inverse-surface rounded-xl p-3.5 text-inverse-on-surface font-mono text-[12px] overflow-x-auto max-h-56 leading-relaxed select-text shadow-inner">
+<pre class="m-0"><span class="text-outline-variant font-bold">// État Avant Mutation (Snapshot t-1)</span>
+{
+  <span class="text-tertiary-fixed">"member_id"</span>: <span class="text-secondary-fixed">"PAS-1998-0012"</span>,
+  <span class="text-tertiary-fixed">"jurisdiction"</span>: <span class="text-secondary-fixed">"District Centre 1"</span>,
+  <span class="text-tertiary-fixed">"role_status"</span>: <span class="text-tertiary-fixed-dim">"TITULAIRE_ORDONNATEUR"</span>,
+  <span class="text-tertiary-fixed">"signatory_limit_fcfa"</span>: <span class="text-secondary-fixed-dim">15000000</span>,
+  <span class="text-tertiary-fixed">"quorum_required"</span>: <span class="text-secondary-fixed-dim">2</span>
+}
+
+<span class="text-primary-fixed-dim font-bold">// Mutation Consignée (Commit Inaltérable)</span>
+{
+  <span class="text-tertiary-fixed">"action"</span>: <span class="text-primary-fixed-dim">"REVOKE_ORDINATOR_PERMISSIONS"</span>,
+  <span class="text-tertiary-fixed">"reason"</span>: <span class="text-secondary-fixed">"AFFECTATION_PASTORALE_SYNODALE"</span>,
+  <span class="text-tertiary-fixed">"target_pastor"</span>: <span class="text-secondary-fixed">"Rev. Samuel N."</span>,
+  <span class="text-tertiary-fixed">"effective_date"</span>: <span class="text-secondary-fixed">"2025-03-29T10:42:00Z"</span>,
+  <span class="text-tertiary-fixed">"signed_by"</span>: [
+    <span class="text-secondary-fixed">"SUPERINTENDANT_GENERAL"</span>,
+    <span class="text-secondary-fixed">"SECRETAIRE_GENERAL_FGM"</span>
+  ]
+}</pre>
+</div>
+</div>
+<!-- Action de Téléchargement de Preuve Cryptographique -->
+<div class="pt-2 flex flex-col gap-2">
+<button class="w-full h-12 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface font-title-md text-title-md flex items-center justify-center gap-2 transition-all" onclick="downloadProof()">
+<span class="material-symbols-outlined text-primary text-[20px]">download_for_offline</span>
+<span>Télécharger la preuve d'horodatage (.p7s / .tsr)</span>
+</button>
+<p class="text-center font-label-sm text-[11px] text-on-surface-variant">
+          Certificat racine conforme eIDAS &amp; Loi Camerounaise sur la Cyberjustice (2010/012).
+        </p>
+</div>
+</div>
+</div>
+<!-- Notification Toast pour Actions (Copié / Vérification) -->
+<div class="fixed bottom-8 right-8 z-50 bg-inverse-surface text-inverse-on-surface px-4 py-3 rounded-xl shadow-xl flex items-center gap-3 translate-y-24 opacity-0 transition-all duration-300" id="toast">
+<span class="material-symbols-outlined text-tertiary-fixed text-[22px]" id="toast-icon">check_circle</span>
+<span class="font-body-md-medium text-body-md-medium" id="toast-msg">Chaîne de scellés 100% vérifiée avec succès.</span>
+</div>
+</div>
+<!-- Script Interactif pour Filtrage, Inspection Dynamique, et Preuves -->
+<script>
+  // Données des Logs pour l'inspection interactive
+  const logsData = {
+    1: {
+      id: "#AUD-2025-88421",
+      title: "Détail de l'Événement #AUD-2025-88421",
+      severity: "Niveau : Statutaire / Critique",
+      severityBg: "bg-primary/10 text-primary",
+      sha: "8f92a4bc89e1d4400a9829f029a73862ecb6200234199aa56730df87bb3c3a09",
+      session: "sess_88fa-91b-c12",
+      auth: "FIDO2-U2F-Hardware",
+      isp: "CAMTEL Fibre Yaoundé",
+      geo: "Yaoundé, Tsinga (CMR)",
+      before: `{\n  "member_id": "PAS-1998-0012",\n  "jurisdiction": "District Centre 1",\n  "role_status": "TITULAIRE_ORDONNATEUR",\n  "signatory_limit_fcfa": 15000000,\n  "quorum_required": 2\n}`,
+      after: `{\n  "action": "REVOKE_ORDINATOR_PERMISSIONS",\n  "reason": "AFFECTATION_PASTORALE_SYNODALE",\n  "target_pastor": "Rev. Samuel N.",\n  "effective_date": "2025-03-29T10:42:00Z",\n  "signed_by": ["SUPERINTENDANT_GENERAL", "SECRETAIRE_GENERAL_FGM"]\n}`
+    },
+    2: {
+      id: "#AUD-2025-88420",
+      title: "Détail de l'Événement #AUD-2025-88420",
+      severity: "Niveau : Information & Contrôle",
+      severityBg: "bg-surface-container-highest text-on-surface",
+      sha: "42f0b991ab7601c0a8764ef1a0293cba3948712398abfd3467198a287c889a14",
+      session: "sess_99ce-44a-f01",
+      auth: "SMS-OTP-Orange + Bio",
+      isp: "Orange Cameroun 4G",
+      geo: "Yaoundé, Tsinga (CMR)",
+      before: `{\n  "caisse_status": "OPEN",\n  "balance_initial_fcfa": 2100000,\n  "encaissements_jour_fcfa": 2750000\n}`,
+      after: `{\n  "action": "CLOSE_CASH_DRAWER",\n  "balance_cloture_fcfa": 4850000,\n  "pv_reference": "PV-CLOTURE-2025-TSG-03",\n  "signature_diacre": "TR-2004-019",\n  "visa_pastoral": true\n}`
+    },
+    3: {
+      id: "#AUD-2025-88419",
+      title: "Détail de l'Événement #AUD-2025-88419",
+      severity: "Niveau : Financier / Trésorerie",
+      severityBg: "bg-tertiary/10 text-tertiary",
+      sha: "e190d720b08012ffecba3948011283ac8726190284ab9c450198aa2810cd0411",
+      session: "sess_41ba-22d-b87",
+      auth: "Matricule Certifié + 2FA",
+      isp: "MTN Business Fibre",
+      geo: "Yaoundé, Siège National",
+      before: `{\n  "compte_source": "AFRILAND_#4029_SOLIDARITE",\n  "solde_avant_fcfa": 34800000,\n  "statut": "IDLE"\n}`,
+      after: `{\n  "action": "EXECUTE_DISBURSEMENT",\n  "montant_fcfa": 3500000,\n  "beneficiaire": "Mission Évangélisation Adamaoua",\n  "ordonnateur": "Fr. Moïse Ngongang",\n  "quittance_bancaire": "VIR-AFR-2025-998"\n}`
+    },
+    4: {
+      id: "#AUD-2025-88418",
+      title: "Détail de l'Événement #AUD-2025-88418",
+      severity: "Niveau : Gouvernance & Statuts",
+      severityBg: "bg-secondary-fixed/40 text-secondary",
+      sha: "99bc771802938aaeefc0128941092837bcda091823746a9b8c71928374619283",
+      session: "sess_10ad-77f-e22",
+      auth: "Double Clé YubiKey FGM",
+      isp: "CAMTEL WAN Sécurisé",
+      geo: "Yaoundé, Bureau National",
+      before: `{\n  "mandat": "2022-2025",\n  "signataires_actifs": 3,\n  "regime": "SIMPLE_QUORUM"\n}`,
+      after: `{\n  "mandat": "2025-2028",\n  "signataires_actifs": 4,\n  "regime": "DOUBLE_CLE_PASTORALE_ET_FINANCIERE",\n  "approbateur_synodal": "CONSEIL_GENERAL_1961"\n}`
+    },
+    5: {
+      id: "#AUD-2025-88417",
+      title: "Détail de l'Événement #AUD-2025-88417",
+      severity: "Niveau : Statutaire / Ministère",
+      severityBg: "bg-tertiary-fixed/40 text-on-tertiary-fixed-variant",
+      sha: "77aa119283746a81928374a918293cba3948712398abfd3467198a287c889a14",
+      session: "sess_88fa-91b-c12",
+      auth: "FIDO2-U2F-Hardware",
+      isp: "CAMTEL Fibre Yaoundé",
+      geo: "Yaoundé, Mendong (CMR)",
+      before: `{\n  "affectation": "Tsinga Titulaire",\n  "charge_paroissiale": "Active"\n}`,
+      after: `{\n  "mutation_destination": "Paroisse Mendong",\n  "inventaire_valide": true,\n  "date_prise_fonction": "2025-04-01"\n}`
+    },
+    6: {
+      id: "#AUD-2025-88416",
+      title: "Détail de l'Événement #AUD-2025-88416",
+      severity: "Niveau : Sécurité / Connexion",
+      severityBg: "bg-surface-container-high text-on-surface-variant",
+      sha: "31dd8a9182374619283bcda09182938aaeefc0128941092837bcda091823746a",
+      session: "sess_02aa-11c-d90",
+      auth: "FIDO2 Clé Physique",
+      isp: "Camtel Fiber Yaoundé",
+      geo: "Yaoundé, Centre Administratif",
+      before: `{\n  "session": "CLOSED",\n  "token_expire": true\n}`,
+      after: `{\n  "session": "ACTIVE",\n  "role": "SECRETARIAT_GENERAL",\n  "duree_validite": "4_HOURS"\n}`
+    }
+  };
+
+  function selectLog(id) {
+    const data = logsData[id];
+    if (!data) return;
+
+    // Mise en évidence visuelle de la ligne sélectionnée
+    for (let i = 1; i <= 6; i++) {
+      const row = document.getElementById('row-log-' + i);
+      if (row) {
+        if (i === id) {
+          row.classList.add('bg-surface-container-low/60');
+          const btn = row.querySelector('button');
+          if (btn) {
+            btn.className = "h-9 px-3 rounded-lg bg-primary-container text-on-primary font-label-sm text-label-sm hover:bg-primary transition-all flex items-center gap-1 ml-auto";
+          }
+        } else {
+          row.classList.remove('bg-surface-container-low/60');
+          const btn = row.querySelector('button');
+          if (btn) {
+            btn.className = "h-9 px-3 rounded-lg bg-surface-container text-on-surface font-label-sm text-label-sm hover:bg-surface-container-high transition-all flex items-center gap-1 ml-auto";
+          }
+        }
+      }
+    }
+
+    // Ouvrir ou rafraîchir l'inspecteur
+    const inspector = document.getElementById('inspector-panel');
+    const wrapper = document.getElementById('table-wrapper');
+    inspector.classList.remove('hidden');
+    wrapper.classList.remove('xl:w-full');
+    wrapper.classList.add('xl:w-2/3');
+
+    // Mettre à jour les données dans l'inspecteur
+    document.getElementById('inspector-title').textContent = data.title;
+    document.getElementById('sha-hash').textContent = data.sha;
+
+    showToast("Événement " + data.id + " chargé pour examen.");
+  }
+
+  function closeInspector() {
+    const inspector = document.getElementById('inspector-panel');
+    const wrapper = document.getElementById('table-wrapper');
+    inspector.classList.add('hidden');
+    wrapper.classList.remove('xl:w-2/3');
+    wrapper.classList.add('xl:w-full');
+  }
+
+  function toggleExportMenu() {
+    const menu = document.getElementById('export-menu');
+    menu.classList.toggle('hidden');
+  }
+
+  function closeExportMenu() {
+    const menu = document.getElementById('export-menu');
+    menu.classList.add('hidden');
+    showToast("Exportation du registre crypté en cours de génération...");
+  }
+
+  // Fermer le dropdown en cliquant à l'extérieur
+  window.addEventListener('click', function(e) {
+    const btn = document.getElementById('export-dropdown-toggle');
+    const menu = document.getElementById('export-menu');
+    if (btn && menu && !btn.contains(e.target) && !menu.contains(e.target)) {
+      menu.classList.add('hidden');
+    }
+  });
+
+  function copyHash() {
+    const hash = document.getElementById('sha-hash').innerText;
+    navigator.clipboard.writeText(hash).then(() => {
+      const copyText = document.getElementById('copy-text');
+      const copyIcon = document.getElementById('copy-icon');
+      copyText.textContent = "Hash Copié !";
+      copyIcon.textContent = "done";
+      showToast("Empreinte SHA-256 copiée dans le presse-papier.");
+      setTimeout(() => {
+        copyText.textContent = "Copier le hash";
+        copyIcon.textContent = "content_copy";
+      }, 2500);
+    });
+  }
+
+  function triggerVerification() {
+    const spinner = document.getElementById('verify-spinner');
+    spinner.classList.add('animate-spin');
+    spinner.textContent = "autorenew";
+
+    setTimeout(() => {
+      spinner.classList.remove('animate-spin');
+      spinner.textContent = "security_update_good";
+      showToast("Chaîne Merkle Tree 100% vérifiée. Zéro altération détectée (48 920 scellés).");
+    }, 900);
+  }
+
+  function downloadProof() {
+    showToast("Téléchargement du jeton d'horodatage RFC 3161 (.tsr certifié)...");
+  }
+
+  function showToast(msg) {
+    const toast = document.getElementById('toast');
+    const toastMsg = document.getElementById('toast-msg');
+    toastMsg.textContent = msg;
+    toast.classList.remove('translate-y-24', 'opacity-0');
+    toast.classList.add('translate-y-0', 'opacity-100');
+
+    setTimeout(() => {
+      toast.classList.remove('translate-y-0', 'opacity-100');
+      toast.classList.add('translate-y-24', 'opacity-0');
+    }, 3500);
+  }
+
+  function filterTable() {
+    const query = document.getElementById('filter-search').value.toLowerCase();
+    const action = document.getElementById('filter-action').value.toLowerCase();
+    const entity = document.getElementById('filter-entity').value.toLowerCase();
+    const rows = document.querySelectorAll('#audit-tbody tr');
+
+    let visibleCount = 0;
+    rows.forEach(row => {
+      const text = row.innerText.toLowerCase();
+      const matchQuery = !query || text.includes(query);
+      const matchAction = !action || text.includes(action);
+      const matchEntity = !entity || text.includes(entity);
+
+      if (matchQuery && matchAction && matchEntity) {
+        row.style.display = '';
+        visibleCount++;
+      } else {
+        row.style.display = 'none';
+      }
+    });
+
+    document.getElementById('log-count').textContent = visibleCount + " entrées affichées";
+  }
+
+  function quickFilterAuthor(author) {
+    document.getElementById('filter-search').value = author;
+    filterTable();
+  }
+
+  function resetFilters() {
+    document.getElementById('filter-search').value = '';
+    document.getElementById('filter-action').value = '';
+    document.getElementById('filter-entity').value = '';
+    filterTable();
+    showToast("Filtres réinitialisés.");
+  }
+</script></main></div><div class="md:hidden fixed bottom-0 left-0 right-0 h-16 bg-surface-container-lowest/95 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.06)] z-50 flex items-center justify-around px-2"><a class="flex flex-col items-center justify-center flex-1 py-1 text-primary-container" href="#"><span class="material-symbols-outlined text-[22px]">grid_view</span><span class="font-label-sm text-[10px] mt-0.5">Accueil</span></a><a class="flex flex-col items-center justify-center flex-1 py-1 text-on-surface-variant" href="#"><span class="material-symbols-outlined text-[22px]">groups</span><span class="font-label-sm text-[10px] mt-0.5">Membres</span></a><a class="flex flex-col items-center justify-center flex-1 py-1 text-on-surface-variant" href="#"><span class="material-symbols-outlined text-[22px]">payments</span><span class="font-label-sm text-[10px] mt-0.5">Finance</span></a><a class="flex flex-col items-center justify-center flex-1 py-1 text-on-surface-variant relative" href="#"><span class="material-symbols-outlined text-[22px]">chat_bubble</span><span class="absolute top-1 right-5 w-2 h-2 rounded-full bg-primary-container"></span><span class="font-label-sm text-[10px] mt-0.5">Messages</span></a><button class="flex flex-col items-center justify-center flex-1 py-1 text-on-surface-variant"><span class="material-symbols-outlined text-[22px]">menu_open</span><span class="font-label-sm text-[10px] mt-0.5">Plus</span></button></div></body></html>

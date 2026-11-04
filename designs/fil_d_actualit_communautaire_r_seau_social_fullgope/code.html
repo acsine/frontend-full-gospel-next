@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+
+<html lang="fr"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"surface-container-low":"#f6f2f8","on-secondary-fixed":"#2a1800","surface-variant":"#e4e1e7","surface-container-lowest":"#ffffff","inverse-surface":"#303034","surface-container-high":"#eae7ed","primary-fixed":"#ffdad8","tertiary-fixed":"#86faa7","background":"#fcf8fe","on-background":"#1b1b1f","error":"#ba1a1a","on-primary-container":"#ffdad8","secondary-container":"#feb64e","on-secondary-fixed-variant":"#643f00","surface-bright":"#fcf8fe","secondary-fixed-dim":"#ffb956","on-primary-fixed-variant":"#92001c","outline-variant":"#e5bdbb","tertiary-fixed-dim":"#6add8d","tertiary":"#00592b","on-error-container":"#93000a","tertiary-container":"#00743a","on-surface":"#1b1b1f","error-container":"#ffdad6","on-tertiary":"#ffffff","primary":"#9e001f","on-primary-fixed":"#410007","on-primary":"#ffffff","primary-container":"#c8102e","inverse-primary":"#ffb3b1","secondary":"#835400","primary-fixed-dim":"#ffb3b1","surface-dim":"#dcd9df","on-tertiary-fixed-variant":"#005228","surface-tint":"#bf0229","on-secondary":"#ffffff","inverse-on-surface":"#f3eff6","on-tertiary-container":"#86faa7","secondary-fixed":"#ffddb5","surface":"#fcf8fe","outline":"#906f6e","on-tertiary-fixed":"#00210c","surface-container-highest":"#e4e1e7","on-secondary-container":"#714800","on-surface-variant":"#5c403f","surface-container":"#f0edf3","on-error":"#ffffff"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"margin-desktop":"3rem","gutter":"1rem","space-md":"1rem","space-xl":"2.5rem","space-sm":"0.5rem","gutter-desktop":"2rem","space-xs":"0.25rem","margin":"1rem","space-lg":"1.5rem","margin-tablet":"2rem","gutter-tablet":"1.5rem"},"fontFamily":{"headline-sm":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"body-md-medium":["Inter"],"title-md":["Plus Jakarta Sans"],"body-md":["Inter"],"display-lg-mobile":["Plus Jakarta Sans"],"label-sm":["Inter"],"currency-display":["Plus Jakarta Sans"],"headline-lg-mobile":["Plus Jakarta Sans"],"body-sm":["Inter"],"display-lg":["Plus Jakarta Sans"],"body-lg":["Inter"],"label-md":["Inter"],"headline-lg":["Plus Jakarta Sans"]},"fontSize":{"headline-sm":["20px",{"lineHeight":"28px","fontWeight":"600"}],"headline-md":["24px",{"lineHeight":"32px","fontWeight":"700"}],"body-md-medium":["16px",{"lineHeight":"24px","fontWeight":"500"}],"title-md":["18px",{"lineHeight":"26px","fontWeight":"600"}],"body-md":["16px",{"lineHeight":"24px","fontWeight":"400"}],"display-lg-mobile":["34px",{"lineHeight":"42px","fontWeight":"800"}],"label-sm":["12px",{"lineHeight":"16px","fontWeight":"600"}],"currency-display":["28px",{"lineHeight":"36px","fontWeight":"700"}],"headline-lg-mobile":["26px",{"lineHeight":"34px","fontWeight":"700"}],"body-sm":["14px",{"lineHeight":"20px","fontWeight":"400"}],"display-lg":["48px",{"lineHeight":"56px","fontWeight":"800"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"label-md":["14px",{"lineHeight":"20px","fontWeight":"500"}],"headline-lg":["32px",{"lineHeight":"40px","fontWeight":"700"}]}}}}</script></head><body class="bg-surface font-body-md text-on-surface"><aside class="fixed left-0 top-0 h-screen w-72 bg-inverse-surface text-inverse-on-surface z-50 flex flex-col justify-between overflow-y-auto select-none shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="px-space-lg pt-space-lg pb-space-md flex items-center gap-space-sm"><div class="w-10 h-10 rounded-xl bg-primary-container flex items-center justify-center text-on-primary shadow-sm flex-shrink-0"><span class="material-symbols-outlined text-[24px]">local_fire_department</span></div><div class="flex flex-col min-w-0"><span class="font-headline-sm text-headline-sm tracking-tight text-surface-container-lowest font-bold leading-none">FULLGOPE</span><span class="font-label-sm text-label-sm text-surface-variant truncate mt-0.5">Mission du Plein Évangile</span></div></div><div class="px-space-md py-space-xs"><div class="px-space-sm py-space-xs rounded-lg bg-surface-container-highest/10 text-surface-variant font-label-sm text-label-sm leading-tight italic">« No Other Christ, No Other Gospel » • 1961</div></div><nav class="flex flex-col gap-space-xs px-space-md mt-space-md" data-active-classes="bg-primary-container text-on-primary font-body-md-medium shadow-sm"><div class="px-space-sm pt-space-sm pb-space-xs font-label-sm text-label-sm uppercase tracking-wider text-surface-variant/70 font-semibold">Principal</div><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-surface-variant hover:bg-surface-container-highest/20 hover:text-surface-container-lowest transition-colors" data-path="accueil" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">grid_view</span><span class="font-body-sm text-body-sm">Accueil</span></div></a><div class="px-space-sm pt-space-md pb-space-xs font-label-sm text-label-sm uppercase tracking-wider text-surface-variant/70 font-semibold">Communauté</div><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-surface-variant hover:bg-surface-container-highest/20 hover:text-surface-container-lowest transition-colors" data-path="membres" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">groups</span><span class="font-body-sm text-body-sm">Membres</span></div><span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container-highest/20 text-surface-bright">1 450</span></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-surface-variant hover:bg-surface-container-highest/20 hover:text-surface-container-lowest transition-colors" data-path="departements" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">diversity_3</span><span class="font-body-sm text-body-sm">Départements</span></div></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-surface-variant hover:bg-surface-container-highest/20 hover:text-surface-container-lowest transition-colors" data-path="organisation" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">account_tree</span><span class="font-body-sm text-body-sm">Organisation</span></div></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-surface-variant hover:bg-surface-container-highest/20 hover:text-surface-container-lowest transition-colors" data-path="transferts" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">move_up</span><span class="font-body-sm text-body-sm">Transferts</span></div></a><div class="px-space-sm pt-space-md pb-space-xs font-label-sm text-label-sm uppercase tracking-wider text-surface-variant/70 font-semibold">Ministère &amp; Activités</div><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-surface-variant hover:bg-surface-container-highest/20 hover:text-surface-container-lowest transition-colors" data-path="rapports" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">description</span><span class="font-body-sm text-body-sm">Rapports</span></div></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-surface-variant hover:bg-surface-container-highest/20 hover:text-surface-container-lowest transition-colors" data-path="publications" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">menu_book</span><span class="font-body-sm text-body-sm">Publications</span></div></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-surface-variant hover:bg-surface-container-highest/20 hover:text-surface-container-lowest transition-colors" data-path="evenements-plannings" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">calendar_month</span><span class="font-body-sm text-body-sm">Événements &amp; Plannings</span></div><span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-primary-container text-on-primary font-semibold">3</span></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-surface-variant hover:bg-surface-container-highest/20 hover:text-surface-container-lowest transition-colors" data-path="reseau-social" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">hub</span><span class="font-body-sm text-body-sm">Réseau social</span></div></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-surface-variant hover:bg-surface-container-highest/20 hover:text-surface-container-lowest transition-colors" data-path="messagerie" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">chat</span><span class="font-body-sm text-body-sm">Messagerie</span></div><span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-secondary text-on-secondary font-semibold">12</span></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-surface-variant hover:bg-surface-container-highest/20 hover:text-surface-container-lowest transition-colors" data-path="mediatheque" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">play_circle</span><span class="font-body-sm text-body-sm">Médiathèque</span></div></a><div class="px-space-sm pt-space-md pb-space-xs font-label-sm text-label-sm uppercase tracking-wider text-surface-variant/70 font-semibold">Intendance &amp; Gouvernance</div><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-surface-variant hover:bg-surface-container-highest/20 hover:text-surface-container-lowest transition-colors" data-path="finance" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">account_balance_wallet</span><span class="font-body-sm text-body-sm">Finance (FCFA)</span></div></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-surface-variant hover:bg-surface-container-highest/20 hover:text-surface-container-lowest transition-colors" data-path="dons-campagnes" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">volunteer_activism</span><span class="font-body-sm text-body-sm">Dons &amp; Campagnes</span></div></a><a class="flex items-center justify-between px-space-sm py-space-sm rounded-lg text-surface-variant hover:bg-surface-container-highest/20 hover:text-surface-container-lowest transition-colors" data-path="administration" href="#"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-[20px]">admin_panel_settings</span><span class="font-body-sm text-body-sm">Administration</span></div></a></nav></div><div class="p-space-md flex flex-col gap-space-xs bg-surface-container-highest/5 mt-space-md"><div class="flex items-center justify-between px-space-sm py-space-xs rounded-lg text-surface-variant font-label-sm text-label-sm"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim inline-block animate-pulse"></span><span class="text-surface-bright">Yaoundé v2.4</span></div><span class="font-semibold text-tertiary-fixed">En ligne</span></div><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-surface-variant hover:text-surface-bright font-label-sm text-label-sm transition-colors" data-path="centre-aide" href="#"><span class="material-symbols-outlined text-[18px]">help</span><span>Assistance &amp; Guide pastoral</span></a></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/85 backdrop-blur-xl z-40 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-space-lg flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md flex-1 max-w-xl"><div class="flex items-center gap-space-xs px-space-sm py-1.5 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm"><span class="material-symbols-outlined text-[18px] text-primary">church</span><span class="font-semibold truncate max-w-[210px]">District Centre (Temple Tsinga)</span><span class="text-outline text-xs">•</span><span class="text-on-surface-variant font-medium text-xs whitespace-nowrap">Pasteur Titulaire</span></div><div class="relative flex-1 hidden md:block"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span><input class="w-full pl-9 pr-4 py-2 rounded-full bg-surface-container-low text-on-surface placeholder:text-outline font-body-sm text-body-sm outline-none focus:bg-surface-container-lowest focus:ring-1 focus:ring-primary transition-all" placeholder="Rechercher membre, culte, transaction..." type="text"/></div></div><div class="flex items-center gap-space-sm"><div class="flex items-center p-0.5 rounded-full bg-surface-container-low text-on-surface"><button class="px-2.5 py-1 rounded-full bg-on-surface text-surface font-label-sm text-label-sm transition-colors" type="button">FR</button><button class="px-2.5 py-1 rounded-full text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm transition-colors" type="button">EN</button></div><button class="relative w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-primary-container ring-2 ring-surface"></span></button><div class="flex items-center gap-space-sm pl-space-xs"><div class="flex flex-col text-right hidden lg:flex"><span class="font-body-md-medium text-body-sm text-on-surface font-semibold leading-tight">Rev. N. Samuel</span><span class="font-label-sm text-label-sm text-on-surface-variant">Pasteur Titulaire</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-sm"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="relative pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Top Ambient Banner / Breadcrumb & Status -->
+<div class="px-gutter-desktop py-space-md bg-surface-container-lowest shadow-sm flex flex-col gap-space-sm">
+<div class="flex flex-wrap items-center justify-between gap-space-sm">
+<nav class="flex items-center gap-space-xs text-body-sm font-body-sm text-outline">
+<a class="hover:text-primary transition-colors flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[16px]">home</span>
+<span>Accueil</span>
+</a>
+<span>/</span>
+<span class="text-on-surface-variant">Ministère &amp; Activités</span>
+<span>/</span>
+<span class="text-primary font-body-md-medium font-semibold">Réseau Social &amp; Vie Fraternelle</span>
+</nav>
+<!-- Canon Moderation Quick Link for Elders / Overseers -->
+<div class="flex items-center gap-space-sm">
+<button class="flex items-center gap-space-xs px-3 py-1.5 rounded-full bg-primary-container/10 text-primary hover:bg-primary-container/20 transition-all text-label-sm font-label-sm" id="open-moderation-pill">
+<span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+<span class="material-symbols-outlined text-[16px] text-primary">policy</span>
+<span class="font-bold">File Pastorale : 3 signalements</span>
+</button>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">
+          Matricule Tsinga #23-TS
+        </span>
+</div>
+</div>
+<!-- Section Title & Motto Header -->
+<div class="flex flex-wrap items-end justify-between gap-space-md pt-space-xs">
+<div>
+<div class="flex items-center gap-space-xs mb-1">
+<span class="px-2 py-0.5 rounded-full bg-secondary/10 text-secondary font-label-sm text-label-sm font-semibold tracking-wide">
+            Koinōnia • Communion de l'Esprit
+          </span>
+<span class="text-outline text-label-sm">•</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm italic">« Un seul corps et un seul Esprit »</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight font-extrabold">
+          Fil Fraternel &amp; Communauté
+        </h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mt-0.5">
+          Partage d'édification, témoignages vivants, requêtes d'intercession et soutien mutuel au sein de la Mission du Plein Évangile.
+        </p>
+</div>
+<!-- Live Stream Quick Link / Service broadcast badge -->
+<div class="flex items-center gap-space-sm bg-surface-container-low px-space-md py-2.5 rounded-2xl shadow-sm">
+<div class="w-9 h-9 rounded-xl bg-tertiary-container flex items-center justify-center text-on-tertiary">
+<span class="material-symbols-outlined text-[20px]">radio</span>
+</div>
+<div class="flex flex-col text-left">
+<div class="flex items-center gap-1.5">
+<span class="font-label-sm text-label-sm font-bold text-on-surface">Prière d'Aurore</span>
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim animate-pulse"></span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">05:30 - 06:30 • 324 frères en ligne</span>
+</div>
+</div>
+</div>
+<!-- Navigation Tabs / Social Spaces -->
+<div class="flex items-center gap-space-xs overflow-x-auto pt-space-sm border-none select-none scrollbar-none">
+<button class="flex items-center gap-2 px-4 py-2.5 rounded-full bg-primary-container text-on-primary font-label-md text-label-md font-bold shadow-sm whitespace-nowrap">
+<span class="material-symbols-outlined text-[18px]">public</span>
+<span>Public (Tous les fidèles)</span>
+<span class="px-2 py-0.2 rounded-full bg-surface-container-lowest text-primary text-[11px] font-extrabold uppercase">Direct</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2.5 rounded-full bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container-high transition-colors font-label-md text-label-md font-semibold whitespace-nowrap shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-primary">church</span>
+<span>Mon Assemblée (Temple Tsinga)</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed-variant text-[11px] font-bold">42 nouv.</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2.5 rounded-full bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container-high transition-colors font-label-md text-label-md font-semibold whitespace-nowrap shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-secondary">diversity_3</span>
+<span>Mon Département (Chorale CGL &amp; Jeunesse)</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2.5 rounded-full bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container-high transition-colors font-label-md text-label-md font-semibold whitespace-nowrap shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-tertiary">groups</span>
+<span>Groupes de Prière &amp; Étude</span>
+</button>
+<div class="ml-auto flex items-center gap-2 pl-space-sm">
+<button class="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center text-on-surface-variant hover:text-on-surface shadow-sm" title="Filtrer les publications">
+<span class="material-symbols-outlined text-[20px]">filter_list</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Realtime Floating Refresher Banner -->
+<div class="px-gutter-desktop pt-space-md">
+<div class="w-full flex items-center justify-between px-space-md py-2.5 rounded-xl bg-gradient-to-r from-surface-container-lowest via-primary-fixed/20 to-surface-container-lowest shadow-sm hover:shadow-md transition-all cursor-pointer" id="refresh-alert">
+<div class="flex items-center gap-space-sm">
+<span class="relative flex h-3 w-3">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-tertiary"></span>
+</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">
+<strong class="font-bold text-primary">3 nouvelles publications</strong> sont apparues dans le Temple Tsinga • Célébration, requêtes et témoignages
+        </span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-label-sm font-label-sm text-primary font-bold hover:underline flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">sync</span> Actualiser le fil
+        </span>
+</div>
+</div>
+</div>
+<!-- Main Feed 12-Column Grid Layout -->
+<div class="px-gutter-desktop py-space-lg grid grid-cols-12 gap-gutter-desktop">
+<!-- LEFT & CENTER FEED COLUMN (8 Cols) -->
+<div class="col-span-12 lg:col-span-8 flex flex-col gap-space-lg">
+<!-- ADVANCED POST COMPOSER -->
+<section class="bg-surface-container-lowest rounded-2xl p-space-md lg:p-space-lg shadow-sm flex flex-col gap-space-md">
+<!-- Post types switcher -->
+<div class="flex items-center gap-space-xs overflow-x-auto pb-1 scrollbar-none">
+<button class="px-3.5 py-1.5 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm font-bold flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-[16px]">edit_note</span>
+<span>Texte &amp; Médias</span>
+</button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high font-label-sm text-label-sm font-medium flex items-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[16px] text-secondary">auto_stories</span>
+<span>Verset du Jour</span>
+</button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high font-label-sm text-label-sm font-medium flex items-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[16px] text-primary">volunteer_activism</span>
+<span class="text-primary font-semibold">Requête d'Intercession</span>
+</button>
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high font-label-sm text-label-sm font-medium flex items-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[16px] text-tertiary">how_to_vote</span>
+<span>Sondage Fraternel</span>
+</button>
+</div>
+<!-- Composer Main Input Area -->
+<div class="flex items-start gap-space-md">
+<div class="relative">
+<img class="w-12 h-12 rounded-full object-cover shadow-sm ring-2 ring-primary/20" data-alt="Portrait du Frère Fossouo Jean-Claude, chantre et ouvrier chrétien camerounais souriant vêtu d'une chemise africaine soignée dans l'enceinte de l'église Full Gospel Mission Cameroon, lumière douce naturelle et atmosphère bienveillante." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRQJxQWfMmJrOfY-1nMFwxPbs5ga3Fu8-6RbZ1t3CuCmcbg6JvaXcBv58ULUNkPUwTnMCXwnVwwA8myXkMuWOaz54HA96KRrnDdC50ZbIR53lMs55SLS_99ONwSLb7GurSeATRAXckkkdUuUgIbkgTwLrbByIf_whmyL62UhCEju57sbPp8TnUwEdNs6HJvFagydtublsS7t_OaMexf3uaGkXsrz2a_RPUcU7OXNE"/>
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full bg-tertiary ring-2 ring-surface-container-lowest" title="En communion active"></span>
+</div>
+<div class="flex-1 flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-body-md-medium text-body-md-medium font-bold text-on-surface">Fr. Fossouo Jean-Claude</span>
+<span class="px-2 py-0.5 rounded-md bg-surface-container text-on-surface-variant text-[11px] font-semibold">Ténor CGL • Ouvrier</span>
+</div>
+<!-- Audience selector -->
+<div class="relative">
+<button class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-low hover:bg-surface-container-high text-on-surface font-label-sm text-label-sm font-medium transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-primary">church</span>
+<span>Temple Central de Tsinga</span>
+<span class="material-symbols-outlined text-[16px]">expand_more</span>
+</button>
+</div>
+</div>
+<textarea class="w-full p-space-sm rounded-xl bg-surface-container-low text-on-surface placeholder:text-outline font-body-md text-body-md focus:outline-none focus:bg-surface-container-lowest focus:shadow-md transition-all resize-none" placeholder="Partagez un témoignage vivant, une parole de réconfort ou déposez votre requête de prière avec le corps de Christ..." rows="3"></textarea>
+</div>
+</div>
+<!-- Suggestion Chips / Scripture references & hashtags -->
+<div class="flex flex-wrap items-center gap-2 pt-space-xs">
+<span class="font-label-sm text-label-sm text-outline font-semibold">Tags rapides :</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm hover:bg-primary-fixed hover:text-on-primary-fixed transition-colors cursor-pointer">#Edification</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm hover:bg-primary-fixed hover:text-on-primary-fixed transition-colors cursor-pointer">#PleinEvangile1961</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm hover:bg-primary-fixed hover:text-on-primary-fixed transition-colors cursor-pointer">#Moisson2025</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm hover:bg-primary-fixed hover:text-on-primary-fixed transition-colors cursor-pointer">@Pasteur Samuel</span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm hover:bg-primary-fixed hover:text-on-primary-fixed transition-colors cursor-pointer">@Chorale CGL</span>
+</div>
+<!-- Composer Action Bar -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm pt-space-sm bg-surface-container-lowest">
+<div class="flex items-center gap-1 sm:gap-2">
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low hover:text-primary transition-all" title="Photo ou Vidéo">
+<span class="material-symbols-outlined text-[22px]">photo_camera</span>
+</button>
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low hover:text-secondary transition-all" title="Insérer Verset Biblique (Louis Segond / King James)">
+<span class="material-symbols-outlined text-[22px]">book_2</span>
+</button>
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low hover:text-primary transition-all" title="Demande de Prière Urgente">
+<span class="material-symbols-outlined text-[22px]">local_fire_department</span>
+</button>
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low hover:text-tertiary transition-all" title="Créer un sondage">
+<span class="material-symbols-outlined text-[22px]">poll</span>
+</button>
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-all" title="Fichier audio / Sermon">
+<span class="material-symbols-outlined text-[22px]">mic</span>
+</button>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="px-4 py-2 rounded-full text-on-surface-variant hover:bg-surface-container-low font-label-md text-label-md font-semibold transition-colors">
+              Brouillon
+            </button>
+<button class="px-6 py-2.5 rounded-full bg-primary-container hover:bg-primary text-on-primary font-label-md text-label-md font-bold shadow-md transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">send</span>
+<span>Publier</span>
+</button>
+</div>
+</div>
+</section>
+<!-- FEED POST 1: Pastoral Poll & Spiritual Reactions -->
+<article class="bg-surface-container-lowest rounded-2xl p-space-md lg:p-space-lg shadow-sm flex flex-col gap-space-md">
+<!-- Post Header -->
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-start gap-space-sm">
+<div class="relative">
+<img class="w-12 h-12 rounded-full object-cover ring-2 ring-primary/25" data-alt="Pasteur Daniel Ebogo, pasteur associé plein évangile camerounais plein de ferveur, avec costume sombre élégant et regard pastoral chaleureux, devant une estrade sobre d'église avec croix chrétienne stylisée et lumière dorée douce." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeuFTWx7xdRAflZary2ACO72mVyRgYxanFbJ76V3TINfQ_LPAkiC5G_8LK3twg3jHNGyUwe7UrrKqi5Z3-m1qrRywmhXwfuUw17Qd9diusQtHiwj6jY2QTjaGBeztBgLHU4FwfJ7ZJ6UapstTjODPjsNaQ25kbzJ83r9v3Z6BVETcmHw8QRaIHK0Ho96NfXisyFIcIta3vWhLbOs6TpVVU1Iym_XHE6bAiU3Jhk-I"/>
+<div class="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-primary-container text-on-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[13px]">verified</span>
+</div>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2 flex-wrap">
+<h3 class="font-body-md-medium text-body-md-medium font-bold text-on-surface">Pasteur Daniel Ebogo</h3>
+<span class="px-2 py-0.2 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm font-semibold">
+                  Pasteur Associé
+                </span>
+<span class="text-outline text-xs">•</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">Mat. #PAST-042</span>
+</div>
+<div class="flex items-center gap-1.5 text-label-sm font-label-sm text-outline mt-0.5">
+<span class="flex items-center gap-1 text-primary font-semibold">
+<span class="material-symbols-outlined text-[14px]">church</span>
+                  Mon Assemblée (Tsinga)
+                </span>
+<span>•</span>
+<span>Il y a 25 min</span>
+<span>•</span>
+<span class="material-symbols-outlined text-[14px]" title="Visible à tous les membres de Tsinga">groups</span>
+</div>
+</div>
+</div>
+<!-- Post Action Menu -->
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 rounded-full hover:bg-surface-container-low flex items-center justify-center text-outline hover:text-on-surface transition-colors" title="Plus d'actions">
+<span class="material-symbols-outlined text-[20px]">more_horiz</span>
+</button>
+</div>
+</div>
+<!-- Post Body Content -->
+<div class="text-body-md text-on-surface leading-relaxed">
+<p>
+            Bien-aimés dans le Seigneur, la paix de Jésus-Christ soit avec vous tous. En vue de notre grande veillée de combat spirituel et de proclamation prophétique de ce vendredi soir au Temple Tsinga, l'équipe pastorale aimerait sonder le fardeau de prière que le Saint-Esprit dépose sur vos cœurs :
+          </p>
+<p class="mt-2 font-medium text-primary">
+            Sur quel axe sentez-vous la nécessité d'insister tout particulièrement lors des temps d'intercession collective ?
+          </p>
+</div>
+<!-- Interactive Church Poll Component -->
+<div class="bg-surface-container-low rounded-2xl p-space-md flex flex-col gap-space-sm shadow-inner">
+<div class="flex items-center justify-between text-label-sm font-label-sm text-on-surface-variant mb-1">
+<span class="font-bold flex items-center gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-tertiary">how_to_vote</span> Sondage Communautaire Officiel
+            </span>
+<span>263 votes au total • Reste 18h</span>
+</div>
+<!-- Option 1 (Leading) -->
+<div class="flex flex-col gap-1 p-space-sm rounded-xl bg-surface-container-lowest shadow-sm hover:shadow transition-shadow cursor-pointer">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-primary-container text-on-primary flex items-center justify-center text-[12px] font-bold">✓</span>
+<span class="font-body-sm text-body-sm font-bold text-on-surface">1. Réveil spirituel et consécration de la jeunesse</span>
+</div>
+<span class="font-body-sm text-body-sm font-extrabold text-primary">54%</span>
+</div>
+<div class="w-full h-2.5 rounded-full bg-surface-container overflow-hidden mt-1">
+<div class="h-full bg-primary-container rounded-full" style="width: 54%"></div>
+</div>
+<span class="text-right text-[11px] text-outline font-semibold">142 votes enregistrés</span>
+</div>
+<!-- Option 2 -->
+<div class="flex flex-col gap-1 p-space-sm rounded-xl bg-surface-container-lowest/80 hover:bg-surface-container-lowest transition-all cursor-pointer">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center text-[11px] font-bold">2</span>
+<span class="font-body-sm text-body-sm text-on-surface">2. Salut des âmes inconverties et restauration des familles</span>
+</div>
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">28%</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden mt-1">
+<div class="h-full bg-secondary-container rounded-full" style="width: 28%"></div>
+</div>
+<span class="text-right text-[11px] text-outline font-semibold">74 votes</span>
+</div>
+<!-- Option 3 -->
+<div class="flex flex-col gap-1 p-space-sm rounded-xl bg-surface-container-lowest/80 hover:bg-surface-container-lowest transition-all cursor-pointer">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center text-[11px] font-bold">3</span>
+<span class="font-body-sm text-body-sm text-on-surface">3. Guérison divine et délivrance puissante des malades</span>
+</div>
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">18%</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden mt-1">
+<div class="h-full bg-tertiary-container rounded-full" style="width: 18%"></div>
+</div>
+<span class="text-right text-[11px] text-outline font-semibold">47 votes</span>
+</div>
+</div>
+<!-- Spiritual Reactions Counter Bar -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm pt-space-xs text-body-sm text-outline">
+<div class="flex items-center gap-space-sm">
+<div class="flex -space-x-1.5 items-center">
+<span class="w-7 h-7 rounded-full bg-primary-container text-on-primary flex items-center justify-center text-xs shadow-sm ring-2 ring-surface-container-lowest" title="Amen">🙏</span>
+<span class="w-7 h-7 rounded-full bg-tertiary-container text-on-tertiary flex items-center justify-center text-xs shadow-sm ring-2 ring-surface-container-lowest" title="Prière fervente">🕊️</span>
+<span class="w-7 h-7 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center text-xs shadow-sm ring-2 ring-surface-container-lowest" title="Amour Fraternel">❤️</span>
+</div>
+<span class="font-label-sm text-label-sm font-semibold text-on-surface-variant">191 réactions spirituelles</span>
+</div>
+<div class="flex items-center gap-3 font-label-sm text-label-sm">
+<span class="hover:underline cursor-pointer">18 partages</span>
+<span>•</span>
+<span class="hover:underline cursor-pointer">29 commentaires</span>
+</div>
+</div>
+<!-- Spiritual Interaction Buttons with Hover Reaction Pill -->
+<div class="relative flex items-center justify-between pt-space-xs bg-surface-container-lowest">
+<div class="flex items-center gap-1 sm:gap-2">
+<!-- Amen Button -->
+<button class="px-3.5 py-2 rounded-xl bg-surface-container-low hover:bg-primary-fixed/30 text-on-surface font-label-sm text-label-sm font-semibold flex items-center gap-1.5 transition-colors">
+<span class="text-base">🙏</span>
+<span class="text-primary font-bold">Amen ! (84)</span>
+</button>
+<!-- Intercession Button -->
+<button class="px-3.5 py-2 rounded-xl bg-surface-container-low hover:bg-tertiary-fixed/30 text-on-surface font-label-sm text-label-sm font-semibold flex items-center gap-1.5 transition-colors">
+<span class="text-base">🕊️</span>
+<span>En prière (42)</span>
+</button>
+<!-- Love / Fraternal Grace Button -->
+<button class="px-3.5 py-2 rounded-xl bg-surface-container-low hover:bg-secondary-fixed/40 text-on-surface font-label-sm text-label-sm font-semibold flex items-center gap-1.5 transition-colors">
+<span class="text-base">❤️</span>
+<span>Grâce (31)</span>
+</button>
+</div>
+<div class="flex items-center gap-1">
+<button class="px-3 py-2 rounded-xl hover:bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm font-semibold flex items-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[18px]">chat_bubble</span>
+<span>Commenter</span>
+</button>
+<button class="px-3 py-2 rounded-xl hover:bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm font-semibold flex items-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[18px]">share</span>
+<span class="hidden sm:inline">WhatsApp</span>
+</button>
+</div>
+</div>
+<!-- Comment Thread Section -->
+<div class="pt-space-sm flex flex-col gap-space-sm">
+<!-- Parent Comment -->
+<div class="flex items-start gap-space-sm">
+<img class="w-9 h-9 rounded-full object-cover" data-alt="Portrait de Sœur Mireille Ngo, jeune responsable de l'intercession à Yaoundé, tête recouverte avec élégance, expression joyeuse et regard paisible dans un cadre de prière d'assemblée." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLWHBCNdFNjaOMcIGfWgNbj1Dsyg_FZ_UIuDhKjjIcGXs-QKI_ZOIJqr9PcMJ84ZaJiNr9KiXhjGMnHX_Bo3_7gYrii7HivxHZu5j7q3dBDJfRfFXpnKIM6KmG2N65Ck_r5I6i_dB8Fbf0bDDH8ZrszztuwAhI0zU6DEc0A0fu9aKDnlGwfQWJ8lo_zaY5tuoX8vSikK3A4m5i-kdzE3M3MNgwYRBatNONZBUd-EA"/>
+<div class="flex-1 flex flex-col gap-1">
+<div class="p-space-sm rounded-2xl bg-surface-container-low">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-bold text-on-surface">Sr. Mireille Ngo</span>
+<span class="text-[11px] text-outline">Il y a 14 min</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface mt-0.5">
+                  Amen Pasteur Daniel ! Nous portons la jeunesse dans le jeûne de trois jours dès ce mercredi avec les sentinelles de Tsinga. Que le feu descende !
+                </p>
+</div>
+<div class="flex items-center gap-3 pl-2 text-[12px] font-label-sm font-semibold text-outline">
+<button class="hover:text-primary">Amen (12)</button>
+<span>•</span>
+<button class="hover:text-on-surface">Répondre</button>
+</div>
+<!-- Nested Reply -->
+<div class="flex items-start gap-space-sm mt-1 pl-space-sm">
+<div class="w-7 h-7 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container font-bold text-xs">
+                  KT
+                </div>
+<div class="flex-1 p-space-sm rounded-xl bg-surface-container">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-bold text-on-surface">Fr. Kevin Tchana</span>
+<span class="text-[10px] text-outline">Il y a 6 min</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface mt-0.5">
+                    Nous serons là dès 20h avec le département des instruments. Que toute la gloire revienne au Roi des rois.
+                  </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick comment entry input -->
+<div class="flex items-center gap-space-sm pt-space-xs">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-bold text-xs">
+              FJ
+            </div>
+<div class="flex-1 relative">
+<input class="w-full py-2 pl-4 pr-10 rounded-full bg-surface-container-low text-on-surface placeholder:text-outline font-body-sm text-body-sm focus:outline-none focus:bg-surface-container-lowest focus:shadow-sm transition-all" placeholder="Écrire un mot d'édification ou un soutien..." type="text"/>
+<button class="absolute right-2 top-1/2 -translate-y-1/2 text-primary hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[20px]">send</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+<!-- FEED POST 2: Urgent Intercession & Media Scripture Card -->
+<article class="bg-surface-container-lowest rounded-2xl p-space-md lg:p-space-lg shadow-sm flex flex-col gap-space-md">
+<!-- Post Header -->
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-start gap-space-sm">
+<div class="relative">
+<img class="w-12 h-12 rounded-full object-cover ring-2 ring-secondary/30" data-alt="Portrait de Sœur Estelle Bekolo, choriste de la chorale CGL au Cameroun, souriante et gracieuse, en tenue d'apparat ecclésiale violette et blanche, avec arrière-plan flouté d'instruments de musique du temple." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDc2zWedqRDCY8tfibnvSpnwjSU2AQty0RWn-x1uzIIeVbEh3O3uHjiQ3noHXc0rGpu_lvn6LhpgNKkSAowuZHLjTAWPXPTkKxyI6T_IdhK7LnUctVmm-eseiDWEHp7cICuh1MiAvyKU1j2wO6X7ojP6S-MjCe3BbhIa0ze_OQd3JKPgZEO28VPk8DaXcbGQMAPAkT8nkIzP6VEPS0n82859p1Oo6dN8TrQELINroA"/>
+<div class="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-secondary text-on-secondary flex items-center justify-center text-[10px] shadow-sm font-bold">
+                CGL
+              </div>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2 flex-wrap">
+<h3 class="font-body-md-medium text-body-md-medium font-bold text-on-surface">Sr. Estelle Bekolo</h3>
+<span class="px-2 py-0.2 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm font-semibold">
+                  Chorale CGL • Soprano
+                </span>
+</div>
+<div class="flex items-center gap-1.5 text-label-sm font-label-sm text-outline mt-0.5">
+<span class="text-on-surface-variant font-medium">Chorale &amp; Département Louange</span>
+<span>•</span>
+<span>Il y a 1h 10 min</span>
+</div>
+</div>
+</div>
+<!-- URGENT INTERCESSION BADGE -->
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm font-extrabold shadow-sm animate-pulse">
+<span class="material-symbols-outlined text-[16px]">emergency</span>
+<span>Requête d'Intercession Urgente</span>
+</div>
+</div>
+<!-- Post Message Text -->
+<div class="text-body-md text-on-surface leading-relaxed">
+<p>
+            Chers frères et sœurs de la chorale et de tout le district de Yaoundé, merci de joindre vos voix et vos supplications pour notre sœur bien-aimée <strong>Marthe du pupitre Alto</strong>, actuellement hospitalisée au Centre des Urgences de Yaoundé (CURY).
+          </p>
+<p class="mt-2 text-on-surface-variant">
+            Les médecins gardent espoir mais nous savons que le diagnostic souverain appartient à l'Éternel Rapha ! Réclamons ensemble par la foi la puissance purificatrice du Sang de Jésus-Christ pour son rétablissement parfait.
+          </p>
+</div>
+<!-- Calligraphic Scripture / Faith Banner -->
+<div class="rounded-2xl p-space-lg bg-gradient-to-br from-inverse-surface via-inverse-surface/95 to-primary-container text-surface-container-lowest shadow-md flex flex-col gap-space-sm relative overflow-hidden">
+<div class="absolute -right-8 -bottom-8 w-44 h-44 rounded-full bg-primary/20 blur-2xl"></div>
+<div class="flex items-center justify-between text-secondary-fixed-dim">
+<span class="font-label-sm text-label-sm uppercase tracking-widest font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">menu_book</span> Parole d'Onction &amp; Promesse
+            </span>
+<span class="font-label-sm text-label-sm opacity-80">Ésaïe 53:5</span>
+</div>
+<blockquote class="font-headline-sm text-headline-sm italic font-serif leading-snug tracking-wide text-surface-bright">
+            « Mais il était blessé pour nos péchés, brisé pour nos iniquités ; le châtiment qui nous donne la paix est tombé sur lui, et c'est par ses meurtrissures que nous sommes guéris. »
+          </blockquote>
+<div class="flex items-center justify-between pt-space-xs text-xs opacity-80 border-t border-surface-container-highest/10">
+<span>Version Louis Segond • Foi &amp; Proclamation</span>
+<span class="text-tertiary-fixed font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">done_all</span> Promesse immuable
+            </span>
+</div>
+</div>
+<!-- Active Prayer Pledge Tracker -->
+<div class="flex items-center justify-between p-space-md rounded-xl bg-tertiary/10 text-on-surface">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-tertiary flex items-center justify-center text-on-tertiary shadow-sm">
+<span class="material-symbols-outlined text-[20px]">diversity_1</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-md-medium text-body-md-medium font-bold text-tertiary">98 frères et sœurs sont présentement en prière</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Chaine d'intercession ininterrompue lancée par le Pasteur Titulaire</span>
+</div>
+</div>
+<button class="px-5 py-2 rounded-full bg-tertiary hover:bg-tertiary-container text-on-tertiary font-label-md text-label-md font-bold shadow-sm flex items-center gap-1.5 transition-all">
+<span class="material-symbols-outlined text-[18px]">volunteer_activism</span>
+<span>Je m'engage à prier</span>
+</button>
+</div>
+<!-- Post Actions -->
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex items-center gap-2">
+<button class="px-4 py-2 rounded-full bg-surface-container-low hover:bg-primary-fixed/30 text-on-surface font-label-sm text-label-sm font-semibold flex items-center gap-1.5 transition-colors">
+<span>🙏</span>
+<span>Amen &amp; Victoire (112)</span>
+</button>
+<button class="px-4 py-2 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold flex items-center gap-1.5 transition-colors">
+<span>🕊️</span>
+<span>Guérison proclamée (64)</span>
+</button>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 rounded-full hover:bg-surface-container-low text-on-surface-variant" title="Signaler discrètement">
+<span class="material-symbols-outlined text-[18px]">flag</span>
+</button>
+<button class="px-3 py-1.5 rounded-full bg-surface-container-low text-on-surface font-label-sm text-label-sm font-medium hover:bg-surface-container transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">bookmark</span>
+<span>Sauvegarder</span>
+</button>
+</div>
+</div>
+</article>
+</div>
+<!-- RIGHT SIDEBAR (Double Volet: Groupes & Modération Pastorale) (4 Cols) -->
+<div class="col-span-12 lg:col-span-4 flex flex-col gap-space-lg">
+<!-- VOLET A : Groupes Communautaires Recommandés -->
+<section class="bg-surface-container-lowest rounded-2xl p-space-md lg:p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-[18px]">groups_2</span>
+</div>
+<h2 class="font-title-md text-title-md font-bold text-on-surface">Groupes Recommandés</h2>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-bold hover:underline cursor-pointer">Voir tout</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant -mt-2">
+          Rejoignez les cercles d'affinité spirituelle pour approfondir la doctrine et la fraternité.
+        </p>
+<!-- Group Item 1 -->
+<div class="flex items-start gap-space-sm p-space-sm rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="w-11 h-11 rounded-xl bg-primary-container text-on-primary flex items-center justify-center flex-shrink-0 font-bold shadow-sm">
+<span class="material-symbols-outlined text-[22px]">nest_clock_farsight_analog</span>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="font-body-sm font-bold text-on-surface truncate">Intercesseurs du Matin (Tsinga)</h4>
+<div class="flex items-center gap-1.5 text-[11px] text-outline mt-0.5">
+<span>184 sentinelles</span>
+<span>•</span>
+<span class="text-tertiary font-semibold">12 partages/jour</span>
+</div>
+<button class="mt-2 px-3 py-1 rounded-full bg-primary-container hover:bg-primary text-on-primary font-label-sm text-label-sm font-semibold transition-all shadow-sm">
+              Rejoindre
+            </button>
+</div>
+</div>
+<!-- Group Item 2 -->
+<div class="flex items-start gap-space-sm p-space-sm rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="w-11 h-11 rounded-xl bg-secondary text-on-secondary flex items-center justify-center flex-shrink-0 font-bold shadow-sm">
+<span class="material-symbols-outlined text-[22px]">work</span>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="font-body-sm font-bold text-on-surface truncate">Jeunes Professionnels Plein Évangile</h4>
+<div class="flex items-center gap-1.5 text-[11px] text-outline mt-0.5">
+<span>92 membres actifs</span>
+<span>•</span>
+<span>Yaoundé Métropole</span>
+</div>
+<button class="mt-2 px-3 py-1 rounded-full bg-surface-container-highest text-on-surface font-label-sm text-label-sm font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-tertiary">check</span>
+<span>Déjà membre</span>
+</button>
+</div>
+</div>
+<!-- Group Item 3 -->
+<div class="flex items-start gap-space-sm p-space-sm rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="w-11 h-11 rounded-xl bg-tertiary text-on-tertiary flex items-center justify-center flex-shrink-0 font-bold shadow-sm">
+<span class="material-symbols-outlined text-[22px]">auto_stories</span>
+</div>
+<div class="flex-1 min-w-0">
+<h4 class="font-body-sm font-bold text-on-surface truncate">Étude Biblique Épître aux Romains</h4>
+<div class="flex items-center gap-1.5 text-[11px] text-outline mt-0.5">
+<span>65 disciples</span>
+<span>•</span>
+<span>Mardi 18h30</span>
+</div>
+<button class="mt-2 px-3 py-1 rounded-full bg-primary-container hover:bg-primary text-on-primary font-label-sm text-label-sm font-semibold transition-all shadow-sm">
+              Rejoindre
+            </button>
+</div>
+</div>
+<a class="text-center font-label-md text-label-md text-primary font-bold hover:underline pt-space-xs flex items-center justify-center gap-1" href="#">
+<span>Découvrir tous les groupes d'édification (24)</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</section>
+<!-- VOLET B : File de Modération Pastorale (Anciens & Conseil des Ministères) -->
+<section class="bg-surface-container-lowest rounded-2xl p-space-md lg:p-space-lg shadow-sm flex flex-col gap-space-md ring-2 ring-primary-container/20" id="moderation-panel">
+<!-- Moderation Header -->
+<div class="flex items-start justify-between pb-space-xs">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-primary-container text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+</div>
+<div>
+<h2 class="font-title-md text-title-md font-bold text-on-surface leading-tight">File Pastorale</h2>
+<span class="font-label-sm text-label-sm text-outline">Modération &amp; Surveillance canonique</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-error text-on-error font-label-sm text-label-sm font-extrabold animate-pulse">
+            3 alertes
+          </span>
+</div>
+<!-- Alert Notice Box -->
+<div class="p-space-sm rounded-xl bg-error-container/30 text-on-surface flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-error flex-shrink-0 mt-0.5">warning</span>
+<p class="font-body-sm text-body-sm leading-snug">
+            3 publications ou commentaires ont été signalés par les fidèles pour non-respect de l'éthique fraternelle.
+          </p>
+</div>
+<!-- Flagged Item Card -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-space-sm shadow-inner">
+<div class="flex items-center justify-between text-[12px]">
+<div class="flex items-center gap-1.5">
+<span class="font-bold text-on-surface">Roger M.</span>
+<span class="text-outline">(Mat. #M-7712)</span>
+</div>
+<span class="px-2 py-0.2 rounded-md bg-error/10 text-error font-bold text-[10px]">Signalement x5</span>
+</div>
+<!-- Infraction details -->
+<div class="bg-surface-container-lowest p-space-sm rounded-lg text-body-sm text-on-surface italic">
+            « Contactez-moi en privé sur WhatsApp pour des opportunités de trading crypto 100% garanties bénies par le Seigneur... »
+          </div>
+<div class="flex items-center gap-1.5 text-[11px] text-on-surface-variant">
+<span class="font-bold text-error">Motif invoqué :</span>
+<span>Vente commerciale non autorisée / Hors doctrine</span>
+</div>
+<!-- Moderation Action Buttons -->
+<div class="grid grid-cols-3 gap-1.5 pt-space-xs">
+<button class="py-1.5 rounded-lg bg-surface-container-highest hover:bg-surface-dim text-on-surface-variant font-label-sm text-label-sm font-semibold transition-colors text-center">
+              Ignorer
+            </button>
+<button class="py-1.5 rounded-lg bg-secondary-container hover:bg-secondary text-on-secondary-container hover:text-on-secondary font-label-sm text-label-sm font-bold transition-colors text-center">
+              Retirer
+            </button>
+<button class="py-1.5 rounded-lg bg-error hover:bg-on-error-container text-on-error font-label-sm text-label-sm font-bold transition-colors text-center">
+              Suspendre
+            </button>
+</div>
+</div>
+<!-- Church Canon Reminder -->
+<div class="p-space-sm rounded-xl bg-surface-container flex items-start gap-space-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-secondary flex-shrink-0 mt-0.5">gavel</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-bold text-on-surface">Règle de Communion (Galates 5:22)</span>
+<span class="font-body-sm text-body-sm text-[12px] leading-tight">
+              Tout message doit refléter la paix, la bienveillance, la fidélité doctrinale et l'édification exclusive de l'Église.
+            </span>
+</div>
+</div>
+<div class="flex items-center justify-between text-label-sm font-label-sm pt-1">
+<span class="text-outline">Dernière revue par : Rev. Samuel</span>
+<a class="text-primary font-bold hover:underline" href="#">Registre canonique</a>
+</div>
+</section>
+<!-- Spiritual Calendar Widget -->
+<div class="bg-surface-container-lowest rounded-2xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-title-md font-bold text-on-surface">Agenda Fraternel</span>
+<span class="font-label-sm text-label-sm text-primary font-bold">Cette semaine</span>
+</div>
+<div class="flex items-center gap-space-sm p-space-sm rounded-xl bg-surface-container-low">
+<div class="w-10 h-10 rounded-xl bg-primary-container text-on-primary flex flex-col items-center justify-center font-bold leading-none">
+<span class="text-xs uppercase">Ven</span>
+<span class="text-base">28</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-sm font-bold text-on-surface truncate">Veillée de Combat &amp; Moisson</span>
+<span class="text-[12px] text-outline">22h00 - 05h00 • Grand Temple Tsinga</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm p-space-sm rounded-xl bg-surface-container-low">
+<div class="w-10 h-10 rounded-xl bg-secondary-container text-on-secondary-container flex flex-col items-center justify-center font-bold leading-none">
+<span class="text-xs uppercase">Dim</span>
+<span class="text-base">30</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-sm font-bold text-on-surface truncate">Culte d'Actions de Grâces</span>
+<span class="text-[12px] text-outline">08h30 - 12h00 • Sainte-Cène générale</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive script for client-side micro-interactions -->
+<script>
+    // Refresh banner toggle interaction
+    const refreshBanner = document.getElementById('refresh-alert');
+    if (refreshBanner) {
+      refreshBanner.addEventListener('click', () => {
+        refreshBanner.classList.add('opacity-50', 'pointer-events-none');
+        setTimeout(() => {
+          refreshBanner.innerHTML = `
+            <div class="flex items-center gap-2 text-tertiary font-bold font-body-sm text-body-sm">
+              <span class="material-symbols-outlined text-[18px]">check_circle</span>
+              <span>Fil actualisé en direct avec les serveurs du District Tsinga.</span>
+            </div>
+          `;
+          refreshBanner.classList.remove('opacity-50');
+        }, 600);
+      });
+    }
+
+    // Scroll to moderation panel from header quick-pill
+    const modBtn = document.getElementById('open-moderation-pill');
+    const modPanel = document.getElementById('moderation-panel');
+    if (modBtn && modPanel) {
+      modBtn.addEventListener('click', () => {
+        modPanel.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        modPanel.classList.add('ring-4', 'ring-primary');
+        setTimeout(() => {
+          modPanel.classList.remove('ring-4', 'ring-primary');
+        }, 1500);
+      });
+    }
+  </script>
+</div></main></div></body></html>

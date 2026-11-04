@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+
+<html lang="fr"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}.route-loader{position:fixed;top:0;left:0;height:3px;width:68%;background:#C8102E;z-index:9999;box-shadow:0 0 10px rgba(200,16,46,0.5);animation:pulse-bar 2s infinite ease-in-out;}@keyframes pulse-bar{0%{width:20%;opacity:0.8;}50%{width:85%;opacity:1;}100%{width:68%;opacity:0.9;}}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"on-primary":"#ffffff","surface-bright":"#fcf8fe","primary-fixed-dim":"#ffb3b1","surface-container-highest":"#e4e1e7","surface-variant":"#e4e1e7","secondary-fixed-dim":"#ffb956","on-error":"#ffffff","surface-dim":"#dcd9df","secondary-container":"#feb64e","on-secondary-container":"#714800","outline":"#906f6e","surface-tint":"#bf0229","on-tertiary":"#ffffff","inverse-on-surface":"#f3eff6","tertiary":"#00592b","on-secondary-fixed":"#2a1800","outline-variant":"#e5bdbb","on-tertiary-container":"#86faa7","on-error-container":"#93000a","on-primary-fixed-variant":"#92001c","secondary":"#835400","primary":"#9e001f","on-surface-variant":"#5c403f","surface-container":"#f0edf3","error":"#ba1a1a","on-background":"#1b1b1f","primary-container":"#c8102e","primary-fixed":"#ffdad8","surface-container-high":"#eae7ed","background":"#fcf8fe","error-container":"#ffdad6","tertiary-container":"#00743a","on-tertiary-fixed-variant":"#005228","on-primary-fixed":"#410007","on-secondary":"#ffffff","on-secondary-fixed-variant":"#643f00","tertiary-fixed":"#86faa7","on-tertiary-fixed":"#00210c","inverse-surface":"#303034","surface-container-low":"#f6f2f8","surface-container-lowest":"#ffffff","surface":"#fcf8fe","on-surface":"#1b1b1f","inverse-primary":"#ffb3b1","secondary-fixed":"#ffddb5","tertiary-fixed-dim":"#6add8d","on-primary-container":"#ffdad8"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-sm":"0.5rem","margin-desktop":"3rem","gutter":"1rem","space-lg":"1.5rem","space-xl":"2.5rem","space-xs":"0.25rem","gutter-desktop":"2rem","space-md":"1rem","margin":"1rem","margin-tablet":"2rem","gutter-tablet":"1.5rem"},"fontFamily":{"display-lg-mobile":["Plus Jakarta Sans"],"currency-display":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"label-md":["Inter"],"body-md":["Inter"],"headline-lg":["Plus Jakarta Sans"],"body-lg":["Inter"],"title-md":["Plus Jakarta Sans"],"body-md-medium":["Inter"],"label-sm":["Inter"],"body-sm":["Inter"],"headline-lg-mobile":["Plus Jakarta Sans"],"display-lg":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"]},"fontSize":{"display-lg-mobile":["34px",{"lineHeight":"42px","fontWeight":"800"}],"currency-display":["28px",{"lineHeight":"36px","fontWeight":"700"}],"headline-sm":["20px",{"lineHeight":"28px","fontWeight":"600"}],"label-md":["14px",{"lineHeight":"20px","fontWeight":"500"}],"body-md":["16px",{"lineHeight":"24px","fontWeight":"400"}],"headline-lg":["32px",{"lineHeight":"40px","fontWeight":"700"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"title-md":["18px",{"lineHeight":"26px","fontWeight":"600"}],"body-md-medium":["16px",{"lineHeight":"24px","fontWeight":"500"}],"label-sm":["12px",{"lineHeight":"16px","fontWeight":"600"}],"body-sm":["14px",{"lineHeight":"20px","fontWeight":"400"}],"headline-lg-mobile":["26px",{"lineHeight":"34px","fontWeight":"700"}],"display-lg":["48px",{"lineHeight":"56px","fontWeight":"800"}],"headline-md":["24px",{"lineHeight":"32px","fontWeight":"700"}]}}}}</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><div class="route-loader"></div><aside class="fixed left-0 top-0 h-full w-72 bg-inverse-surface text-inverse-on-surface z-50 flex flex-col justify-between hidden md:flex"><div class="flex flex-col flex-1 overflow-y-auto"><div class="px-space-md py-space-md flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-10 h-10 rounded-xl bg-primary-container flex items-center justify-center text-on-primary font-headline-sm text-headline-sm">FG</div><div><span class="font-headline-sm text-headline-sm tracking-tight text-surface-container-lowest block">FULLGOPE</span><span class="font-label-sm text-label-sm text-surface-variant flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-tertiary-fixed"></span>Connecté • Tsinga</span></div></div><button class="w-8 h-8 rounded-lg flex items-center justify-center text-surface-variant hover:text-surface-container-lowest transition-colors"><span class="material-symbols-outlined text-[20px]">dock_to_right</span></button></div><div class="px-space-md py-space-xs"><div class="bg-inverse-on-surface/5 rounded-lg px-space-sm py-1.5"><p class="font-label-sm text-label-sm text-secondary-fixed italic leading-tight">« No Other Christ, No Other Gospel »</p><p class="font-label-sm text-[10px] text-surface-dim uppercase tracking-wider mt-0.5">Mission du Plein Évangile (1961)</p></div></div><nav class="flex-1 px-space-sm py-space-md space-y-space-md" data-active-classes="bg-primary-container text-on-primary font-body-md-medium rounded-xl"><div class="space-y-1"><span class="px-space-sm font-label-sm text-label-sm uppercase tracking-wider text-surface-dim block mb-1">Principal</span><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="accueil" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">grid_view</span><span class="font-body-sm text-body-sm">Accueil</span></div></a></div><div class="space-y-1"><span class="px-space-sm font-label-sm text-label-sm uppercase tracking-wider text-surface-dim block mb-1">Communauté</span><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="membres" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">groups</span><span class="font-body-sm text-body-sm">Membres</span></div><span class="px-2 py-0.5 rounded-full font-label-sm text-[11px] bg-inverse-on-surface/15 text-surface-bright">1 450</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="departements" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">diversity_3</span><span class="font-body-sm text-body-sm">Départements</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="organisation" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">account_tree</span><span class="font-body-sm text-body-sm">Organisation</span></div></a></div><div class="space-y-1"><span class="px-space-sm font-label-sm text-label-sm uppercase tracking-wider text-surface-dim block mb-1">Ministère &amp; Activités</span><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="rapports" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">assignment</span><span class="font-body-sm text-body-sm">Rapports</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="publications" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">menu_book</span><span class="font-body-sm text-body-sm">Publications</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="evenements-et-plannings" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">calendar_month</span><span class="font-body-sm text-body-sm">Événements &amp; Plannings</span></div><span class="px-2 py-0.5 rounded-full font-label-sm text-[11px] bg-secondary-container text-on-secondary-container font-bold">3</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="reseau-social" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">hub</span><span class="font-body-sm text-body-sm">Réseau social</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="messagerie" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">chat_bubble</span><span class="font-body-sm text-body-sm">Messagerie</span></div><span class="px-2 py-0.5 rounded-full font-label-sm text-[11px] bg-primary text-on-primary font-bold">12</span></a><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="mediatheque" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">video_library</span><span class="font-body-sm text-body-sm">Médiathèque</span></div></a></div><div class="space-y-1"><span class="px-space-sm font-label-sm text-label-sm uppercase tracking-wider text-surface-dim block mb-1">Intendance &amp; Gouvernance</span><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="finance" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">payments</span><span class="font-body-sm text-body-sm">Finance</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="dons-et-campagnes" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">volunteer_activism</span><span class="font-body-sm text-body-sm">Dons &amp; Campagnes</span></div></a><a class="flex items-center justify-between px-space-sm py-2 rounded-xl text-surface-variant hover:bg-inverse-on-surface/10 hover:text-surface-container-lowest transition-all" data-path="administration" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-[20px]">admin_panel_settings</span><span class="font-body-sm text-body-sm">Administration</span></div></a></div></nav></div><div class="p-space-md bg-inverse-on-surface/5 flex items-center justify-between"><div class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-tertiary-fixed-dim"></span><span class="font-label-sm text-label-sm text-surface-variant">Serveur Yaoundé • v2.4</span></div><button class="text-surface-dim hover:text-surface-container-lowest transition-colors"><span class="material-symbols-outlined text-[18px]">help</span></button></div></aside><div class="md:pl-72"><header class="fixed top-0 left-0 md:left-72 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 px-space-md flex items-center justify-between"><div class="flex items-center gap-space-sm flex-1 max-w-xl"><button class="md:hidden w-10 h-10 rounded-xl flex items-center justify-center text-on-surface hover:bg-surface-container"><span class="material-symbols-outlined">menu</span></button><div class="relative flex-1 hidden sm:block"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">search</span><input class="w-full h-10 pl-10 pr-20 bg-surface-container-low rounded-xl font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant/70 focus:outline-none focus:bg-surface-container-lowest" placeholder="Rechercher fidèles, assemblées, reçus MoMo/Orange..." type="text"/><kbd class="absolute right-2.5 top-1/2 -translate-y-1/2 px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-[11px]">&amp;#8984;K</kbd></div><div class="hidden lg:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface"><span class="material-symbols-outlined text-primary text-[18px]">church</span><span class="font-body-md-medium text-body-md-medium">Pasteur Titulaire</span><span class="text-on-surface-variant">•</span><span class="text-on-surface-variant">District Centre (Temple Tsinga)</span></div></div><div class="flex items-center gap-space-sm"><div class="flex items-center gap-1 p-1 bg-surface-container-low rounded-full"><button class="px-2.5 py-1 rounded-full font-label-sm text-label-sm font-bold bg-inverse-surface text-surface-container-lowest">FR</button><button class="px-2.5 py-1 rounded-full font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface">EN</button></div><button class="h-9 px-2.5 rounded-xl bg-surface-container text-on-surface-variant hover:text-on-surface flex items-center gap-1.5 font-label-sm text-label-sm" title="Basculer l'état de chargement skeleton"><span class="material-symbols-outlined text-[18px] text-secondary">hourglass_empty</span><span class="hidden xl:inline">Skeleton</span></button><button class="relative w-10 h-10 rounded-xl flex items-center justify-center text-on-surface hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2 right-2 w-2.5 h-2.5 rounded-full bg-primary-container ring-2 ring-surface-container-lowest"></span></button><div class="flex items-center gap-2 pl-2 border-l border-surface-container-high"><div class="relative"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-tertiary-container ring-2 ring-surface-container-lowest"></span></div><div class="hidden sm:block text-left"><span class="font-label-md text-label-md text-on-surface block leading-tight">Rev. N. Samuel</span><span class="font-label-sm text-label-sm text-on-surface-variant block leading-tight">District Tsinga</span></div><span class="material-symbols-outlined text-on-surface-variant text-[18px]">arrow_drop_down</span></div></div></header><main class="w-full pt-16 bg-surface min-h-screen px-space-md md:px-gutter-desktop py-space-lg pb-24 md:pb-space-lg"><div class="flex flex-col w-full space-y-space-lg">
+<!-- En-tête de page & Fil d'Ariane -->
+<header class="flex flex-col gap-space-sm md:flex-row md:items-end md:justify-between bg-surface-container-lowest p-space-lg rounded-2xl shadow-sm">
+<div class="space-y-1">
+<nav class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm">
+<a class="hover:text-primary transition-colors flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[16px]">home</span>
+          Accueil
+        </a>
+<span class="text-surface-dim">/</span>
+<span class="text-on-surface-variant">Intendance &amp; Gouvernance</span>
+<span class="text-surface-dim">/</span>
+<span class="text-primary font-body-md-medium">Médiathèque &amp; Actifs Numériques</span>
+</nav>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight flex items-center gap-3">
+        Médiathèque Numérique &amp; Archives Multimédias
+        <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-[11px] font-bold">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> R2 Synced
+        </span>
+</h1>
+<p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-tertiary">verified_user</span>
+        Stockage certifié R2 &amp; Cloudflare CDN — Actifs paroissiaux, ministériels et liturgiques du Plein Évangile.
+      </p>
+</div>
+<!-- Actions Globales -->
+<div class="flex flex-wrap items-center gap-space-sm pt-2 md:pt-0">
+<button class="h-12 px-space-md rounded-xl bg-surface-container text-on-surface hover:bg-surface-container-high transition-all flex items-center gap-2 font-label-md text-label-md shadow-sm" onclick="document.getElementById('picker-modal-overlay').classList.remove('hidden')">
+<span class="material-symbols-outlined text-[20px] text-secondary">visibility</span>
+<span>Aperçu Sélecteur (Modale)</span>
+</button>
+<div class="relative inline-block text-left" id="more-actions-menu">
+<button class="h-12 px-space-md rounded-xl bg-surface-container text-on-surface hover:bg-surface-container-high transition-all flex items-center gap-2 font-label-md text-label-md shadow-sm">
+<span class="material-symbols-outlined text-[20px]">create_new_folder</span>
+<span class="hidden sm:inline">Créer dossier</span>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">expand_more</span>
+</button>
+</div>
+<button class="h-12 px-space-lg rounded-xl bg-primary-container text-on-primary hover:bg-primary transition-all flex items-center gap-2.5 font-label-md text-label-md font-bold shadow-md hover:scale-[1.01] active:scale-[0.98]" onclick="document.getElementById('file-upload-input').click()">
+<span class="material-symbols-outlined text-[22px]">cloud_upload</span>
+<span>+ Téléverser des fichiers</span>
+</button>
+<input class="hidden" id="file-upload-input" multiple="" type="file"/>
+</div>
+</header>
+<!-- Métriques / KPIs de Stockage & Distribution CDN -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- Jauge de stockage -->
+<div class="bg-surface-container-lowest p-space-md rounded-2xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-bold uppercase tracking-wider">Espace Stockage Cloud</span>
+<span class="p-2 rounded-xl bg-primary-fixed text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">cloud_sync</span>
+</span>
+</div>
+<div class="mt-3">
+<div class="flex items-baseline gap-2">
+<span class="font-currency-display text-currency-display text-on-surface">142.8 Go</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">/ 500 Go (28.5%)</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-2 mt-2.5 overflow-hidden flex">
+<div class="bg-primary-container h-full rounded-full" style="width: 28.5%"></div>
+<div class="bg-secondary-container h-full rounded-full" style="width: 4%"></div>
+</div>
+<div class="flex items-center justify-between text-[11px] font-label-sm text-on-surface-variant mt-1.5">
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-primary-container"></span>Actifs (142.8 Go)</span>
+<span>357.2 Go libres</span>
+</div>
+</div>
+</div>
+<!-- Total fichiers indexés -->
+<div class="bg-surface-container-lowest p-space-md rounded-2xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-bold uppercase tracking-wider">Fichiers Multimédias</span>
+<span class="p-2 rounded-xl bg-surface-container text-on-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">perm_media</span>
+</span>
+</div>
+<div class="mt-3">
+<div class="flex items-baseline gap-2">
+<span class="font-currency-display text-currency-display text-on-surface">3 480</span>
+<span class="font-label-sm text-label-sm text-tertiary font-bold flex items-center">
+<span class="material-symbols-outlined text-[16px]">arrow_upward</span>+124 ce mois
+          </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-tertiary">check_circle</span>
+          Intégrité MD5 vérifiée à 100%
+        </p>
+</div>
+</div>
+<!-- CDN Bandwidth -->
+<div class="bg-surface-container-lowest p-space-md rounded-2xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-bold uppercase tracking-wider">Trafic CDN Edge (30j)</span>
+<span class="p-2 rounded-xl bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">speed</span>
+</span>
+</div>
+<div class="mt-3">
+<div class="flex items-baseline gap-2">
+<span class="font-currency-display text-currency-display text-on-surface">1.8 To</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">diffusés</span>
+</div>
+<div class="flex items-center gap-2 mt-2">
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-[11px] font-bold">Hit: 98.4%</span>
+<span class="font-body-sm text-[12px] text-on-surface-variant">Noeuds Douala &amp; Ydé</span>
+</div>
+</div>
+</div>
+<!-- Téléversements récents -->
+<div class="bg-surface-container-lowest p-space-md rounded-2xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-bold uppercase tracking-wider">Uploads Aujourd'hui</span>
+<span class="p-2 rounded-xl bg-tertiary-fixed text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">update</span>
+</span>
+</div>
+<div class="mt-3">
+<div class="flex items-baseline gap-2">
+<span class="font-currency-display text-currency-display text-on-surface">24 fichiers</span>
+<span class="font-label-sm text-label-sm text-primary font-bold">Actifs</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2 truncate">
+          Culte Tsinga + Affiches Convention
+        </p>
+</div>
+</div>
+</section>
+<!-- Zone de Glisser-Déposer & Transferts R2 en direct -->
+<section class="bg-surface-container-lowest p-space-md md:p-space-lg rounded-2xl shadow-sm space-y-space-md">
+<div class="p-6 md:p-8 rounded-xl bg-surface-container-low text-center flex flex-col items-center justify-center transition-all hover:bg-surface-container group cursor-pointer" onclick="document.getElementById('file-upload-input').click()">
+<div class="w-16 h-16 rounded-2xl bg-surface-container-lowest text-primary flex items-center justify-center shadow-sm group-hover:scale-110 group-hover:bg-primary group-hover:text-on-primary transition-all">
+<span class="material-symbols-outlined text-[36px]">cloud_upload</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mt-3">Glissez-déposez vos fichiers liturgiques ou parcourez votre appareil</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 max-w-xl">
+        Support multi-part upload optimisé R2 : Vidéos 4K jusqu'à 2 Go, Enregistrements audio mp3, Affiches haute résolution (PNG, JPG, WebP) et Bulletins PDF.
+      </p>
+<div class="flex flex-wrap items-center justify-center gap-2 mt-4 text-[12px] font-label-sm text-on-surface-variant">
+<span class="px-2.5 py-1 bg-surface-container-lowest rounded-md">Vidéos (MP4, MKV)</span>
+<span class="px-2.5 py-1 bg-surface-container-lowest rounded-md">Audios (MP3, WAV, AAC)</span>
+<span class="px-2.5 py-1 bg-surface-container-lowest rounded-md">Images (JPG, PNG, WebP)</span>
+<span class="px-2.5 py-1 bg-surface-container-lowest rounded-md">Docs (PDF, DOCX)</span>
+</div>
+</div>
+<!-- Fichiers en cours de téléversement (Simulation interactive) -->
+<div class="space-y-space-sm pt-2">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-bold text-on-surface uppercase tracking-wider flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+          File de transfert en temps réel (2 éléments)
+        </span>
+<button class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface">Masquer la file</button>
+</div>
+<!-- Item 1 : Vidéo en cours (68%) -->
+<div class="bg-surface p-space-sm md:p-space-md rounded-xl flex flex-col md:flex-row md:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[24px]">video_file</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-2">
+<p class="font-body-md-medium text-body-md-medium text-on-surface truncate">predication_pasteur_samuel_23mars.mp4</p>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-primary font-label-sm text-[10px] font-bold flex-shrink-0">Envoi direct R2</span>
+</div>
+<p class="font-body-sm text-[12px] text-on-surface-variant">840 Mo • 45 Mo/s • Restant ~12s</p>
+</div>
+</div>
+<div class="flex items-center gap-4 flex-1 max-w-md justify-end">
+<div class="flex-1 hidden sm:block">
+<div class="flex justify-between font-label-sm text-[11px] text-on-surface-variant mb-1">
+<span>Transfert en cours</span>
+<span class="font-bold text-on-surface">68%</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-1.5 overflow-hidden">
+<div class="bg-primary-container h-full rounded-full transition-all duration-300" style="width: 68%"></div>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" title="Suspendre">
+<span class="material-symbols-outlined text-[18px]">pause</span>
+</button>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-error hover:bg-error-container transition-colors" title="Annuler le transfert">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Item 2 : Bannière achevée (100%) -->
+<div class="bg-surface p-space-sm md:p-space-md rounded-xl flex flex-col md:flex-row md:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-10 h-10 rounded-lg bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[24px]">image</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-2">
+<p class="font-body-md-medium text-body-md-medium text-on-surface truncate">banniere_convention_pentecote_4k.png</p>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-container text-on-tertiary font-label-sm text-[10px] font-bold flex-shrink-0">Scellé &amp; Prêt</span>
+</div>
+<p class="font-body-sm text-[12px] text-on-surface-variant">18 Mo • Optimisé WebP automatique (CDN Edge)</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-tertiary font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">check_circle</span> Traité avec succès
+          </span>
+<button class="h-8 px-2.5 rounded-lg bg-surface-container-high text-on-surface hover:bg-surface-container font-label-sm text-[12px] ml-2">
+            Inspecter
+          </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Filtres, Barre d'outils et Sélections -->
+<section class="bg-surface-container-lowest p-space-md rounded-2xl shadow-sm space-y-space-md">
+<!-- Ligne de recherche & Sélecteurs de vue -->
+<div class="flex flex-col lg:flex-row gap-space-sm items-stretch lg:items-center justify-between">
+<!-- Barre de recherche enrichie -->
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">search</span>
+<input class="w-full h-11 pl-11 pr-24 bg-surface-container-low rounded-xl font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant/70 focus:outline-none focus:bg-surface-container focus:ring-2 focus:ring-primary-container/20 transition-all" placeholder="Rechercher par nom de fichier, étiquette, auteur, prédicateur... (ex: culte_23mars.mp3, affiche_pentecote.png)" type="text"/>
+<div class="absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-1">
+<span class="text-on-surface-variant text-[11px] font-label-sm">Filtres</span>
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">tune</span>
+</div>
+</div>
+<!-- Filtres secondaires : District & Tri -->
+<div class="flex flex-wrap items-center gap-2">
+<select class="h-11 px-3 bg-surface-container-low rounded-xl font-body-sm text-body-sm text-on-surface border-none focus:ring-0 cursor-pointer">
+<option>Tous les Échelons (Cameroun)</option>
+<option selected="">Temple Central de Tsinga</option>
+<option>District Centre 1</option>
+<option>Convention Nationale 2025</option>
+<option>Département National Jeunesse</option>
+</select>
+<select class="h-11 px-3 bg-surface-container-low rounded-xl font-body-sm text-body-sm text-on-surface border-none focus:ring-0 cursor-pointer">
+<option>Plus récents d'abord</option>
+<option>Taille décroissante (Mo/Go)</option>
+<option>Nom A-Z</option>
+<option>Plus téléchargés</option>
+</select>
+<!-- Bascule Grille / Liste -->
+<div class="flex items-center p-1 bg-surface-container-low rounded-xl">
+<button class="w-9 h-9 rounded-lg bg-surface-container-lowest text-primary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[20px]">grid_view</span>
+</button>
+<button class="w-9 h-9 rounded-lg text-on-surface-variant hover:text-on-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">format_list_bulleted</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Onglets de catégories de médias avec compteurs -->
+<div class="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none">
+<button class="px-4 py-2 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm font-bold flex items-center gap-2 flex-shrink-0 shadow-sm">
+<span>Tous les actifs</span>
+<span class="px-2 py-0.5 rounded-full bg-white/20 text-on-primary text-[11px]">3 480</span>
+</button>
+<button class="px-4 py-2 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm flex items-center gap-2 flex-shrink-0 transition-colors">
+<span class="material-symbols-outlined text-[16px]">photo_camera</span>
+<span>Photos &amp; Cultes</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface text-[11px]">1 850</span>
+</button>
+<button class="px-4 py-2 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm flex items-center gap-2 flex-shrink-0 transition-colors">
+<span class="material-symbols-outlined text-[16px]">brush</span>
+<span>Affiches &amp; Visuels</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface text-[11px]">420</span>
+</button>
+<button class="px-4 py-2 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm flex items-center gap-2 flex-shrink-0 transition-colors">
+<span class="material-symbols-outlined text-[16px]">videocam</span>
+<span>Vidéos &amp; Replays</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface text-[11px]">310</span>
+</button>
+<button class="px-4 py-2 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm flex items-center gap-2 flex-shrink-0 transition-colors">
+<span class="material-symbols-outlined text-[16px]">graphic_eq</span>
+<span>Audio &amp; Prédications</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface text-[11px]">650</span>
+</button>
+<button class="px-4 py-2 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm flex items-center gap-2 flex-shrink-0 transition-colors">
+<span class="material-symbols-outlined text-[16px]">description</span>
+<span>Documents &amp; PVs</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface text-[11px]">250</span>
+</button>
+<button class="px-4 py-2 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm flex items-center gap-2 flex-shrink-0 transition-colors">
+<span class="material-symbols-outlined text-[16px]">account_circle</span>
+<span>Avatars &amp; Profils</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface text-[11px]">180</span>
+</button>
+</div>
+</section>
+<!-- CONTENU PRINCIPAL : Grille multimédia + Volet Inspecteur Latéral -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- COLONNE GAUCHE (8 colonnes sur Desktop) : Grille d'actifs -->
+<div class="lg:col-span-8 space-y-space-md">
+<!-- Barre d'état de sélection multiple -->
+<div class="flex items-center justify-between px-2">
+<div class="flex items-center gap-2 font-label-sm text-label-sm text-on-surface-variant">
+<input class="w-4 h-4 rounded text-primary focus:ring-0 cursor-pointer" id="select-all" type="checkbox"/>
+<label class="cursor-pointer" for="select-all">Tout sélectionner dans cette vue</label>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Affichage de 8 sur 3 480 fichiers</span>
+</div>
+<!-- Grille responsive de cartes -->
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-space-md">
+<!-- Carte 1 : Affiche Sélectionnée (Actif courant dans le panneau latéral) -->
+<div class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-md ring-2 ring-primary-container flex flex-col group relative transition-all">
+<div class="relative aspect-video bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Graphic poster for the National Pentecost Convention 2025 in Cameroon showing vivid flames of the Holy Spirit, golden glowing cross and crowds gathered in prayer with solemn Cameroonian typography in deep crimson and amber." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQ2AkrlYVkSGSL8erWU5GGChNNokQBfLJ4T_UAGgq8VzFUp7uAHpBC2DfQQPaqCmue2207F7P2yYsCGdkZNqWQW7TWLspGvsDYmD5IoOOzdRqBPABrtq6qS9N4ptafgjauKNCGzxsOIM9E68yDAOgvFKKKn3lreCejnjnD8Qs7KuK2kLAHOQLFwSAyPdqtYsPmqX15b45-1IZB4L2FVl86r4k6F7-Ke7bYpxFZefY"/>
+<div class="absolute top-2 left-2 flex items-center gap-1.5">
+<input checked="" class="w-4 h-4 rounded accent-primary cursor-pointer" type="checkbox"/>
+<span class="px-2 py-0.5 rounded-md bg-inverse-surface/80 backdrop-blur text-surface-bright font-label-sm text-[10px] font-bold uppercase">.JPG</span>
+</div>
+<div class="absolute top-2 right-2">
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-[10px] font-bold">Affiche</span>
+</div>
+<div class="absolute bottom-2 right-2 px-2 py-0.5 rounded bg-inverse-surface/70 backdrop-blur text-surface-bright font-label-sm text-[10px]">
+              4.2 Mo
+            </div>
+</div>
+<div class="p-3 flex-1 flex flex-col justify-between">
+<div>
+<p class="font-body-md-medium text-[13px] text-on-surface truncate" title="affiche_pentecote_2025_hq.jpg">affiche_pentecote_2025_hq.jpg</p>
+<p class="font-body-sm text-[11px] text-on-surface-variant mt-0.5">3840×2160 • 28 Mars 2025</p>
+</div>
+<div class="flex items-center justify-between mt-3 pt-2 bg-surface-container-low/50 -mx-3 -mb-3 px-3 py-1.5">
+<span class="font-label-sm text-[11px] text-tertiary font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">link</span> CDN Prêt
+              </span>
+<button class="w-7 h-7 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Carte 2 : Vidéo de Culte -->
+<div class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm hover:shadow-md flex flex-col group relative transition-all">
+<div class="relative aspect-video bg-inverse-surface overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 opacity-80" data-alt="Interior sanctuary of Full Gospel Central Church in Tsinga Yaounde Cameroon during Sunday worship, vibrant praise team singing on elevated platform with warm golden illumination and congregation hands lifted." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzW3191bZuyvDPKc6Eas3ybulUmq0yEyuc8VRiNroPlF5WNSHE_aXJkXKE-_jH20kS_QJjDleuosVKP5RGbZStG36v2H7g353aPM5zaWoqvsTGeex9gXKvoZFeT6PzNQ1j1UOZp8s-9vkMXF5jITMWV219UnqwvYotDmo-ML8XtWCzQIF96gNuMMgED6k4DXPOmB5Ofhh0fHbNlxxRUNjmBowWRhQySAQOmXBf2zE"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-10 h-10 rounded-full bg-primary-container text-on-primary flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[24px]">play_arrow</span>
+</div>
+</div>
+<div class="absolute top-2 left-2 flex items-center gap-1.5">
+<input class="w-4 h-4 rounded accent-primary cursor-pointer" type="checkbox"/>
+<span class="px-2 py-0.5 rounded-md bg-inverse-surface/80 backdrop-blur text-surface-bright font-label-sm text-[10px] font-bold uppercase">.MP4</span>
+</div>
+<div class="absolute top-2 right-2">
+<span class="px-2 py-0.5 rounded-full bg-primary text-on-primary font-label-sm text-[10px] font-bold">Vidéo</span>
+</div>
+<div class="absolute bottom-2 right-2 px-2 py-0.5 rounded bg-inverse-surface/80 backdrop-blur text-surface-bright font-label-sm text-[10px]">
+              01:45:20
+            </div>
+</div>
+<div class="p-3 flex-1 flex flex-col justify-between">
+<div>
+<p class="font-body-md-medium text-[13px] text-on-surface truncate" title="culte_adoration_dimanche_tsinga.mp4">culte_adoration_dimanche_tsinga.mp4</p>
+<p class="font-body-sm text-[11px] text-on-surface-variant mt-0.5">1.2 Go • 1080p 60fps</p>
+</div>
+<div class="flex items-center justify-between mt-3 pt-2 bg-surface-container-low/50 -mx-3 -mb-3 px-3 py-1.5">
+<span class="font-label-sm text-[11px] text-on-surface-variant">Temple Tsinga</span>
+<button class="w-7 h-7 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Carte 3 : Audio Prédication (Waveform) -->
+<div class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm hover:shadow-md flex flex-col group relative transition-all">
+<div class="relative aspect-video bg-surface-container-high p-4 flex flex-col justify-between overflow-hidden">
+<div class="flex items-center justify-between z-10">
+<span class="px-2 py-0.5 rounded-md bg-inverse-surface/80 backdrop-blur text-surface-bright font-label-sm text-[10px] font-bold uppercase">.MP3</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary text-on-secondary font-label-sm text-[10px] font-bold">Audio</span>
+</div>
+<!-- Onde sonore SVG stylisée -->
+<div class="flex items-end justify-between gap-0.5 h-12 my-auto px-2">
+<span class="w-1 bg-primary h-4 rounded-full"></span>
+<span class="w-1 bg-primary h-8 rounded-full"></span>
+<span class="w-1 bg-primary h-12 rounded-full"></span>
+<span class="w-1 bg-primary h-6 rounded-full"></span>
+<span class="w-1 bg-primary-container h-10 rounded-full"></span>
+<span class="w-1 bg-primary-container h-3 rounded-full"></span>
+<span class="w-1 bg-primary h-9 rounded-full"></span>
+<span class="w-1 bg-primary h-11 rounded-full"></span>
+<span class="w-1 bg-primary h-5 rounded-full"></span>
+<span class="w-1 bg-primary-container h-8 rounded-full"></span>
+</div>
+<div class="flex items-center justify-between z-10 font-label-sm text-[10px] text-on-surface-variant">
+<span>58 min</span>
+<span>48 Mo</span>
+</div>
+</div>
+<div class="p-3 flex-1 flex flex-col justify-between">
+<div>
+<p class="font-body-md-medium text-[13px] text-on-surface truncate" title="enseignement_puissance_du_sang_rev_samuel.mp3">enseignement_puissance_du_sang...</p>
+<p class="font-body-sm text-[11px] text-on-surface-variant mt-0.5">Rev. Samuel N. • 320 kbps</p>
+</div>
+<div class="flex items-center justify-between mt-3 pt-2 bg-surface-container-low/50 -mx-3 -mb-3 px-3 py-1.5">
+<button class="font-label-sm text-[11px] text-primary font-bold flex items-center gap-1 hover:underline">
+<span class="material-symbols-outlined text-[16px]">play_circle</span> Écouter
+              </button>
+<button class="w-7 h-7 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Carte 4 : Baptêmes de la Sanaga (Photo) -->
+<div class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm hover:shadow-md flex flex-col group relative transition-all">
+<div class="relative aspect-video bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Outdoor baptism ceremony in the Sanaga river Cameroon conducted by Full Gospel pastors in white robes, joyful believers being immersed with tropical lush riverbanks under bright equatorial daylight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoflHmaPQXPr2jasqT0x4FRj_f7Pof4b0VyG5Dgza-UT3osbuFLd1O4uW_vb-kJ3jpVQlE3JetfCeHolde2q-3hjSv9AVZd44yDpaBpWg7ZVk8aZ9vIYKbguyr57WwhtKRVakqhyrsmuDmkKVt5lE_zlHo17ONE66iRtm9hdPWlVsNc9_j0ERWu_roErCzKOzngfFhs5aCgX2_fCWxbJupRTOejqofNy1VTvFy-lQ"/>
+<div class="absolute top-2 left-2 flex items-center gap-1.5">
+<input class="w-4 h-4 rounded accent-primary cursor-pointer" type="checkbox"/>
+<span class="px-2 py-0.5 rounded-md bg-inverse-surface/80 backdrop-blur text-surface-bright font-label-sm text-[10px] font-bold uppercase">.JPG</span>
+</div>
+<div class="absolute top-2 right-2">
+<span class="px-2 py-0.5 rounded-full bg-tertiary text-on-tertiary font-label-sm text-[10px] font-bold">Photo</span>
+</div>
+<div class="absolute bottom-2 right-2 px-2 py-0.5 rounded bg-inverse-surface/70 backdrop-blur text-surface-bright font-label-sm text-[10px]">
+              6.8 Mo
+            </div>
+</div>
+<div class="p-3 flex-1 flex flex-col justify-between">
+<div>
+<p class="font-body-md-medium text-[13px] text-on-surface truncate" title="photo_baptemes_sanaga_mars2025.jpg">photo_baptemes_sanaga_mars2025.jpg</p>
+<p class="font-body-sm text-[11px] text-on-surface-variant mt-0.5">District Centre • 14 Mars 2025</p>
+</div>
+<div class="flex items-center justify-between mt-3 pt-2 bg-surface-container-low/50 -mx-3 -mb-3 px-3 py-1.5">
+<span class="font-label-sm text-[11px] text-on-surface-variant">4240×2832</span>
+<button class="w-7 h-7 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Carte 5 : Document Programme PDF -->
+<div class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm hover:shadow-md flex flex-col group relative transition-all">
+<div class="relative aspect-video bg-surface-container p-4 flex flex-col justify-between overflow-hidden">
+<div class="flex items-center justify-between z-10">
+<span class="px-2 py-0.5 rounded-md bg-inverse-surface/80 backdrop-blur text-surface-bright font-label-sm text-[10px] font-bold uppercase">.PDF</span>
+<span class="px-2 py-0.5 rounded-full bg-inverse-surface text-surface-bright font-label-sm text-[10px] font-bold">Document</span>
+</div>
+<div class="flex flex-col items-center justify-center my-auto">
+<span class="material-symbols-outlined text-[44px] text-primary">picture_as_pdf</span>
+<span class="font-label-sm text-[10px] text-on-surface-variant mt-1">24 Pages • Français &amp; English</span>
+</div>
+<div class="flex items-center justify-between z-10 font-label-sm text-[10px] text-on-surface-variant">
+<span>3.4 Mo</span>
+<span>Signé Pasteur</span>
+</div>
+</div>
+<div class="p-3 flex-1 flex flex-col justify-between">
+<div>
+<p class="font-body-md-medium text-[13px] text-on-surface truncate" title="programme_officiel_convention_pentecote.pdf">programme_officiel_convention...</p>
+<p class="font-body-sm text-[11px] text-on-surface-variant mt-0.5">Comité d'Organisation</p>
+</div>
+<div class="flex items-center justify-between mt-3 pt-2 bg-surface-container-low/50 -mx-3 -mb-3 px-3 py-1.5">
+<a class="font-label-sm text-[11px] text-primary font-bold flex items-center gap-1 hover:underline" href="#">
+<span class="material-symbols-outlined text-[14px]">download</span> Ouvrir
+              </a>
+<button class="w-7 h-7 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Carte 6 : Avatar Officiel Pasteur -->
+<div class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm hover:shadow-md flex flex-col group relative transition-all">
+<div class="relative aspect-video bg-surface-container flex items-center justify-center overflow-hidden">
+<div class="w-20 h-20 rounded-full bg-surface-container-high overflow-hidden shadow-inner flex items-center justify-center">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" data-alt="Dignified portrait of an African senior pastor wearing a dark clerical suit and collar, calm benevolent smile, neutral clean photographic studio lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwukCrlIMjPjFrmpjxY-D00GsRpKpMCyI805WEp0O8_ea9EsvH_-76qceLxEclrSP3MDunvaYy3TWLfReJif0RjZrrhKRXSMd15yw16KHMKL2ZWdxouyG3e6PIoVdbh8mPvQW8KlFZC9-zCsERixNoZDbzsaqXsc5fjGheuucJ_e9TO_LSdCXbJDNnBVbaWjTSj5UvSExV5CdQm60_RmKRVii5551n3aH-ffM6W_8"/>
+</div>
+<div class="absolute top-2 left-2 flex items-center gap-1.5">
+<input class="w-4 h-4 rounded accent-primary cursor-pointer" type="checkbox"/>
+<span class="px-2 py-0.5 rounded-md bg-inverse-surface/80 backdrop-blur text-surface-bright font-label-sm text-[10px] font-bold uppercase">.PNG</span>
+</div>
+<div class="absolute top-2 right-2">
+<span class="px-2 py-0.5 rounded-full bg-outline text-surface-bright font-label-sm text-[10px] font-bold">Avatar</span>
+</div>
+<div class="absolute bottom-2 right-2 px-2 py-0.5 rounded bg-inverse-surface/70 backdrop-blur text-surface-bright font-label-sm text-[10px]">
+              850 Ko
+            </div>
+</div>
+<div class="p-3 flex-1 flex flex-col justify-between">
+<div>
+<p class="font-body-md-medium text-[13px] text-on-surface truncate" title="avatar_rev_samuel_officiel.png">avatar_rev_samuel_officiel.png</p>
+<p class="font-body-sm text-[11px] text-on-surface-variant mt-0.5">Détouré transparent • 800×800</p>
+</div>
+<div class="flex items-center justify-between mt-3 pt-2 bg-surface-container-low/50 -mx-3 -mb-3 px-3 py-1.5">
+<span class="font-label-sm text-[11px] text-on-surface-variant">Profil Rev. Samuel</span>
+<button class="w-7 h-7 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Carte 7 : Communion fraternelle Jeunesse -->
+<div class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm hover:shadow-md flex flex-col group relative transition-all">
+<div class="relative aspect-video bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Young Cameroonian church youth members smiling together in front of the modern chapel courtyard, holding Bibles and instruments, bright sunny Yaounde weather, full of energy and fellowship." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC49VII1aqjHA2uE_k_ggpaIgBnZl-n8KJE4AYozbiu56eegDdCdugrjqmqhuGHnRSB_a4uFLj9kiswdOQZF3Owqafy7nC479lgtKcab4ujrYx6t2qsP_JAmEM8zPyKHjaXldIjOXsx_uzrDuu8QMNBmJoIHV-pwLx-64dkj0fm_DYu7e1Gpl9iyOdfXvXcbEYaepsvikfzG9LcDOmeNzR9QCO2uKlgKtjNLBluLg4"/>
+<div class="absolute top-2 left-2 flex items-center gap-1.5">
+<input class="w-4 h-4 rounded accent-primary cursor-pointer" type="checkbox"/>
+<span class="px-2 py-0.5 rounded-md bg-inverse-surface/80 backdrop-blur text-surface-bright font-label-sm text-[10px] font-bold uppercase">.JPG</span>
+</div>
+<div class="absolute top-2 right-2">
+<span class="px-2 py-0.5 rounded-full bg-tertiary text-on-tertiary font-label-sm text-[10px] font-bold">Photo</span>
+</div>
+<div class="absolute bottom-2 right-2 px-2 py-0.5 rounded bg-inverse-surface/70 backdrop-blur text-surface-bright font-label-sm text-[10px]">
+              5.1 Mo
+            </div>
+</div>
+<div class="p-3 flex-1 flex flex-col justify-between">
+<div>
+<p class="font-body-md-medium text-[13px] text-on-surface truncate" title="communion_fraternelle_jeunesse_tsinga.jpg">communion_fraternelle_jeunesse...</p>
+<p class="font-body-sm text-[11px] text-on-surface-variant mt-0.5">Jeunesse Tsinga • Mars 2025</p>
+</div>
+<div class="flex items-center justify-between mt-3 pt-2 bg-surface-container-low/50 -mx-3 -mb-3 px-3 py-1.5">
+<span class="font-label-sm text-[11px] text-on-surface-variant">3000×2000</span>
+<button class="w-7 h-7 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Carte 8 : Bulletin Annonces Avril -->
+<div class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm hover:shadow-md flex flex-col group relative transition-all">
+<div class="relative aspect-video bg-surface-container p-4 flex flex-col justify-between overflow-hidden">
+<div class="flex items-center justify-between z-10">
+<span class="px-2 py-0.5 rounded-md bg-inverse-surface/80 backdrop-blur text-surface-bright font-label-sm text-[10px] font-bold uppercase">.PDF</span>
+<span class="px-2 py-0.5 rounded-full bg-inverse-surface text-surface-bright font-label-sm text-[10px] font-bold">Document</span>
+</div>
+<div class="flex flex-col items-center justify-center my-auto">
+<span class="material-symbols-outlined text-[44px] text-secondary">feed</span>
+<span class="font-label-sm text-[10px] text-on-surface-variant mt-1">4 Pages • Bilingue</span>
+</div>
+<div class="flex items-center justify-between z-10 font-label-sm text-[10px] text-on-surface-variant">
+<span>1.1 Mo</span>
+<span>District Centre</span>
+</div>
+</div>
+<div class="p-3 flex-1 flex flex-col justify-between">
+<div>
+<p class="font-body-md-medium text-[13px] text-on-surface truncate" title="bulletin_annonces_avril_2025.pdf">bulletin_annonces_avril_2025.pdf</p>
+<p class="font-body-sm text-[11px] text-on-surface-variant mt-0.5">Paroisse Tsinga • 02 Avr 2025</p>
+</div>
+<div class="flex items-center justify-between mt-3 pt-2 bg-surface-container-low/50 -mx-3 -mb-3 px-3 py-1.5">
+<a class="font-label-sm text-[11px] text-primary font-bold flex items-center gap-1 hover:underline" href="#">
+<span class="material-symbols-outlined text-[14px]">download</span> Télécharger
+              </a>
+<button class="w-7 h-7 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination & Volume des éléments -->
+<div class="flex items-center justify-between pt-4 pb-2">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Page 1 sur 435</span>
+<div class="flex items-center gap-1">
+<button class="w-10 h-10 rounded-xl bg-surface-container text-on-surface-variant flex items-center justify-center disabled:opacity-40" disabled="">
+<span class="material-symbols-outlined text-[20px]">chevron_left</span>
+</button>
+<button class="w-10 h-10 rounded-xl bg-primary-container text-on-primary font-label-md text-label-md font-bold">1</button>
+<button class="w-10 h-10 rounded-xl bg-surface-container text-on-surface hover:bg-surface-container-high font-label-md text-label-md">2</button>
+<button class="w-10 h-10 rounded-xl bg-surface-container text-on-surface hover:bg-surface-container-high font-label-md text-label-md">3</button>
+<span class="px-2 text-on-surface-variant">...</span>
+<button class="w-10 h-10 rounded-xl bg-surface-container text-on-surface hover:bg-surface-container-high font-label-md text-label-md">435</button>
+<button class="w-10 h-10 rounded-xl bg-surface-container text-on-surface hover:bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- COLONNE DROITE (4 colonnes sur Desktop) : Volet Inspecteur d'Actif Sélectionné -->
+<aside class="lg:col-span-4 bg-surface-container-lowest rounded-2xl shadow-sm overflow-hidden sticky top-20 flex flex-col">
+<!-- En-tête de l'inspecteur -->
+<div class="p-space-md bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-primary text-[22px]">info</span>
+<h2 class="font-title-md text-title-md text-on-surface truncate">Inspecteur d'Actif</h2>
+</div>
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 rounded-lg text-error hover:bg-error-container flex items-center justify-center" onclick="document.getElementById('delete-modal').classList.remove('hidden')" title="Supprimer définitivement">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+<button class="w-8 h-8 rounded-lg text-on-surface-variant hover:bg-surface-container flex items-center justify-center" title="Fermer le volet">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+</div>
+<!-- Aperçu Grand Format de l'image sélectionnée -->
+<div class="p-space-md space-y-space-md overflow-y-auto max-h-[calc(100vh-140px)]">
+<div class="relative rounded-xl overflow-hidden bg-surface-container aspect-video shadow-inner">
+<img class="w-full h-full object-cover" data-alt="Grand visual banner of the National Pentecost Convention 2025 with fiery dove descending over map of Cameroon, bilingual scriptures, vibrant full color in 4K sharpness." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAy0YlBCYKDSApvQ74xgHqkRsXuuD0xnu2F1ZW_YbYx9uyQk-A7N5jdUk06s-tF4HQ8pZVV2PdeTcqAdHR7BrXJEmgWkRnjdlwVX2nMqJ0DY75JyUQjW8GR49w62RgIRwl0VLGzc0ZNpejgzTtO4qqYUfZ1e_Y21j8-CiT6DsZfOgVsiwf7kFtH1OFGOz2w_aNsBuoaVvxqJaOBTdk6Fci0gV-QtqkES6UzbTDJ8uY"/>
+<div class="absolute bottom-2 right-2 flex items-center gap-1">
+<button class="p-1.5 rounded-lg bg-inverse-surface/80 text-surface-bright hover:bg-inverse-surface transition-colors" title="Zoomer / Lightbox">
+<span class="material-symbols-outlined text-[16px]">zoom_in</span>
+</button>
+<button class="p-1.5 rounded-lg bg-inverse-surface/80 text-surface-bright hover:bg-inverse-surface transition-colors" title="Télécharger l'original">
+<span class="material-symbols-outlined text-[16px]">download</span>
+</button>
+</div>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface break-words leading-tight">affiche_pentecote_2025_hq.jpg</h3>
+<p class="font-body-sm text-[12px] text-on-surface-variant mt-1">Déposé par Pasteur Samuel N. (Temple Tsinga)</p>
+</div>
+<!-- Fiche Métadonnées Techniques -->
+<div class="bg-surface-container-low rounded-xl p-space-sm space-y-2 font-label-sm text-[12px]">
+<div class="flex justify-between py-1 text-on-surface-variant">
+<span>Type MIME :</span>
+<span class="font-body-md-medium text-on-surface">image/jpeg</span>
+</div>
+<div class="flex justify-between py-1 text-on-surface-variant">
+<span>Dimensions réelles :</span>
+<span class="font-body-md-medium text-on-surface">3840 × 2160 px (16:9 4K)</span>
+</div>
+<div class="flex justify-between py-1 text-on-surface-variant">
+<span>Poids du fichier :</span>
+<span class="font-body-md-medium text-on-surface">4.2 Mo (4 404 019 octets)</span>
+</div>
+<div class="flex justify-between py-1 text-on-surface-variant">
+<span>Datacenter &amp; CDN :</span>
+<span class="font-body-md-medium text-tertiary flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span> Douala Edge / Ydé Primary
+            </span>
+</div>
+<div class="flex justify-between py-1 text-on-surface-variant">
+<span>Horodatage :</span>
+<span class="font-body-md-medium text-on-surface">28 Mars 2025, 16:32 WAT</span>
+</div>
+<div class="flex justify-between py-1 text-on-surface-variant">
+<span>Utilisations détectées :</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-primary font-bold">3 publications actives</span>
+</div>
+</div>
+<!-- Accessibilité & SEO (Texte alternatif obligatoire) -->
+<div class="space-y-1.5">
+<label class="font-label-md text-label-md text-on-surface flex items-center justify-between">
+<span class="flex items-center gap-1">
+              Texte alternatif (Alt text)
+              <span class="text-error">*</span>
+</span>
+<span class="text-[11px] font-label-sm text-tertiary">Exigence Accessibilité</span>
+</label>
+<textarea class="w-full p-3 bg-surface-container-low rounded-xl font-body-sm text-body-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary-container/20 resize-none" rows="3">Affiche solennelle de la Grande Convention Nationale de Pentecôte 2025 de la Full Gospel Mission Cameroun avec le thème 'Le Réveil des Nations' et la colombe enflammée.</textarea>
+<button class="h-9 px-3 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors font-label-sm text-[12px] flex items-center gap-1.5 ml-auto">
+<span class="material-symbols-outlined text-[16px] text-tertiary">save</span>
+<span>Enregistrer le texte alternatif</span>
+</button>
+</div>
+<!-- Titre public & Description liturgique -->
+<div class="space-y-2">
+<div>
+<label class="font-label-sm text-[12px] text-on-surface font-bold">Titre public d'affichage</label>
+<input class="w-full h-10 px-3 mt-1 bg-surface-container-low rounded-xl font-body-sm text-body-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary-container/20" type="text" value="Visuel Officiel - Convention Nationale de Pentecôte 2025"/>
+</div>
+<div>
+<label class="font-label-sm text-[12px] text-on-surface font-bold">Description pastorale &amp; Contexte</label>
+<textarea class="w-full p-3 mt-1 bg-surface-container-low rounded-xl font-body-sm text-body-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary-container/20 resize-none" rows="2">Visuel approuvé par le Bureau National pour diffusion dans les districts Centre, Littoral et Grand Nord.</textarea>
+</div>
+</div>
+<!-- Intégration CDN & Liens directs -->
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-primary">cloud_sync</span>
+            Lien Public CDN Sécurisé
+          </label>
+<div class="flex items-center gap-1.5 bg-surface-container-low p-1.5 rounded-xl">
+<input class="flex-1 bg-transparent px-2 font-mono text-[11px] text-on-surface truncate focus:outline-none" id="cdn-url-input" readonly="" type="text" value="https://cdn.fullgope.cm/media/2025/affiches/convention-pentecote-hq.webp"/>
+<button class="h-8 px-2.5 rounded-lg bg-primary-container text-on-primary font-label-sm text-[11px] font-bold flex items-center gap-1 hover:bg-primary transition-all flex-shrink-0" onclick="navigator.clipboard.writeText(document.getElementById('cdn-url-input').value); document.getElementById('copy-feedback').classList.remove('hidden'); setTimeout(() =&gt; document.getElementById('copy-feedback').classList.add('hidden'), 2000);">
+<span class="material-symbols-outlined text-[14px]">content_copy</span> Copier
+            </button>
+</div>
+<p class="hidden text-[11px] font-label-sm text-tertiary flex items-center gap-1" id="copy-feedback">
+<span class="material-symbols-outlined text-[14px]">check</span> Lien copié dans le presse-papiers !
+          </p>
+<!-- Snippet HTML Embed -->
+<div class="mt-2">
+<span class="font-label-sm text-[11px] text-on-surface-variant block mb-1">Code d'intégration Web / HTML :</span>
+<div class="p-2.5 bg-inverse-surface rounded-xl text-[11px] font-mono text-tertiary-fixed break-all select-all">
+              &lt;img src="https://cdn.fullgope.cm/media/2025/affiches/convention-pentecote-hq.webp" alt="Convention Pentecôte 2025" loading="lazy" /&gt;
+            </div>
+</div>
+</div>
+<!-- Zone de Danger : Suppression -->
+<div class="pt-3 border-t border-surface-container-high">
+<button class="w-full h-11 rounded-xl bg-error-container text-error hover:bg-error hover:text-on-error transition-all font-label-md text-label-md font-bold flex items-center justify-center gap-2" onclick="document.getElementById('delete-modal').classList.remove('hidden')">
+<span class="material-symbols-outlined text-[20px]">delete_forever</span>
+<span>Supprimer définitivement ce média</span>
+</button>
+<span class="block text-center font-body-sm text-[11px] text-on-surface-variant mt-1.5">
+            Purge immédiate du CDN sous 15 secondes.
+          </span>
+</div>
+</div>
+</aside>
+</div>
+<!-- COMPOSANT MODAL 1 : SÉLECTEUR DE MÉDIA RÉUTILISABLE (Media Picker Modal) -->
+<div class="hidden fixed inset-0 z-50 bg-inverse-surface/60 backdrop-blur-sm flex items-center justify-center p-space-md" id="picker-modal-overlay">
+<div class="bg-surface-container-lowest w-full max-w-4xl rounded-2xl shadow-xl overflow-hidden flex flex-col max-h-[921px]">
+<!-- En-tête Modal -->
+<div class="p-space-md bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-9 h-9 rounded-xl bg-primary-container text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">photo_library</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Sélectionner un média dans la bibliothèque</h3>
+<p class="font-body-sm text-[12px] text-on-surface-variant">Composant réutilisable pour publications, événements et profils</p>
+</div>
+</div>
+<button class="w-9 h-9 rounded-xl text-on-surface-variant hover:bg-surface-container flex items-center justify-center" onclick="document.getElementById('picker-modal-overlay').classList.add('hidden')">
+<span class="material-symbols-outlined text-[22px]">close</span>
+</button>
+</div>
+<!-- Onglets du Sélecteur -->
+<div class="px-space-md pt-2 flex items-center gap-3 bg-surface-container-low/40">
+<button class="pb-2.5 font-label-md text-label-md font-bold text-primary border-b-2 border-primary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">cloud</span>
+          Bibliothèque existante (3 480)
+        </button>
+<button class="pb-2.5 font-label-md text-label-md text-on-surface-variant hover:text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">upload</span>
+          Téléverser depuis l'appareil
+        </button>
+<button class="pb-2.5 font-label-md text-label-md text-on-surface-variant hover:text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">link</span>
+          Lien web externe
+        </button>
+</div>
+<!-- Barre de recherche rapide de modale -->
+<div class="p-space-md flex flex-wrap items-center gap-2 bg-surface">
+<div class="relative flex-1 min-w-[240px]">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">search</span>
+<input class="w-full h-10 pl-9 pr-4 bg-surface-container-low rounded-xl font-body-sm text-body-sm text-on-surface focus:outline-none focus:bg-surface-container" placeholder="Filtrer parmi les photos, affiches, bannières..." type="text"/>
+</div>
+<div class="flex items-center gap-1 overflow-x-auto">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container font-label-sm text-[12px] font-bold text-on-surface">Toutes catégories</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface-variant hover:text-on-surface font-label-sm text-[12px]">Affiches</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface-variant hover:text-on-surface font-label-sm text-[12px]">Photos</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface-variant hover:text-on-surface font-label-sm text-[12px]">Logos</button>
+</div>
+</div>
+<!-- Grille compacte de sélection (4 colonnes) -->
+<div class="p-space-md overflow-y-auto flex-1 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 bg-surface">
+<!-- Item 1 (Sélectionné) -->
+<div class="relative aspect-square rounded-xl overflow-hidden ring-4 ring-primary-container cursor-pointer shadow-md">
+<img class="w-full h-full object-cover" data-alt="Holy Spirit convention banner 2025 with fiery Pentecostal tongues and Cameroonian flag accent colors." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlUsBrqw6am3B4Uri4Cgdj8nsyycdXakssHVqnItnDMLjcpss1lHDZshloR-kjRZzzSSyRMO79-gauBaMeCgA7GcYGwV3SrsccuRTqO67D8xV-ZRXYHaLWbVhK16KN6DMws53S7e4xVtx9rl_LrobtJFzufmOxBdwXOAuVvW_kmNJctUybwZp2WdAxsFOBNwFIDQUmi5Ze1jbI5yJ2P8Mxp_7GjBxlVMf__wVYSMU"/>
+<div class="absolute inset-0 bg-primary/20"></div>
+<div class="absolute top-2 right-2 w-6 h-6 rounded-full bg-primary-container text-on-primary flex items-center justify-center shadow">
+<span class="material-symbols-outlined text-[16px] font-bold">check</span>
+</div>
+<div class="absolute bottom-0 inset-x-0 bg-inverse-surface/80 p-1.5 text-surface-bright font-label-sm text-[10px] truncate">
+            affiche_pentecote_2025_hq.jpg
+          </div>
+</div>
+<!-- Item 2 -->
+<div class="relative aspect-square rounded-xl overflow-hidden hover:opacity-90 cursor-pointer bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Reverend pastor delivering pastoral blessing from wooden pulpit in Yaounde temple." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOuVqMW6hd93Ym-SxZhof4kQhCk-8BfvR5EWgIYxWaMXinUmPH4MQoWqeXEOU-XwTqkOhGfqdsYu1pPuNd7lEmpY6Q3PKj88HJlX30gwCBEDpSyUCHoKqoU-AyaB9W0aPY_xzfsmrFlls7A6qiUglH5oUi_d6t8n6DKsGeIsAS8IQmXkeVUvZif1QNgkn8I-om0nZSW3pGGVIFGECSEvUPUxuK1OzuL1BpNWiIqr4"/>
+<div class="absolute bottom-0 inset-x-0 bg-inverse-surface/80 p-1.5 text-surface-bright font-label-sm text-[10px] truncate">
+            photo_pasteur_benediction.jpg
+          </div>
+</div>
+<!-- Item 3 -->
+<div class="relative aspect-square rounded-xl overflow-hidden hover:opacity-90 cursor-pointer bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Choir singing at Full Gospel church in traditional Cameroonian fabric uniforms." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOc_bdrq2BI4z83_-LW9e0apWJqGNprnR4TmS4qKSYcZdd5xyRCJfxuZUOYlWcTu21QNJSH-bWYCrp0ZzMUz8Ru_y-mr4gupAxn6AMoRmz7mDp2kPGOAJ9wWgoK_tTIW_4aGkJNbzhmFc425yvH91T4WSbsfDxzB-BdKHwLhHBRja-1oKi9BSFUruU0TbFKqRjEQ64m9-AsLtxTrL3FN7CVHO4n2hRmqOIF67GXmU"/>
+<div class="absolute bottom-0 inset-x-0 bg-inverse-surface/80 p-1.5 text-surface-bright font-label-sm text-[10px] truncate">
+            chorale_tsinga_paques.jpg
+          </div>
+</div>
+<!-- Item 4 -->
+<div class="relative aspect-square rounded-xl overflow-hidden hover:opacity-90 cursor-pointer bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="River baptism ceremony group picture with pastor raising Bible." src="https://lh3.googleusercontent.com/aida-public/AB6AXuApcApZh9X0Z9B9aLDphxrxWRwQ6A3nyPNwTqb170GO2ngIMlqBy3LTOV-vkJF6h5C015oizP380BJDf8ISCAoAM4njO8JRO3pjzTAzarN2zqhHeOKXveKsrTz4jKl4YvlzmUJM7NsLFB66Q9GpSoG3xU7-4aOk5L1SAinymtGj-p29wfGgddWv_9koIEFrEoG_OfqEkqkazrcWN-0q-D2p0dX2BcXzbbM8VEjNZcs"/>
+<div class="absolute bottom-0 inset-x-0 bg-inverse-surface/80 p-1.5 text-surface-bright font-label-sm text-[10px] truncate">
+            baptemes_sanaga_mars2025.jpg
+          </div>
+</div>
+<!-- Item 5 -->
+<div class="relative aspect-square rounded-xl overflow-hidden hover:opacity-90 cursor-pointer bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Official round emblem of Full Gospel Mission Cameroon with flaming cross." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJiG5LVAhitP52Mq08JUgq7DArDULetaxVOOAOIBAp-0I0bYCYbe8til6Yo-YpySlQVADqtS6Fk-e7dKnwqWgL4IxWnMU_G7XCdtgp7r0Wsr_f5dcBz0W0ZdRj8WPALlsJEzR0Xi_Jq9bQCmiVb4p-ZKNlMDcm3x8GzglVxUTJsMG3Qgrpx8WqSNLv8kIbWgS_qFVnGWUi4dHWs2u-dfEMnnbqbRFiys3OfWrZezs"/>
+<div class="absolute bottom-0 inset-x-0 bg-inverse-surface/80 p-1.5 text-surface-bright font-label-sm text-[10px] truncate">
+            logo_officiel_fgm_2025.png
+          </div>
+</div>
+<!-- Item 6 -->
+<div class="relative aspect-square rounded-xl overflow-hidden hover:opacity-90 cursor-pointer bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Youth convention praise and worship stage lights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuByU_N3EgddyskOpjpHVjXoCZiGrkUnNdZDY8CdlCVFQ_2oErxr64j8rwJCOPQwDR6adjYozfgfIoM9XK7XQJC_iJgfimJh0aMcaEawgUTG389lMRB04Uf0l3ZHcaMdWQ4FAsAGAGLF-F_GOEGo9ltaGeFSkZ9O7c4faVgeGO-Fyj95UG37G4-YjQTfPnQOdrkaGpz8A5XETK0JuzZATeEGlpyQ9ZiZg_FV7KnQmAQ"/>
+<div class="absolute bottom-0 inset-x-0 bg-inverse-surface/80 p-1.5 text-surface-bright font-label-sm text-[10px] truncate">
+            jeunesse_louange_nuit.jpg
+          </div>
+</div>
+<!-- Item 7 -->
+<div class="relative aspect-square rounded-xl overflow-hidden hover:opacity-90 cursor-pointer bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Sunday school children holding art projects at Tsinga mission school." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9g26VkCZcZIiomZgQ8H_ApV8Jz08Shu1ZP14oFF5wHEEz6zQV7qN3uARTVYxTMeb1i2sNuhg-RxWR83tALBGnDd2O4R0HCAd-SbXJJyzAufgSFZ60bTEr476YRmxCNS0i28vrKId9d9lsV_axQ541ud99-ZknCX8HCqS5-qIOKyC2Xl_01SN_gPMO4wz9uj4eL4sH5AuPgUhOS6G3fB_qWk_nBKVNO4wkKstdJ6k"/>
+<div class="absolute bottom-0 inset-x-0 bg-inverse-surface/80 p-1.5 text-surface-bright font-label-sm text-[10px] truncate">
+            ecole_du_dimanche_mars.jpg
+          </div>
+</div>
+<!-- Item 8 -->
+<div class="relative aspect-square rounded-xl overflow-hidden hover:opacity-90 cursor-pointer bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Panoramic aerial view of the main Full Gospel Mission compound in Tsinga Yaounde." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPt-Mahzig3AgF1lW5PHAmYxzh3lvasOliDGRZbeq-YSfyNakMZuqXwxnFbVAbyVNQyTeBxBCa8GTGiFtfAzo0INxr2Ygw-EjSQsFsa6eQHukVk6yozxTxbgrGHyWRLnawF3L8gDAwTkLyJ62m23GBmbVoRP6ucsIdJ9SXvyY0W7X9TEoVlZa_iGJWaKtRTFYYrb8_5guHQVFDvvvfmkfZOBB_7qTdufNIG_qUo0c"/>
+<div class="absolute bottom-0 inset-x-0 bg-inverse-surface/80 p-1.5 text-surface-bright font-label-sm text-[10px] truncate">
+            vue_aerienne_temple_tsinga.jpg
+          </div>
+</div>
+</div>
+<!-- Pied de page du Sélecteur -->
+<div class="p-space-md bg-surface-container-low flex flex-col sm:flex-row items-center justify-between gap-space-sm">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary"></span>
+<p class="font-body-sm text-[13px] text-on-surface">
+<strong>1 média sélectionné :</strong> affiche_pentecote_2025_hq.jpg (4.2 Mo • 3840×2160)
+          </p>
+</div>
+<div class="flex items-center gap-2 w-full sm:w-auto justify-end">
+<button class="h-11 px-space-md rounded-xl bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors font-label-md text-label-md" onclick="document.getElementById('picker-modal-overlay').classList.add('hidden')">
+            Annuler
+          </button>
+<button class="h-11 px-space-lg rounded-xl bg-primary-container text-on-primary hover:bg-primary transition-all font-label-md text-label-md font-bold shadow-md" onclick="document.getElementById('picker-modal-overlay').classList.add('hidden')">
+            Insérer ce média
+          </button>
+</div>
+</div>
+</div>
+</div>
+<!-- COMPOSANT MODAL 2 : CONFIRMATION SOLENNELLE DE SUPPRESSION -->
+<div class="hidden fixed inset-0 z-50 bg-inverse-surface/60 backdrop-blur-sm flex items-center justify-center p-space-md" id="delete-modal">
+<div class="bg-surface-container-lowest max-w-lg w-full rounded-2xl shadow-2xl p-space-lg space-y-space-md">
+<div class="w-14 h-14 rounded-2xl bg-error-container text-error flex items-center justify-center mx-auto">
+<span class="material-symbols-outlined text-[32px]">warning</span>
+</div>
+<div class="text-center space-y-1.5">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Supprimer définitivement cet actif ?</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Attention, vous êtes sur le point de détruire le fichier <strong>affiche_pentecote_2025_hq.jpg</strong>.
+        </p>
+</div>
+<div class="p-3 bg-error-container/40 rounded-xl space-y-2 text-[12px] font-label-sm text-on-surface">
+<div class="flex items-center gap-2 text-error font-bold">
+<span class="material-symbols-outlined text-[18px]">report</span>
+          Impacts critiques identifiés :
+        </div>
+<ul class="list-disc list-inside space-y-1 text-on-surface-variant">
+<li>Purge immédiate des serveurs Cloudflare Edge (Yaoundé &amp; Douala).</li>
+<li><strong>3 publications liturgiques</strong> utilisent actuellement ce fichier comme affiche principale (elles afficheront une image brisée).</li>
+<li>Cette action ne peut pas être annulée.</li>
+</ul>
+</div>
+<div class="flex items-center justify-end gap-2 pt-2">
+<button class="h-11 px- space-md rounded-xl bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors font-label-md text-label-md" onclick="document.getElementById('delete-modal').classList.add('hidden')">
+          Annuler et préserver
+        </button>
+<button class="h-11 px-space-md rounded-xl bg-error text-on-error hover:bg-error/90 transition-all font-label-md text-label-md font-bold shadow-md" onclick="document.getElementById('delete-modal').classList.add('hidden')">
+          Confirmer la suppression
+        </button>
+</div>
+</div>
+</div>
+</div></main></div><div class="md:hidden fixed bottom-0 left-0 right-0 h-16 bg-surface-container-lowest/95 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.06)] z-50 flex items-center justify-around px-2"><a class="flex flex-col items-center justify-center flex-1 py-1 text-primary-container" href="#"><span class="material-symbols-outlined text-[22px]">grid_view</span><span class="font-label-sm text-[10px] mt-0.5">Accueil</span></a><a class="flex flex-col items-center justify-center flex-1 py-1 text-on-surface-variant" href="#"><span class="material-symbols-outlined text-[22px]">groups</span><span class="font-label-sm text-[10px] mt-0.5">Membres</span></a><a class="flex flex-col items-center justify-center flex-1 py-1 text-on-surface-variant" href="#"><span class="material-symbols-outlined text-[22px]">payments</span><span class="font-label-sm text-[10px] mt-0.5">Finance</span></a><a class="flex flex-col items-center justify-center flex-1 py-1 text-on-surface-variant relative" href="#"><span class="material-symbols-outlined text-[22px]">chat_bubble</span><span class="absolute top-1 right-5 w-2 h-2 rounded-full bg-primary-container"></span><span class="font-label-sm text-[10px] mt-0.5">Messages</span></a><button class="flex flex-col items-center justify-center flex-1 py-1 text-on-surface-variant"><span class="material-symbols-outlined text-[22px]">menu_open</span><span class="font-label-sm text-[10px] mt-0.5">Plus</span></button></div></body></html>
