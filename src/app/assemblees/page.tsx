@@ -1,13 +1,23 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import Link from "next/link";
 import dynamic from "next/dynamic";
+import { useRouter, useSearchParams } from "next/navigation";
 import { PublicHeader } from "@/components/public/PublicHeader";
 import { PublicFooter } from "@/components/public/PublicFooter";
 import { api } from "@/lib/api";
 import { useIntl } from "@/intl";
 import type { AssemblyMapItem } from "@/components/maps/AssembliesMap";
+
+// Normalisation robuste insensible aux accents, majuscules et espaces
+function normalizeText(str: string): string {
+  return (str || "")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .trim();
+}
 
 // Dynamic import of Leaflet map (client-only to prevent SSR errors)
 const AssembliesMap = dynamic(
@@ -114,23 +124,26 @@ const SvgIcons = {
   ),
 };
 
-export default function AssembleesPage() {
+function AssembleesContent() {
   const { t } = useIntl();
+  const searchParams = useSearchParams();
+  const qParam = searchParams.get("q") || "";
+
   const [assemblies, setAssemblies] = useState<Assembly[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState(qParam);
   const [selectedType, setSelectedType] = useState<"all" | "active" | "pioneer" | "historical">("all");
   const [selectedAssembly, setSelectedAssembly] = useState<Assembly | null>(null);
   const [viewMode, setViewMode] = useState<"map" | "list">("map");
   const [showSidebar, setShowSidebar] = useState(true);
   const [showDetails, setShowDetails] = useState(true);
 
+  // Synchroniser le terme de recherche avec l'URL en direct
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      const q = new URLSearchParams(window.location.search).get("q");
-      if (q) setSearchTerm(q);
+    if (qParam !== undefined) {
+      setSearchTerm(qParam);
     }
-  }, []);
+  }, [qParam]);
 
   useEffect(() => {
     let isMounted = true;
@@ -187,15 +200,40 @@ export default function AssembleesPage() {
     };
   }, []);
 
+  // Filtrage intelligent insensible aux accents et caractères spéciaux
   const filteredAssemblies = assemblies.filter((a) => {
-    const matchSearch =
-      a.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      a.city.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      a.district.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      a.pastor.toLowerCase().includes(searchTerm.toLowerCase());
+    const normSearch = normalizeText(searchTerm);
     const matchType = selectedType === "all" || a.type === selectedType;
-    return matchSearch && matchType;
+    if (!matchType) return false;
+    if (!normSearch) return true;
+
+    const matchName = normalizeText(a.name).includes(normSearch);
+    const matchCity = normalizeText(a.city).includes(normSearch);
+    const matchDistrict = normalizeText(a.district).includes(normSearch);
+    const matchAddress = normalizeText(a.address).includes(normSearch);
+    const matchPastor =
+      a.pastor &&
+      a.pastor !== "Pasteur Titulaire" &&
+      !a.pastor.includes("@") &&
+      normalizeText(a.pastor).includes(normSearch);
+
+    return matchName || matchCity || matchDistrict || matchAddress || matchPastor;
   });
+
+  // Synchronisation stricte de l'assemblée sélectionnée avec les résultats filtrés
+  useEffect(() => {
+    if (filteredAssemblies.length > 0) {
+      // Si la sélection actuelle ne fait plus partie des résultats filtrés, basculer sur le 1er résultat
+      if (!selectedAssembly || !filteredAssemblies.some((a) => a.id === selectedAssembly.id)) {
+        setSelectedAssembly(filteredAssemblies[0] || null);
+        setShowDetails(true);
+      }
+    } else {
+      // 0 résultat : désélectionner pour ne jamais afficher une mauvaise assemblée hors-sujet
+      setSelectedAssembly(null);
+      setShowDetails(false);
+    }
+  }, [searchTerm, selectedType, assemblies]);
 
   return (
     <div className="flex flex-col min-h-screen bg-white text-slate-900">
@@ -534,6 +572,30 @@ export default function AssembleesPage() {
                 className="w-full h-full min-h-[550px] lg:min-h-full"
               />
 
+              {/* Alerte visuelle claire quand la recherche ne donne aucun résultat */}
+              {filteredAssemblies.length === 0 && !isLoading && (
+                <div className="absolute top-4 left-1/2 -translate-x-1/2 z-30 bg-white/95 backdrop-blur-md px-4 py-3 rounded-2xl shadow-xl border border-slate-200 text-xs text-slate-800 flex items-center gap-3 max-w-md w-[calc(100%-32px)] animate-in fade-in slide-in-from-top-2">
+                  <div className="w-8 h-8 rounded-full bg-rose-50 text-[#c8102e] flex items-center justify-center shrink-0">
+                    <SvgIcons.Pin />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="font-bold truncate">Aucune assemblée trouvée</p>
+                    <p className="text-[11px] text-slate-500 truncate">
+                      Aucun lieu de culte ne correspond à « {searchTerm} »
+                    </p>
+                  </div>
+                  <button
+                    onClick={() => {
+                      setSearchTerm("");
+                      setSelectedType("all");
+                    }}
+                    className="px-2.5 py-1 rounded-lg bg-[#c8102e] text-white text-[11px] font-bold shrink-0 hover:bg-[#9e001f] transition-colors"
+                  >
+                    Effacer
+                  </button>
+                </div>
+              )}
+
               {/* Floating button to reopen sidebar on desktop when hidden */}
               {!showSidebar && (
                 <button
@@ -660,5 +722,19 @@ export default function AssembleesPage() {
 
       <PublicFooter />
     </div>
+  );
+}
+
+export default function AssembleesPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="min-h-screen bg-white flex items-center justify-center">
+          <div className="w-8 h-8 border-3 border-[#c8102e] border-t-transparent rounded-full animate-spin" />
+        </div>
+      }
+    >
+      <AssembleesContent />
+    </Suspense>
   );
 }

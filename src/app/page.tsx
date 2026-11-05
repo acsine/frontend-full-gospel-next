@@ -2,13 +2,23 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { useState, useEffect, useRef } from "react";
 import { PublicHeader } from "@/components/public/PublicHeader";
 import { PublicFooter } from "@/components/public/PublicFooter";
 import { useIntl } from "@/intl";
 import { api } from "@/lib/api";
 
+function normalizeText(str: string): string {
+  return (str || "")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .trim();
+}
+
 export default function HomePage() {
+  const router = useRouter();
   const { locale, t } = useIntl();
   const [isSkeleton, setIsSkeleton] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -17,6 +27,7 @@ export default function HomePage() {
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const [searchCity, setSearchCity] = useState("");
+  const [assembliesList, setAssembliesList] = useState<any[]>([]);
   const [backendStats, setBackendStats] = useState<{
     total_regions: number;
     total_districts: number;
@@ -39,17 +50,22 @@ export default function HomePage() {
     async function loadAllData() {
       setLoading(true);
       try {
-        const [statsRes, eventsRes, pubRes, campRes] = await Promise.allSettled([
+        const [statsRes, eventsRes, pubRes, campRes, asmRes] = await Promise.allSettled([
           api.organizations.getStats(),
           api.events.list({ limit: 10 }),
           api.publications.getPublic({ limit: 10 }),
           api.donations.listCampaigns(),
+          api.organizations.listAssemblies({ limit: 100 }),
         ]);
 
         if (!isMounted) return;
 
         if (statsRes.status === "fulfilled" && statsRes.value.data) {
           setBackendStats(statsRes.value.data as any);
+        }
+        if (asmRes.status === "fulfilled" && asmRes.value.data) {
+          const rawAsm = (asmRes.value.data as any)?.assemblies || (asmRes.value.data as any)?.items || (Array.isArray(asmRes.value.data) ? asmRes.value.data : []);
+          setAssembliesList(rawAsm);
         }
         if (eventsRes.status === "fulfilled" && eventsRes.value.data) {
           const rawEvents = (eventsRes.value.data as any)?.events || (Array.isArray(eventsRes.value.data) ? eventsRes.value.data : []);
@@ -155,6 +171,31 @@ export default function HomePage() {
   const campaignPercent = campaignGoal > 0 ? Math.min(100, Math.round((campaignCurrent / campaignGoal) * 100)) : 0;
   const campaignRemaining = Math.max(0, campaignGoal - campaignCurrent);
 
+  // Suggestions d'assemblées en direct et gestion de la recherche
+  const liveMatchingAssemblies =
+    searchCity.trim().length > 0
+      ? assembliesList
+          .filter((a: any) => {
+            const norm = normalizeText(searchCity);
+            return (
+              normalizeText(a.name).includes(norm) ||
+              normalizeText(a.city).includes(norm) ||
+              normalizeText(a.district_name || a.district).includes(norm) ||
+              normalizeText(a.address).includes(norm)
+            );
+          })
+          .slice(0, 5)
+      : [];
+
+  const handleSearchSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (searchCity.trim()) {
+      router.push(`/assemblees?q=${encodeURIComponent(searchCity.trim())}`);
+    } else {
+      router.push("/assemblees");
+    }
+  };
+
   return (
     <div className="flex flex-col min-h-screen bg-surface">
       <PublicHeader />
@@ -175,63 +216,56 @@ export default function HomePage() {
             <div className="absolute inset-0 bg-gradient-to-t from-inverse-surface via-transparent to-inverse-surface/80" />
           </div>
 
-          <div className="relative z-10 w-full px-4 md:px-8 lg:px-12 pt-6 sm:pt-16 md:pt-24 lg:pt-32 pb-14 sm:pb-24 md:pb-32 lg:pb-40 flex flex-col items-center text-center">
-            {/* Decree & Year badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 sm:px-6 py-1 sm:py-2 rounded-full bg-surface-container-lowest/15 backdrop-blur-md mb-2.5 sm:mb-6 lg:mb-8 shadow-sm border border-surface-container-lowest/20">
-              <span className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-secondary-container animate-ping" />
-              <span className="text-[10px] sm:text-xs lg:text-sm tracking-wider uppercase text-surface-bright font-bold">
-                {t("hero.badge")}
+          <div className="relative z-10 w-full px-4 md:px-8 lg:px-12 pt-6 sm:pt-14 md:pt-20 lg:pt-28 pb-12 sm:pb-20 md:pb-28 lg:pb-36 flex flex-col items-center text-center">
+            {/* Decree & Year institutional badge */}
+            <div className="inline-flex items-center gap-2 px-3.5 sm:px-5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-3 sm:mb-5 shadow-sm">
+              <span className="w-2 h-2 rounded-full bg-emerald-400" />
+              <span className="text-[10px] sm:text-xs tracking-wider uppercase text-white font-extrabold">
+                {locale === "en" ? "Since 1961 • Presidential Decree N°69/DF/144" : "Depuis 1961 • Décret Présidentiel N°69/DF/144"}
               </span>
             </div>
 
-            {/* Title */}
-            <h1 className="text-2xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-surface-bright tracking-tight mb-2 sm:mb-4 lg:mb-6 drop-shadow-md font-display-lg leading-tight">
-              {t("hero.title")}
-              <span className="block text-secondary-fixed text-base sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl mt-1 sm:mt-2 font-semibold tracking-normal">
-                {t("hero.subtitle")}
+            {/* Title & Subtitle - Hiérarchisé, noble et sans répétition */}
+            <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white tracking-tight font-display drop-shadow-md leading-tight max-w-4xl">
+              {locale === "en" ? "Full Gospel Mission" : "Mission du Plein Évangile"}
+              <span className="block text-secondary-container text-base sm:text-xl md:text-2xl lg:text-3xl font-bold tracking-normal mt-1 sm:mt-2">
+                {locale === "en" ? "Cameroon • 10 Apostolic Regions" : "Cameroun • 10 Régions Apostoliques"}
               </span>
             </h1>
 
-            {/* Motto */}
-            <div className="inline-block px-3.5 py-1.5 sm:px-7 sm:py-3 rounded-xl bg-surface-container-lowest/10 backdrop-blur-sm mb-3 sm:mb-6 lg:mb-8 border border-surface-container-lowest/15 shadow-inner">
-              <p className="text-xs sm:text-base lg:text-lg tracking-widest uppercase text-secondary-container font-extrabold">
-                {t("hero.motto")}
-              </p>
-            </div>
+            {/* Slogan officiel canonique - Texte blanc pur sans carte, sans fond et sans bordure */}
+            <p className="text-xs sm:text-sm md:text-base lg:text-lg font-bold tracking-wide text-white drop-shadow-sm my-2 sm:my-3 font-sans">
+              {t("hero.motto")}
+            </p>
 
-            {/* Subtitle */}
-            <p className="text-xs sm:text-base md:text-lg lg:text-xl text-surface-container-high max-w-xl lg:max-w-4xl mb-4 sm:mb-10 lg:mb-14 leading-relaxed font-normal line-clamp-2 sm:line-clamp-none">
+            {/* Subtitle / Description narrative */}
+            <p className="text-xs sm:text-sm md:text-base lg:text-lg text-white/85 max-w-xl lg:max-w-3xl mb-4 sm:mb-6 leading-relaxed font-normal">
               {t("hero.description")}
             </p>
 
-            {/* Action buttons - Visibles directement au premier coup d'œil sur mobile */}
-            <div className="w-full flex flex-row gap-2.5 sm:gap-4 max-w-md lg:max-w-xl justify-center items-stretch">
+            {/* Action buttons - Duo symétrique optimisé mobile (grid-cols-2 côte-à-côte) */}
+            <div className="grid grid-cols-2 gap-2.5 sm:gap-4 w-full max-w-xs sm:max-w-md mx-auto mb-2">
               <Link
                 href="/assemblees"
-                className="flex-1 h-11 sm:h-12 lg:h-14 px-3 sm:px-6 lg:px-8 rounded-full bg-primary-container text-on-primary font-bold text-xs sm:text-sm lg:text-base flex items-center justify-center gap-1.5 sm:gap-2.5 shadow-xl hover:bg-primary active:scale-95 transition-all text-center whitespace-nowrap"
+                className="h-11 sm:h-12 px-3 sm:px-5 rounded-xl sm:rounded-2xl bg-primary hover:bg-primary-container text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-1.5 sm:gap-2 shadow-lg shadow-black/30 active:scale-95 transition-all text-center"
               >
-                <svg className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/>
-                  <circle cx="12" cy="10" r="3"/>
-                </svg>
-                <span>{t("hero.findAssembly")}</span>
+                <span className="material-symbols-outlined text-[18px]">church</span>
+                <span className="truncate">{t("hero.findAssembly")}</span>
               </Link>
               <Link
                 href="/dons"
-                className="flex-1 h-11 sm:h-12 lg:h-14 px-3 sm:px-6 lg:px-8 rounded-full bg-surface-container-lowest/20 text-surface-bright font-bold text-xs sm:text-sm lg:text-base flex items-center justify-center gap-1.5 sm:gap-2.5 backdrop-blur-md hover:bg-surface-container-lowest/30 active:scale-95 transition-all border border-surface-container-lowest/30 shadow-lg text-center whitespace-nowrap"
+                className="h-11 sm:h-12 px-3 sm:px-5 rounded-xl sm:rounded-2xl bg-white/15 hover:bg-white/25 text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-1.5 sm:gap-2 backdrop-blur-md border border-white/25 shadow-md active:scale-95 transition-all text-center"
               >
-                <svg className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
-                </svg>
-                <span>{t("hero.supportMission")}</span>
+                <span className="material-symbols-outlined text-[18px]">volunteer_activism</span>
+                <span className="truncate">{t("hero.supportMission")}</span>
               </Link>
             </div>
 
             {/* Desktop Highlights Strip */}
-            <div className="hidden lg:flex items-center justify-center gap-8 mt-14 pt-8 border-t border-surface-container-lowest/15 text-xs lg:text-sm text-surface-container-high w-full max-w-4xl">
+            <div className="hidden lg:flex items-center justify-center gap-8 mt-10 pt-6 border-t border-white/15 text-xs lg:text-sm text-surface-container-high w-full max-w-4xl">
               <div className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-secondary-container" />
-                <span className="font-semibold text-surface-bright">60+ Ans d'Héritage Apostolique</span>
+                <span className="font-semibold text-surface-bright">60+ Ans d&apos;Héritage Apostolique</span>
               </div>
               <span className="text-surface-container-lowest/30">•</span>
               <div className="flex items-center gap-2">
@@ -252,89 +286,147 @@ export default function HomePage() {
         </section>
 
         {/* ============================================================== */}
-        {/* 2. FLOATING ASSEMBLY SEARCH BAR (Overlapping Hero) */}
+        {/* 2. FLOATING ASSEMBLY SEARCH BAR (Overlapping Hero ProMax) */}
         {/* ============================================================== */}
-        <div className="relative z-20 max-w-3xl lg:max-w-5xl xl:max-w-6xl mx-auto px-4 -mt-10 lg:-mt-16 mb-16 lg:mb-24">
-          <div className="bg-surface-container-lowest rounded-3xl p-5 lg:p-8 shadow-2xl border border-surface-container-high/80">
-            <div className="flex flex-col gap-4 lg:gap-6">
-              {/* Desktop Dual Bar: Search Input + GPS Button side-by-side */}
-              <div className="flex flex-col lg:flex-row items-stretch lg:items-center gap-3">
+        <div className="relative z-20 max-w-3xl lg:max-w-5xl xl:max-w-6xl mx-auto px-4 -mt-6 sm:-mt-10 lg:-mt-14 mb-10 sm:mb-16 lg:mb-20">
+          <div className="bg-surface-container-lowest rounded-2xl sm:rounded-3xl p-3.5 sm:p-6 lg:p-7 shadow-2xl border border-surface-container-high/80">
+            <div className="flex flex-col gap-3 sm:gap-4">
+              {/* Card Top Label & Live Stats */}
+              <div className="flex items-center justify-between gap-2 flex-wrap">
+                <div className="flex items-center gap-1.5">
+                  <span className="material-symbols-outlined text-primary text-[18px] sm:text-[20px]">explore</span>
+                  <span className="text-xs sm:text-sm font-black text-on-surface tracking-tight font-display">
+                    {locale === "en" ? "Find a place of worship" : "Trouver un lieu de culte au Cameroun"}
+                  </span>
+                </div>
+                <div className="flex items-center gap-1.5 text-[11px] sm:text-xs font-semibold text-on-surface-variant">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                  <span>
+                    {backendStats?.total_assemblies
+                      ? `${backendStats.total_assemblies} ${locale === "en" ? "assemblies" : "assemblées"}`
+                      : (locale === "en" ? "Assemblies mapped" : "Assemblées cartographiées")}
+                  </span>
+                </div>
+              </div>
+
+              {/* Main Search Input with integrated Form & GPS */}
+              <form onSubmit={handleSearchSubmit} className="flex flex-col sm:flex-row items-stretch gap-2 sm:gap-2.5">
                 <div className="relative flex-1 flex items-center">
-                  <span className="absolute left-4 text-on-surface-variant flex items-center justify-center">
-                    <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <circle cx="11" cy="11" r="8" />
-                      <line x1="21" y1="21" x2="16.65" y2="16.65" />
-                    </svg>
+                  <span className="absolute left-3 text-on-surface-variant pointer-events-none flex items-center">
+                    <span className="material-symbols-outlined text-[18px]">search</span>
                   </span>
                   <input
                     type="text"
                     value={searchCity}
                     onChange={(e) => setSearchCity(e.target.value)}
-                    placeholder="Rechercher une assemblée (ex: Tsinga, Bépanda, Bamenda)..."
-                    className="w-full h-12 lg:h-14 pl-12 pr-28 sm:pr-32 rounded-2xl bg-surface-container-low text-xs sm:text-sm lg:text-base text-on-surface placeholder:text-on-surface-variant/70 focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all font-medium"
+                    placeholder={locale === "en" ? "City, neighborhood or assembly..." : "Ville, quartier ou assemblée..."}
+                    className="w-full h-11 sm:h-12 pl-10 pr-22 rounded-xl bg-surface-container-low text-xs sm:text-sm text-on-surface placeholder:text-on-surface-variant/60 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:bg-surface-container-lowest transition-all border border-surface-container-high focus:border-primary font-medium"
                   />
-                  <Link
-                    href={`/assemblees?q=${encodeURIComponent(searchCity)}`}
-                    className="absolute right-2 h-9 lg:h-10 px-3.5 sm:px-5 rounded-xl bg-primary-container hover:bg-primary text-on-primary text-xs lg:text-sm font-bold flex items-center gap-1 active:scale-95 transition-transform shadow-sm"
+                  <button
+                    type="submit"
+                    className="absolute right-1.5 h-8 sm:h-9 px-3 rounded-lg bg-primary hover:bg-primary-container text-white text-xs font-bold flex items-center gap-1 active:scale-95 transition-all shadow-xs cursor-pointer"
                   >
-                    Chercher
-                  </Link>
+                    <span>{locale === "en" ? "Search" : "Chercher"}</span>
+                  </button>
+
+                  {/* Dropdown de suggestions en direct sous la barre de recherche */}
+                  {searchCity.trim().length > 0 && (
+                    <div className="absolute top-full left-0 right-0 mt-1.5 bg-white dark:bg-surface-container-lowest rounded-2xl shadow-2xl border border-surface-container-high overflow-hidden z-30 animate-in fade-in slide-in-from-top-1 text-left">
+                      <div className="px-3 py-2 bg-surface-container-low border-b border-surface-container text-[11px] font-bold text-on-surface-variant flex items-center justify-between">
+                        <span>Résultats suggérés ({liveMatchingAssemblies.length})</span>
+                        <button
+                          type="button"
+                          onClick={() => setSearchCity("")}
+                          className="text-on-surface-variant hover:text-on-surface font-semibold cursor-pointer"
+                        >
+                          Effacer ✕
+                        </button>
+                      </div>
+                      {liveMatchingAssemblies.length > 0 ? (
+                        <div className="max-h-60 overflow-y-auto divide-y divide-surface-container">
+                          {liveMatchingAssemblies.map((a: any) => (
+                            <Link
+                              key={a.id}
+                              href={`/assemblees?q=${encodeURIComponent(a.name)}`}
+                              className="p-3 flex items-start gap-3 hover:bg-surface-container transition-colors text-left"
+                            >
+                              <span className="material-symbols-outlined text-primary text-[20px] mt-0.5 shrink-0">church</span>
+                              <div className="min-w-0 flex-1">
+                                <div className="flex items-center gap-2 flex-wrap">
+                                  <span className="font-bold text-xs text-on-surface">{a.name}</span>
+                                  <span className="text-[10px] px-1.5 py-0.2 rounded-full bg-surface-container-high text-on-surface-variant font-semibold">
+                                    {a.city || "Cameroun"}
+                                  </span>
+                                </div>
+                                <p className="text-[11px] text-on-surface-variant truncate mt-0.5">
+                                  {a.address || a.district_name || "Assemblée locale"}
+                                </p>
+                              </div>
+                              <span className="material-symbols-outlined text-on-surface-variant text-[16px] self-center">arrow_forward</span>
+                            </Link>
+                          ))}
+                        </div>
+                      ) : (
+                        <div className="p-4 text-center">
+                          <p className="text-xs text-on-surface-variant font-medium">
+                            Aucune assemblée ne correspond directement à &laquo; <strong>{searchCity}</strong> &raquo;.
+                          </p>
+                          <Link
+                            href={`/assemblees?q=${encodeURIComponent(searchCity)}`}
+                            className="inline-flex items-center gap-1 text-xs font-bold text-primary hover:underline mt-2"
+                          >
+                            <span>Consulter toutes les assemblées sur la carte</span>
+                            <span className="material-symbols-outlined text-[15px]">arrow_forward</span>
+                          </Link>
+                        </div>
+                      )}
+                    </div>
+                  )}
                 </div>
 
-                {/* GPS Near me */}
+                {/* GPS Near me - Épuré et compact */}
                 <Link
                   href="/assemblees"
-                  className="h-12 lg:h-14 px-6 rounded-2xl bg-primary-fixed hover:bg-primary-fixed-dim text-on-primary-fixed text-sm lg:text-base font-bold flex items-center justify-center gap-2 active:scale-98 transition-all shrink-0"
+                  className="h-11 sm:h-12 px-3.5 sm:px-4 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface text-xs sm:text-sm font-bold flex items-center justify-center gap-1.5 border border-surface-container-high transition-all shrink-0 active:scale-98"
+                  title={locale === "en" ? "Find assemblies near my location" : "Localiser les assemblées proches de ma position"}
                 >
-                  <svg className="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <circle cx="12" cy="12" r="7" />
-                    <path d="M12 2v3M12 19v3M2 12h3M19 12h3" />
-                  </svg>
-                  <span>Localiser près de moi (GPS)</span>
+                  <span className="material-symbols-outlined text-primary text-[18px]">my_location</span>
+                  <span>{locale === "en" ? "Near me (GPS)" : "Près de moi (GPS)"}</span>
                 </Link>
-              </div>
+              </form>
 
-              {/* City quick pills & quick stats */}
-              <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-3 pt-1 border-t border-surface-container-high/60 text-xs lg:text-sm">
-                <div className="flex items-center gap-2 overflow-x-auto no-scrollbar w-full lg:w-auto">
-                  <span className="text-on-surface-variant font-bold flex-shrink-0">
-                    Villes principales :
+              {/* Quick cities & Map link */}
+              <div className="flex items-center justify-between gap-2 pt-2 border-t border-surface-container text-xs overflow-x-auto no-scrollbar">
+                <div className="flex items-center gap-1.5 shrink-0">
+                  <span className="text-on-surface-variant font-bold text-[10px] sm:text-[11px] uppercase tracking-wider shrink-0 mr-0.5">
+                    {locale === "en" ? "Cities:" : "Villes :"}
                   </span>
                   {cities.map((city) => (
                     <button
                       key={city}
-                      onClick={() => setSearchCity(city)}
-                      className="px-3.5 py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-semibold transition-colors flex-shrink-0"
+                      type="button"
+                      onClick={() => {
+                        setSearchCity(city);
+                        router.push(`/assemblees?q=${encodeURIComponent(city)}`);
+                      }}
+                      className={`px-2.5 py-1 rounded-full text-[11px] sm:text-xs font-semibold transition-all shrink-0 cursor-pointer ${
+                        searchCity === city
+                          ? "bg-primary text-white shadow-xs"
+                          : "bg-surface-container text-on-surface-variant hover:bg-primary hover:text-white"
+                      }`}
                     >
                       {city}
                     </button>
                   ))}
                 </div>
 
-                <div className="flex items-center gap-3">
-                  <div className="hidden lg:flex items-center gap-1.5 text-on-surface-variant text-xs font-semibold">
-                    <svg className="w-4 h-4 text-tertiary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                      <polyline points="22 4 12 14.01 9 11.01" />
-                    </svg>
-                    <span>
-                      {backendStats?.total_assemblies
-                        ? `${backendStats.total_assemblies} ${locale === "en" ? "mapped Assemblies" : "Assemblées cartographiées"}`
-                        : (locale === "en" ? "Mapped Assemblies" : "Assemblées cartographiées")}
-                    </span>
-                  </div>
-                  <Link
-                    href="/assemblees"
-                    className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-primary-container hover:bg-primary text-on-primary font-bold text-xs transition-colors shrink-0 shadow-sm"
-                  >
-                    <svg className="w-4 h-4 text-on-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6" />
-                      <line x1="8" y1="2" x2="8" y2="18" />
-                      <line x1="16" y1="6" x2="16" y2="22" />
-                    </svg>
-                    <span>Carte Leaflet</span>
-                  </Link>
-                </div>
+                <Link
+                  href="/assemblees"
+                  className="inline-flex items-center gap-1 text-[11px] sm:text-xs font-bold text-primary hover:underline shrink-0 ml-auto whitespace-nowrap"
+                >
+                  <span>{locale === "en" ? "Interactive map" : "Carte interactive"}</span>
+                  <span className="material-symbols-outlined text-[15px]">arrow_forward</span>
+                </Link>
               </div>
             </div>
           </div>
@@ -1286,52 +1378,6 @@ export default function HomePage() {
 
       {/* Public Footer */}
       <PublicFooter />
-
-      {/* Floating Bottom Nav for Mobile - Haute Visibilité avec Bouton Dashboard Prominent */}
-      <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-surface-container-lowest/95 backdrop-blur-xl border-t border-surface-container shadow-[0_-4px_20px_rgba(0,0,0,0.12)] py-2 px-3 pb-safe flex justify-between items-center max-w-full">
-        <Link
-          href="/"
-          className="flex flex-col items-center text-primary font-bold text-[11px] px-2 py-1 active:scale-95 transition-transform"
-        >
-          <svg className="w-5 h-5 mb-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-            <polyline points="9 22 9 12 15 12 15 22"/>
-          </svg>
-          <span>Accueil</span>
-        </Link>
-        <Link
-          href="/assemblees"
-          className="flex flex-col items-center text-on-surface-variant hover:text-primary font-semibold text-[11px] px-2 py-1 active:scale-95 transition-transform"
-        >
-          <svg className="w-5 h-5 mb-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M18 20V6a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v14"/>
-            <path d="M2 20h20"/>
-            <path d="M14 12v.01"/>
-            <path d="M12 2v2"/>
-            <path d="M10 3h4"/>
-          </svg>
-          <span>Assemblées</span>
-        </Link>
-        <Link
-          href="/dons"
-          className="flex flex-col items-center text-on-surface-variant hover:text-primary font-semibold text-[11px] px-2 py-1 active:scale-95 transition-transform"
-        >
-          <svg className="w-5 h-5 mb-0.5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
-          </svg>
-          <span>Dons</span>
-        </Link>
-        <Link
-          href="/connexion?redirect=/dashboard"
-          className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-primary-container text-on-primary font-bold text-xs shadow-md active:scale-95 transition-transform whitespace-nowrap"
-        >
-          <svg className="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-            <rect width="18" height="11" x="3" y="11" rx="2" ry="2"/>
-            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-          </svg>
-          <span>Dashboard</span>
-        </Link>
-      </nav>
     </div>
   );
 }

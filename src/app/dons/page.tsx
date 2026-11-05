@@ -50,10 +50,18 @@ export default function DonsPage() {
   const [manualWalletRef, setManualWalletRef] = useState("");
   const [manualWalletError, setManualWalletError] = useState<string | null>(null);
 
-  // Automatic Mobile Money states (décompte actif UNIQUEMENT après initiation en mode auto)
+  // Automatic Mobile Money states (débit USSD automatique)
   const [paymentInitiated, setPaymentInitiated] = useState(false);
   const [isInitiating, setIsInitiating] = useState(false);
-  const [timer, setTimer] = useState(120);
+
+  // Action Button Loading States (Anti-double-clic & feedback visuel)
+  const [isProceedingStep1, setIsProceedingStep1] = useState(false);
+  const [isSubmittingManual, setIsSubmittingManual] = useState(false);
+  const [isSubmittingBank, setIsSubmittingBank] = useState(false);
+  const [isSubmittingCard, setIsSubmittingCard] = useState(false);
+  const [isRetryingUssd, setIsRetryingUssd] = useState(false);
+  const [isCheckingServer, setIsCheckingServer] = useState(false);
+  const [isSimulating, setIsSimulating] = useState(false);
 
   // État de validation automatique backend (Sondage et validation par le serveur, sans bouton utilisateur)
   const [autoChecking, setAutoChecking] = useState(false);
@@ -89,19 +97,6 @@ export default function DonsPage() {
       }
     }
   }, []);
-
-  // Décompte de temps : UNIQUEMENT pour les moyens automatiques (MTN / Orange en mode AUTO),
-  // et UNIQUEMENT APRÈS que le débit a été initié par l'utilisateur !
-  useEffect(() => {
-    let interval: NodeJS.Timeout;
-    const isAutomatic = (paymentMethod === "mtn" || paymentMethod === "orange") && walletMode === "auto";
-    if (step === 2 && paymentInitiated && isAutomatic && timer > 0) {
-      interval = setInterval(() => {
-        setTimer((prev) => (prev > 0 ? prev - 1 : 0));
-      }, 1000);
-    }
-    return () => clearInterval(interval);
-  }, [step, paymentInitiated, paymentMethod, walletMode, timer]);
 
   // Validation automatique par le Backend pour les paiements automatiques (MTN MoMo & Orange Money)
   // Utilise en priorité un flux Server-Sent Events (SSE) temps réel, complété par un polling de secours.
@@ -215,16 +210,10 @@ export default function DonsPage() {
   }, [step, paymentInitiated, paymentMethod, walletMode, donationId, autoCheckStatus]);
 
   // ÉTAPE 1 : Initiation du paiement (Montant, type, vœu et bénéficiaire)
+  // AUCUNE boîte de dialogue de confirmation à l'étape 1 (Confirmation demandée UNIQUEMENT à l'étape 2)
   const handleProceedToPayment = async () => {
-    const typeLabel = donationType === "dime" ? "Dîme canonique" : donationType === "offrande" ? "Offrande de culte" : "Don spécial";
-    const ok = await confirm({
-      title: "Confirmer l'engagement de libéralité",
-      message: `Confirmez-vous le versement de ${amount.toLocaleString()} FCFA au titre de « ${typeLabel} » ? Vous pourrez choisir votre moyen de paiement (MTN MoMo, Orange Money ou Virement Bancaire) à l'étape suivante.`,
-      confirmText: "Procéder au choix du paiement",
-      variant: "primary",
-    });
-    if (!ok) return;
-
+    if (isProceedingStep1) return;
+    setIsProceedingStep1(true);
     // Appel API backend Étape 1 : Enregistrement de l'intention
     try {
       const res: any = await api.donations.initiatePayment({
@@ -241,10 +230,11 @@ export default function DonsPage() {
       }
     } catch (e) {
       console.warn("Initiation API backend en mode dégradé:", e);
+    } finally {
+      setIsProceedingStep1(false);
     }
 
     setPaymentInitiated(false);
-    setTimer(120);
     setPhoneError(null);
     setBankError(null);
     setCardError(null);
@@ -263,8 +253,9 @@ export default function DonsPage() {
   };
 
   // ÉTAPE 2.A : Initier le débit Mobile Money Automatique (SasPay Softpay USSD)
-  // (Le décompte de temps ne s'affiche qu'APRÈS ce clic !)
+  // La confirmation d'action est demandée ICI à l'étape 2
   const handleInitiateMobilePayment = async () => {
+    if (isInitiating) return;
     const cleanPhone = phoneNumber.replace(/[\s\-\.]/g, "");
     if (!cleanPhone || cleanPhone.length < 8) {
       setPhoneError("Veuillez saisir un numéro de téléphone Mobile Money valide (ex: 6 77 12 34 56).");
@@ -294,7 +285,6 @@ export default function DonsPage() {
       console.warn("SasPay Softpay completion notice:", e);
     } finally {
       setIsInitiating(false);
-      setTimer(120);
       setPaymentInitiated(true);
       setAutoChecking(true);
       setAutoCheckStatus("processing");
@@ -304,7 +294,8 @@ export default function DonsPage() {
 
   // Vérification manuelle de secours auprès du serveur (interroge le backend sans jamais valider arbitrairement)
   const handleManualCheckServerStatus = async () => {
-    if (!donationId) return;
+    if (isCheckingServer || !donationId) return;
+    setIsCheckingServer(true);
     try {
       const res = await api.donations.checkPaymentStatus(donationId);
       const paymentStatus = res?.data?.payment_status;
@@ -328,33 +319,41 @@ export default function DonsPage() {
         message: "Impossible de joindre le serveur pour le moment. Veuillez patienter.",
         variant: "warning",
       });
+    } finally {
+      setIsCheckingServer(false);
     }
   };
 
   // Renvoyer l'invite USSD
   const handleRetryUssd = async () => {
-    setTimer(120);
+    if (isRetryingUssd) return;
+    setIsRetryingUssd(true);
     setAutoChecking(true);
     setAutoCheckStatus("processing");
     setAutoCheckMessage(`Nouvelle invite USSD transmise au +237 ${phoneNumber}...`);
-    if (donationId) {
-      try {
+    try {
+      if (donationId) {
         await api.donations.completePayment(donationId, {
           payment_method: paymentMethod === "mtn" ? "mtn_momo" : "orange_money",
           phone_number: phoneNumber,
         });
-      } catch {}
+      }
+      await alert({
+        title: "Invite USSD renvoyée",
+        message: `Une nouvelle demande de débit de ${amount.toLocaleString()} FCFA a été envoyée au +237 ${phoneNumber}. Veuillez consulter votre écran.`,
+        variant: "info",
+      });
+    } catch {
+      // ignore
+    } finally {
+      setIsRetryingUssd(false);
     }
-    await alert({
-      title: "Invite USSD renvoyée",
-      message: `Une nouvelle demande de débit de ${amount.toLocaleString()} FCFA a été envoyée au +237 ${phoneNumber}. Veuillez consulter votre écran.`,
-      variant: "info",
-    });
   };
 
   // ÉTAPE 2.B : Soumettre la référence d'un Dépôt Mobile Money Manuel vers la Trésorerie (PAS DE DÉCOMPTE)
   const handleSubmitManualWallet = async (e?: React.FormEvent) => {
     if (e) e.preventDefault();
+    if (isSubmittingManual) return;
     if (!manualWalletRef.trim()) {
       setManualWalletError("Veuillez renseigner la référence de transaction SMS (ex: MP260301.1234.A56789).");
       return;
@@ -370,6 +369,7 @@ export default function DonsPage() {
     });
     if (!ok) return;
 
+    setIsSubmittingManual(true);
     try {
       if (donationId) {
         await api.donations.completePayment(donationId, {
@@ -378,18 +378,23 @@ export default function DonsPage() {
           phone_number: phoneNumber,
         });
       }
+      setReceiptNumber(`REC-PROV-${new Date().getFullYear()}-${Math.floor(10000 + Math.random() * 90000)}`);
+      setDonationStatus("pending_validation");
+      setStep(3);
     } catch (e) {
       console.warn("Manual wallet completion error:", e);
+      setReceiptNumber(`REC-PROV-${new Date().getFullYear()}-${Math.floor(10000 + Math.random() * 90000)}`);
+      setDonationStatus("pending_validation");
+      setStep(3);
+    } finally {
+      setIsSubmittingManual(false);
     }
-
-    setReceiptNumber(`REC-PROV-${new Date().getFullYear()}-${Math.floor(10000 + Math.random() * 90000)}`);
-    setDonationStatus("pending_validation");
-    setStep(3);
   };
 
   // ÉTAPE 2.C : Soumettre la preuve de virement bancaire (PAS DE DÉCOMPTE DE TEMPS)
   const handleSubmitBankProof = async (e?: React.FormEvent) => {
     if (e) e.preventDefault();
+    if (isSubmittingBank) return;
     if (!bankRef.trim()) {
       setBankError("Veuillez renseigner le numéro de bordereau ou la référence de la transaction bancaire.");
       return;
@@ -404,16 +409,17 @@ export default function DonsPage() {
     });
     if (!ok) return;
 
-    if (proofFile) {
-      try {
-        await api.media.upload(proofFile, {
-          category: "document",
-          alt_text: `Preuve virement don ${bankRef}`,
-        }).catch(() => {});
-      } catch {}
-    }
-
+    setIsSubmittingBank(true);
     try {
+      if (proofFile) {
+        try {
+          await api.media.upload(proofFile, {
+            category: "document",
+            alt_text: `Preuve virement don ${bankRef}`,
+          }).catch(() => {});
+        } catch {}
+      }
+
       if (donationId) {
         await api.donations.completePayment(donationId, {
           payment_method: "bank_transfer_manual",
@@ -423,17 +429,22 @@ export default function DonsPage() {
           proof_url: proofPreview || undefined,
         });
       }
+      setReceiptNumber(`REC-PROV-${new Date().getFullYear()}-${Math.floor(10000 + Math.random() * 90000)}`);
+      setDonationStatus("pending_validation");
+      setStep(3);
     } catch (e) {
       console.warn("Bank transfer completion error:", e);
+      setReceiptNumber(`REC-PROV-${new Date().getFullYear()}-${Math.floor(10000 + Math.random() * 90000)}`);
+      setDonationStatus("pending_validation");
+      setStep(3);
+    } finally {
+      setIsSubmittingBank(false);
     }
-
-    setReceiptNumber(`REC-PROV-${new Date().getFullYear()}-${Math.floor(10000 + Math.random() * 90000)}`);
-    setDonationStatus("pending_validation");
-    setStep(3);
   };
 
   // Action Carte Bancaire
   const handleSubmitCardPayment = async () => {
+    if (isSubmittingCard) return;
     if (!cardNumber.trim() || cardNumber.replace(/\s/g, "").length < 16) {
       setCardError("Veuillez saisir un numéro de carte bancaire valide à 16 chiffres.");
       return;
@@ -447,6 +458,7 @@ export default function DonsPage() {
     });
     if (!ok) return;
 
+    setIsSubmittingCard(true);
     try {
       if (donationId) {
         await api.donations.completePayment(donationId, {
@@ -455,10 +467,15 @@ export default function DonsPage() {
         });
         await api.donations.verifyAutoPayment(donationId);
       }
-    } catch {}
-
-    setDonationStatus("completed");
-    setStep(3);
+      setDonationStatus("completed");
+      setStep(3);
+    } catch (e) {
+      console.warn("Card payment error:", e);
+      setDonationStatus("completed");
+      setStep(3);
+    } finally {
+      setIsSubmittingCard(false);
+    }
   };
 
   const handleProofFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -483,19 +500,13 @@ export default function DonsPage() {
 
   const presetAmounts = [1000, 5000, 10000, 25000, 50000, 100000];
 
-  const formatTimer = (seconds: number) => {
-    const mins = Math.floor(seconds / 60);
-    const secs = seconds % 60;
-    return `${mins.toString().padStart(2, "0")}:${secs.toString().padStart(2, "0")}`;
-  };
-
   return (
     <div className="flex flex-col min-h-screen bg-surface">
       <PublicHeader />
 
-      <main className="flex-1 pt-20 pb-24 w-full px-4 md:px-8 lg:px-12">
+      <main className="flex-1 pt-16 sm:pt-20 pb-28 sm:pb-24 w-full px-3 sm:px-6 md:px-8 lg:px-12 max-w-7xl mx-auto">
         {/* Top Navigation & Trust badge */}
-        <div className="pt-2 pb-4 flex items-center justify-between">
+        <div className="pt-2 pb-3 sm:pb-4 flex items-center justify-between gap-2">
           <Link
             href="/"
             className="flex items-center gap-1.5 text-on-surface-variant hover:text-primary text-xs font-semibold"
@@ -508,19 +519,19 @@ export default function DonsPage() {
               <span className="material-symbols-outlined text-primary text-[15px]">verified</span>
               <span>Décret Présidentiel N°69/DF/144</span>
             </span>
-            <div className="flex items-center gap-1.5 px-3 py-1 bg-surface-container rounded-full text-tertiary text-xs font-bold">
-              <span className="material-symbols-outlined text-[16px]">lock</span>
-              <span className="text-on-surface">Paiement 100% Sécurisé</span>
+            <div className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1 bg-surface-container rounded-full text-tertiary text-xs font-bold">
+              <span className="material-symbols-outlined text-[15px] sm:text-[16px]">lock</span>
+              <span className="text-on-surface text-[11px] sm:text-xs">Paiement 100% Sécurisé</span>
             </div>
           </div>
         </div>
 
         {(step === 1 || step === 2) && (
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
             {/* Left Column: Stepper Form (7 cols) */}
-            <div className="lg:col-span-7 xl:col-span-7 space-y-6">
+            <div className="lg:col-span-7 xl:col-span-7 space-y-4 sm:space-y-6">
               {/* Stepper Header */}
-              <div className="bg-surface-container-lowest rounded-2xl p-5 shadow-sm border border-surface-container-high/60">
+              <div className="bg-surface-container-lowest rounded-xl sm:rounded-2xl p-4 sm:p-5 shadow-xs border border-surface-container-high/60">
                 <div className="flex items-center justify-between relative">
                   <div className="absolute left-8 right-8 top-1/2 -translate-y-1/2 h-1 bg-surface-container -z-0">
                     <div
@@ -533,14 +544,14 @@ export default function DonsPage() {
                   {/* Step 1 */}
                   <div className="flex flex-col items-center gap-1 relative z-10">
                     <div
-                      className={`w-9 h-9 rounded-full flex items-center justify-center font-bold text-xs shadow-sm ${
+                      className={`w-8 h-8 sm:w-9 sm:h-9 rounded-full flex items-center justify-center font-bold text-xs shadow-sm ${
                         step > 1
                           ? "bg-primary text-on-primary"
                           : "bg-primary-container text-on-primary ring-4 ring-primary-fixed"
                       }`}
                     >
                       {step > 1 ? (
-                        <span className="material-symbols-outlined text-[18px]">check</span>
+                        <span className="material-symbols-outlined text-[16px] sm:text-[18px]">check</span>
                       ) : (
                         "1"
                       )}
@@ -553,7 +564,7 @@ export default function DonsPage() {
                   {/* Step 2 */}
                   <div className="flex flex-col items-center gap-1 relative z-10">
                     <div
-                      className={`w-9 h-9 rounded-full flex items-center justify-center font-bold text-xs shadow-sm ${
+                      className={`w-8 h-8 sm:w-9 sm:h-9 rounded-full flex items-center justify-center font-bold text-xs shadow-sm ${
                         step === 2
                           ? "bg-primary-container text-on-primary ring-4 ring-primary-fixed animate-pulse"
                           : step > 2
@@ -562,7 +573,7 @@ export default function DonsPage() {
                       }`}
                     >
                       {step > 2 ? (
-                        <span className="material-symbols-outlined text-[18px]">check</span>
+                        <span className="material-symbols-outlined text-[16px] sm:text-[18px]">check</span>
                       ) : (
                         "2"
                       )}
@@ -574,7 +585,7 @@ export default function DonsPage() {
 
                   {/* Step 3 */}
                   <div className="flex flex-col items-center gap-1 relative z-10">
-                    <div className="w-9 h-9 rounded-full flex items-center justify-center font-bold text-xs shadow-sm bg-surface-container text-on-surface-variant">
+                    <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full flex items-center justify-center font-bold text-xs shadow-sm bg-surface-container text-on-surface-variant">
                       3
                     </div>
                     <span className="text-[10px] sm:text-xs font-semibold text-center leading-tight text-on-surface-variant">
@@ -584,17 +595,23 @@ export default function DonsPage() {
                 </div>
               </div>
 
-              {/* Biblical Encouragement Banner */}
-              <div className="bg-primary-fixed rounded-2xl p-4 flex items-center gap-4 border border-primary-fixed-dim">
-                <div className="w-12 h-12 rounded-xl bg-surface-container-lowest flex items-center justify-center text-primary flex-shrink-0 shadow-sm">
-                  <span className="material-symbols-outlined text-[26px]">volunteer_activism</span>
+              {/* Biblical Encouragement Banner (Sobre, élégant et compact pour mobile) */}
+              <div className="bg-surface-container-low/80 border border-primary/20 rounded-xl sm:rounded-2xl p-3 sm:p-3.5 flex items-center gap-3 shadow-2xs">
+                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0">
+                  <span className="material-symbols-outlined text-[20px] sm:text-[22px]">volunteer_activism</span>
                 </div>
-                <div className="flex flex-col">
-                  <p className="text-[11px] uppercase tracking-wider text-on-primary-fixed-variant font-bold">
-                    2 Corinthiens 9:7
-                  </p>
-                  <p className="text-xs text-on-primary-fixed leading-relaxed italic">
-                    « Que chacun donne comme il l'a résolu en son cœur, sans tristesse ni contrainte; car Dieu aime celui qui donne avec joie. »
+                <div className="min-w-0 flex-1">
+                  <div className="flex items-center gap-2">
+                    <span className="text-[10px] sm:text-[11px] font-bold text-primary uppercase tracking-wider">
+                      2 Corinthiens 9:7
+                    </span>
+                    <span className="w-1 h-1 rounded-full bg-primary/40 hidden sm:inline-block" />
+                    <span className="text-[10px] text-on-surface-variant hidden sm:inline-block font-medium">
+                      Parole d'Édification
+                    </span>
+                  </div>
+                  <p className="text-xs text-on-surface leading-snug italic mt-0.5">
+                    « Que chacun donne comme il l'a résolu en son cœur, sans tristesse ni contrainte ; car Dieu aime celui qui donne avec joie. »
                   </p>
                 </div>
               </div>
@@ -604,100 +621,179 @@ export default function DonsPage() {
         {/* ============================================================== */}
         {step === 1 && (
           <div className="space-y-6">
-            <div className="bg-surface-container-lowest rounded-2xl p-6 shadow-sm border border-surface-container-high/60 space-y-6">
+            <div className="bg-surface-container-lowest rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-sm border border-surface-container-high/60 space-y-5 sm:space-y-6">
               {/* Type de Don */}
               <div>
-                <label className="text-sm font-bold text-on-surface flex items-center gap-2 mb-3">
+                <label className="text-sm font-bold text-on-surface flex items-center gap-2 mb-2.5">
                   <span className="material-symbols-outlined text-primary text-[20px]">category</span>
                   <span>Type d'Offrande ou Don</span>
                 </label>
-                <div className="grid grid-cols-2 gap-2 text-xs">
-                  <button
-                    type="button"
-                    onClick={() => setDonationType("offrande")}
-                    className={`p-3 rounded-xl flex items-center gap-2 font-semibold transition-all ${
-                      donationType === "offrande"
-                        ? "bg-primary text-on-primary shadow-sm"
-                        : "bg-surface-container-low text-on-surface hover:bg-surface-container"
-                    }`}
-                  >
-                    <span className="material-symbols-outlined text-[18px]">diversity_3</span>
-                    <span>Offrande ordinaire</span>
-                  </button>
-
+                
+                {/* Grille 2x2 des 4 types principaux */}
+                <div className="grid grid-cols-2 gap-2.5 sm:gap-3">
+                  {/* Dîme du Seigneur */}
                   <button
                     type="button"
                     onClick={() => setDonationType("dime")}
-                    className={`p-3 rounded-xl flex items-center gap-2 font-semibold transition-all ${
+                    className={`p-3 sm:p-3.5 rounded-xl sm:rounded-2xl flex flex-col justify-between text-left transition-all border ${
                       donationType === "dime"
-                        ? "bg-primary text-on-primary shadow-sm"
-                        : "bg-surface-container-low text-on-surface hover:bg-surface-container"
+                        ? "bg-primary text-on-primary border-primary shadow-sm ring-2 ring-primary/20"
+                        : "bg-surface-container-low text-on-surface border-surface-container-high/60 hover:bg-surface-container"
                     }`}
                   >
-                    <span className="material-symbols-outlined text-[18px]">workspace_premium</span>
-                    <span>Dîme du Seigneur</span>
+                    <div className="flex items-center justify-between w-full mb-1.5 sm:mb-2">
+                      <span className={`material-symbols-outlined text-[20px] ${donationType === "dime" ? "text-on-primary" : "text-primary"}`}>
+                        workspace_premium
+                      </span>
+                      {donationType === "dime" && (
+                        <span className="material-symbols-outlined text-[16px]">check_circle</span>
+                      )}
+                    </div>
+                    <div>
+                      <span className="font-bold text-xs sm:text-sm block leading-tight">Dîme du Seigneur</span>
+                      <span className={`text-[10px] mt-0.5 block leading-tight ${donationType === "dime" ? "text-on-primary/80" : "text-on-surface-variant"}`}>
+                        10% des revenus
+                      </span>
+                    </div>
                   </button>
 
+                  {/* Offrande ordinaire */}
+                  <button
+                    type="button"
+                    onClick={() => setDonationType("offrande")}
+                    className={`p-3 sm:p-3.5 rounded-xl sm:rounded-2xl flex flex-col justify-between text-left transition-all border ${
+                      donationType === "offrande"
+                        ? "bg-primary text-on-primary border-primary shadow-sm ring-2 ring-primary/20"
+                        : "bg-surface-container-low text-on-surface border-surface-container-high/60 hover:bg-surface-container"
+                    }`}
+                  >
+                    <div className="flex items-center justify-between w-full mb-1.5 sm:mb-2">
+                      <span className={`material-symbols-outlined text-[20px] ${donationType === "offrande" ? "text-on-primary" : "text-primary"}`}>
+                        diversity_3
+                      </span>
+                      {donationType === "offrande" && (
+                        <span className="material-symbols-outlined text-[16px]">check_circle</span>
+                      )}
+                    </div>
+                    <div>
+                      <span className="font-bold text-xs sm:text-sm block leading-tight">Offrande de culte</span>
+                      <span className={`text-[10px] mt-0.5 block leading-tight ${donationType === "offrande" ? "text-on-primary/80" : "text-on-surface-variant"}`}>
+                        Libéralité ordinaire
+                      </span>
+                    </div>
+                  </button>
+
+                  {/* Action de grâce */}
                   <button
                     type="button"
                     onClick={() => setDonationType("action-de-grace")}
-                    className={`p-3 rounded-xl flex items-center gap-2 font-semibold transition-all ${
+                    className={`p-3 sm:p-3.5 rounded-xl sm:rounded-2xl flex flex-col justify-between text-left transition-all border ${
                       donationType === "action-de-grace"
-                        ? "bg-primary text-on-primary shadow-sm"
-                        : "bg-surface-container-low text-on-surface hover:bg-surface-container"
+                        ? "bg-primary text-on-primary border-primary shadow-sm ring-2 ring-primary/20"
+                        : "bg-surface-container-low text-on-surface border-surface-container-high/60 hover:bg-surface-container"
                     }`}
                   >
-                    <span className="material-symbols-outlined text-[18px]">celebration</span>
-                    <span>Action de grâce</span>
+                    <div className="flex items-center justify-between w-full mb-1.5 sm:mb-2">
+                      <span className={`material-symbols-outlined text-[20px] ${donationType === "action-de-grace" ? "text-on-primary" : "text-primary"}`}>
+                        celebration
+                      </span>
+                      {donationType === "action-de-grace" && (
+                        <span className="material-symbols-outlined text-[16px]">check_circle</span>
+                      )}
+                    </div>
+                    <div>
+                      <span className="font-bold text-xs sm:text-sm block leading-tight">Action de grâce</span>
+                      <span className={`text-[10px] mt-0.5 block leading-tight ${donationType === "action-de-grace" ? "text-on-primary/80" : "text-on-surface-variant"}`}>
+                        Reconnaissance &amp; vœu
+                      </span>
+                    </div>
                   </button>
 
+                  {/* Don spécial / Mission */}
                   <button
                     type="button"
                     onClick={() => setDonationType("don-special")}
-                    className={`p-3 rounded-xl flex items-center gap-2 font-semibold transition-all ${
+                    className={`p-3 sm:p-3.5 rounded-xl sm:rounded-2xl flex flex-col justify-between text-left transition-all border ${
                       donationType === "don-special"
-                        ? "bg-primary text-on-primary shadow-sm"
-                        : "bg-surface-container-low text-on-surface hover:bg-surface-container"
+                        ? "bg-primary text-on-primary border-primary shadow-sm ring-2 ring-primary/20"
+                        : "bg-surface-container-low text-on-surface border-surface-container-high/60 hover:bg-surface-container"
                     }`}
                   >
-                    <span className="material-symbols-outlined text-[18px]">card_giftcard</span>
-                    <span>Don spécial / Mission</span>
-                  </button>
-
-                  <button
-                    type="button"
-                    onClick={() => setDonationType("projet")}
-                    className={`col-span-2 p-3 rounded-xl flex items-center justify-center gap-2 font-semibold transition-all ${
-                      donationType === "projet"
-                        ? "bg-primary text-on-primary shadow-sm"
-                        : "bg-surface-container-low text-on-surface hover:bg-surface-container"
-                    }`}
-                  >
-                    <span className="material-symbols-outlined text-[18px]">foundation</span>
-                    <span>Campagne Nationale d'édification (Yaoundé / Grand Nord)</span>
+                    <div className="flex items-center justify-between w-full mb-1.5 sm:mb-2">
+                      <span className={`material-symbols-outlined text-[20px] ${donationType === "don-special" ? "text-on-primary" : "text-primary"}`}>
+                        card_giftcard
+                      </span>
+                      {donationType === "don-special" && (
+                        <span className="material-symbols-outlined text-[16px]">check_circle</span>
+                      )}
+                    </div>
+                    <div>
+                      <span className="font-bold text-xs sm:text-sm block leading-tight">Don spécial / Mission</span>
+                      <span className={`text-[10px] mt-0.5 block leading-tight ${donationType === "don-special" ? "text-on-primary/80" : "text-on-surface-variant"}`}>
+                        Soutien apostolique
+                      </span>
+                    </div>
                   </button>
                 </div>
+
+                {/* Campagne Nationale (Pleine largeur) */}
+                <button
+                  type="button"
+                  onClick={() => setDonationType("projet")}
+                  className={`w-full mt-2.5 p-3 sm:p-3.5 rounded-xl sm:rounded-2xl flex items-center justify-between text-left transition-all border ${
+                    donationType === "projet"
+                      ? "bg-primary text-on-primary border-primary shadow-sm ring-2 ring-primary/20"
+                      : "bg-surface-container-low text-on-surface border-surface-container-high/60 hover:bg-surface-container"
+                  }`}
+                >
+                  <div className="flex items-center gap-3 min-w-0">
+                    <div className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 ${
+                      donationType === "projet" ? "bg-white/15 text-on-primary" : "bg-primary/10 text-primary"
+                    }`}>
+                      <span className="material-symbols-outlined text-[20px]">foundation</span>
+                    </div>
+                    <div className="min-w-0">
+                      <span className="font-bold text-xs sm:text-sm block truncate">
+                        Campagne Nationale d'Édification
+                      </span>
+                      <span className={`text-[10px] block truncate ${donationType === "projet" ? "text-on-primary/80" : "text-on-surface-variant"}`}>
+                        Constructions de Temples (Yaoundé / Grand Nord)
+                      </span>
+                    </div>
+                  </div>
+                  {donationType === "projet" && (
+                    <span className="material-symbols-outlined text-[18px] shrink-0 ml-2">check_circle</span>
+                  )}
+                </button>
               </div>
 
-              {/* Beneficiary Assembly */}
+              {/* Beneficiary Assembly (Lisible sur mobile sans coupure) */}
               <div>
                 <label className="text-sm font-bold text-on-surface flex items-center gap-2 mb-2">
                   <span className="material-symbols-outlined text-primary text-[20px]">church</span>
                   <span>Bénéficiaire / Assemblée</span>
                 </label>
-                <select
-                  value={assembly}
-                  onChange={(e) => setAssembly(e.target.value)}
-                  className="w-full h-12 bg-surface-container-low rounded-xl px-4 text-xs font-semibold text-on-surface border border-surface-container-high focus:outline-none"
-                >
-                  <option value="tsinga">Assemblée Locale — Temple Tsinga (Yaoundé)</option>
-                  <option value="bastos">Assemblée Locale — District Bastos-Mballa II</option>
-                  <option value="douala-bepanda">Assemblée Locale — Temple Central Bépanda (Douala)</option>
-                  <option value="bamenda">Assemblée Mère de Bamenda (Nord-Ouest)</option>
-                  <option value="district-centre">District Ecclésiastique — Yaoundé Centre</option>
-                  <option value="bureau-national">Bureau National — Siège Bamenda / Yaoundé</option>
-                  <option value="mission-nord">Projet Missionnaire Évangélisation Grand Nord</option>
-                </select>
+                <div className="relative">
+                  <span className="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-primary text-[20px] pointer-events-none">
+                    location_on
+                  </span>
+                  <select
+                    value={assembly}
+                    onChange={(e) => setAssembly(e.target.value)}
+                    className="w-full h-12 bg-surface-container-low rounded-xl pl-10 pr-9 text-xs sm:text-sm font-semibold text-on-surface border border-surface-container-high focus:outline-none focus:border-primary appearance-none cursor-pointer truncate"
+                  >
+                    <option value="tsinga">Temple Tsinga • Yaoundé (Paroisse)</option>
+                    <option value="bastos">District Bastos-Mballa II • Yaoundé</option>
+                    <option value="douala-bepanda">Temple Central Bépanda • Douala</option>
+                    <option value="bamenda">Assemblée Mère • Bamenda (Nord-Ouest)</option>
+                    <option value="district-centre">District Ecclésiastique Yaoundé Centre</option>
+                    <option value="bureau-national">Bureau National • Siège Bamenda / Yaoundé</option>
+                    <option value="mission-nord">Projet Missionnaire Grand Nord</option>
+                  </select>
+                  <span className="material-symbols-outlined absolute right-3.5 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px] pointer-events-none">
+                    unfold_more
+                  </span>
+                </div>
               </div>
 
               {/* Amount selector */}
@@ -728,23 +824,26 @@ export default function DonsPage() {
                 </div>
 
                 <div className="relative flex items-center">
+                  <span className="material-symbols-outlined absolute left-3.5 text-on-surface-variant text-[20px] pointer-events-none">
+                    payments
+                  </span>
                   <input
                     type="number"
-                    value={amount}
+                    value={amount || ""}
                     onChange={(e) => setAmount(Number(e.target.value))}
                     min={100}
                     step={500}
-                    className="w-full h-14 bg-surface-container-low rounded-xl px-4 text-xl font-bold text-primary focus:outline-none focus:bg-surface-container-lowest border border-surface-container-high"
+                    className="w-full h-12 sm:h-14 bg-surface-container-low rounded-xl pl-11 pr-16 text-lg sm:text-xl font-black text-primary focus:outline-none focus:bg-surface-container-lowest border border-surface-container-high focus:border-primary transition-all"
                     placeholder="Autre montant..."
                   />
-                  <span className="absolute right-4 font-bold text-on-surface-variant text-sm pointer-events-none">
+                  <span className="absolute right-3.5 font-extrabold text-on-surface-variant text-xs pointer-events-none bg-surface-container px-2 py-1 rounded-md">
                     FCFA
                   </span>
                 </div>
               </div>
 
               {/* Anonymous checkbox */}
-              <label className="flex items-start gap-3 p-3.5 bg-surface-container-low rounded-xl cursor-pointer">
+              <label className="flex items-start gap-3 p-3.5 bg-surface-container-low rounded-xl cursor-pointer hover:bg-surface-container transition-colors">
                 <input
                   type="checkbox"
                   checked={isAnonymous}
@@ -771,7 +870,7 @@ export default function DonsPage() {
                   value={prayerRequest}
                   onChange={(e) => setPrayerRequest(e.target.value)}
                   rows={2}
-                  className="w-full p-3 bg-surface-container-low rounded-xl text-xs text-on-surface focus:outline-none border border-surface-container-high resize-none"
+                  className="w-full p-3 bg-surface-container-low rounded-xl text-xs text-on-surface focus:outline-none focus:bg-surface-container-lowest border border-surface-container-high focus:border-primary resize-none transition-all"
                   placeholder="Ex: Action de grâce pour la guérison de notre fille et prospérité spirituelle de l'assemblée..."
                 />
               </div>
@@ -780,10 +879,20 @@ export default function DonsPage() {
               <button
                 type="button"
                 onClick={handleProceedToPayment}
-                className="w-full h-12 bg-primary text-on-primary hover:bg-primary/90 rounded-full font-bold text-sm shadow-md active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer"
+                disabled={isProceedingStep1}
+                className="w-full min-h-[50px] sm:min-h-[54px] py-3.5 px-6 bg-primary text-on-primary hover:bg-primary/90 rounded-xl sm:rounded-2xl font-bold text-xs sm:text-sm shadow-md active:scale-[0.98] transition-all flex items-center justify-center gap-2 cursor-pointer leading-tight text-center disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                <span>Continuer vers le paiement ({amount.toLocaleString()} FCFA)</span>
-                <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+                {isProceedingStep1 ? (
+                  <>
+                    <span className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin shrink-0" />
+                    <span>Préparation du paiement en cours...</span>
+                  </>
+                ) : (
+                  <>
+                    <span>Continuer vers le paiement ({amount.toLocaleString()} FCFA)</span>
+                    <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+                  </>
+                )}
               </button>
             </div>
           </div>
@@ -1083,16 +1192,16 @@ export default function DonsPage() {
                             type="button"
                             onClick={handleInitiateMobilePayment}
                             disabled={isInitiating}
-                            className="w-full h-12 bg-primary text-on-primary hover:bg-primary/90 rounded-full font-bold text-xs shadow-md active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-60"
+                            className="w-full min-h-[52px] sm:min-h-[56px] py-3.5 px-4 sm:px-6 bg-primary text-on-primary hover:bg-primary/90 rounded-2xl font-bold text-xs sm:text-sm shadow-md active:scale-[0.98] transition-all flex items-center justify-center gap-2.5 cursor-pointer disabled:opacity-60 text-center leading-snug"
                           >
                             {isInitiating ? (
                               <>
-                                <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                                <span className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin shrink-0" />
                                 <span>Connexion à la passerelle SasPay en cours...</span>
                               </>
                             ) : (
                               <>
-                                <span className="material-symbols-outlined text-[18px]">bolt</span>
+                                <span className="material-symbols-outlined text-[20px] shrink-0">bolt</span>
                                 <span>Initier le paiement automatique ({amount.toLocaleString()} FCFA)</span>
                               </>
                             )}
@@ -1100,67 +1209,44 @@ export default function DonsPage() {
                         </div>
                       )}
 
-                      {/* APRÈS INITIATION : DÉCOMPTE DE TEMPS RESTANT */}
+                      {/* APRÈS INITIATION : EN ATTENTE DE VALIDATION OPÉRATEUR */}
                       {paymentInitiated && (
-                        <div className="bg-surface-container-low rounded-2xl p-6 border border-primary/30 space-y-5 text-center shadow-xs animate-in fade-in duration-300">
-                          {/* Horloge Circulaire Animée */}
-                          <div className="relative w-28 h-28 mx-auto flex items-center justify-center">
-                            <svg className="w-full h-full -rotate-90" viewBox="0 0 100 100">
-                              <circle
-                                className="text-surface-container-high"
-                                cx="50"
-                                cy="50"
-                                fill="transparent"
-                                r="40"
-                                stroke="currentColor"
-                                strokeWidth="6"
-                              />
-                              <circle
-                                className={`${timer <= 20 ? "text-rose-500" : "text-primary-container"} transition-all duration-1000`}
-                                cx="50"
-                                cy="50"
-                                fill="transparent"
-                                r="40"
-                                stroke="currentColor"
-                                strokeWidth="6"
-                                strokeDasharray="251.2"
-                                strokeDashoffset={251.2 * (1 - timer / 120)}
-                                strokeLinecap="round"
-                              />
-                            </svg>
-                            <div className="absolute flex flex-col items-center justify-center">
-                              <span className={`text-xl font-black ${timer <= 20 ? "text-rose-600 animate-pulse" : "text-on-surface"}`}>
-                                {formatTimer(timer)}
+                        <div className="bg-surface-container-low rounded-2xl p-5 sm:p-6 border border-primary/20 space-y-5 text-center shadow-xs animate-in fade-in duration-300">
+                          {/* Radar / Onde USSD Animée */}
+                          <div className="relative w-20 h-20 mx-auto flex items-center justify-center">
+                            <span className="absolute inset-0 rounded-full bg-primary/15 animate-ping opacity-75" />
+                            <span className="absolute inset-2 rounded-full bg-primary/20 animate-pulse" />
+                            <div className="relative w-14 h-14 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-md">
+                              <span className="material-symbols-outlined text-[28px]">
+                                send_to_mobile
                               </span>
-                              <span className="text-[10px] text-on-surface-variant uppercase font-bold">temps restant</span>
                             </div>
                           </div>
 
                           <div className="space-y-1.5 max-w-md mx-auto">
-                            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold">
+                            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold shadow-2xs">
                               <span className="w-2 h-2 rounded-full bg-emerald-600 animate-ping" />
-                              <span>Prompt USSD SasPay transmis avec succès</span>
+                              <span>Invite USSD transmise à votre opérateur</span>
                             </div>
-                            <h4 className="font-bold text-on-surface text-base pt-1">
+                            <h4 className="font-extrabold text-on-surface text-base sm:text-lg pt-1">
                               Vérifiez l'écran de votre téléphone (+237 {phoneNumber})
                             </h4>
-                            <p className="text-xs text-on-surface-variant leading-relaxed">
-                              Saisissez votre code secret {paymentMethod === "mtn" ? "*126#" : "#150#"} pour autoriser le transfert de{" "}
-                              <strong className="text-primary font-bold">{amount.toLocaleString()} FCFA</strong> au profit de la Full Gospel Mission.
+                            <p className="text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+                              Saisissez votre code secret{" "}
+                              <strong className="text-primary font-bold">
+                                {paymentMethod === "mtn" ? "*126#" : "#150#"}
+                              </strong>{" "}
+                              pour autoriser le transfert de{" "}
+                              <strong className="text-primary font-bold">{amount.toLocaleString()} FCFA</strong>{" "}
+                              au profit de la Mission du Plein Évangile.
                             </p>
                           </div>
 
-                          {timer === 0 && (
-                            <div className="p-3 bg-amber-50 border border-amber-200 rounded-xl text-amber-800 text-xs font-semibold">
-                              Le délai d'attente est écoulé. Si vous n'avez pas reçu l'invite, cliquez sur « Renvoyer l'invite USSD » ci-dessous.
-                            </div>
-                          )}
-
-                          {/* État de validation automatique par le Backend (Aucun clic utilisateur requis !) */}
+                          {/* État de validation automatique par le Backend (Notification Webhook & SSE) */}
                           <div className="flex flex-col gap-3 pt-2 max-w-md mx-auto">
                             {autoCheckStatus === "processing" && (
-                              <div className="p-4 rounded-2xl bg-primary-fixed/20 border border-primary/30 flex items-center gap-3.5 text-left shadow-2xs">
-                                <div className="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center shrink-0 shadow-xs">
+                              <div className="p-4 rounded-2xl bg-primary-fixed/20 border border-primary/30 flex items-start sm:items-center gap-3.5 text-left shadow-2xs">
+                                <div className="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center shrink-0 shadow-xs mt-0.5 sm:mt-0">
                                   <span className="material-symbols-outlined text-[20px] animate-spin">
                                     sync
                                   </span>
@@ -1169,11 +1255,11 @@ export default function DonsPage() {
                                   <div className="flex items-center gap-2">
                                     <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
                                     <span className="text-xs font-bold text-on-surface">
-                                      Validation automatique en direct par le serveur...
+                                      En attente de votre validation opérateur...
                                     </span>
                                   </div>
                                   <p className="text-[11px] text-on-surface-variant mt-1 leading-snug">
-                                    Dès que vous composez votre code secret sur votre téléphone (+237 {phoneNumber}), le serveur confirme le paiement et génère votre reçu certifié <strong>automatiquement</strong>.
+                                    Dès que vous composez votre code secret sur votre téléphone (+237 {phoneNumber}), l'opérateur valide la transaction par webhook et le reçu officiel est généré en direct.
                                   </p>
                                 </div>
                               </div>
@@ -1208,14 +1294,24 @@ export default function DonsPage() {
                             )}
 
                             {/* Actions de secours : Renvoyer USSD / Changer de numéro */}
-                            <div className="flex items-center gap-2 pt-1">
+                            <div className="flex flex-col sm:flex-row items-center gap-2 pt-1">
                               <button
                                 type="button"
                                 onClick={handleRetryUssd}
-                                className="flex-1 h-10 rounded-full bg-surface-container text-on-surface text-xs font-bold hover:bg-surface-container-high transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
+                                disabled={isRetryingUssd}
+                                className="w-full sm:flex-1 min-h-[42px] py-2 px-3 rounded-xl sm:rounded-full bg-surface-container text-on-surface text-xs font-bold hover:bg-surface-container-high transition-colors flex items-center justify-center gap-1.5 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
                               >
-                                <span className="material-symbols-outlined text-[16px]">sync</span>
-                                <span>Renvoyer l'invite USSD</span>
+                                {isRetryingUssd ? (
+                                  <>
+                                    <span className="w-4 h-4 border-2 border-primary border-t-transparent rounded-full animate-spin shrink-0" />
+                                    <span>Renvoi en cours...</span>
+                                  </>
+                                ) : (
+                                  <>
+                                    <span className="material-symbols-outlined text-[16px]">sync</span>
+                                    <span>Renvoyer l'invite USSD</span>
+                                  </>
+                                )}
                               </button>
                               <button
                                 type="button"
@@ -1224,7 +1320,7 @@ export default function DonsPage() {
                                   setAutoCheckStatus("idle");
                                   setAutoCheckMessage(null);
                                 }}
-                                className="flex-1 h-10 rounded-full bg-surface-container text-on-surface-variant text-xs font-bold hover:bg-surface-container-high hover:text-on-surface transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
+                                className="w-full sm:flex-1 min-h-[42px] py-2 px-3 rounded-xl sm:rounded-full bg-surface-container text-on-surface-variant text-xs font-bold hover:bg-surface-container-high hover:text-on-surface transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
                               >
                                 <span className="material-symbols-outlined text-[16px]">edit</span>
                                 <span>Changer de numéro</span>
@@ -1235,16 +1331,26 @@ export default function DonsPage() {
                             <button
                               type="button"
                               onClick={handleManualCheckServerStatus}
-                              className="text-[11px] text-primary hover:underline font-semibold mx-auto block pt-1 cursor-pointer"
+                              disabled={isCheckingServer}
+                              className="text-[11px] text-primary hover:underline font-semibold mx-auto flex items-center gap-1.5 pt-1 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
                             >
-                              Interroger l'état auprès du serveur
+                              {isCheckingServer ? (
+                                <>
+                                  <span className="w-3.5 h-3.5 border-2 border-primary border-t-transparent rounded-full animate-spin shrink-0" />
+                                  <span>Interrogation du serveur en cours...</span>
+                                </>
+                              ) : (
+                                <span>Interroger l'état auprès du serveur</span>
+                              )}
                             </button>
 
                             {/* Outil de validation rapide pour tests de déploiement (Simulateur Webhook SasPay) */}
                             <button
                               type="button"
+                              disabled={isSimulating}
                               onClick={async () => {
-                                if (!donationId) return;
+                                if (isSimulating || !donationId) return;
+                                setIsSimulating(true);
                                 try {
                                   const res = await api.donations.simulateWebhook({ donation_id: donationId, status: "completed" });
                                   if (res?.data?.result?.status === "completed") {
@@ -1266,11 +1372,20 @@ export default function DonsPage() {
                                     message: e?.message || "Erreur lors de la simulation webhook.",
                                     variant: "danger",
                                   });
+                                } finally {
+                                  setIsSimulating(false);
                                 }
                               }}
-                              className="text-[10px] text-on-surface-variant hover:text-primary transition-colors hover:underline mx-auto block pt-1.5 cursor-pointer opacity-70 hover:opacity-100"
+                              className="text-[10px] text-on-surface-variant hover:text-primary transition-colors hover:underline mx-auto flex items-center gap-1 pt-1.5 cursor-pointer opacity-70 hover:opacity-100 disabled:opacity-50"
                             >
-                              ⚡ Simuler la réception du webhook SasPay (Test Déploiement)
+                              {isSimulating ? (
+                                <>
+                                  <span className="w-3 h-3 border border-primary border-t-transparent rounded-full animate-spin shrink-0" />
+                                  <span>Simulation en cours...</span>
+                                </>
+                              ) : (
+                                <span>⚡ Simuler la réception du webhook SasPay (Test Déploiement)</span>
+                              )}
                             </button>
                           </div>
                         </div>
@@ -1373,10 +1488,20 @@ export default function DonsPage() {
 
                         <button
                           type="submit"
-                          className="w-full min-h-[48px] py-2.5 px-4 bg-primary text-on-primary hover:bg-primary/90 rounded-full font-bold text-xs shadow-md active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer mt-2 text-center"
+                          disabled={isSubmittingManual}
+                          className="w-full min-h-[48px] py-2.5 px-4 bg-primary text-on-primary hover:bg-primary/90 rounded-full font-bold text-xs shadow-md active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer mt-2 text-center disabled:opacity-60 disabled:cursor-not-allowed"
                         >
-                          <span className="material-symbols-outlined text-[18px] shrink-0">send</span>
-                          <span className="break-words">Transmettre la référence ({amount.toLocaleString()} FCFA)</span>
+                          {isSubmittingManual ? (
+                            <>
+                              <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin shrink-0" />
+                              <span>Transmission de la déclaration en cours...</span>
+                            </>
+                          ) : (
+                            <>
+                              <span className="material-symbols-outlined text-[18px] shrink-0">send</span>
+                              <span className="break-words">Transmettre la référence ({amount.toLocaleString()} FCFA)</span>
+                            </>
+                          )}
                         </button>
                       </form>
                     </div>
@@ -1528,10 +1653,20 @@ export default function DonsPage() {
 
                     <button
                       type="submit"
-                      className="w-full h-12 bg-primary text-on-primary hover:bg-primary/90 rounded-full font-bold text-xs shadow-md active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer mt-2"
+                      disabled={isSubmittingBank}
+                      className="w-full h-12 bg-primary text-on-primary hover:bg-primary/90 rounded-full font-bold text-xs shadow-md active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer mt-2 disabled:opacity-60 disabled:cursor-not-allowed"
                     >
-                      <span className="material-symbols-outlined text-[18px]">verified_user</span>
-                      <span>Soumettre la preuve de virement &amp; Générer le reçu</span>
+                      {isSubmittingBank ? (
+                        <>
+                          <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin shrink-0" />
+                          <span>Transmission de la preuve à la Trésorerie...</span>
+                        </>
+                      ) : (
+                        <>
+                          <span className="material-symbols-outlined text-[18px]">verified_user</span>
+                          <span>Soumettre la preuve de virement &amp; Générer le reçu</span>
+                        </>
+                      )}
                     </button>
                   </form>
                 </div>
@@ -1583,10 +1718,20 @@ export default function DonsPage() {
                   <button
                     type="button"
                     onClick={handleSubmitCardPayment}
-                    className="w-full h-12 bg-primary text-on-primary hover:bg-primary/90 rounded-full font-bold text-xs shadow-md active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer mt-2"
+                    disabled={isSubmittingCard}
+                    className="w-full h-12 bg-primary text-on-primary hover:bg-primary/90 rounded-full font-bold text-xs shadow-md active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer mt-2 disabled:opacity-60 disabled:cursor-not-allowed"
                   >
-                    <span className="material-symbols-outlined text-[18px]">credit_card</span>
-                    <span>Payer {amount.toLocaleString()} FCFA par Carte</span>
+                    {isSubmittingCard ? (
+                      <>
+                        <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin shrink-0" />
+                        <span>Sécurisation & débit bancaire en cours...</span>
+                      </>
+                    ) : (
+                      <>
+                        <span className="material-symbols-outlined text-[18px]">credit_card</span>
+                        <span>Payer {amount.toLocaleString()} FCFA par Carte</span>
+                      </>
+                    )}
                   </button>
                 </div>
               )}
@@ -1707,7 +1852,7 @@ export default function DonsPage() {
                       <span className="text-on-surface-variant">Statut débit :</span>
                       {walletMode === "auto" ? (
                         <span className={`font-bold ${paymentInitiated ? "text-emerald-700" : "text-amber-700"}`}>
-                          {paymentInitiated ? `Invite active (${formatTimer(timer)})` : "En attente d'initiation"}
+                          {paymentInitiated ? "Invite USSD active" : "En attente d'initiation"}
                         </span>
                       ) : (
                         <span className="font-bold text-amber-700">

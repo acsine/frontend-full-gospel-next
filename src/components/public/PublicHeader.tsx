@@ -166,14 +166,14 @@ export function PublicHeader() {
 
           {/* Actions (Desktop & Mobile) */}
           <div className="flex items-center gap-1.5 sm:gap-2 flex-shrink-0">
-            {/* Lang Selector (Desktop) */}
-            <div className="hidden sm:flex items-center bg-surface-container rounded-full p-0.5 text-xs font-semibold">
+            {/* Lang Selector (Visible sur mobile & desktop) */}
+            <div className="flex items-center bg-surface-container rounded-full p-0.5 text-xs font-semibold">
               <button
                 type="button"
                 onClick={() => setLocale("fr")}
-                className={`min-w-[28px] h-7 px-2 rounded-full transition-all text-xs ${
+                className={`min-w-[26px] sm:min-w-[28px] h-6 sm:h-7 px-1.5 sm:px-2 rounded-full transition-all text-[11px] sm:text-xs ${
                   locale === "fr"
-                    ? "bg-surface-container-lowest text-on-surface shadow-sm font-bold"
+                    ? "bg-surface-container-lowest text-on-surface shadow-xs font-bold"
                     : "text-on-surface-variant hover:text-on-surface"
                 }`}
                 title="Passer en Français"
@@ -183,9 +183,9 @@ export function PublicHeader() {
               <button
                 type="button"
                 onClick={() => setLocale("en")}
-                className={`min-w-[28px] h-7 px-2 rounded-full transition-all text-xs ${
+                className={`min-w-[26px] sm:min-w-[28px] h-6 sm:h-7 px-1.5 sm:px-2 rounded-full transition-all text-[11px] sm:text-xs ${
                   locale === "en"
-                    ? "bg-surface-container-lowest text-on-surface shadow-sm font-bold"
+                    ? "bg-surface-container-lowest text-on-surface shadow-xs font-bold"
                     : "text-on-surface-variant hover:text-on-surface"
                 }`}
                 title="Switch to English"
@@ -194,10 +194,10 @@ export function PublicHeader() {
               </button>
             </div>
 
-            {/* Bouton Don */}
+            {/* Bouton Don (Desktop & tablette - sur mobile disponible dans la barre du bas et le tiroir) */}
             <Link
               href="/dons"
-              className="h-8 sm:h-9 px-2.5 sm:px-3 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface hover:text-primary rounded-full text-xs font-bold flex items-center justify-center gap-1 shadow-xs transition-all whitespace-nowrap"
+              className="hidden sm:flex h-8 sm:h-9 px-3 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface hover:text-primary rounded-full text-xs font-bold items-center justify-center gap-1.5 shadow-xs transition-all whitespace-nowrap"
               title="Faire un don ou verser sa dîme"
             >
               <svg className="w-3.5 h-3.5 text-primary shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -206,10 +206,10 @@ export function PublicHeader() {
               <span>{t("nav.give")}</span>
             </Link>
 
-            {/* Bouton Dashboard / Connexion (CLAIREMENT VISIBLE SUR MOBILE & DESKTOP) */}
+            {/* Bouton Dashboard / Connexion (Desktop & tablette - sur mobile disponible dans la barre du bas) */}
             <Link
               href={isLoggedIn ? "/dashboard" : "/connexion?redirect=/dashboard"}
-              className="h-8 sm:h-9 px-3 sm:px-4 rounded-full bg-primary-container hover:bg-primary text-on-primary text-xs sm:text-sm font-bold flex items-center justify-center gap-1.5 shadow-md active:scale-95 transition-all whitespace-nowrap"
+              className="hidden sm:flex h-8 sm:h-9 px-3.5 sm:px-4 rounded-full bg-primary-container hover:bg-primary text-on-primary text-xs sm:text-sm font-bold items-center justify-center gap-1.5 shadow-md active:scale-95 transition-all whitespace-nowrap"
               title="Espace Intendant & Dashboard"
             >
               {isLoggedIn ? (
@@ -228,11 +228,11 @@ export function PublicHeader() {
               )}
             </Link>
 
-            {/* Bouton Hamburger Mobile (Accessible et animé) */}
+            {/* Bouton Hamburger Mobile (Aéré, bien cadré avec marge saine) */}
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden w-8 h-8 sm:w-9 sm:h-9 rounded-xl flex items-center justify-center text-on-surface bg-surface-container hover:bg-surface-container-high transition-colors ml-0.5 shrink-0"
+              className="md:hidden w-9 h-9 rounded-xl flex items-center justify-center text-on-surface bg-surface-container hover:bg-surface-container-high transition-colors shrink-0"
               aria-label={mobileMenuOpen ? "Fermer le menu" : "Ouvrir le menu de navigation"}
               aria-expanded={mobileMenuOpen}
             >
@@ -385,6 +385,89 @@ export function PublicHeader() {
           </div>
         </div>
       )}
+      {/* ============================================================== */}
+      {/* BARRE DE NAVIGATION INFÉRIEURE MOBILE (BOTTOM NAV UNIFIÉE)     */}
+      {/* ============================================================== */}
+      <nav className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-surface-container-lowest/95 backdrop-blur-xl border-t border-surface-container-high/80 shadow-[0_-4px_20px_rgba(0,0,0,0.08)] py-1.5 px-2 pb-[max(0.375rem,env(safe-area-inset-bottom))] grid grid-cols-4 items-center">
+        {/* 1. Accueil */}
+        <Link
+          href="/"
+          className={`flex flex-col items-center justify-center py-1 rounded-xl transition-all active:scale-95 ${
+            pathname === "/"
+              ? "text-primary font-bold"
+              : "text-on-surface-variant hover:text-on-surface font-medium"
+          }`}
+        >
+          <div className={`p-1 rounded-lg ${pathname === "/" ? "bg-primary/10" : ""}`}>
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={pathname === "/" ? "2.4" : "2"} strokeLinecap="round" strokeLinejoin="round">
+              <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+              <polyline points="9 22 9 12 15 12 15 22" />
+            </svg>
+          </div>
+          <span className="text-[10px] tracking-tight mt-0.5">Accueil</span>
+        </Link>
+
+        {/* 2. Assemblées */}
+        <Link
+          href="/assemblees"
+          className={`flex flex-col items-center justify-center py-1 rounded-xl transition-all active:scale-95 ${
+            pathname.startsWith("/assemblees")
+              ? "text-primary font-bold"
+              : "text-on-surface-variant hover:text-on-surface font-medium"
+          }`}
+        >
+          <div className={`p-1 rounded-lg ${pathname.startsWith("/assemblees") ? "bg-primary/10" : ""}`}>
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={pathname.startsWith("/assemblees") ? "2.4" : "2"} strokeLinecap="round" strokeLinejoin="round">
+              <path d="M18 20V6a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v14" />
+              <path d="M2 20h20" />
+              <path d="M14 12v.01" />
+              <path d="M12 2v2" />
+              <path d="M10 3h4" />
+            </svg>
+          </div>
+          <span className="text-[10px] tracking-tight mt-0.5">Assemblées</span>
+        </Link>
+
+        {/* 3. Dons */}
+        <Link
+          href="/dons"
+          className={`flex flex-col items-center justify-center py-1 rounded-xl transition-all active:scale-95 ${
+            pathname.startsWith("/dons")
+              ? "text-primary font-bold"
+              : "text-on-surface-variant hover:text-on-surface font-medium"
+          }`}
+        >
+          <div className={`p-1 rounded-lg ${pathname.startsWith("/dons") ? "bg-primary/10" : ""}`}>
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={pathname.startsWith("/dons") ? "2.4" : "2"} strokeLinecap="round" strokeLinejoin="round">
+              <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+            </svg>
+          </div>
+          <span className="text-[10px] tracking-tight mt-0.5">Dons &amp; Dîmes</span>
+        </Link>
+
+        {/* 4. Dashboard / Connexion */}
+        <Link
+          href={isLoggedIn ? "/dashboard" : "/connexion?redirect=/dashboard"}
+          className={`flex flex-col items-center justify-center py-1 rounded-xl transition-all active:scale-95 ${
+            pathname.startsWith("/dashboard") || pathname.startsWith("/connexion")
+              ? "text-primary font-bold"
+              : "text-on-surface-variant hover:text-on-surface font-medium"
+          }`}
+        >
+          <div className={`relative p-1 rounded-lg ${pathname.startsWith("/dashboard") || pathname.startsWith("/connexion") ? "bg-primary/10" : ""}`}>
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={pathname.startsWith("/dashboard") ? "2.4" : "2"} strokeLinecap="round" strokeLinejoin="round">
+              <rect width="18" height="11" x="3" y="11" rx="2" ry="2" />
+              <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+            </svg>
+            {isLoggedIn && (
+              <span className="absolute top-0.5 right-0.5 w-2 h-2 rounded-full bg-emerald-500 animate-pulse ring-2 ring-surface-container-lowest" />
+            )}
+          </div>
+          <span className="text-[10px] tracking-tight mt-0.5">
+            {isLoggedIn ? "Dashboard" : "Connexion"}
+          </span>
+        </Link>
+      </nav>
     </>
   );
 }
